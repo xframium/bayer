@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://xframium.org/xsl/xs3p.xsl"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.xframium.org/structureValidation" xmlns:tns="http://www.xframium.org/structureValidation" elementFormDefault="qualified">
+  <annotation>
+    <documentation xml:lang="en">Structure validation definition
+    </documentation>
+  </annotation>
+  <element name="validationCollection" type="tns:ValidationCollection" />
+  <complexType name="ValidationCollection">
+    <sequence>
+      <element name="validation" type="tns:Validation" minOccurs="1" maxOccurs="unbounded" />
+    </sequence>
+  </complexType>
+  <complexType name="Validation">
+    <sequence>
+      <element name="description" type="string" minOccurs="0" maxOccurs="1" />
+      <element name="tag" type="tns:Tag" minOccurs="1" maxOccurs="unbounded" />
+    </sequence>
+    <attribute name="name" type="string" use="required" />
+  </complexType>
+  <complexType name="Tag">
+    <sequence>
+      <element name="attribute" type="tns:Attribute" minOccurs="0" maxOccurs="unbounded" />
+      <element name="text" type="tns:TextContent" minOccurs="0" maxOccurs="1" />
+      <element name="tag" type="tns:Tag" minOccurs="0" maxOccurs="unbounded" />
+    </sequence>
+    <attribute name="name" type="string" use="required" />
+  </complexType>
+  <complexType name="Attribute">
+    <simpleContent>
+      <extension base="string">
+        <attribute name="name" type="string" use="required" />
+        <attribute name="required" type="boolean" default="true" />
+        <attribute name="type" default="is">
+          <simpleType>
+            <restriction base="string">
+              <enumeration value="is" />
+              <enumeration value="starts-with" />
+              <enumeration value="contains" />
+              <enumeration value="ends-with" />
+              <enumeration value="regex" />
+              <enumeration value="exists" />
+            </restriction>
+          </simpleType>
+        </attribute>
+      </extension>
+    </simpleContent>
+  </complexType>
+  <complexType name="TextContent">
+    <simpleContent>
+      <extension base="string">
+        <attribute name="type" default="is">
+          <simpleType>
+            <restriction base="string">
+              <enumeration value="is" />
+              <enumeration value="starts-with" />
+              <enumeration value="contains" />
+              <enumeration value="ends-with" />
+              <enumeration value="regex" />
+              <enumeration value="exists" />
+            </restriction>
+          </simpleType>
+        </attribute>
+      </extension>
+    </simpleContent>
+  </complexType>
+</schema>

@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Bayer Demo Suite" verbose="0" parallel="tests">
+    
+    <test name="defaultTest" enabled="true">
+        <classes>
+            <class name="com.bayer.test.betaseron.HomePage"/>
+            <class name="com.bayer.test.betaseron.HomePage2"/>
+        </classes>
+    </test>
+
+</suite>
