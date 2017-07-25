@@ -1,4 +1,4 @@
-package com.bayer.test.step.spi.common;
+package com.bayer.common;
 
 import com.bayer.BayerWebDriver;
 import com.bayer.test.step.AbstractStep;
@@ -13,7 +13,7 @@ public class Navigate extends AbstractStep implements Step
         this.url = url;
     }
     
-    @Override
+    @Override 
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
         webDriver.get( url );

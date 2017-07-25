@@ -1,4 +1,4 @@
-package com.bayer.test.step.spi.common.utility;
+package com.bayer.common.utility;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
