@@ -26,7 +26,14 @@ public class DeviceManager
     
     private void configureContainer()
     {
-        MatrixResult matrixResult = Utility.instance().readCSV( "com/bayer/configuration/deviceSheet.csv" );
+        
+        String deviceSheet = System.getProperty( "deviceSheet" );
+        
+        MatrixResult matrixResult = null;
+        if ( deviceSheet == null ) 
+            matrixResult = Utility.instance().readCSV( "com/bayer/configuration/deviceSheet.csv" );
+        else
+            matrixResult = Utility.instance().readCSV( deviceSheet );
 
         if ( log.isInfoEnabled() )
             log.info( "Read " + matrixResult.getSize() + " device records" );
