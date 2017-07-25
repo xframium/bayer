@@ -29,6 +29,7 @@ public class DeviceManager
         
         String deviceSheet = System.getProperty( "deviceSheet" );
         
+        
         MatrixResult matrixResult = null;
         if ( deviceSheet == null ) 
             matrixResult = Utility.instance().readCSV( "com/bayer/configuration/deviceSheet.csv" );
