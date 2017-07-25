@@ -36,7 +36,14 @@ public class PropertyReader implements ObjectRepository
             if ( FileName != null )
                 inputStream = new FileInputStream( FileName );
             else
-                inputStream = ClassLoader.getSystemClassLoader().getResourceAsStream( "com/bayer/objectRepository/objectRepository.properties" );
+            {
+                String objectRepo = System.getProperty( "objectRepository.properties" );
+                if ( objectRepo != null ) 
+                    inputStream = ClassLoader.getSystemClassLoader().getResourceAsStream( objectRepo );
+                else
+                    inputStream = ClassLoader.getSystemClassLoader().getResourceAsStream( "com/bayer/objectRepository/objectRepository.properties" );
+                    
+            }
             prop.load( inputStream );
             
             GsonBuilder gsonBuilder = new GsonBuilder();

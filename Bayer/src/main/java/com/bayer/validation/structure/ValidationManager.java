@@ -17,13 +17,21 @@ public class ValidationManager
     
     private Map<String,Validation> validationMap = new HashMap<String,Validation>( 10 );
     
+    @SuppressWarnings ( "restriction")
     private ValidationManager()
     {
         try
         {
             JAXBContext jc = JAXBContext.newInstance( ObjectFactory.class );
             Unmarshaller u = jc.createUnmarshaller();
-            JAXBElement<?> rootElement = (JAXBElement<?>) u.unmarshal( getClass().getResourceAsStream( "/com/bayer/validation/structure/structureValidation.xml" ) );
+            
+            String validationLocation = System.getProperty( "validationDefinition" );
+            JAXBElement<?> rootElement = null;
+            
+            if ( validationLocation != null )
+                rootElement = (JAXBElement<?>) u.unmarshal( getClass().getResourceAsStream( "/com/bayer/validation/structure/structureValidation.xml" ) );
+            else
+                rootElement = (JAXBElement<?>) u.unmarshal( getClass().getResourceAsStream( "/com/bayer/validation/structure/structureValidation.xml" ) );
     
             ValidationCollection rRoot = (ValidationCollection) rootElement.getValue();
             

@@ -19,7 +19,11 @@ public class ConfigurationManager
     {
         try
         {
-            cP.load( ClassLoader.getSystemClassLoader().getResourceAsStream( "com/bayer/configuration/config.properties" ) );
+            String configLocation = System.getProperty( "config.properties" );
+            if ( configLocation != null )
+                cP.load( ClassLoader.getSystemClassLoader().getResourceAsStream( configLocation ) );
+            else
+                cP.load( ClassLoader.getSystemClassLoader().getResourceAsStream( "com/bayer/configuration/config.properties" ) );
         }
         catch( Exception e )
         {
