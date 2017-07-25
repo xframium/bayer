@@ -13,7 +13,7 @@ public class HomePage extends AbstractTest
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://betaseron.com" ) } );
+        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/" ) } );
     }
     
     @TestDescriptor( testName="Structure Test" )
