@@ -20,7 +20,7 @@ public class HomePage extends AbstractTest
     @Test ( dataProvider = "deviceList", enabled=false)
     public void structureTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/important-safety-information/" ), new StructureValidator( "ISI" ) } );
+        executeSteps( new Step[] { new Navigate( "https://www.aleve.com" ), new StructureValidator( "ISI" ) } );
     }
     
 }
