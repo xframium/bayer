@@ -23,7 +23,7 @@ public class ConfigurationManager
             if ( configLocation != null )
                 cP.load( ClassLoader.getSystemClassLoader().getResourceAsStream( configLocation ) );
             else
-                cP.load( ClassLoader.getSystemClassLoader().getResourceAsStream( "com/bayer/configuration/config.properties" ) );
+                cP.load( ClassLoader.getSystemClassLoader().getResourceAsStream( "com/bayer/config.properties" ) );
         }
         catch( Exception e )
         {

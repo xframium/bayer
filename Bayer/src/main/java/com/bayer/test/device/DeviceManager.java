@@ -32,7 +32,7 @@ public class DeviceManager
         
         MatrixResult matrixResult = null;
         if ( deviceSheet == null ) 
-            matrixResult = Utility.instance().readCSV( "com/bayer/configuration/deviceSheet.csv" );
+            matrixResult = Utility.instance().readCSV( "com/bayer/deviceSheet.csv" );
         else
             matrixResult = Utility.instance().readCSV( deviceSheet );
 
