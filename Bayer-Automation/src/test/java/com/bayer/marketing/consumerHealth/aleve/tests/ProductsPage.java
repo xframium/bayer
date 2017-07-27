@@ -15,7 +15,7 @@ public class ProductsPage extends AbstractTest
     {
         executeSteps( new Step[] { new Navigate( "https://www.aleve.com/" ) } );
     }
-    int x =10;
+    int x =11;
     @TestDescriptor( testName="Structure Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void structureTest( DeviceContainer dC )
