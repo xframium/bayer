@@ -4,10 +4,10 @@ import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 
-public class couponStep extends AbstractStep
+public class saveStep extends AbstractStep
 {
 
-    public couponStep()
+    public saveStep()
     {
         super( "message", "error message" );
     }

@@ -12,10 +12,10 @@
             </tag>
         </tag>
     </validation>
-    <validation name="HOME">
+    <validation name="Aleve HOME">
         <description>Testing Home</description>
         <tag name="//p/strong">
-            <text type="contains">BETASERON can cause serious side effects, including:</text>
+            <text type="contains">GO BEYOND PAIN</text>
         </tag>
         <tag name="//p">
             <text type="contains">Symptoms of liver problems may include yellowing of your eyes, itchy skin, feeling very tired, flu-like symptoms, nausea or vomiting, bruising easily or bleeding problems. Your healthcare provider will do blood tests to check for these problems while you take BETASERON. </text>

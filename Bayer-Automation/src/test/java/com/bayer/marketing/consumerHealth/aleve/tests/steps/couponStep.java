@@ -25,9 +25,7 @@ public class couponStep extends AbstractStep
         BayerWebElement print = getElement( "aleve.coupon.print", webDriver );
         print.click();
         
-        
-
-        
+ 
         
         return true;
     }
