@@ -11,7 +11,7 @@ import com.bayer.test.step.factory.Step;
 public class FAQNavRun extends AbstractTest
 {
    
-    @TestDescriptor( testName="Structure Test" )
+    @TestDescriptor( testName="Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void structureTest( DeviceContainer dC )
     {
