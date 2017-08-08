@@ -40,6 +40,7 @@ public class FAQNavStep extends AbstractStep
         BayerWebElement sinusandcold = getElement( "aleve.faq.link.sinusandcold", webDriver );
         sinusandcold.click();
         
+        
         return true;
     }
 
