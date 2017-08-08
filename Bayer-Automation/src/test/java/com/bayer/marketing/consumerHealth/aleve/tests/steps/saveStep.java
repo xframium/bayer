@@ -5,6 +5,7 @@ import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 
+<<<<<<< HEAD
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -14,6 +15,8 @@ import org.openqa.selenium.interactions.SendKeysAction;
 import org.openqa.selenium.internal.WrapsElement;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+=======
+>>>>>>> branch 'master' of https://github.com/xframium/bayer.git
 public class saveStep extends AbstractStep
 {
 

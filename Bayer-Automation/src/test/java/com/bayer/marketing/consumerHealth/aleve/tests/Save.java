@@ -7,7 +7,11 @@ import com.bayer.marketing.consumerHealth.aleve.tests.steps.saveStep;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
+<<<<<<< HEAD
 import org.openqa.selenium.internal.WrapsElement;
+=======
+
+>>>>>>> branch 'master' of https://github.com/xframium/bayer.git
 public class Save extends AbstractTest
 {
    

@@ -25,10 +25,12 @@ public class whereToBuyStep extends AbstractStep
         zip.sendKeys("07981");
         
  
-        BayerWebElement buyNow = getElement( "aleve.wtb.buyNow", webDriver );
+        BayerWebElement buyNow = getElement( "aleve.wtb.buyNow1", webDriver );
         buyNow.click();
 
-        
+   
+        zip.clear();
+        zip.sendKeys("07751");
 
         
         
