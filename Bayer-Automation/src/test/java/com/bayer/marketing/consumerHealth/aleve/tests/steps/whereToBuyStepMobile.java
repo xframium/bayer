@@ -19,7 +19,6 @@ public class whereToBuyStepMobile extends AbstractStep
         BayerWebElement menu = getElement( "aleve.mobile.wtb.menu", webDriver );
         menu.click();
         
-        
         BayerWebElement wheretobuy = getElement( "aleve.mobile.wtb.wheretobuy", webDriver );
         wheretobuy.click();
        
@@ -30,13 +29,18 @@ public class whereToBuyStepMobile extends AbstractStep
         zip.clear();
         zip.sendKeys("07981");
         
-      
         BayerWebElement online = getElement( "aleve.mobile.wtb.findOnline", webDriver );
         online.click();
         
-       BayerWebElement buyNow = getElement( "aleve.wtb.buyNow", webDriver );
-       buyNow.click();
-       buyNow.click();
+        BayerWebElement PRFR = getElement( "aleve.wtb.PRFR", webDriver );
+        PRFR.click();
+        
+        BayerWebElement buyNow = getElement( "aleve.wtb.buyNow1", webDriver );
+        buyNow.click();
+       
+        
+        
+     
         
         return true;
     }

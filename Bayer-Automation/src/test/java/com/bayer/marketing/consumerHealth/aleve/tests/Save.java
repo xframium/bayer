@@ -8,7 +8,7 @@ import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
 
-public class Coupon extends AbstractTest
+public class Save extends AbstractTest
 {
    
    
