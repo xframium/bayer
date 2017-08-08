@@ -1,13 +1,14 @@
-package com.bayer.marketing.consumerHealth.aleve.tests.FAQ;
+package com.bayer.marketing.consumerHealth.aleve.tests.steps;
 
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
+import com.bayer.marketing.consumerHealth.aleve.tests.FAQNavRun;
 import com.bayer.test.step.AbstractStep;
 
-public class FAQNav extends AbstractStep
+public class FAQNavStep extends AbstractStep
 {
 
-    public FAQNav()
+    public FAQNavStep()
     {
         super( "message", "error message" );
     }
