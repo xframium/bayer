@@ -18,10 +18,10 @@ public class FAQNavStep extends AbstractStep
     {
         BayerWebElement faq = getElement( "aleve.faq.link.faq", webDriver );
         faq.click();
-        
+       
         BayerWebElement ingredients = getElement( "aleve.faq.link.ingredients", webDriver );
         ingredients.click();
-        
+       
         BayerWebElement dosage = getElement( "aleve.faq.link.dosage", webDriver );
         dosage.click();
         
@@ -39,7 +39,7 @@ public class FAQNavStep extends AbstractStep
         
         BayerWebElement sinusandcold = getElement( "aleve.faq.link.sinusandcold", webDriver );
         sinusandcold.click();
-        
+         
         
         return true;
     }
