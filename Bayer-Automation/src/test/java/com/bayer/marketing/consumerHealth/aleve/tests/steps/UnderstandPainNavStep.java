@@ -20,31 +20,43 @@ public class UnderstandPainNavStep extends AbstractStep
     	BayerWebElement arthritis = getElement( "aleve.understand.arthritis", webDriver );
     	arthritis.click();
     	
-    	webDriver.executeScript("window.history.go(-1)");
+    	waitForElement( "aleve.test", webDriver, 15 );
+    	
+    	webDriver.navigate().to("https://www.aleve.com/understand-pain/");
        
+    	waitForElement( "aleve.understand.arthritis", webDriver, 15 );
         BayerWebElement back = getElement( "aleve.understand.back", webDriver );
         back.click();
-       
-        webDriver.executeScript("window.history.go(-1)");
+     
+        waitForElement( "aleve.test", webDriver, 15 );
+    	webDriver.navigate().to("https://www.aleve.com/understand-pain/");
         
+    	waitForElement( "aleve.understand.arthritis", webDriver, 15 );
         BayerWebElement knee = getElement( "aleve.understand.knee", webDriver );
         knee.click();
         
-        webDriver.executeScript("window.history.go(-1)");
+        waitForElement( "aleve.test", webDriver, 15 );
+        webDriver.navigate().to("https://www.aleve.com/understand-pain/");
         
+        waitForElement( "aleve.understand.arthritis", webDriver, 15 );
         BayerWebElement headache = getElement( "aleve.understand.headache", webDriver );
         headache.click();
         
-        webDriver.executeScript("window.history.go(-1)");
+        waitForElement( "aleve.test", webDriver, 15 );
+        webDriver.navigate().to("https://www.aleve.com/understand-pain/");
         
+        waitForElement( "aleve.understand.arthritis", webDriver, 15 );
         BayerWebElement shoulder = getElement( "aleve.understand.shoulder", webDriver );
         shoulder.click();
         
-        webDriver.executeScript("window.history.go(-1)");
+        waitForElement( "aleve.test", webDriver, 15 );
+        webDriver.navigate().to("https://www.aleve.com/understand-pain/");
         
+        waitForElement( "aleve.understand.arthritis", webDriver, 15 );
         BayerWebElement sinus = getElement( "aleve.understand.sinus", webDriver );
         sinus.click();
         
+        waitForElement( "aleve.test", webDriver, 15 );
         
          
         
