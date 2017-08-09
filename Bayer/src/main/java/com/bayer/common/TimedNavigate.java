@@ -11,6 +11,7 @@ public class TimedNavigate extends AbstractStep implements Step
     private static final Map<String,String> HASH_CACHE = new HashMap<String,String>(20);
     private static final String[] WEB_PERFORMANCE = new String[] { "navigationStart", "redirectStart", "redirectEnd", "fetchStart", "domainLookupStart", "domainLookupEnd", "connectStart", "connectEnd", "requestStart", "responseStart", "responseEnd", "unloadStart", "unloadEnd", "domLoading", "domInteractive", "domContentLoaded", "domComplete", "loadEventStart", "loadEventEnd" };
     private String url;
+    
     public TimedNavigate ( String url )
     {
         super( "Navigate to the url: " + url, "Failed to navigate to: " + url );
@@ -34,7 +35,7 @@ public class TimedNavigate extends AbstractStep implements Step
                     
                     System.out.println( perfKey + ": " + value );
                     
-                    if ( value > 3000 )
+                    if ( value > 4000 )
                         return false;
                     
                 }
@@ -51,5 +52,6 @@ public class TimedNavigate extends AbstractStep implements Step
         
         return true;
     }
+   
+  }
 
-}
