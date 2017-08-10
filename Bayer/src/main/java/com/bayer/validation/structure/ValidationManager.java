@@ -29,7 +29,7 @@ public class ValidationManager
             JAXBElement<?> rootElement = null;
             
             if ( validationLocation != null )
-                rootElement = (JAXBElement<?>) u.unmarshal( getClass().getResourceAsStream( "/com/bayer/validation/structure/structureValidation.xml" ) );
+                rootElement = (JAXBElement<?>) u.unmarshal( getClass().getResourceAsStream( validationLocation ) );
             else
                 rootElement = (JAXBElement<?>) u.unmarshal( getClass().getResourceAsStream( "/com/bayer/validation/structure/structureValidation.xml" ) );
     

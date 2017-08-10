@@ -1,4 +1,4 @@
 Active,manufacturer,platformName,platformVersion,browserName,browserVersion
-No,Apple,IOS
-No,Samsung,Android
-Yes,,Windows,10,Chrome,60
+Yes,Apple,IOS,,,
+Yes,Samsung,Android,,,
+No,,Windows,10,Chrome,60

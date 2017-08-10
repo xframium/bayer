@@ -222,12 +222,4 @@ public class StructureValidator extends AbstractStep
         }
     }
     
-    public static void main( String[] args )
-    {
-        String xs = "\n      \nBETASERON\n      $#174;\n       (interferon beta-1b)\n           \n";
-        System.out.println( xs );
-        System.out.println( Pattern.matches( "(?s).*BETASERON.*\\(interferon beta-1b\\).*", xs ) );
-        System.out.println( Pattern.matches( "BETASERON", xs ) );
-    }
-    
 }
