@@ -28,7 +28,7 @@ public class saveStep extends AbstractStep
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
     	//WebElement iframe = webDriver.findElement(By.xpath("//*[@id='mydiv']/iframe"));
-    	webDriver.switchTo().frame(0);
+    	webDriver.switchTo().frame(1);
     	
     	waitForElement( "aleve.coupon.aleveDCheck", webDriver, 15 );
         BayerWebElement aleveDCheck = getElement( "aleve.coupon.aleveDCheck", webDriver );
@@ -41,14 +41,6 @@ public class saveStep extends AbstractStep
         BayerWebElement print = getElement( "aleve.coupon.print", webDriver );
        // print.click();
          
-       // webDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-    	
-        //waitForElement( "aleve.printPopUp.cancel", webDriver, 15 );
-        //BayerWebElement printCancel = getElement( "aleve.printPopUp.cancel", webDriver );
-        //printCancel.click();
-        
-        //waitForElement( "aleve.test", webDriver, 15 );
-
         
         
         return true;

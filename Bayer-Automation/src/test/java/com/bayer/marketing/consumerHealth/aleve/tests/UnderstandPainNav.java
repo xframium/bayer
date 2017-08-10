@@ -9,14 +9,14 @@ import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
 
-public class FAQNavRun extends AbstractTest
+public class UnderstandPainNav extends AbstractTest
 {
    
-    @TestDescriptor( testName="FAQ Test" )
+    @TestDescriptor( testName="Nav Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
-    public void faqTest( DeviceContainer dC )
+    public void navTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/FAQ/" ), new FAQNavStep() } );
+        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/understand-pain/" ), new UnderstandPainNavStep() } );
     }
     
 }

@@ -4,19 +4,19 @@ import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
 import com.bayer.common.utility.StructureValidator;
 import com.bayer.marketing.consumerHealth.aleve.tests.steps.FAQNavStep;
-import com.bayer.marketing.consumerHealth.aleve.tests.steps.UnderstandPainNavStep;
+import com.bayer.marketing.consumerHealth.aleve.tests.steps.FAQNavStepMobile;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
 
-public class FAQNavRun extends AbstractTest
+public class FAQNavRunMobile extends AbstractTest
 {
    
-    @TestDescriptor( testName="FAQ Test" )
+    @TestDescriptor( testName="FAQ Mobile Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void faqTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/FAQ/" ), new FAQNavStep() } );
+        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/faq/" ), new FAQNavStepMobile() } );
     }
     
 }
