@@ -8,6 +8,7 @@ import com.bayer.test.step.AbstractStep;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.collections.functors.SwitchTransformer;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.WebElement;
@@ -27,21 +28,19 @@ public class saveStep extends AbstractStep
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
-    	//WebElement iframe = webDriver.findElement(By.xpath("//*[@id='mydiv']/iframe"));
-    	webDriver.switchTo().frame(1);
+    	waitForElement( "aleve.coupon.iframe", webDriver, 15 );
+        WebElement iframe = getElement( "aleve.coupon.iframe", webDriver );
+        webDriver.switchTo().frame(0);
+
     	
     	waitForElement( "aleve.coupon.aleveDCheck", webDriver, 15 );
         BayerWebElement aleveDCheck = getElement( "aleve.coupon.aleveDCheck", webDriver );
         aleveDCheck.click();
-        
-        
-       // BayerWebElement alevePMCheck = getElement( "aleve.coupon.alevePMCheck", webDriver );
-       // alevePMCheck.click();
    
         BayerWebElement print = getElement( "aleve.coupon.print", webDriver );
        // print.click();
          
-        
+       
         
         return true;
     }
