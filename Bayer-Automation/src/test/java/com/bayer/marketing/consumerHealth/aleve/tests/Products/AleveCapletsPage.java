@@ -14,7 +14,7 @@ public class AleveCapletsPage extends AbstractTest
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/aleve-tablets/" ), new AleveCapletsSteps() } );
+        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/aleve-caplets/" ), new AleveCapletsSteps() } );
     }
     
     
