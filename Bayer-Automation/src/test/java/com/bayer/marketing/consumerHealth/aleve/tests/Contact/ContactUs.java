@@ -12,13 +12,21 @@ import com.bayer.test.step.factory.Step;
 public class ContactUs extends AbstractTest
 {
    
-    @TestDescriptor( testName="Contact Us Test" )
+    @TestDescriptor( testName="Contact Us General Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
-    public void faqTest( DeviceContainer dC )
+    public void GeneralTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/contact-us/" ), new contactUsGeneralStep(), 
-        		new Navigate( "https://www.aleve.com/contact-us/"), new contactUsComplimentStep()  } );
+        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/contact-us/" ), new contactUsGeneralStep() } );
+        		
     }
+    
+    @TestDescriptor( testName="Contact Us Compliment Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void ComplimentTest( DeviceContainer dC )
+    {
+        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/contact-us/"), new contactUsComplimentStep()  } );
+    }
+    
     
 }
 

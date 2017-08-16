@@ -16,7 +16,7 @@ public class contactUsComplimentStep extends AbstractStep
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
     	waitForElement( "aleve.contact.generalInquiry", webDriver, 15 );
-        BayerWebElement generalInquiry = getElement( "aleve.contact.generalInquiry", webDriver );
+        BayerWebElement generalInquiry = getElement( "aleve.contact.compliment", webDriver );
         generalInquiry.click();
        
         BayerWebElement continueButton = getElement( "aleve.contact.continue", webDriver );
@@ -43,22 +43,22 @@ public class contactUsComplimentStep extends AbstractStep
         BayerWebElement city = getElement( "aleve.contact.form.city", webDriver );
         city.sendKeys("Parsippany");
         
-        BayerWebElement zip = getElement( "aleve.contact.form.zip", webDriver );
-        zip.sendKeys("07054");
-        
         BayerWebElement nj = getElement( "aleve.contact.form.nj", webDriver );
         nj.click();
+        
+        BayerWebElement zip = getElement( "aleve.contact.form.zip", webDriver );
+        zip.sendKeys("07054");
         
         BayerWebElement phone = getElement( "aleve.contact.form.phone", webDriver );
         phone.sendKeys("862 404 6034");
         
         BayerWebElement comm = getElement( "aleve.contact.form.comm", webDriver );
-        comm.sendKeys("Test Compliment");
+        comm.sendKeys("Test Compliment.If anyone reads this sorry about all the tests.");
 
         BayerWebElement submit = getElement( "aleve.contact.form.submit", webDriver );
         submit.click();
         
-        waitForElement( "aleve.contact.form.verify", webDriver, 15 );
+       // waitForElement( "aleve.contact.form.verify", webDriver, 15 );
         
         
         
