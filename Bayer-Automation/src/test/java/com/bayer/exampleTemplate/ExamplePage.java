@@ -16,6 +16,7 @@ public class ExamplePage extends AbstractTest {
     public void navigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.bayer.com/" ), new ExampleStep() } );
     }
+    
     @TestDescriptor( testName="Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void timedNavigateTest( DeviceContainer dC ) {
