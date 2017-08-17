@@ -19,7 +19,9 @@ public class ExampleStep extends AbstractStep
         BayerWebElement exampleImage = getElement("bayer.home.img", webDriver);
         exampleImage.click();
         
-        
+        waitForElement( "bayer.home.img", webDriver, 15 );
+        BayerWebElement exampleImage2 = getElement("bayer.home.img", webDriver);
+        exampleImage2.click();
         ///////////////Example Code Structure///////////////////
         /*BayerWebElement emailAddress = getElement( "login.emailAddress", webDriver );
         emailAddress.sendKeys( "test@bayer.com" );
