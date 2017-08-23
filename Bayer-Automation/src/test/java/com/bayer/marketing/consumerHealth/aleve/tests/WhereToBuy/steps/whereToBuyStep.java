@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.aleve.tests.steps;
+package com.bayer.marketing.consumerHealth.aleve.tests.WhereToBuy.steps;
 
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;

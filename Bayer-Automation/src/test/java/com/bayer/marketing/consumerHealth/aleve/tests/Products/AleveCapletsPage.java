@@ -3,7 +3,7 @@ package com.bayer.marketing.consumerHealth.aleve.tests.Products;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
 import com.bayer.common.utility.StructureValidator;
-import com.bayer.marketing.consumerHealth.aleve.tests.steps.AleveCapletsSteps;
+import com.bayer.marketing.consumerHealth.aleve.tests.Products.steps.AleveCapletsSteps;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;

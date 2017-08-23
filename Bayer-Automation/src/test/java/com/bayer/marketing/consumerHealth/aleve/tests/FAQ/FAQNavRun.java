@@ -1,10 +1,9 @@
-package com.bayer.marketing.consumerHealth.aleve.tests;
+package com.bayer.marketing.consumerHealth.aleve.tests.FAQ;
 
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
 import com.bayer.common.utility.StructureValidator;
-import com.bayer.marketing.consumerHealth.aleve.tests.steps.FAQNavStep;
-import com.bayer.marketing.consumerHealth.aleve.tests.steps.UnderstandPainNavStep;
+import com.bayer.marketing.consumerHealth.aleve.tests.FAQ.steps.FAQNavStep;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
@@ -16,7 +15,7 @@ public class FAQNavRun extends AbstractTest
     @Test ( dataProvider = "deviceList", enabled=true)
     public void faqTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/FAQ/" ), new FAQNavStep() } );
+        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/faq/" ), new FAQNavStep() } );
     }
     
 }

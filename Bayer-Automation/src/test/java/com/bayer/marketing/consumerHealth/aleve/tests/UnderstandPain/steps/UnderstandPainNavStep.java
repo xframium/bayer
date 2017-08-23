@@ -1,8 +1,7 @@
-package com.bayer.marketing.consumerHealth.aleve.tests.steps;
+package com.bayer.marketing.consumerHealth.aleve.tests.UnderstandPain.steps;
 
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
-import com.bayer.marketing.consumerHealth.aleve.tests.FAQNavRun;
 import com.bayer.test.step.AbstractStep;
 
 public class UnderstandPainNavStep extends AbstractStep

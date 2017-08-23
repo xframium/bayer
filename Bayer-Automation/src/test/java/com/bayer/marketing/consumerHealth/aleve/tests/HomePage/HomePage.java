@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.aleve.tests;
+package com.bayer.marketing.consumerHealth.aleve.tests.HomePage;
 
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
@@ -25,4 +25,4 @@ public class HomePage extends AbstractTest
     
 }
 
-// push test 5
+// push test 6

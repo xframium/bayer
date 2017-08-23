@@ -1,8 +1,8 @@
-package com.bayer.marketing.consumerHealth.aleve.tests;
+package com.bayer.marketing.consumerHealth.aleve.tests.WhereToBuy;
 
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
-import com.bayer.marketing.consumerHealth.aleve.tests.steps.whereToBuyStepMobile;
+import com.bayer.marketing.consumerHealth.aleve.tests.WhereToBuy.steps.whereToBuyStepMobile;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
