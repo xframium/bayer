@@ -4,7 +4,6 @@ import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
 import com.bayer.common.utility.StructureValidator;
-import com.bayer.marketing.consumerHealth.aleve.tests.steps.FAQNavStep;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;

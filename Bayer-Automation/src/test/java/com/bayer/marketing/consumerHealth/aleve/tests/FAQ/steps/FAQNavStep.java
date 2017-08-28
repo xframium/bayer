@@ -20,6 +20,7 @@ public class FAQNavStep extends AbstractStep
     	BayerWebElement dropDown = getElement( "aleve.faq.link.dropdown", webDriver );
     	
     	if(dropDown.isDisplayed()){
+    		//Mobile Test
     		
     		dropDown.click();
         	
@@ -81,6 +82,7 @@ public class FAQNavStep extends AbstractStep
     		
     	}else{
     	
+    	//Desktop Test	
     	
     	BayerWebElement faq = getElement( "aleve.faq.link.faq", webDriver );
         faq.click();
