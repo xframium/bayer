@@ -17,7 +17,7 @@ public class LiveWellNavStep extends AbstractStep
     {
     	waitForElement( "aleve.understand.arthritis", webDriver, 15 );
     	BayerWebElement arthritis = getElement( "aleve.understand.arthritis", webDriver );
-    	arthritis.click();
+    	arthritis.click(); 
     	
     	waitForElement( "aleve.test", webDriver, 15 );
     	
