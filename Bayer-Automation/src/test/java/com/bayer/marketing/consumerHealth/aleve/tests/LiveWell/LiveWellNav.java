@@ -16,7 +16,7 @@ public class LiveWellNav extends AbstractTest
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/understand-pain/" ), new LiveWellNavStep() } );
+        executeSteps( new Step[] { new Navigate( "https://www.aleve.com/live" ), new LiveWellNavStep() } );
     
     }
     

@@ -11,13 +11,13 @@ import org.openqa.selenium.internal.WrapsElement;
 
 public class CouponsNav extends AbstractTest
 {
-   
+   private String url = "https://www.claritin.com/";
    
     @TestDescriptor( testName="Claritin Coupon Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void couponTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate("https://www.claritin.com/coupons/"), new couponsStep() } );
+        executeSteps( new Step[] { new Navigate(url+"coupons/"), new couponsStep() } );
     }
     
 }
