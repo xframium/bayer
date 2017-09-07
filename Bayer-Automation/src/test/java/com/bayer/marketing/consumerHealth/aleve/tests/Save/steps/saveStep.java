@@ -28,20 +28,32 @@ public class saveStep extends AbstractStep
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
-    	waitForElement( "aleve.coupon.iframe", webDriver, 15 );
-        WebElement iframe = getElement( "aleve.coupon.iframe", webDriver );
-        webDriver.switchTo().frame(0);
-
     	
-    	waitForElement( "aleve.coupon.aleveDCheck", webDriver, 15 );
-        BayerWebElement aleveDCheck = getElement( "aleve.coupon.aleveDCheck", webDriver );
-        aleveDCheck.click();
-   
-        BayerWebElement print = getElement( "aleve.coupon.print", webDriver );
-       // print.click();
-         
-       
+    	waitForElement( "aleve.mobile.wtb.menu", webDriver, 15 );
+        WebElement menu = getElement( "aleve.mobile.wtb.menu", webDriver );
         
+        if(menu.isDisplayed()){
+        	
+        	waitForElement( "aleve.coupon.mobile", webDriver, 15 );
+        	WebElement mobile = getElement( "aleve.coupon.mobile", webDriver );
+        	mobile.click(); 
+        	
+        }else{
+    	
+	    	waitForElement( "aleve.coupon.iframe", webDriver, 15 );
+	        WebElement iframe = getElement( "aleve.coupon.iframe", webDriver );
+	        webDriver.switchTo().frame(0);
+	        
+	    	
+	    	waitForElement( "aleve.coupon.aleveDCheck", webDriver, 15 );
+	        BayerWebElement aleveDCheck = getElement( "aleve.coupon.aleveDCheck", webDriver );
+	        aleveDCheck.click();
+	   
+	        BayerWebElement print = getElement( "aleve.coupon.print", webDriver );
+	       // print.click();
+        
+        
+        }
         return true;
     }
 
