@@ -30,6 +30,12 @@
     	<text type="contains"> Love the design of Aleve Direct Therapy.</text>
     	</tag>
     </validation>
+    <validation name="Copyright">
+    <description>Copyright</description>
+   		<tag name="//*"> 
+    	<text type="contains">Copyright 2017 Bayer. All Rights Reserved unless otherwise indicated. All trademarks are owned by Bayer and its affiliates or licensed for its use</text>
+    	</tag>
+    </validation>
     <validation name="ISI">
         <description>Important Safety Information</description>
         <tag name="//p">
