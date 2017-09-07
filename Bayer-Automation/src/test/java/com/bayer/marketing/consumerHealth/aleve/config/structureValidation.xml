@@ -24,6 +24,12 @@
             </tag>
         </tag>
     </validation>
+    <validation name="Review">
+    <description>Product Rating</description>
+   		<tag name="//*"> 
+    	<text type="contains"> Love the design of Aleve Direct Therapy.</text>
+    	</tag>
+    </validation>
     <validation name="ISI">
         <description>Important Safety Information</description>
         <tag name="//p">

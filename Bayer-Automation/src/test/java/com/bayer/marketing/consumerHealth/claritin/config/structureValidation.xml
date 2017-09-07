@@ -24,6 +24,13 @@
             </tag>
         </tag>
     </validation>
+    <validation name="Allergy Test">
+        <description>Testing allergy</description>
+        <tag name="//*">
+            <text type="contains">Information provided by</text>
+        </tag>
+       
+    </validation>
     <validation name="ISI">
         <description>Important Safety Information</description>
         <tag name="//p">

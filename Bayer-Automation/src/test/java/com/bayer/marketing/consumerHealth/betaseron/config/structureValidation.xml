@@ -13,7 +13,7 @@
         </tag>
     </validation>
     <validation name="Home Page Test">
-    <description> Text Verification</description>
+    <description>Text Verification</description>
    		<tag name=//*> 
     	<text type="contains"> Effective therapy. Proven results.</text>
     	</tag>
