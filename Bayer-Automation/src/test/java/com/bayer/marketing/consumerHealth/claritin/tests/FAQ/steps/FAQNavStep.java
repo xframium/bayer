@@ -16,10 +16,10 @@ public class FAQNavStep extends AbstractStep
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
         
-    	waitForElement( "claritin.faq.link.dropdown", webDriver, 15 );
-    	BayerWebElement dropDown = getElement( "claritin.faq.link.dropdown", webDriver );
+    	//waitForElement( "claritin.faq.link.dropdown", webDriver, 15 );
+    	//BayerWebElement dropDown = getElement( "claritin.faq.link.dropdown", webDriver );
     	
-    	if(dropDown.isDisplayed()){
+    	/*if(dropDown.isDisplayed()){
     		//Mobile Test
     		
     		dropDown.click();
@@ -54,12 +54,9 @@ public class FAQNavStep extends AbstractStep
         	BayerWebElement verify = getElement( "claritin.faq.link.verify", webDriver );
             verify.click();
     		
-    	}else{
+    	}else{ */
     	
     	//Desktop Test	
-    	
-    	BayerWebElement faq = getElement( "claritin.faq.link.faq", webDriver );
-        faq.click();
        
         BayerWebElement general = getElement( "claritin.faq.link.general", webDriver );
         general.click();
@@ -73,7 +70,7 @@ public class FAQNavStep extends AbstractStep
         BayerWebElement claritind = getElement( "claritin.faq.link.claritind", webDriver );
         claritind.click();
 
-    	}
+    	//}
         
         return true;
     }
