@@ -47,10 +47,6 @@ public class FAQNavStep extends AbstractStep
             BayerWebElement claritind = getElement( "claritin.faq.link.claritind", webDriver );
             claritind.click();
             
-            
-            BayerWebElement dropDown4 = getElement( "claritin.faq.link.dropdown", webDriver );
-            dropDown4.click();
-            
             BayerWebElement children = getElement( "claritin.faq.link.children", webDriver );
             children.click();
             
@@ -77,9 +73,6 @@ public class FAQNavStep extends AbstractStep
         
         BayerWebElement claritind = getElement( "claritin.faq.link.claritind", webDriver );
         claritind.click();
-        
-        BayerWebElement children39sclaritin = getElement( "claritin.faq.link.children39sclaritin", webDriver );
-        children39sclaritin.click();
 
     	}
         
