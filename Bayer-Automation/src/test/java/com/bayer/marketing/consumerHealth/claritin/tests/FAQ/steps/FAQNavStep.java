@@ -40,7 +40,6 @@ public class FAQNavStep extends AbstractStep
             BayerWebElement claritin = getElement( "claritin.faq.link.claritin", webDriver );
             claritin.click();
             
-            
             BayerWebElement dropDown3 = getElement( "claritin.faq.link.dropdown", webDriver );
             dropDown3.click();
             
