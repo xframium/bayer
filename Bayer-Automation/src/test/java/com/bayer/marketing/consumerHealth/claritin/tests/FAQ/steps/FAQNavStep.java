@@ -49,6 +49,7 @@ public class FAQNavStep extends AbstractStep
             BayerWebElement children = getElement( "claritin.faq.link.children", webDriver );
             children.click();
             
+            
             waitForElement( "claritin.faq.link.verify", webDriver, 15 );
         	BayerWebElement verify = getElement( "claritin.faq.link.verify", webDriver );
             verify.click();
