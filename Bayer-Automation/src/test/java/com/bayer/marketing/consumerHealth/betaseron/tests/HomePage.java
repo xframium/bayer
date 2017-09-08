@@ -7,6 +7,7 @@ import com.bayer.common.utility.StructureValidator;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
+import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class HomePage extends AbstractTest
 {
@@ -21,7 +22,9 @@ public class HomePage extends AbstractTest
     @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new TimedNavigate( "https://www.betaseron.com/important-safety-information/", 3000 ), new StructureValidator( "ISI" ) } );
+        executeSteps( new Step[] { new TimedNavigate( "https://www.betaseron.com/important-safety-information/", 3000 ), 
+        						   new StructureValidator( "ISI" ), 
+        						   new StructureValidator("Text Verification") } );
     }
     
 }
