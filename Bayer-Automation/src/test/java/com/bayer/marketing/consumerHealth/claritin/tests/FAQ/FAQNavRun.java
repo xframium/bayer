@@ -19,4 +19,3 @@ public class FAQNavRun extends AbstractTest
     }
     
 }
-
