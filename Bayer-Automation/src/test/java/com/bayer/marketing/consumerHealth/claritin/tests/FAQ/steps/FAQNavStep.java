@@ -16,49 +16,34 @@ public class FAQNavStep extends AbstractStep
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
         
-    	waitForElement( "claritin.faq.link.dropdown", webDriver, 15 );
-    	BayerWebElement dropDown = getElement( "claritin.faq.link.dropdown", webDriver );
+    	waitForElement( "claritin.faq.multiAccordion", webDriver, 15 );
+    	BayerWebElement multiAccordion = getElement( "claritin.faq.multiAccordion", webDriver );
     	
-    	if(dropDown.isDisplayed()){
+    	if(multiAccordion.isDisplayed()){
     		//Mobile Test
-    		
-    		dropDown.click();
-        	
-        	BayerWebElement faq = getElement( "claritin.faq.link.faq", webDriver );
-            faq.click();
-           
-            BayerWebElement dropDown1 = getElement( "claritin.faq.link.dropdown", webDriver );
-            dropDown1.click();
             
-            BayerWebElement general = getElement( "claritin.faq.link.general", webDriver );
+            BayerWebElement general = getElement( "claritin.faq.multiAccordion.txt.general", webDriver );
+            general.click();
             general.click();
             
-        
-            BayerWebElement dropDown2 = getElement( "claritin.faq.link.dropdown", webDriver );
-            dropDown2.click();
-            
-            BayerWebElement claritin = getElement( "claritin.faq.link.claritin", webDriver );
+            BayerWebElement claritin = getElement( "claritin.faq.multiAccordion.txt.claritin", webDriver );
+            claritin.click();
             claritin.click();
             
-            BayerWebElement dropDown3 = getElement( "claritin.faq.link.dropdown", webDriver );
-            dropDown3.click();
-            
-            BayerWebElement claritind = getElement( "claritin.faq.link.claritind", webDriver );
+            BayerWebElement claritind = getElement( "claritin.faq.multiAccordion.txt.claritind", webDriver );
+            claritind.click(); 
             claritind.click();
             
-            BayerWebElement children = getElement( "claritin.faq.link.children", webDriver );
+            BayerWebElement children = getElement( "claritin.faq.multiAccordion.txt.children", webDriver );
             children.click();
-            
-            
-            waitForElement( "claritin.faq.link.verify", webDriver, 15 );
-        	BayerWebElement verify = getElement( "claritin.faq.link.verify", webDriver );
-            verify.click();
+            children.click();
+
     		
     	}else{ 
     	
     	//Desktop Test	
        
-        BayerWebElement general = getElement( "claritin.faq.link.general", webDriver );
+        BayerWebElement general = getElement( "claritin.link.faq", webDriver );
         general.click();
        
         BayerWebElement ingredients = getElement( "claritin.faq.link.ingredients", webDriver );
