@@ -22,19 +22,19 @@ public class FAQNavStep extends AbstractStep
     	if(multiAccordion.isDisplayed()){
     		//Mobile Test
             
-            BayerWebElement general = getElement( "claritin.faq.multiAccordion.txt.general", webDriver );
+            BayerWebElement general = getElement( "claritin.faq.multiAccordion.general", webDriver );
             general.click();
             general.click();
             
-            BayerWebElement claritin = getElement( "claritin.faq.multiAccordion.txt.claritin", webDriver );
+            BayerWebElement claritin = getElement( "claritin.faq.multiAccordion.claritin", webDriver );
             claritin.click();
             claritin.click();
             
-            BayerWebElement claritind = getElement( "claritin.faq.multiAccordion.txt.claritind", webDriver );
+            BayerWebElement claritind = getElement( "claritin.faq.multiAccordion.claritind", webDriver );
             claritind.click(); 
             claritind.click();
             
-            BayerWebElement children = getElement( "claritin.faq.multiAccordion.txt.children", webDriver );
+            BayerWebElement children = getElement( "claritin.faq.multiAccordion.children", webDriver );
             children.click();
             children.click();
 
