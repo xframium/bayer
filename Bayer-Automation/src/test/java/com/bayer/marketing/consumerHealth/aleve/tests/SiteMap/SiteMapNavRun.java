@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import com.bayer.common.Navigate;
 import com.bayer.marketing.consumerHealth.aleve.tests.SiteMap.steps.SiteMapAleveAndPMAndPMD;
+import com.bayer.marketing.consumerHealth.aleve.tests.SiteMap.steps.SiteMapDirectTherapyAndContactUs;
 import com.bayer.marketing.consumerHealth.aleve.tests.SiteMap.steps.SiteMapFaqAndSaveNavStep;
 import com.bayer.marketing.consumerHealth.aleve.tests.SiteMap.steps.SiteMapLiveWellNavStep;
 import com.bayer.marketing.consumerHealth.aleve.tests.SiteMap.steps.SiteMapUnderstandPainNavStep;
@@ -40,6 +41,13 @@ public class SiteMapNavRun extends AbstractTest
     public void alevePMandPMDNavTest( DeviceContainer dC )
     {
     	executeSteps( new Step[] { new Navigate( "https://www.aleve.com/site-map/" ), new SiteMapAleveAndPMAndPMD() } );
+    }
+	
+	@TestDescriptor( testName="Site Map Direct Therapy and Contact Us Navigation Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void aleveDirectTherapyAndContactUsNavTest( DeviceContainer dC )
+    {
+    	executeSteps( new Step[] { new Navigate( "https://www.aleve.com/site-map/" ), new SiteMapDirectTherapyAndContactUs() } );
     }
     
 }
