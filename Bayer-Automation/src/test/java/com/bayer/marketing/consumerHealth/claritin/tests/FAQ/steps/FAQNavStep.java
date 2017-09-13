@@ -38,17 +38,20 @@ public class FAQNavStep extends AbstractStep
     	
     	//Desktop Test	
        
-        BayerWebElement general = getElement( "claritin.link.faq", webDriver );
+        BayerWebElement general = getElement( "claritin.faq.tabMenu.faq", webDriver );
         general.click();
        
-        BayerWebElement ingredients = getElement( "claritin.faq.link.ingredients", webDriver );
+        BayerWebElement ingredients = getElement( "claritin.faq.tabMenu.ingredients", webDriver );
         ingredients.click();
         
-        BayerWebElement claritin = getElement( "claritin.faq.link.claritin", webDriver );
+        BayerWebElement claritin = getElement( "claritin.faq.tabMenu.claritin", webDriver );
         claritin.click();
         
-        BayerWebElement claritind = getElement( "claritin.faq.link.claritind", webDriver );
+        BayerWebElement claritind = getElement( "claritin.faq.tabMenu.claritind", webDriver );
         claritind.click();
+        
+        BayerWebElement childrens = getElement( "claritin.faq.tabMenu.childrens", webDriver );
+        childrens.click();
 
     	}
         
