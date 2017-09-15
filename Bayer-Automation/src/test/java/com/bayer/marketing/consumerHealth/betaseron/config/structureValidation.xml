@@ -14,8 +14,29 @@
     </validation>
     <validation name="Home Page Test">
     <description>Text Verification</description>
-   		<tag name=//*> 
+   		<tag name="//*"> 
     	<text type="contains"> Effective therapy. Proven results.</text>
+    	</tag>
+    </validation>
+    <validation name="Indication Test">
+    <description>Indications</description>
+   		<tag name="//*"> 
+    	<text type="contains">BETASERON® (interferon beta-1b) is a prescription medicine used to reduce the number of relapses in people with relapsing forms of multiple sclerosis (MS). This includes people who have had their first symptoms of multiple sclerosis and have an MRI consistent with multiple sclerosis. BETASERON will not cure MS but may decrease the number of flare-ups of the disease</text>
+    	</tag>
+    </validation>
+    <validation name="ISI Indication Test">
+    <description>FDA Indications</description>
+   		<tag name="//*"> 
+    	<text type="contains">You are encouraged to report negative side effects or quality complaints of prescription drugs to the FDA. Visit www.fda.gov/medwatch or call 1-800-FDA-1088</text>
+    	</tag>
+    	<tag name="//*"> 
+    	<text type="contains">BAYER, the Bayer Cross, BETAPLUS and BETASERON are registered trademarks of Bayer. BETACONNECT and myBETAapp are trademarks of Bayer. The Bluetooth® word mark and logos are registered trademarks owned by the Bluetooth SIG, Inc. and any use of such marks by Bayer is under license. Apple, App Store, and iPhone are registered trademarks of Apple Inc. Google Play is a trademark of Google Inc. Use of this trademark is subject to Google Permissions. MixJect® is a registered trademark of Medimop Medical Projects, Ltd., a subsidiary of West Pharmaceuticals Services, Inc. Windows is a registered trademark of Microsoft Corporation. Apple and Mac OS are registered trademarks of Apple Computer, Inc. All other trademarks are property of their respective owners. These trademark owners are not affiliated with Bayer and do not sponsor or endorse Bayer or this product</text>
+    	</tag>
+    	<tag name="//*"> 
+    	<text type="contains">© 2017 Bayer. All rights reserved</text>
+    	</tag>
+    	<tag name="//*"> 
+    	<text type="contains">Site Last Modified: 07/2017</text>
     	</tag>
     </validation>
     <validation name="Aleve HOME">
