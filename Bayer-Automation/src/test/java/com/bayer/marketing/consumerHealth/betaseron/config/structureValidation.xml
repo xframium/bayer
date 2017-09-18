@@ -40,7 +40,6 @@
     	</tag>
     </validation>
     <validation name="Key"> 
-    	<description>  </description>
     	<description>Product and Services Key</description>
     	<tag name="//*"> 
     		<text type="contains">BETASERON® (interferon beta-1b) </text>
