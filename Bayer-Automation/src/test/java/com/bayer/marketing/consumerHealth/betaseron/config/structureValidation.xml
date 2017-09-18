@@ -39,6 +39,29 @@
     	<text type="contains">Site Last Modified: 07/2017</text>
     	</tag>
     </validation>
+    <validation name="Key"> 
+    	<description>  </description>
+    	<description>Product and Services Key</description>
+    	<tag name="//*"> 
+    		<text type="contains">BETASERON® (interferon beta-1b) </text>
+    	</tag>	
+    	<tag name="//*"> 
+    		<text type="contains">The first FDA-approved treatment for relapsing-remitting multiple sclerosis (RRMS)</text>
+    	</tag>
+    	<tag name="//*"> 
+    		<text type="contains">BETASERON® (interferon beta-1b) </text>
+    	</tag>
+    	<tag name="//*">
+    		<text type="contains">The BETACONNECT system</text> 
+    	</tag>
+    	<tag name="//*"> 
+    		<text type="contains">myBETAapp</text>
+    	</tag>
+    	<tag name="//*"> 
+    		<text type="contains">myBETAapp uses Bluetooth® technology to connect with the BETACONNECT and proactively track and share your injection data with your BETA Nurse and healthcare tea</text>
+    	</tag>	
+    			
+    </validation>
     <validation name="Aleve HOME">
         <description>Testing Home</description>
         <tag name="//p/strong">
