@@ -20,7 +20,13 @@ public class BetaConnectSysNavSteps extends AbstractStep
 
 	if(menu.isDisplayed()){
         	
-        	menu.click();
+        	menu.click();        	
+
+        	BayerWebElement tab3caret = getElement( "betaseron.mobile.menu.tab3.caret", webDriver );
+            tab3caret.click();
+            
+            BayerWebElement app = getElement( "betaseron.mobile.menu.tab3.caret.drop2", webDriver );
+            app.click();        	
 
 	}       
          
