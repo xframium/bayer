@@ -3,8 +3,13 @@ package com.bayer.common.utility;
 import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Pattern;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.Unmarshaller;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPath;
@@ -18,8 +23,10 @@ import org.xml.sax.InputSource;
 import com.bayer.BayerWebDriver;
 import com.bayer.test.step.AbstractStep;
 import com.bayer.validation.structure.Attribute;
+import com.bayer.validation.structure.ObjectFactory;
 import com.bayer.validation.structure.Tag;
 import com.bayer.validation.structure.Validation;
+import com.bayer.validation.structure.ValidationCollection;
 import com.bayer.validation.structure.ValidationManager;
 
 public class StructureValidator extends AbstractStep
@@ -34,6 +41,41 @@ public class StructureValidator extends AbstractStep
         v = ValidationManager.instance().getValidation( validationName );
 
         this.setDescription( v.getDescription() );
+    }
+
+    /**
+     * 
+     * @param validationName
+     *            The key name of the validation
+     * @param validationFile
+     *            The full classpath location of the validation file
+     */
+    public StructureValidator( String validationName, String validationFile )
+    {
+        super( "Generic structure validation", null );
+
+        try
+        {
+            Map<String, Validation> validationMap = new HashMap<String, Validation>( 10 );
+            JAXBContext jc = JAXBContext.newInstance( ObjectFactory.class );
+            Unmarshaller u = jc.createUnmarshaller();
+
+            JAXBElement<?> rootElement = null;
+
+            rootElement = (JAXBElement<?>) u.unmarshal( getClass().getResourceAsStream( validationFile ) );
+
+            ValidationCollection rRoot = (ValidationCollection) rootElement.getValue();
+
+            for ( Validation vx : rRoot.getValidation() )
+                validationMap.put( vx.getName(), vx );
+
+            v = validationMap.get( validationName );
+            this.setDescription( v.getDescription() );
+        }
+        catch ( Exception e )
+        {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -52,24 +94,21 @@ public class StructureValidator extends AbstractStep
                 inputSource.setEncoding( "UTF-8" );
 
                 cachedDocument = dBuilder.parse( inputSource );
-                
-                
-                
             }
             catch ( Exception e )
             {
                 e.printStackTrace();
             }
-            
+
             for ( Tag t : v.getTag() )
             {
                 validateTag( "", cachedDocument, t );
             }
-            
+
         }
         return true;
     }
-    
+
     private List<Element> getNodes( Document xmlDocument, String xPathExpression )
     {
         List<Element> elementList = new ArrayList<Element>( 10 );
@@ -77,15 +116,13 @@ public class StructureValidator extends AbstractStep
         {
             XPath xPath = xPathFactory.newXPath();
             NodeList nodeList = (NodeList) xPath.evaluate( xPathExpression, xmlDocument, XPathConstants.NODESET );
-            
-            
-            
-            for ( int i=0; i<nodeList.getLength(); i++ )
-                elementList.add( (Element) nodeList.item( i ) ); 
-            
+
+            for ( int i = 0; i < nodeList.getLength(); i++ )
+                elementList.add( (Element) nodeList.item( i ) );
+
             return elementList;
         }
-        catch (Exception e)
+        catch ( Exception e )
         {
             e.printStackTrace();
             return elementList;
@@ -95,9 +132,7 @@ public class StructureValidator extends AbstractStep
     private void validateTag( String context, Document cachedDocument, Tag t )
     {
         log.info( "Searching for " + context + t.getName() );
-        
-        
-        
+
         List<Element> elementList = getNodes( cachedDocument, context + t.getName() );
 
         List<Element> filteredList = new ArrayList<Element>( 10 );
@@ -130,24 +165,24 @@ public class StructureValidator extends AbstractStep
                         continue;
                     }
                 }
-                
+
                 if ( !attributeFound )
                     continue;
-                
+
                 filteredList.add( e );
             }
         }
         else
             filteredList.addAll( elementList );
-        
+
         if ( filteredList.isEmpty() )
         {
             setFailureMessage( "Could not validate " + context + t.getName() + " as " + t.getText().getValue() + " due to attribute violation" );
             throw new IllegalArgumentException( "Could not validate " + context + t.getName() + " as " + t.getText() + " due to attribute violation" );
         }
-        
+
         List<Element> finalList = new ArrayList<Element>( 5 );
-        
+
         //
         // Validate any text
         //
@@ -158,14 +193,14 @@ public class StructureValidator extends AbstractStep
             {
                 StringBuilder textBuilder = new StringBuilder();
                 NodeList childNodes = e.getChildNodes();
-                for ( int i=0; i<childNodes.getLength(); i++ )
+                for ( int i = 0; i < childNodes.getLength(); i++ )
                 {
                     if ( childNodes.item( i ).getNodeType() == Node.TEXT_NODE )
                     {
                         textBuilder.append( childNodes.item( i ).getTextContent() );
                     }
                 }
-                
+
                 String textValue = textBuilder.toString();
 
                 //
@@ -176,18 +211,18 @@ public class StructureValidator extends AbstractStep
 
                 if ( textValue != null && !validate( t.getText().getType(), t.getText().getValue(), textValue ) )
                     continue;
-                
+
                 finalList.add( e );
                 break;
             }
         }
-        
+
         if ( finalList.isEmpty() )
         {
             setFailureMessage( "Could not validate " + context + t.getName() + " as " + t.getText().getValue() + " due to text violation" );
             throw new IllegalArgumentException( "Could not validate " + context + t.getName() + " as " + t.getText().getValue() + " due to text violation" );
         }
-        
+
         if ( t.getTag() != null )
         {
             for ( Tag t2 : t.getTag() )
@@ -201,25 +236,25 @@ public class StructureValidator extends AbstractStep
         {
             case "is":
                 return value.equals( validationData );
-                
+
             case "contains":
                 return value.contains( validationData );
-                        
+
             case "starts-with":
                 return value.startsWith( validationData );
-                
+
             case "ends-with":
                 return value.endsWith( validationData );
-                
+
             case "exists":
                 return true;
-                
+
             case "regex":
                 return Pattern.matches( validationData, value );
-                
+
             default:
                 return false;
         }
     }
-    
+
 }
