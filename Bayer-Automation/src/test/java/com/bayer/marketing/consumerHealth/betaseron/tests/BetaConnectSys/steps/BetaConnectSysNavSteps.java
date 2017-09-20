@@ -23,17 +23,17 @@ public class BetaConnectSysNavSteps extends AbstractStep
 
 	if(menu.isDisplayed()){
 		
-		WebElement w1 = webDriver.findElementByXPath ( "//*[@resource-id='com.android.chrome:id/menu_button']");
-		w1.click();
+		//WebElement w1 = webDriver.findElementByXPath ( "//*[@resource-id='com.android.chrome:id/menu_button']");
+		//w1.click();
 		
-		WebElement w2 = webDriver.findElementByXPath( "//*[@content-desc='Settings']");
-        w2.click();
+		//WebElement w2 = webDriver.findElementByXPath( "//*[@content-desc='Settings']");
+        //w2.click();
         
-		WebElement w3 = webDriver.findElementByXPath( "//*[@text='Site settings']");
-        w3.click();
+		//WebElement w3 = webDriver.findElementByXPath( "//*[@text='Site settings']");
+        //w3.click();
         
-		WebElement w4 = webDriver.findElementByXPath( "//*[@text='Pop-ups']");
-        w4.click();
+		//WebElement w4 = webDriver.findElementByXPath( "//*[@text='Pop-ups']");
+        //w4.click();
         
         	menu.click();        	
 
@@ -41,7 +41,12 @@ public class BetaConnectSysNavSteps extends AbstractStep
             tab3caret.click();
             
             BayerWebElement app = getElement( "betaseron.mobile.menu.tab3.caret.drop2", webDriver );
-            app.click();        	
+            app.click();
+            
+            WebElement block1 = webDriver.findElementByXPath( "//*[@resource-id='com.android.chrome:id/button_primary']");
+            if(block1.isDisplayed()){
+            	block1.click();
+            }
 
 	}       
          
