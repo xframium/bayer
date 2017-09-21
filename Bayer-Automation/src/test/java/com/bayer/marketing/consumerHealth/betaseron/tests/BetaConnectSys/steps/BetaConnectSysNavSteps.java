@@ -43,10 +43,13 @@ public class BetaConnectSysNavSteps extends AbstractStep
             BayerWebElement app = getElement( "betaseron.mobile.menu.tab3.caret.drop2", webDriver );
             app.click();
             
-            WebElement block1 = webDriver.findElementByXPath( "//*[@resource-id='com.android.chrome:id/button_primary']");
-            if(block1.isDisplayed()){
-            	block1.click();
-            }
+    		WebElement openvid = webDriver.findElementByXPath( "//*[text()='Watch it in action ']");
+            openvid.click();
+    		WebElement closevid = webDriver.findElementByXPath( "//*[@class='close']/span");
+            closevid.click();
+            
+            
+          
 
 	}       
          
