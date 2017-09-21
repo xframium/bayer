@@ -26,7 +26,7 @@ public class BetaseronEfficacyNavStep extends AbstractStep {
 
 		this.validate("betaseron.efficacy.proven.link", webDriver, "betaseron.efficacy.proven.link.validate", wait);
 		Util.recallBaseURL(webDriver, betaSeronEfficacyUrl);
-		waitForElement("betaseron.heritage.key.logo", webDriver, 30);
+		waitForElement("betaseron.efficacy.key.logo", webDriver, 30);
 
 		BayerWebElement tabOne = getElement("betaseron.efficacy.tab.one", webDriver);
 		Util.scrollToElement(webDriver, tabOne, wait);
@@ -58,30 +58,30 @@ public class BetaseronEfficacyNavStep extends AbstractStep {
 		this.validate("betaseron.efficacy.learnMore.safety", webDriver, "betaseron.efficacy.learnMore.safety.validate",
 				wait);
 		Util.recallBaseURL(webDriver, betaSeronEfficacyUrl);
-		waitForElement("betaseron.heritage.key.logo", webDriver, 30);
+		waitForElement("betaseron.efficacy.key.logo", webDriver, 30);
 
 		this.validate("betaseron.efficacy.getDiscussion.guide", webDriver,
 				"betaseron.efficacy.getDiscussion.guide.validate", wait);
 		Util.recallBaseURL(webDriver, betaSeronEfficacyUrl);
-		waitForElement("betaseron.heritage.key.logo", webDriver, 30);
+		waitForElement("betaseron.efficacy.key.logo", webDriver, 30);
 
 		this.validate("betaseron.efficacy.betaplus", webDriver, "betaseron.efficacy.betaplus.validate", wait);
 		Util.recallBaseURL(webDriver, betaSeronEfficacyUrl);
-		waitForElement("betaseron.heritage.key.logo", webDriver, 30);
+		waitForElement("betaseron.efficacy.key.logo", webDriver, 30);
 
 		BayerWebElement whereToNext = getElement("betaseron.efficacy.whereToNext", webDriver);
 		Util.scrollToElement(webDriver, whereToNext, wait);
 		this.validate("betaseron.efficacy.financial.support", webDriver,
 				"betaseron.efficacy.financial.support.validate", wait);
 		Util.recallBaseURL(webDriver, betaSeronEfficacyUrl);
-		waitForElement("betaseron.heritage.key.logo", webDriver, 30);
+		waitForElement("betaseron.efficacy.key.logo", webDriver, 30);
 
 		BayerWebElement whereTonext = getElement("betaseron.efficacy.whereToNext", webDriver);
 		Util.scrollToElement(webDriver, whereTonext, wait);
 		this.validate("betaseron.efficacy.stepByStep.training", webDriver,
 				"betaseron.efficacy.stepByStep.training.validate", wait);
 		Util.recallBaseURL(webDriver, betaSeronEfficacyUrl);
-		waitForElement("betaseron.heritage.key.logo", webDriver, 30);
+		waitForElement("betaseron.efficacy.key.logo", webDriver, 30);
 
 		return true;
 	}
