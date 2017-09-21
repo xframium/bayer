@@ -13,7 +13,7 @@ public class Util {
 		Point point = webElment.getLocation();
 		((JavascriptExecutor) webDriver).executeScript("return window.title;");
 		wait = new WebDriverWait(webDriver, 30);
-		((JavascriptExecutor) webDriver).executeScript("window.scrollBy(0," + (point.getY()) + ");");
+		((JavascriptExecutor) webDriver).executeScript("window.scrollBy(0," + (point.getY() - 200) + ");");
 
 	}
 
