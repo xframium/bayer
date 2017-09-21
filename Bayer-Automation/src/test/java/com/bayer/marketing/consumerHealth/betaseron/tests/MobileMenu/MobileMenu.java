@@ -14,7 +14,7 @@ public class MobileMenu extends AbstractTest
     @Test ( dataProvider = "deviceList", enabled=true)
     public void MobileMenuTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/" ), new BetaConnectSysNavSteps() } );
+        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/" ), new MobileMenuSteps() } );
     }
     
 }
