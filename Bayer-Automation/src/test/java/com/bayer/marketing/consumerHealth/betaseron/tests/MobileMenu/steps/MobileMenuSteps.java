@@ -22,23 +22,28 @@ public class MobileMenuSteps extends AbstractStep
     	BayerWebElement menu = getElement("betaseron.mobile.menu", webDriver );
 
 	if(menu.isDisplayed()){	      
-        menu.click();        
+        menu.click(); 
+        waitForElement( "betaseron.mobile.menu.tab1", webDriver, 15 );
     	BayerWebElement tab1 = getElement("betaseron.mobile.menu.tab1", webDriver );
         tab1.click();
         
     	menu.click();
+    	waitForElement( "betaseron.mobile.menu.tab2", webDriver, 15 );
     	BayerWebElement tab2 = getElement("betaseron.mobile.menu.tab2", webDriver );
         tab2.click();
         
     	menu.click();
+    	waitForElement( "betaseron.mobile.menu.tab3", webDriver, 15 );
     	BayerWebElement tab3 = getElement("betaseron.mobile.menu.tab3", webDriver );
         tab3.click();
         
     	menu.click();
+    	waitForElement( "betaseron.mobile.menu.tab4", webDriver, 15 );
     	BayerWebElement tab4 = getElement("betaseron.mobile.menu.tab4", webDriver );
         tab4.click();
         
     	menu.click();
+    	waitForElement( "betaseron.mobile.menu.tab5", webDriver, 15 );
     	BayerWebElement tab5 = getElement("betaseron.mobile.menu.tab5", webDriver );
         tab5.click();           
 	}       
