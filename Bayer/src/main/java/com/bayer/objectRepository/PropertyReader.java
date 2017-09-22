@@ -22,19 +22,26 @@ public class PropertyReader implements ObjectRepository
     }
     
     private Map<String,ORLookup> orMap = new HashMap<String,ORLookup>( 10 );
+    
+    private String[] fileArray = null;
 
-    public synchronized void load( String FileName )
+    public String[] getFileArray()
     {
-        if ( initialized )
-            return;
-        
+        return fileArray;
+    }
+    public void setFileArray( String[] fileArray )
+    {
+        this.fileArray = fileArray;
+    }
+    public synchronized void load( String fileName )
+    {
         initialized = true;
         try
         {
             InputStream inputStream = null;
             Properties prop = new Properties();
-            if ( FileName != null )
-                inputStream = new FileInputStream( FileName );
+            if ( fileName != null )
+                inputStream = ClassLoader.getSystemClassLoader().getResourceAsStream( fileName );
             else
             {
                 String objectRepo = System.getProperty( "objectRepository.properties" );
@@ -91,6 +98,15 @@ public class PropertyReader implements ObjectRepository
         
         if ( !initialized )
         {
+            if ( fileArray != null )
+            {
+                synchronized ( fileArray )
+                {
+                    for ( String file : fileArray )
+                        load( file );
+                }
+            }
+            
             load( null );
         }
         
