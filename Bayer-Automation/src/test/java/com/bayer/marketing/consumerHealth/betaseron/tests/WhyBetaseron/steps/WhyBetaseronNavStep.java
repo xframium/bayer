@@ -57,6 +57,18 @@ public class WhyBetaseronNavStep extends AbstractStep {
     	waitForElement( "betaseron.why.mybetaapp.video", webDriver, 30 );
     	
     	Util.recallBaseURL(webDriver,whyBetaseronUrl);
+    	
+    	this.validate("betaseron.why.learnMore.mybetaapp", webDriver, "betaseron.why.learnMore.mybetaapp.validate", wait);
+    	Util.recallBaseURL(webDriver,whyBetaseronUrl);
+    	
+    	this.validate("betaseron.why.betaNurse.support", webDriver, "betaseron.why.betaNurse.support.validate", wait);
+    	Util.recallBaseURL(webDriver,whyBetaseronUrl);
+    	
+    	this.validate("betaseron.why.getDiscussion.guide", webDriver, "betaseron.why.getDiscussion.guide.validate", wait);
+    	Util.recallBaseURL(webDriver,whyBetaseronUrl);
+    	
+    	this.validate("betaseron.why.betaplus", webDriver, "betaseron.why.betaplus.validate", wait);
+    	Util.recallBaseURL(webDriver,whyBetaseronUrl);
 		
 		return true;
 	}
@@ -72,5 +84,4 @@ public class WhyBetaseronNavStep extends AbstractStep {
 
 	}
 	
-
 }
