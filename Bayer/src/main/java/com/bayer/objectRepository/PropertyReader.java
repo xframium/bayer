@@ -48,7 +48,7 @@ public class PropertyReader implements ObjectRepository
                 if ( objectRepo != null ) 
                     inputStream = ClassLoader.getSystemClassLoader().getResourceAsStream( objectRepo );
                 else
-                    inputStream = ClassLoader.getSystemClassLoader().getResourceAsStream( "com/bayer/marketing/consumerHealth/betaseron/config/objectRepository.properties" );
+                    System.out.println("Object Repository not specified in Run Configurations");
                     
             }
             prop.load( inputStream );

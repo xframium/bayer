@@ -16,8 +16,17 @@ public class HomePageNavSteps extends AbstractStep
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
     	waitForElement( "betaseron.home.betaAppVid", webDriver, 15 );
-    	BayerWebElement arthritis = getElement( "aleve.understand.arthritis", webDriver );
+    	//scrollAndSearch("betaseron.home.betaAppVid");
+    	BayerWebElement arthritis = getElement( "betaseron.home.betaAppVid", webDriver );
     	arthritis.click();
+    	
+    	waitForElement( "aleve.test", webDriver, 15 );
+    	webDriver.navigate().to("https://www.betaseron.com/");
+    	
+    	waitForElement( "betaseron.home.apply", webDriver, 15 );
+    	//scrollAndSearch("betaseron.home.betaAppVid");
+    	BayerWebElement signup = getElement( "betaseron.home.betaAppVid", webDriver );
+    	signup.click();
     	
     	waitForElement( "aleve.test", webDriver, 15 );
     	webDriver.navigate().to("https://www.betaseron.com/");
