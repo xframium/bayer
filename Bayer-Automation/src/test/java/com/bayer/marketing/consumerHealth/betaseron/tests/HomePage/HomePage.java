@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.betaseron.tests;
+package com.bayer.marketing.consumerHealth.betaseron.tests.HomePage;
 
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
@@ -28,4 +28,3 @@ public class HomePage extends AbstractTest
     }
     
 }
-
