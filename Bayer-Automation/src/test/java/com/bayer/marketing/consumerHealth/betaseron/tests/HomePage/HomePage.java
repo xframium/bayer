@@ -22,8 +22,10 @@ public class HomePage extends AbstractTest
     @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new TimedNavigate( "https://www.betaseron.com/important-safety-information/", 3000 ), 
-        						   new StructureValidator( "ISI" ), 
+        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"), 
+        						   new StructureValidator( "ISI" ),
+        						   new StructureValidator("Indications"),
+        						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
         						   new StructureValidator("Text Verification") } );
     }
     
