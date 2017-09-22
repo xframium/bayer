@@ -31,7 +31,7 @@ public class ValidationManager
             if ( validationLocation != null )
                 rootElement = (JAXBElement<?>) u.unmarshal( getClass().getResourceAsStream( validationLocation ) );
             else
-                rootElement = (JAXBElement<?>) u.unmarshal( getClass().getResourceAsStream( "/com/bayer/validation/structure/structureValidation.xml" ) );
+                rootElement = (JAXBElement<?>) u.unmarshal( getClass().getResourceAsStream( "/com/bayer/marketing/consumerHealth/betaseron/config/structureValidation.xml" ) );
     
             ValidationCollection rRoot = (ValidationCollection) rootElement.getValue();
             
