@@ -11,22 +11,23 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class HomePage extends AbstractTest
 {
-    @TestDescriptor( testName="Navigation Test" )
+    /*@TestDescriptor( testName="Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC )
     {
         executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/" ) } );
     }
+    */
     
-    @TestDescriptor( testName="Structure Test" )
+    @TestDescriptor( testName="Home Page Validation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"), 
-        						   new StructureValidator( "ISI" ),
-        						   new StructureValidator("Indications"),
+        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
         						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
-        						   new StructureValidator("Text Verification") } );
+        						   new StructureValidator("Key")
+        						   //new StructureValidator("Aleve HOME")
+        						    } );
     }
     
 }

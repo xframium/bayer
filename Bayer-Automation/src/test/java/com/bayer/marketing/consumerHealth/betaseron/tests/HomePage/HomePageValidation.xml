@@ -20,5 +20,10 @@
     			<text type="contains">Pairs with your existing BETACONNECT</text>
     	</tag>
     </validation>
-    
+     <validation name="BETASERON and Its Heritage">
+    	<description>BETASERON and Its Heritage</description>
+    		<tag name="//*"> 
+    			<text type="contains">Since FDA approval in 1993, BETASERON has helped lead the fight against RRMS by providing innovative support tools, and resources</text>
+    	</tag>
+    </validation>
 </validationCollection>
