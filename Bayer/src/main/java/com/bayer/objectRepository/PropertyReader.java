@@ -47,6 +47,11 @@ public class PropertyReader implements ObjectRepository
                 String objectRepo = System.getProperty( "objectRepository.properties" );
                 if ( objectRepo != null ) 
                     inputStream = ClassLoader.getSystemClassLoader().getResourceAsStream( objectRepo );
+                /*else if(objectRepo == null){ 
+                	
+                	inputStream = ClassLoader.getSystemClassLoader().getResourceAsStream( "com/bayer/marketing/consumerHealth/aleve/config/objectRepository.properties" );
+                }
+                */
                 else
                     System.out.println("Object Repository not specified in Run Configurations");
                     
