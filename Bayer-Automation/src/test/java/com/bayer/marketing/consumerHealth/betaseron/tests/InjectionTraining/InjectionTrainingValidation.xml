@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
+    
+    <validation name="Home Page Test">
+    <description>Text Verification</description>
+   		<tag name="//*"> 
+    	<text type="contains"> Effective therapy. Proven results.</text>
+    	</tag>
+    </validation>
+    <validation name="Indication Test">
+    <description>Indications</description>
+   		<tag name="//*"> 
+    	<text type="contains">BETASERON® (interferon beta-1b) is a prescription medicine used to reduce the number of relapses in people with relapsing forms of multiple sclerosis (MS). This includes people who have had their first symptoms of multiple sclerosis and have an MRI consistent with multiple sclerosis. BETASERON will not cure MS but may decrease the number of flare-ups of the disease</text>
+    	</tag>
+    </validation>
+    
+    <validation name="Main Now Approved Banner">
+    	<description>App Banner</description>
+    		<tag name="//*"> 
+    			<text type="contains">Pairs with your existing BETACONNECT</text>
+    	</tag>
+    </validation>
+     <validation name="BETASERON and Its Heritage">
+    	<description>BETASERON and Its Heritage</description>
+    		<tag name="//*"> 
+    			<text type="contains">Since FDA approval in 1993, BETASERON has helped lead the fight against RRMS by providing innovative support tools, and resources</text>
+    	</tag>
+    </validation>
+</validationCollection>
