@@ -1,6 +1,7 @@
 package com.bayer.utiilty;
 
 import java.io.ByteArrayInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
@@ -33,7 +34,7 @@ public class HTTPLinkCheck
     public static void main( String[] args ) throws Exception
     {
         HTTPLinkCheck h = new HTTPLinkCheck();
-        h.process( new URL( "https://www.betaseron.com/"), new URL( "https://www.betaseron.com/") );
+        h.process( new URL( "https://www.betaseron.com/"), new URL( "https://www.aleve.com/") );
         System.out.println( h.linkMap.size() + " unique pages" );
         for ( String key : h.linkMap.keySet() )
             System.out.println( key + ": " + h.linkMap.get( key ) + " refereces" );
@@ -89,7 +90,7 @@ public class HTTPLinkCheck
                 {
                     try
                     {
-                        URL useUrl = new URL( hRef );
+                        URL useUrl = new URL( hRef.replace( " ", "%20" ) );
                         if ( useUrl.getHost().equals( baseUrl.getHost() ) )
                             process( useUrl, currentUrl );
                         else
@@ -104,7 +105,7 @@ public class HTTPLinkCheck
                 {
                     try
                     {
-                        URL useUrl = new URL( baseUrl, hRef );
+                        URL useUrl = new URL( baseUrl, hRef.replace( " ", "%20" ) );
                         
                         process( useUrl, currentUrl );
                     }
@@ -227,10 +228,14 @@ public class HTTPLinkCheck
             else
                 return null;
         }
-        catch( Throwable t)
+        catch( FileNotFoundException t)
         {
             brokenLinks.add( inputUrl.toString() + " <-- " + referencingUrl.toString() );
             System.err.println( "Broken Link: " + inputUrl.toString() + " referenced from " + referencingUrl.toString() );
+            return null;
+        }
+        catch( Exception e )
+        {
             return null;
         }
     }
