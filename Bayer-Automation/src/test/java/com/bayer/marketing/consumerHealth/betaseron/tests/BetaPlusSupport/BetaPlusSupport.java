@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.betaseron.tests.HomePage;
+package com.bayer.marketing.consumerHealth.betaseron.tests.BetaPlusSupport;
 
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
@@ -9,7 +9,7 @@ import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
-public class HomePage extends AbstractTest
+public class BetaPlusSupport extends AbstractTest
 {
     /*@TestDescriptor( testName="Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
@@ -25,8 +25,7 @@ public class HomePage extends AbstractTest
     {
         executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
         						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
-        						   new StructureValidator("Key"),
-        						   
+        						   new StructureValidator("Key")
         						   //new StructureValidator("Aleve HOME")
         						    } );
     }

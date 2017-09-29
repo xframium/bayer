@@ -43,7 +43,7 @@ public class StructureValidator extends AbstractStep
         this.setDescription( v.getDescription() );
     }
 
-    /**
+    /*
      * 
      * @param validationName
      *            The key name of the validation
@@ -54,8 +54,7 @@ public class StructureValidator extends AbstractStep
     {
         super( "Generic structure validation", null );
 
-        try
-        {
+        try {
             Map<String, Validation> validationMap = new HashMap<String, Validation>( 10 );
             JAXBContext jc = JAXBContext.newInstance( ObjectFactory.class );
             Unmarshaller u = jc.createUnmarshaller();

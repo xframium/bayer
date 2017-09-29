@@ -1,13 +1,13 @@
-package com.bayer.marketing.consumerHealth.betaseron.tests.HomePage.steps;
+package com.bayer.marketing.consumerHealth.betaseron.tests.BetaPlusSupport.steps;
 
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 
-public class HomePageNavSteps extends AbstractStep
+public class BetaPlusSupportSteps extends AbstractStep
 {
 
-    public HomePageNavSteps()
+    public BetaPlusSupportSteps()
     {
         super( "Successful", "error message" );
     }
