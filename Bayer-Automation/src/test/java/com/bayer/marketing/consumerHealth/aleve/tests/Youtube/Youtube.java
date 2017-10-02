@@ -15,7 +15,7 @@ public class Youtube extends AbstractTest
     @Test ( dataProvider = "deviceList", enabled=true)
     public void youTubeTest( DeviceContainer dC )
     {
-    	executeSteps( new Step[] { new Navigate( "https://www.aleve.com/" ), new YoutubeNavStep() } );
+    	executeSteps( new Step[] { new Navigate( "https://www.betaseron.com" ), new YoutubeNavStep() } );
     }
     
 }
