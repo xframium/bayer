@@ -5,8 +5,18 @@
   <test name="Master Site Test"   >
     <packages>
       <package name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaConnectSys" />
-   	  <package name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaPlusSupport" />
-   	  
-   </packages>
+   	  <package name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaPlusSupport" /><package
+   	  	name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaConnectAutoinjector">
+</package>
+    	<package name="com.bayer.marketing.consumerHealth.betaseron.tests.BetasSereonAndHeritage"></package>
+    	<package name="com.bayer.marketing.consumerHealth.betaseron.tests.BeraseronEfficacy"></package>
+    	<package name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaseronSafety"></package>
+    	<package name="com.bayer.marketing.consumerHealth.betaseron.tests.FAQ"></package>
+    	<package name="com.bayer.marketing.consumerHealth.betaseron.tests.HomePage"></package>
+    	<package name="com.bayer.marketing.consumerHealth.betaseron.tests.InjectionTraining"></package>
+    	<package name="com.bayer.marketing.consumerHealth.betaseron.tests.LoginORRegister"></package>
+    	<package name="com.bayer.marketing.consumerHealth.betaseron.tests.MobileMenu"></package>
+
+    </packages>
  </test>
 </suite>
