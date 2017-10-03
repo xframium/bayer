@@ -52,10 +52,24 @@ public class BetaConnectAutoinjectorNavStep extends AbstractStep {
 		BayerWebElement btnFour = getElement("betaconnect.autoinjector.btn.four", webDriver);
 		Util.scrollToElement(webDriver, btnFour, wait);
 		waitForElement("betaconnect.autoinjector.btn.four", webDriver, 15);
-		//Assert.assertEquals(btnTwo.getText(), "Watch it in actionn");
 		btnFour.click();
 		waitForElement("betaconnect.autoinjector.btn.four.validate", webDriver, 15);
-		//waitForElement("betaconnect.autoinjector.modal.close", webDriver, 15);
+		Util.recallBaseURL(webDriver, betaConnectAutoinjectorUrl);
+		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 10);
+		
+		BayerWebElement btnFive = getElement("betaconnect.autoinjector.btn.five", webDriver);
+		Util.scrollToElement(webDriver, btnFive, wait);
+		waitForElement("betaconnect.autoinjector.btn.five", webDriver, 15);
+		btnFive.click();
+		waitForElement("betaconnect.autoinjector.btn.five.validate", webDriver, 15);
+		Util.recallBaseURL(webDriver, betaConnectAutoinjectorUrl);
+		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 10);
+		
+		BayerWebElement btnSix = getElement("betaconnect.autoinjector.btn.six", webDriver);
+		Util.scrollToElement(webDriver, btnSix, wait);
+		waitForElement("betaconnect.autoinjector.btn.six", webDriver, 15);
+		btnFour.click();
+		waitForElement("betaconnect.autoinjector.btn.six.validate", webDriver, 15);
 		Util.recallBaseURL(webDriver, betaConnectAutoinjectorUrl);
 		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 10);
 
