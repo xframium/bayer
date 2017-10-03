@@ -19,8 +19,8 @@ public class InjectionTraining extends AbstractTest
     {
         executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/taking-betaseron/injection-training/"),
         							new InjectionTrainingSteps(),
-        						   new StructureValidator( "ISI" ), 
-        						 // new StructureValidator("Text Verification") } );
+        						   new StructureValidator( "ISI", "/com/bayer/marketing/consumerHealth/betaseron/tests/InjectionTraining/InjectionTrainingValidation.xml" ), 
+        						 
     
         } );
     
