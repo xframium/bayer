@@ -18,8 +18,8 @@ public class InjectionTraining extends AbstractTest
     public void structureTest( DeviceContainer dC )
     {
         executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/taking-betaseron/injection-training/"),
-        							new InjectionTrainingSteps()
-        						  //new StructureValidator( "ISI" ), 
+        							new InjectionTrainingSteps(),
+        						   new StructureValidator( "ISI" ), 
         						 // new StructureValidator("Text Verification") } );
     
         } );
