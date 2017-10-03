@@ -17,8 +17,9 @@ public class TakingBetaseron extends AbstractTest
     @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/taking-betaseron/"), new TakingBetaseronSteps()
-        						  //new StructureValidator( "ISI" ), 
+        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/taking-betaseron/"), 
+        						// new TakingBetaseronSteps(),
+        						  new StructureValidator("ISI"), 
         						 // new StructureValidator("Text Verification") } );
     
         } );
