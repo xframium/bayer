@@ -25,7 +25,7 @@ public class HomePage extends AbstractTest
     {
         executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
         						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
-        						   new StructureValidator("Key"),
+        						   //new StructureValidator("Key"),
         						   
         						   //new StructureValidator("Aleve HOME")
         						    } );
