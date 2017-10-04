@@ -39,7 +39,7 @@ public class FaqNavStep extends AbstractStep {
 		
 		Util.scrollToElement(webDriver, commonQuestion, wait);
 		commonQuestion.click();
-		
+			
 		waitForElement("betaseron.faq.inject.betaseron", webDriver, 15);
 		BayerWebElement inject= getElement("betaseron.faq.inject.betaseron", webDriver);
 		Util.scrollToElement(webDriver, inject, wait);
@@ -57,8 +57,7 @@ public class FaqNavStep extends AbstractStep {
 		Util.recallBaseURL(webDriver, betaSeronFaqUrl);
 		waitForElement("betaseron.faq.base.check", webDriver, 30);
 		
-		Util.scrollToElement(webDriver, commonQuestion, wait);
-		commonQuestion.click();
+		this.flipCommonQuestion(webDriver, wait);	
 		
 		waitForElement("betaseron.faq.electronic.autoinjector", webDriver, 15);
 		BayerWebElement autoinjector= getElement("betaseron.faq.electronic.autoinjector", webDriver);
@@ -81,8 +80,7 @@ public class FaqNavStep extends AbstractStep {
 		Util.recallBaseURL(webDriver, betaSeronFaqUrl);
 		waitForElement("betaseron.faq.base.check", webDriver, 30);
 		
-		Util.scrollToElement(webDriver, commonQuestion, wait);
-		commonQuestion.click();
+		this.flipCommonQuestion(webDriver, wait);	
 		
 		waitForElement("betaseron.faq.mybeta.app", webDriver, 15);
 		BayerWebElement mybetaapp= getElement("betaseron.faq.mybeta.app", webDriver);
@@ -97,9 +95,10 @@ public class FaqNavStep extends AbstractStep {
 		Util.recallBaseURL(webDriver, betaSeronFaqUrl);
 		waitForElement("betaseron.faq.base.check", webDriver, 30);
 		
-		Util.scrollToElement(webDriver, commonQuestion, wait);
-		commonQuestion.click();
+		this.flipCommonQuestion(webDriver, wait);	
 		
+		waitForElement("betaseron.faq.mybeta.app", webDriver, 15);
+		mybetaapp= getElement("betaseron.faq.mybeta.app", webDriver);
 		Util.scrollToElement(webDriver, mybetaapp, wait);
 		mybetaapp.click();
 		
@@ -135,23 +134,20 @@ public class FaqNavStep extends AbstractStep {
 		Util.recallBaseURL(webDriver, betaSeronFaqUrl);
 		waitForElement("betaseron.faq.base.check", webDriver, 30);
 		
-		Util.scrollToElement(webDriver, commonQuestion, wait);
-		commonQuestion.click();
+		this.flipCommonQuestion(webDriver, wait);	
 		
 		this.validate("betaseron.faq.create.custom.doctor", webDriver, "betaseron.faq.create.custom.doctor.validate", wait);
 		Util.recallBaseURL(webDriver, betaSeronFaqUrl);
 		waitForElement("betaseron.faq.base.check", webDriver, 30);
 		
-		Util.scrollToElement(webDriver, commonQuestion, wait);
-		commonQuestion.click();
+		this.flipCommonQuestion(webDriver, wait);	
 		
 		this.validate("betaseron.faq.signup.betaplus", webDriver, "betaseron.faq.signup.betaplus.validate", wait);
 		Util.recallBaseURL(webDriver, betaSeronFaqUrl);
 		waitForElement("betaseron.faq.base.check", webDriver, 30);
 		
-		Util.scrollToElement(webDriver, commonQuestion, wait);
-		commonQuestion.click();
-					
+		this.flipCommonQuestion(webDriver, wait);	
+		
 		return true;
 	}
 
@@ -162,7 +158,15 @@ public class FaqNavStep extends AbstractStep {
 		element.click();
 
 		waitForElement(objectValidator, webDriver, 30);
-
+		
+	}
+	
+	public void flipCommonQuestion(BayerWebDriver webDriver, WebDriverWait wait) {
+		waitForElement("betaseron.faq.common.question", webDriver, 15);
+		BayerWebElement commonQuestion = getElement("betaseron.faq.common.question", webDriver);
+		Util.scrollToElement(webDriver, commonQuestion, wait);
+		Assert.assertEquals(commonQuestion.getText(), "Common questions");
+		commonQuestion.click();
 	}
 	
 }
