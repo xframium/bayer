@@ -28,6 +28,10 @@ public class LoginOrRegisterNavStep extends AbstractStep {
 		Util.recallBaseURL(webDriver, betaSeronRegisterUrl);
 		waitForElement("betaseron.login.base.check", webDriver, 30);
 		
+		this.validate("betaseron.login.tellus.permission", webDriver, "betaseron.login.tellus.permission.validate", wait);
+		Util.recallBaseURL(webDriver, betaSeronRegisterUrl);
+		waitForElement("betaseron.login.base.check", webDriver, 30);
+		
 		waitForElement("betaseron.login.tellus.yourself", webDriver, 15);
 		BayerWebElement yourself = getElement("betaseron.login.tellus.yourself", webDriver);
 		Util.scrollToElement(webDriver, yourself, wait);
@@ -70,15 +74,16 @@ public class LoginOrRegisterNavStep extends AbstractStep {
 		waitForElement("betaseron.login.tellus.signup.validate", webDriver, 15);
 		BayerWebElement thankYou = getElement("betaseron.login.tellus.signup.validate", webDriver);
 		Util.scrollToElement(webDriver, thankYou, wait);
-		Assert.assertEquals(thankYou.getText(), "Thank you");
 		
-		this.validate("betaseron.login.tellus.signup.continue", webDriver, "betaseron.login.tellus.myaccount.validate", wait);
+		waitForElement("betaseron.login.tellus.signup.continue", webDriver, 15);
+		BayerWebElement signupcontinue = getElement("betaseron.login.tellus.signup.continue", webDriver);
+		Util.scrollToElement(webDriver, signupcontinue, wait);
+		waitForElement("betaseron.login.tellus.signup.continue", webDriver, 30);
+		signupcontinue.click();
+		
 		Util.recallBaseURL(webDriver, betaSeronRegisterUrl);
 		waitForElement("betaseron.login.base.check", webDriver, 30);
 		
-		this.validate("betaseron.login.tellus.permission", webDriver, "betaseron.login.tellus.permission.validate", wait);
-		Util.recallBaseURL(webDriver, betaSeronRegisterUrl);
-		waitForElement("betaseron.login.base.check", webDriver, 30);
 				
 		return true;
 	}
