@@ -25,7 +25,7 @@ public class BetaConnectAutoinjectorNavStep extends AbstractStep {
 		Util.recallBaseURL(webDriver, betaConnectAutoinjectorUrl);
 		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 15);	
 
-		/*BayerWebElement btnOne = getElement("betaconnect.autoinjector.btn.one", webDriver);
+		BayerWebElement btnOne = getElement("betaconnect.autoinjector.btn.one", webDriver);
 		Util.scrollToElement(webDriver, btnOne, wait);
 		waitForElement("betaconnect.autoinjector.btn.one", webDriver, 15);
 		btnOne.click();
@@ -71,7 +71,7 @@ public class BetaConnectAutoinjectorNavStep extends AbstractStep {
 		btnSix.click();
 		waitForElement("betaconnect.autoinjector.btn.six.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectAutoinjectorUrl);
-		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 15); */
+		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 15);
 		
 		BayerWebElement btnSeven = getElement("betaconnect.autoinjector.btn.seven", webDriver);
 		Util.scrollToElement(webDriver, btnSeven, wait);
@@ -79,15 +79,15 @@ public class BetaConnectAutoinjectorNavStep extends AbstractStep {
 		btnSeven.click();
 		waitForElement("betaconnect.autoinjector.btn.seven.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectAutoinjectorUrl);
-		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 15); 
+		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 15);
 		
-		/*BayerWebElement btnEight = getElement("betaconnect.autoinjector.btn.eight", webDriver);
+		BayerWebElement btnEight = getElement("betaconnect.autoinjector.btn.eight", webDriver);
 		Util.scrollToElement(webDriver, btnEight, wait);
 		waitForElement("betaconnect.autoinjector.btn.eight", webDriver, 15);
-		btnSix.click();
+		btnEight.click();
 		waitForElement("betaconnect.autoinjector.btn.eight.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectAutoinjectorUrl);
-		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 15); */
+		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 15); 
 
 		return true;
 	}
