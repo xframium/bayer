@@ -2,10 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <!-- Run Invididual Tests Here --> 
-<suite name="Suite1" verbose="1" >
-  <test name="Master Site Test"   >
+<suite name="RunTest1" verbose="1" >
+  <test name="Run Test File"   >
     <packages>
-      <package name="com.bayer.marketing.consumerHealth.aleve.tests.FAQ" />
+      <package name="com.bayer.marketing.consumerHealth.betaseron.tests.HomePage" />
    	    
    </packages>
  </test>
