@@ -3,7 +3,7 @@
 
 <!-- Run Invididual Tests Here --> 
 <suite name="Suite1" verbose="1" >
-  <test name="Master Site Test"   >
+  <test name="Run Test File">
     <packages>
       <package name="com.bayer.marketing.consumerHealth.aleve.tests.FAQ" />  
     </packages>
