@@ -5,8 +5,8 @@
 <suite name="Suite1" verbose="1" >
   <test name="Master Site Test"   >
     <packages>
-      <package name="com.bayer.marketing.consumerHealth.aleve.tests.FAQ" />
+      <package name="com.bayer.marketing.consumerHealth.betaseron.tests.TakingBetaseron" />
    	    
    </packages>
  </test>
-</suite>
+</suite>  
