@@ -21,10 +21,11 @@ public class TakingBetaseronSteps extends AbstractStep
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
-    	BayerWebElement mobile = getElement( "betaseron.mobile.menu", webDriver );
+    	
     	String takingBetaseronUrl = webDriver.getCurrentUrl();
     	WebDriverWait wait = new WebDriverWait(webDriver, 30);
-    	
+    	/*
+    	BayerWebElement mobile = getElement( "betaseron.mobile.menu", webDriver );
     	if(mobile.isDisplayed()==false){
     		
     		waitForElement( "betaseron.taking.desktopApp", webDriver, 15 );
@@ -36,7 +37,7 @@ public class TakingBetaseronSteps extends AbstractStep
  
     		
     	}
-    	
+    	*/
     	
     	waitForElement( "betaseron.home.betaAppVid", webDriver, 15 );
     	BayerWebElement vid = getElement( "betaseron.home.betaAppVid", webDriver );
