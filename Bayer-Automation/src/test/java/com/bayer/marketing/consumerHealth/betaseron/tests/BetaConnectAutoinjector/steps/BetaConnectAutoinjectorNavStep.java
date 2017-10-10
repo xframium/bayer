@@ -7,6 +7,7 @@ import com.bayer.BayerWebElement;
 import com.bayer.marketing.consumerHealth.betaseron.tests.Utility.Util;
 import com.bayer.test.step.AbstractStep;
 
+
 public class BetaConnectAutoinjectorNavStep extends AbstractStep {
 
 	public BetaConnectAutoinjectorNavStep() {
