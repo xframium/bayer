@@ -19,7 +19,7 @@ public class InjectionTracking extends AbstractTest
     {
         executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/taking-betaseron/injection-tracking/"),
         							new InjectionTrackingSteps(),
-        						   new StructureValidator( "ISI", "/com/bayer/marketing/consumerHealth/betaseron/tests/InjectionTraining/InjectionTrackingValidation.xml" ), 
+        						   new StructureValidator( "ISI", "/com/bayer/marketing/consumerHealth/betaseron/tests/InjectionTracking/InjectionTrackingValidation.xml" ), 
         						 
     
         } );

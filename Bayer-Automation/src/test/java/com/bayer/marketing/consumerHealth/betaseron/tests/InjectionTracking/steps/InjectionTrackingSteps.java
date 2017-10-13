@@ -21,83 +21,102 @@ public class InjectionTrackingSteps extends AbstractStep
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
-    	
-    	String injectionTrainingURL = webDriver.getCurrentUrl();
+    	String takingBetaseronUrl = webDriver.getCurrentUrl();
     	WebDriverWait wait = new WebDriverWait(webDriver, 30);
     	
-    	waitForElement( "betaseron.injectionSteps.chapter1", webDriver, 15 );
-    	BayerWebElement chapter1 = getElement( "betaseron.injectionSteps.chapter1", webDriver );
-    	Util.scrollToElement(webDriver, chapter1, wait );
-    	chapter1.click();
+    	webDriver.manage().window().maximize(); 
     	
-    	waitForElement( "betaseron.injectionSteps.chapter2", webDriver, 15 );
-    	BayerWebElement chapter2 = getElement( "betaseron.injectionSteps.chapter2", webDriver );
-    	Util.scrollToElement(webDriver, chapter2, wait );
-    	chapter2.click();
-
-    	waitForElement( "betaseron.injectionSteps.chapter3", webDriver, 15 );
-    	BayerWebElement chapter3 = getElement( "betaseron.injectionSteps.chapter3", webDriver );
-    	Util.scrollToElement(webDriver, chapter3, wait );
-    	chapter3.click();
-    	
-    	waitForElement( "betaseron.injectionSteps.chapter31", webDriver, 15 );
-    	BayerWebElement chapter31 = getElement( "betaseron.injectionSteps.chapter31", webDriver );
-    	Util.scrollToElement(webDriver, chapter31, wait );
-    	chapter31.click();
-    	
-    	waitForElement( "betaseron.injectionSteps.chapter32", webDriver, 15 );
-    	BayerWebElement chapter32 = getElement( "betaseron.injectionSteps.chapter32", webDriver );
-    	Util.scrollToElement(webDriver, chapter32, wait );
-    	chapter32.click();
-    	
-    	waitForElement( "betaseron.injectionSteps.chapter33", webDriver, 15 );
-    	BayerWebElement chapter33 = getElement( "betaseron.injectionSteps.chapter33", webDriver );
-    	Util.scrollToElement(webDriver, chapter33, wait );
-    	chapter33.click();
-    	
-    	waitForElement( "betaseron.injectionSteps.chapter34", webDriver, 15 );
-    	BayerWebElement chapter34 = getElement( "betaseron.injectionSteps.chapter34", webDriver );
-    	Util.scrollToElement(webDriver, chapter34, wait );
-    	chapter34.click();
-    	
-    	waitForElement( "betaseron.injectionSteps.chapter35", webDriver, 15 );
-    	BayerWebElement chapter35 = getElement( "betaseron.injectionSteps.chapter35", webDriver );
-    	Util.scrollToElement(webDriver, chapter35, wait );
-    	chapter35.click();
-    	
-    	waitForElement( "betaseron.injectionSteps.chapter36", webDriver, 15 );
-    	BayerWebElement chapter36 = getElement( "betaseron.injectionSteps.chapter36", webDriver );
-    	Util.scrollToElement(webDriver, chapter36, wait );
-    	chapter36.click();
-    	
-    	waitForElement( "betaseron.injectionSteps.chapter4", webDriver, 15 );
-    	BayerWebElement chapter4 = getElement( "betaseron.injectionSteps.chapter4", webDriver );
-    	Util.scrollToElement(webDriver, chapter4, wait );
-    	chapter4.click();
-    	
-    	waitForElement( "betaseron.injectionSteps.chapter5", webDriver, 15 );
-    	BayerWebElement chapter5 = getElement( "betaseron.injectionSteps.chapter5", webDriver );
-    	Util.scrollToElement(webDriver, chapter5, wait );
-    	chapter5.click();
-    	
-    	waitForElement( "betaseron.injectionSteps.chapter6", webDriver, 15 );
-    	BayerWebElement chapter6 = getElement( "betaseron.injectionSteps.chapter6", webDriver );
-    	Util.scrollToElement(webDriver, chapter6, wait );
-    	chapter6.click();
-    	
-    	waitForElement( "betaseron.injectionSteps.chapter7", webDriver, 15 );
-    	BayerWebElement chapter7 = getElement( "betaseron.injectionSteps.chapter7", webDriver );
-    	Util.scrollToElement(webDriver, chapter7, wait );
-    	chapter7.click();
+    	BayerWebElement mobile = getElement( "betaseron.mobile.menu", webDriver );
+    	if(mobile.isDisplayed()==false){
+    		
+    		waitForElement( "betaseron.taking.desktopApp", webDriver, 15 );
+        	BayerWebElement desktopApp = getElement( "betaseron.taking.desktopApp", webDriver );
+        	Util.scrollToElement(webDriver, desktopApp, wait );
+        	desktopApp.click();
+        	
+        	Util.recallBaseURL(webDriver, takingBetaseronUrl);
+ 
+    		
+    	}
     	
     	
-    	waitForElement( "betaseron.injectionSteps.register", webDriver, 15 );
-    	BayerWebElement register = getElement( "betaseron.injectionSteps.register", webDriver );
-    	Util.scrollToElement(webDriver, register, wait );
-    	register.click();
-    	Util.recallBaseURL(webDriver, injectionTrainingURL);
+    	waitForElement( "betaseron.home.betaAppVid", webDriver, 15 );
+    	BayerWebElement vid = getElement( "betaseron.home.betaAppVid", webDriver );
+    	Util.scrollToElement(webDriver, vid, wait );
+    	vid.click();
     	
-  	
+    	waitForElement( "betaseron.taking.videoClose", webDriver, 15 );
+    	BayerWebElement videoClose = getElement( "betaseron.taking.videoClose", webDriver );
+    	videoClose.click();
+    	
+    	
+    	waitForElement( "betaseron.taking.appleApp", webDriver, 15 );
+    	BayerWebElement apple = getElement( "betaseron.taking.appleApp", webDriver );
+    	Util.scrollToElement(webDriver, apple, wait );
+    	BayerWebElement apple2 = getElement( "betaseron.taking.appleApp", webDriver );
+    	apple2.click();
+    	
+    	waitForElement( "betaseron.taking.cancel", webDriver, 15 );
+    	BayerWebElement cancel = getElement( "betaseron.taking.cancel", webDriver );
+    	cancel.click();
+   
+    	waitForElement( "betaseron.taking.androidApp", webDriver, 15 );
+    	BayerWebElement android = getElement( "betaseron.taking.androidApp", webDriver );
+    	android.click();
+    	
+    	waitForElement( "betaseron.taking.continue", webDriver, 15 );
+    	BayerWebElement continueButton = getElement( "betaseron.taking.continue", webDriver );
+        continueButton.click(); 
+        Util.recallBaseURL(webDriver, takingBetaseronUrl);
+        
+      	waitForElement( "betaseron.taking.signUp1", webDriver, 15 );
+    	BayerWebElement signUp1 = getElement( "betaseron.taking.signUp1", webDriver );
+    	Util.scrollToElement(webDriver, signUp1, wait );
+    	signUp1.click();         
+    	Util.recallBaseURL(webDriver, takingBetaseronUrl);
+    	
+      	waitForElement( "betaseron.why.learnMore.mybetaapp", webDriver, 15 );
+    	BayerWebElement learnMyBetaApp= getElement( "betaseron.why.learnMore.mybetaapp", webDriver );
+    	Util.scrollToElement(webDriver, learnMyBetaApp, wait );
+    	learnMyBetaApp.click();         
+    	Util.recallBaseURL(webDriver, takingBetaseronUrl);
+    	
+      	waitForElement( "betaseron.taking.learnMore", webDriver, 15 );
+    	BayerWebElement learnMore = getElement( "betaseron.taking.learnMore", webDriver );
+    	Util.scrollToElement(webDriver, learnMore, wait );
+    	learnMore.click();     
+    	Util.recallBaseURL(webDriver, takingBetaseronUrl);
+    	
+    	waitForElement( "betaseron.taking.signUp2", webDriver, 15 );
+    	BayerWebElement signUp2 = getElement( "betaseron.taking.signUp2", webDriver );
+    	Util.scrollToElement(webDriver, signUp2, wait );
+    	signUp2.click();      
+    	Util.recallBaseURL(webDriver, takingBetaseronUrl);
+        
+    	waitForElement( "betaseron.taking.PI", webDriver, 15 );
+    	BayerWebElement PI = getElement( "betaseron.taking.PI", webDriver );
+    	Util.scrollToElement(webDriver, PI, wait );
+    	PI.click();      
+    	Util.recallBaseURL(webDriver, takingBetaseronUrl);
+    	
+    	waitForElement( "betaseron.taking.IFU", webDriver, 15 );
+    	BayerWebElement IFU = getElement( "betaseron.taking.IFU", webDriver );
+    	Util.scrollToElement(webDriver, IFU, wait );
+    	IFU.click();      
+    	Util.recallBaseURL(webDriver, takingBetaseronUrl);
+    	
+    	waitForElement( "betaseron.taking.IFU2", webDriver, 15 );
+    	BayerWebElement IFU2 = getElement( "betaseron.taking.IFU2", webDriver );
+    	Util.scrollToElement(webDriver, IFU2, wait );
+    	IFU2.click();      
+    	Util.recallBaseURL(webDriver, takingBetaseronUrl);
+    	
+    	waitForElement( "betaseron.taking.discussionGuide", webDriver, 15 );
+    	BayerWebElement discussionGuide = getElement( "betaseron.taking.discussionGuide", webDriver );
+    	Util.scrollToElement(webDriver, discussionGuide, wait );
+    	discussionGuide.click();      
+    	Util.recallBaseURL(webDriver, takingBetaseronUrl);
+    	
         return true;
     }
 
