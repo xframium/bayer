@@ -45,73 +45,73 @@ public class VideosAndResourceNavStep extends AbstractStep {
 		Util.scrollToElement(webDriver, videosection, wait);
 		Assert.assertEquals(videoValidator.getText(), "Chapter 1 - Introduction");
 		
-		this.palyVideo("betaseron.videos.resource.chapter.two",webDriver,wait);
+		this.playVideo("betaseron.videos.resource.chapter.two",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
 		Assert.assertEquals(videoValidator.getText(), "Chapter 2 - Ongoing personal support from BETAPLUS®");
 		
-		this.palyVideo("betaseron.videos.resource.chapter.three",webDriver,wait);
+		this.playVideo("betaseron.videos.resource.chapter.three",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
 		Assert.assertEquals(videoValidator.getText(), "Chapter 3 - Injecting Your BETASERON Manually");
 		
-		this.palyVideo("betaseron.videos.resource.chapter.three.one",webDriver,wait);
+		this.playVideo("betaseron.videos.resource.chapter.three.one",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
 		Assert.assertEquals(videoValidator.getText(), "  3.1 - Preparing for BETASERON injection");
 	
-		this.palyVideo("betaseron.videos.resource.chapter.three.two",webDriver,wait);
+		this.playVideo("betaseron.videos.resource.chapter.three.two",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
 		Assert.assertEquals(videoValidator.getText(), "  3.2 - Mixing BETASERON");
 		
-		this.palyVideo("betaseron.videos.resource.chapter.three.three",webDriver,wait);
+		this.playVideo("betaseron.videos.resource.chapter.three.three",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
 		Assert.assertEquals(videoValidator.getText(), "  3.3 - Preparing the injection");
 		
-		this.palyVideo("betaseron.videos.resource.chapter.three.four",webDriver,wait);
+		this.playVideo("betaseron.videos.resource.chapter.three.four",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
 		Assert.assertEquals(videoValidator.getText(), "  3.4 - Choosing an injection site");
 		
-		this.palyVideo("betaseron.videos.resource.chapter.three.five",webDriver,wait);
+		this.playVideo("betaseron.videos.resource.chapter.three.five",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
 		Assert.assertEquals(videoValidator.getText(), "  3.5 - Injecting BETASERON");
 		
-		this.palyVideo("betaseron.videos.resource.chapter.three.six",webDriver,wait);
+		this.playVideo("betaseron.videos.resource.chapter.three.six",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
 		Assert.assertEquals(videoValidator.getText(), "  3.6 - Disposing of used syringes, needles, and vials");
 	
-		this.palyVideo("betaseron.videos.resource.chapter.four",webDriver,wait);
+		this.playVideo("betaseron.videos.resource.chapter.four",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
 		Assert.assertEquals(videoValidator.getText(), "Chapter 4 - Injecting BETASERON with BETACONNECT™ electronic autoinjector");
 	
-		this.palyVideo("betaseron.videos.resource.chapter.five",webDriver,wait);
+		this.playVideo("betaseron.videos.resource.chapter.five",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
 		Assert.assertEquals(videoValidator.getText(), "Chapter 5 - myBETAapp™");
 	
-		this.palyVideo("betaseron.videos.resource.chapter.six",webDriver,wait);
+		this.playVideo("betaseron.videos.resource.chapter.six",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
 		Assert.assertEquals(videoValidator.getText(), "Chapter 6 - Answers to common questions");
 	
-		this.palyVideo("betaseron.videos.resource.chapter.seven",webDriver,wait);
+		this.playVideo("betaseron.videos.resource.chapter.seven",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
@@ -140,7 +140,7 @@ public class VideosAndResourceNavStep extends AbstractStep {
 		return true;
 	}
 
-	private void palyVideo(String videoPath, BayerWebDriver webDriver, WebDriverWait wait) {
+	private void playVideo(String videoPath, BayerWebDriver webDriver, WebDriverWait wait) {
 		waitForElement(videoPath, webDriver, 15);
 		BayerWebElement video= getElement(videoPath, webDriver);
 		Util.scrollToElement(webDriver, video, wait);
