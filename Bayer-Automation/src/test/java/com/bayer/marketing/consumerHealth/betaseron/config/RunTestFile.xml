@@ -5,7 +5,9 @@
 <suite name="RunTest1" verbose="1" >
   <test name="Run Test File"   >
     <packages>
+
       <package name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaseronSafety" /> 
+
    </packages>
  </test>
 </suite>
