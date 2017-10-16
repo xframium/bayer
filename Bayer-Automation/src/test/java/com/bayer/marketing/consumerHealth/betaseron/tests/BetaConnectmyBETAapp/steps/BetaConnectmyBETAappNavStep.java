@@ -57,7 +57,7 @@ public class BetaConnectmyBETAappNavStep extends AbstractStep {
 		Util.scrollToElement(webDriver, btnFive, wait);
 		waitForElement("betaconnect.mybetaapp.btn.five", webDriver, 15);
 		btnFive.click();
-		waitForElement("betaconnect.mybetaapp.btn.four.validate", webDriver, 30);
+		waitForElement("betaconnect.mybetaapp.btn.five.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectmyBETAappUrl);
 		waitForElement("betaconnect.mybetaapp.app.logo", webDriver, 15);
 		
