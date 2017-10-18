@@ -34,7 +34,7 @@ public class HTTPLinkCheck
     public static void main( String[] args ) throws Exception
     {
         HTTPLinkCheck h = new HTTPLinkCheck();
-        h.process( new URL( "https://www.betaseron.com/"), new URL( "https://www.aleve.com/") );
+        h.process( new URL( "https://www.betaseron.com/"), new URL( "https://www.betaseron.com/") );
         System.out.println( h.linkMap.size() + " unique pages" );
         for ( String key : h.linkMap.keySet() )
             System.out.println( key + ": " + h.linkMap.get( key ) + " refereces" );

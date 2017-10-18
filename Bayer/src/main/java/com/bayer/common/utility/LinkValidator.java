@@ -14,6 +14,8 @@ public class LinkValidator extends AbstractStep
     public LinkValidator( String initialUrl, int pageCount )
     {
         super( "Generic Link Validator", "Generic Link Validator" );
+        this.initialUrl = initialUrl;
+        this.pageCount = pageCount;
     }
 
     
