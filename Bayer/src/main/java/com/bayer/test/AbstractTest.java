@@ -93,8 +93,7 @@ public abstract class AbstractTest
 	}
 
 	@BeforeMethod
-	public void beforeMethod( Method currentMethod, ITestContext testContext, Object[] testArgs )
-	{
+	public void beforeMethod( Method currentMethod, ITestContext testContext, Object[] testArgs ) {
 		try
 		{
 			String methodKey = currentMethod.getDeclaringClass().getSimpleName() + "." + currentMethod.getName();

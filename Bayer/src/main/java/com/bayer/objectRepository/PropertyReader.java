@@ -101,7 +101,7 @@ public class PropertyReader implements ObjectRepository
     @Override
     public ORLookup getElement( String elementName, String osType )
     {
-        
+        System.out.println(elementName);
         if ( !initialized )
         {
             if ( fileArray != null )
