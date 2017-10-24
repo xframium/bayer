@@ -31,10 +31,10 @@ public class HTTPLinkCheck
     private URL baseUrl;
     
     
-    public static void main( String[] args ) throws Exception
-    {
-        HTTPLinkCheck h = new HTTPLinkCheck();
-        h.process( new URL( "https://www.betaseron.com/"), new URL( "https://www.betaseron.com/") );
+    public static void main( String[] args ) throws Exception {
+        String url ="https://www.betaseron.com/";
+    	HTTPLinkCheck h = new HTTPLinkCheck();
+        h.process( new URL(url), new URL(url) );
         System.out.println( h.linkMap.size() + " unique pages" );
         for ( String key : h.linkMap.keySet() )
             System.out.println( key + ": " + h.linkMap.get( key ) + " refereces" );

@@ -3,10 +3,10 @@
 
 <!-- Run Invididual Tests Here --> 
 <suite name="PetBasics Test" verbose="1" >
-  <test name="Run Test File"   >
+  <test name="Run Test File"  >
     <packages>
 
-      <package name="com.bayer.marketing.animalHealth.petBasics.tests.All.ProductsAll" /> 
+      <package name="com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage" /> 
 
    </packages>
  </test>

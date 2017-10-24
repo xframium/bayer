@@ -27,21 +27,20 @@ public class HomePage extends AbstractTest
     
     
     @TestDescriptor( testName="Home Page Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
         						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
         						   //new StructureValidator("Key"),
-        						   
         						    } );
     }
     @TestDescriptor( testName="Home Page Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
     	executeSteps(new Step[] { 
-    			new LinkValidator("https://www.betaseron.com/", 70)
     			
-   
+    			new LinkValidator("https://www.betaseron.com/", 67)
+
     	});
     }
     	
