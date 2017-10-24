@@ -1,0 +1,46 @@
+package com.bayer.marketing.animalHealth.petBasics.tests.All.ProductsAll;
+
+import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
+import org.testng.annotations.Test;
+import com.bayer.common.Navigate;
+import com.bayer.common.TimedNavigate;
+import com.bayer.common.utility.LinkValidator;
+import com.bayer.common.utility.StructureValidator;
+import com.bayer.marketing.consumerHealth.betaseron.tests.HomePage.steps.HomePageNavSteps;
+import com.bayer.test.AbstractTest;
+import com.bayer.test.device.DeviceContainer;
+import com.bayer.test.step.factory.Step;
+import com.gargoylesoftware.htmlunit.Page;
+import com.gargoylesoftware.htmlunit.javascript.host.URL;
+import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
+
+
+public class ProductsAll extends AbstractTest {	
+	
+	protected String url = "https://www.petbasics.com/products/?pref=all";
+	 
+	@TestDescriptor( testName="Navigation Test" )
+    @Test ( dataProvider = "deviceList", enabled=false)
+    public void navigateTest( DeviceContainer dC )
+    {
+        executeSteps( new Step[] { new Navigate(url), 
+        							//new HomePageNavSteps(),
+        							new TimedNavigate(url, 4000)
+        } );
+    }
+    
+   
+    @TestDescriptor( testName="Home Page Validation Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void structureTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
+        						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
+        						   //new StructureValidator("Key"),
+        						   
+        						    } );
+    }
+    	
+   
+   
+ 
+} //end class

@@ -19,7 +19,7 @@ public class TakingBetaseron extends AbstractTest
     {
         executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/taking-betaseron/"), 
         						  new TakingBetaseronSteps(),
-        						  new StructureValidator("ISI", "/com/bayer/marketing/consumerHealth/betaseron/tests/TakingBetaseron/TakingBetaseronValidation.xml"), 
+        						  //new StructureValidator("ISI", "/com/bayer/marketing/consumerHealth/betaseron/tests/TakingBetaseron/TakingBetaseronValidation.xml"), 
         						 
     
         } );
