@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
+import com.bayer.marketing.animalHealth.petBasics.tests.educationAll.steps.ApplyFilterToEducationAllNavSteps;
 import com.bayer.marketing.animalHealth.petBasics.tests.educationAll.steps.EducationAllNavSteps;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
@@ -21,9 +22,18 @@ public class EducationAllNavRun extends AbstractTest {
 	@TestDescriptor( testName="PetBasics Education All Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
-        //System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url), 
         							new EducationAllNavSteps()/*,
+        							new TimedNavigate(url, 4000)*/
+        							
+        } );
+    }
+	
+	@TestDescriptor( testName="PetBasics Education All Filter Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void applyFilterTest( DeviceContainer dC ) {
+		executeSteps( new Step[] { new Navigate(url), 
+        							new ApplyFilterToEducationAllNavSteps()/*,
         							new TimedNavigate(url, 4000)*/
         							
         } );
