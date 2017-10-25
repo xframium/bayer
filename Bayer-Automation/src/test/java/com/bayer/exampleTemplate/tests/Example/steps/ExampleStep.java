@@ -1,4 +1,4 @@
-package com.bayer.exampleTemplate;
+package com.bayer.exampleTemplate.tests.Example.steps;
 
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
@@ -15,13 +15,20 @@ public class ExampleStep extends AbstractStep
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
-        waitForElement( "bayer.home.img", webDriver, 15 );
-        BayerWebElement exampleImage = getElement("bayer.home.img", webDriver);
+        waitForElement( "bayer.home.img1", webDriver, 15 );
+        BayerWebElement exampleImage = getElement("bayer.home.img1", webDriver);
         exampleImage.click();
+        waitForElement( "betaseron.key", webDriver, 15 );
+        webDriver.navigate().to("https://www.betaseron.com/");
         
-        waitForElement( "bayer.home.img", webDriver, 15 );
-        BayerWebElement exampleImage2 = getElement("bayer.home.img", webDriver);
-        exampleImage2.click();
+        waitForElement( "bayer.home.search", webDriver, 15 );
+        BayerWebElement exampleSearch = getElement("bayer.home.search", webDriver);
+        exampleSearch.click();
+        exampleSearch.sendKeys("Bayer 04");
+        BayerWebElement exampleSearchBTN = getElement("bayer.home.searchBtn", webDriver);
+        exampleSearchBTN.click();
+        waitForElement( "bayer.key", webDriver, 15 );
+        webDriver.navigate().to("https://www.betaseron.com/");
         ///////////////Example Code Structure///////////////////
         /*BayerWebElement emailAddress = getElement( "login.emailAddress", webDriver );
         emailAddress.sendKeys( "test@bayer.com" );
