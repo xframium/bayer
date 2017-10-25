@@ -6,6 +6,7 @@ import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
 import com.bayer.common.utility.LinkValidator;
 import com.bayer.common.utility.StructureValidator;
+import com.bayer.marketing.animalHealth.petBasics.tests.All.ProductsAll.steps.ProductsAllSteps;
 import com.bayer.marketing.consumerHealth.betaseron.tests.HomePage.steps.HomePageNavSteps;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
@@ -24,8 +25,8 @@ public class ProductsAll extends AbstractTest {
     public void navigateTest( DeviceContainer dC )
     {
         executeSteps( new Step[] { new Navigate("https://www.petbasics.com/products/?pref=all"), 
-        							//new HomePageNavSteps(),
-        							new TimedNavigate("https://www.petbasics.com/products/?pref=all", 10000)
+        							new ProductsAllSteps(),
+        							//new TimedNavigate("https://www.petbasics.com/products/?pref=all", 10000)
         } );
     }
     
@@ -34,14 +35,12 @@ public class ProductsAll extends AbstractTest {
     @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.petbasics.com/products/?pref=all"),
-        						   new StructureValidator("H1 Test", "com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
-        						   //new StructureValidator("Key"),
+        						   new StructureValidator("H1 Test","/com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
+        						   new StructureValidator("H2 Test","/com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
         						   
     						    } );
     }
     	
-   
-   
- 
+
    
 } //end class

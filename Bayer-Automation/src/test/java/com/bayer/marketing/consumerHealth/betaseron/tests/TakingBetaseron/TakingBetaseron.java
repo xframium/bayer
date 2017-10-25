@@ -18,8 +18,8 @@ public class TakingBetaseron extends AbstractTest
     public void structureTest( DeviceContainer dC )
     {
         executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/taking-betaseron/"), 
-        						  new TakingBetaseronSteps(),
-        						  //new StructureValidator("ISI", "/com/bayer/marketing/consumerHealth/betaseron/tests/TakingBetaseron/TakingBetaseronValidation.xml"), 
+        						 // new TakingBetaseronSteps(),
+        						  new StructureValidator("ISI", "/com/bayer/marketing/consumerHealth/betaseron/tests/TakingBetaseron/TakingBetaseronValidation.xml"), 
         						 
     
         } );
