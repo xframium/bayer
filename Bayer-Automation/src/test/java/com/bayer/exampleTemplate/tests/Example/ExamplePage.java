@@ -1,5 +1,6 @@
-package com.bayer.exampleTemplate;
+package com.bayer.exampleTemplate.tests.Example;
 
+import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
@@ -10,20 +11,20 @@ import com.bayer.test.step.factory.Step;
 
 public class ExamplePage extends AbstractTest {
 	
-    @TestDescriptor( testName="Navigation Test" )
+    @TestDescriptor( testName="Example Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.bayer.com/" ), new ExampleStep() } );
     }
     
-    @TestDescriptor( testName="Timed Navigation Test" )
+    @TestDescriptor( testName="Example Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void timedNavigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new TimedNavigate( "https://www.bayer.com/", 3000) } );
     }
     
-    @TestDescriptor( testName="Structure Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @TestDescriptor( testName="Example Structure Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.bayer.com/" ), new StructureValidator( "ISI" ) } );
     }

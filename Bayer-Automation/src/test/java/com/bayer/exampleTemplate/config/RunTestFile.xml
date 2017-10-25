@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!-- Run Invididual Tests Here --> 
+<suite name="PetBasics Test" verbose="1" >
+  <test name="Run Test File"  >
+    <packages>
+
+      <package name="com.bayer.exampleTemplate.tests.Example" /> 
+
+   </packages>
+ </test>
+</suite>
