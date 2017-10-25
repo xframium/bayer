@@ -20,27 +20,28 @@ public class ProductsAll extends AbstractTest {
 	protected String url = "https://www.petbasics.com/products/?pref=all";
 	 
 	@TestDescriptor( testName="Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate(url), 
+        executeSteps( new Step[] { new Navigate("https://www.petbasics.com/products/?pref=all"), 
         							//new HomePageNavSteps(),
-        							new TimedNavigate(url, 4000)
+        							new TimedNavigate("https://www.petbasics.com/products/?pref=all", 10000)
         } );
     }
     
    
-    @TestDescriptor( testName="Home Page Validation Test" )
+    @TestDescriptor( testName="Products All Validation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
-        						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
+        executeSteps( new Step[] { new Navigate( "https://www.petbasics.com/products/?pref=all"),
+        						   new StructureValidator("H1 Test", "com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
         						   //new StructureValidator("Key"),
         						   
-        						    } );
+    						    } );
     }
     	
    
    
  
+   
 } //end class

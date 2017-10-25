@@ -4,13 +4,13 @@
     <validation name="H1 Test">
     <description>Text Verification</description>
    		<tag name="//*"> 
-    	<text type="contains">Your cherished companion</text>
+    	<text type="contains">A family of pet care basics</text>
     	</tag>
     </validation>
     <validation name="Indication Test">
     <description>Indications</description>
    		<tag name="//*"> 
-    	<text type="contains">Our commitment to dependable care</text>
+    	<text type="contains">done precisely right.</text>
     	</tag>
     </validation>
     
