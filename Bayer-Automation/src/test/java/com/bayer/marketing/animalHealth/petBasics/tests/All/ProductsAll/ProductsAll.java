@@ -20,7 +20,7 @@ public class ProductsAll extends AbstractTest {
 	
 	protected String url = "https://www.petbasics.com/products/?pref=all";
 	 
-	@TestDescriptor( testName="Navigation Test" )
+	@TestDescriptor( testName="Products All Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC )
     {
@@ -32,7 +32,7 @@ public class ProductsAll extends AbstractTest {
     
    
     @TestDescriptor( testName="Products All Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.petbasics.com/products/?pref=all"),
         						   new StructureValidator("H1 Test","/com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
