@@ -32,7 +32,8 @@ public class HTTPLinkCheck
     
     
     public static void main( String[] args ) throws Exception {
-        String url ="https://www.betaseron.com/";
+        System.out.println("Link checker initiated");
+    	String url ="https://www.petbasics.com";
     	HTTPLinkCheck h = new HTTPLinkCheck();
         h.process( new URL(url), new URL(url) );
         System.out.println( h.linkMap.size() + " unique pages" );

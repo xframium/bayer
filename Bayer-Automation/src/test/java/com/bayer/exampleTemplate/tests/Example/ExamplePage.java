@@ -16,7 +16,7 @@ public class ExamplePage extends AbstractTest {
     public void navigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.bayer.com/" ), new ExampleStep() } );
     }
-    
+    /*
     @TestDescriptor( testName="Example Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void timedNavigateTest( DeviceContainer dC ) {
@@ -28,7 +28,7 @@ public class ExamplePage extends AbstractTest {
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.bayer.com/" ), new StructureValidator( "ISI" ) } );
     }
-    
+    */
 }
 
 // push test 5

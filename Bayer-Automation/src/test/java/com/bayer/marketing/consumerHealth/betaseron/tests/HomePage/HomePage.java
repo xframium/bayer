@@ -15,7 +15,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class HomePage extends AbstractTest
 {
-    @TestDescriptor( testName="Navigation Test" )
+    /*@TestDescriptor( testName="Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC )
     {
@@ -34,6 +34,7 @@ public class HomePage extends AbstractTest
         						   //new StructureValidator("Key"),
         						    } );
     }
+    */
     @TestDescriptor( testName="Home Page Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
