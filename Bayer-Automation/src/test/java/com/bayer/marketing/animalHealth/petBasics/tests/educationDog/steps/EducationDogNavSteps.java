@@ -16,7 +16,7 @@ public class EducationDogNavSteps extends AbstractStep {
 	@Override
 	protected boolean _executeStep(BayerWebDriver webDriver) {
 
-		String educationCat = webDriver.getCurrentUrl();
+		String educationDog = webDriver.getCurrentUrl();
 
 		waitForElement("petbasics.dog.education", webDriver, 30);
 		WebDriverWait wait = new WebDriverWait(webDriver, 30);
@@ -27,52 +27,52 @@ public class EducationDogNavSteps extends AbstractStep {
 
 		this.validateEducationContent("petbasics.dog.education.featured.content", "petbasics.dog.education.featured.content.readmore",
 				webDriver, "petbasics.dog.education.featured.content.readmore.validate", wait);
-		Util.recallBaseURL(webDriver, educationCat);
+		Util.recallBaseURL(webDriver, educationDog);
 		waitForElement("petbasics.dog.education", webDriver, 15);
 
 		this.validateEducationContent("petbasics.dog.education.your.dog.atrisk", "petbasics.dog.education.your.dog.atrisk.readmore", webDriver,
 				"petbasics.dog.education.your.dog.atrisk.readmore.validate", wait);
-		Util.recallBaseURL(webDriver, educationCat);
+		Util.recallBaseURL(webDriver, educationDog);
 		waitForElement("petbasics.dog.education", webDriver, 15);
 
 		this.validateEducationContent("petbasics.dog.education.heartworms", "petbasics.dog.education.heartworms.readmore",
 				webDriver, "petbasics.dog.education.heartworms.readmore.validate", wait);
-		Util.recallBaseURL(webDriver, educationCat);
+		Util.recallBaseURL(webDriver, educationDog);
 		waitForElement("petbasics.dog.education", webDriver, 15);
 
 		this.validateEducationContent("petbasics.dog.education.whipworms", "petbasics.dog.education.whipworms.readmore",
 				webDriver, "petbasics.dog.education.whipworms.readmore.validate", wait);
-		Util.recallBaseURL(webDriver, educationCat);
+		Util.recallBaseURL(webDriver, educationDog);
 		waitForElement("petbasics.dog.education", webDriver, 15);
 
 		this.validateEducationContent("petbasics.dog.education.top10.mosquito", "petbasics.dog.education.top10.mosquito.readmore", webDriver,
 				"petbasics.dog.education.top10.mosquito.readmore.validate", wait);
-		Util.recallBaseURL(webDriver, educationCat);
+		Util.recallBaseURL(webDriver, educationDog);
 		waitForElement("petbasics.dog.education", webDriver, 15);
 
 		this.validateEducationContent("petbasics.dog.education.how.shelters.dog", "petbasics.dog.education.how.shelters.dog.readmore", webDriver,
 				"petbasics.dog.education.how.shelters.dog.readmore.validate", wait);
-		Util.recallBaseURL(webDriver, educationCat);
+		Util.recallBaseURL(webDriver, educationDog);
 		waitForElement("petbasics.dog.education", webDriver, 15);
 
 		this.validateEducationContent("petbasics.dog.education.every.dog.owner", "petbasics.dog.education.every.dog.owner.readmore",
 				webDriver, "petbasics.dog.education.every.dog.owner.readmore.validate", wait);
-		Util.recallBaseURL(webDriver, educationCat);
+		Util.recallBaseURL(webDriver, educationDog);
 		waitForElement("petbasics.dog.education", webDriver, 15);
 		
 		this.validateEducationContent("petbasics.dog.education.flea.life.cycle", "petbasics.dog.education.flea.life.cycle.readmore",
 				webDriver, "petbasics.dog.education.flea.life.cycle.readmore.validate", wait);
-		Util.recallBaseURL(webDriver, educationCat);
+		Util.recallBaseURL(webDriver, educationDog);
 		waitForElement("petbasics.dog.education", webDriver, 15);
 		
 		this.validateEducationContent("petbasics.dog.education.mosquitoes", "petbasics.dog.education.mosquitoes.readmore",
 				webDriver, "petbasics.dog.education.mosquitoes.readmore.validate", wait);
-		Util.recallBaseURL(webDriver, educationCat);
+		Util.recallBaseURL(webDriver, educationDog);
 		waitForElement("petbasics.dog.education", webDriver, 15);
 		
 		this.validateEducationContent("petbasics.dog.education.tick.disease", "petbasics.dog.education.tick.disease.readmore",
 				webDriver, "petbasics.dog.education.tick.disease.readmore.validate", wait);
-		Util.recallBaseURL(webDriver, educationCat);
+		Util.recallBaseURL(webDriver, educationDog);
 		waitForElement("petbasics.dog.education", webDriver, 15);
 
 		return true;

@@ -49,7 +49,7 @@ public class EducationDogNavRun extends AbstractTest {
 	@TestDescriptor(testName = "PetBasics Education Dog Structure Test")
 	@Test(dataProvider = "deviceList", enabled = false)
 	public void educationCatStructureTest(DeviceContainer dC) {
-		executeSteps(new Step[] {new StructureValidator("All Education", "/EducationDogValidation.xml") 
+		executeSteps(new Step[] {new StructureValidator("All Education", "/EducationDogtValidation.xml") 
 					 			 });
 	}
     
