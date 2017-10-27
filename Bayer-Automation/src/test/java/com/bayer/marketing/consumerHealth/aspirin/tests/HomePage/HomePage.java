@@ -23,19 +23,19 @@ public class HomePage extends AbstractTest {
 	public String getUrl(){ 
 		return url;
 	}
-	/*
+	
 	@TestDescriptor( testName="PetBasics Home Nav Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url), 
-        							new HomePageNavSteps(),
+        							//new HomePageNavSteps(),
         							new TimedNavigate(url, 4000),
         							
         } );
     }
     
-    
+	/*
     @TestDescriptor( testName="Home Page Validation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
@@ -46,16 +46,16 @@ public class HomePage extends AbstractTest {
         						    } );
     }
     */
-    @TestDescriptor( testName="Home Page Link Validation" )
+    /*@TestDescriptor( testName="Home Page Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
     	System.out.println("The url currently being used it" + url);
     	executeSteps(new Step[] { 
-    			new LinkValidator("http://test.bayeraspirin.com/", 70)
+    			new LinkValidator("http://test.bayeraspirin.com/", 188),
     			
    
     	});
     }
-    	
+    */	
  
 } //end class

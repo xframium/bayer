@@ -1,4 +1,4 @@
-package com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage;
+package com.bayer.marketing.animalHealth.petBasics.tests.All.SignIn;
 
 
 import com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.steps.HomePageNavSteps;
@@ -16,25 +16,26 @@ import com.gargoylesoftware.htmlunit.javascript.host.URL;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 
-public class HomePage extends AbstractTest {	
+public class SignIn extends AbstractTest {	
 	
 	public String url = "https://www.petbasics.com/";
     
 	public String getUrl(){ 
 		return url;
 	}
-	
+	/*
 	@TestDescriptor( testName="PetBasics Home Nav Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url), 
-        							new TimedNavigate(url, 5000),
+        							new HomePageNavSteps(),
+        							new TimedNavigate(url, 4000),
         							
         } );
     }
     
-	/*
+    
     @TestDescriptor( testName="Home Page Validation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
@@ -48,9 +49,9 @@ public class HomePage extends AbstractTest {
     @TestDescriptor( testName="Home Page Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
-    	System.out.println("The url currently being used it" + url);
+    	System.out.println("The url currently being used it"+url);
     	executeSteps(new Step[] { 
-    			new LinkValidator("https://www.petbasics.com/", 297)
+    			new LinkValidator("https://www.petbasics.com/", 70)
     			
    
     	});
