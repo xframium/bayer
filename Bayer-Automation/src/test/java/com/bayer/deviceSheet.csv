@@ -1,5 +1,5 @@
 Active,manufacturer,model,platformName,platformVersion,browserName,browserVersion
 No,Apple,iPhone-7,IOS,,,
-Yes,Samsung,Galaxy S5,Android,,,
+Yes,Samsung,Galaxy S7,Android,,,
 No,,,Windows,10,Chrome,60
-Yes,,,Windows,10,Firefox,55
+No,,,Windows,10,Firefox,55
