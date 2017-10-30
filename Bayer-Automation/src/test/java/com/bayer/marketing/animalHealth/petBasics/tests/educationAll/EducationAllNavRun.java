@@ -5,9 +5,12 @@ import org.testng.annotations.Test;
 
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
+import com.bayer.common.utility.LinkValidator;
+import com.bayer.common.utility.StructureValidator;
 import com.bayer.marketing.animalHealth.petBasics.tests.educationAll.steps.ApplyFilterToEducationAllNavSteps;
 import com.bayer.marketing.animalHealth.petBasics.tests.educationAll.steps.EducationAllNavSteps;
 import com.bayer.test.AbstractTest;
+import com.bayer.test.AbstractTest.TestDescriptor;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
 
@@ -38,26 +41,28 @@ public class EducationAllNavRun extends AbstractTest {
         							
         } );
     }
-    
-    /*
-    @TestDescriptor( testName="Home Page Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
-    public void structureTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
-        						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
-        						   //new StructureValidator("Key"),
-        						   
-        						    } );
+	
+	@TestDescriptor( testName="PetBasics Timed Navigation for Education All" )
+    @Test ( dataProvider = "deviceList", enabled=false)
+    public void timedNavigation( DeviceContainer dC ) {
+		executeSteps( new Step[] { new TimedNavigate(url, 4000)} );
     }
-    @TestDescriptor( testName="Home Page Link Validation" )
+	
+	@TestDescriptor(testName = "PetBasics Education All Structure Test")
+	@Test(dataProvider = "deviceList", enabled = false)
+	public void educationAllStructureTest(DeviceContainer dC) {
+		executeSteps(new Step[] {new StructureValidator("All Education", "/EducationAllValidation.xml") 
+					 			 });
+	}
+	
+	@TestDescriptor( testName="PetBasics Education All Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
     	executeSteps(new Step[] { 
-    			new LinkValidator("https://www.betaseron.com/", 70)
+    			new LinkValidator(url, 1)
     			
    
     	});
     }
-    */	
- 
+     
 } //end class

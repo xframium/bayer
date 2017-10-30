@@ -5,10 +5,12 @@ import org.testng.annotations.Test;
 
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
+import com.bayer.common.utility.LinkValidator;
 import com.bayer.common.utility.StructureValidator;
 import com.bayer.marketing.animalHealth.petBasics.tests.educationDog.steps.ApplyFilterToEducationDogNavSteps;
 import com.bayer.marketing.animalHealth.petBasics.tests.educationDog.steps.EducationDogNavSteps;
 import com.bayer.test.AbstractTest;
+import com.bayer.test.AbstractTest.TestDescriptor;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
 
@@ -53,25 +55,15 @@ public class EducationDogNavRun extends AbstractTest {
 					 			 });
 	}
     
-    /*
-    @TestDescriptor( testName="Home Page Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
-    public void structureTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
-        						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
-        						   //new StructureValidator("Key"),
-        						   
-        						    } );
-    }
-    @TestDescriptor( testName="Home Page Link Validation" )
+	@TestDescriptor( testName="PetBasics Education Dog Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
     	executeSteps(new Step[] { 
-    			new LinkValidator("https://www.betaseron.com/", 70)
+    			new LinkValidator(url, 1)
     			
    
     	});
     }
-    */	
+    	
  
 } //end class

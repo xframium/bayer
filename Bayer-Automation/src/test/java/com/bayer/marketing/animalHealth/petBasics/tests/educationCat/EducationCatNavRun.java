@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
+import com.bayer.common.utility.LinkValidator;
 import com.bayer.common.utility.StructureValidator;
 import com.bayer.marketing.animalHealth.petBasics.tests.educationAll.steps.ApplyFilterToEducationAllNavSteps;
 import com.bayer.marketing.animalHealth.petBasics.tests.educationAll.steps.EducationAllNavSteps;
@@ -55,26 +56,16 @@ public class EducationCatNavRun extends AbstractTest {
 		executeSteps(new Step[] {new StructureValidator("All Education", "/EducationCatValidation.xml") 
 					 			 });
 	}
-    
-    /*
-    @TestDescriptor( testName="Home Page Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
-    public void structureTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
-        						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
-        						   //new StructureValidator("Key"),
-        						   
-        						    } );
-    }
-    @TestDescriptor( testName="Home Page Link Validation" )
+	
+	@TestDescriptor( testName="PetBasics Education Cat Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
     	executeSteps(new Step[] { 
-    			new LinkValidator("https://www.betaseron.com/", 70)
+    			new LinkValidator(url, 1)
     			
    
     	});
     }
-    */	
- 
+    
+     
 } //end class
