@@ -28,14 +28,15 @@ public class HomePage extends AbstractTest {
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
-		executeSteps( new Step[] { new Navigate(url), 
-        							new TimedNavigate(url, 5000),
+		executeSteps( new Step[] { new Navigate(url),
+									new HomePageNavSteps(),
+        							//new TimedNavigate(url, 5000),
         							
         } );
     }
     
-	/*
-    @TestDescriptor( testName="Home Page Validation Test" )
+	
+    @TestDescriptor( testName="PetBasics Home Validation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
@@ -44,8 +45,8 @@ public class HomePage extends AbstractTest {
         						   
         						    } );
     }
-    */
-    @TestDescriptor( testName="Home Page Link Validation" )
+    
+    /*@TestDescriptor( testName="Home Page Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
     	System.out.println("The url currently being used it" + url);
@@ -55,6 +56,6 @@ public class HomePage extends AbstractTest {
    
     	});
     }
-    	
+    */	
  
 } //end class

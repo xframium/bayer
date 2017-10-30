@@ -19,9 +19,9 @@ public class HomePageNavSteps extends AbstractStep  {
     protected boolean _executeStep( BayerWebDriver webDriver ) {
     	HomePage urlVar = new HomePage();
     	String url = urlVar.getUrl();
-    	System.out.println(url);
+    	System.out.println("Page url: " + url);
     	
-    	waitForElement( "modal.window", webDriver, 15 );
+    	
     	BayerWebElement window = getElement( "modal.window", webDriver );
     	
     	if (window.isDisplayed()) {
@@ -29,19 +29,28 @@ public class HomePageNavSteps extends AbstractStep  {
         	BayerWebElement skipButton = getElement( "modal.skip", webDriver );
     		skipButton.click();
     		
+    		
 		}
     	
     	
+   
     	//scrollAndSearch("betaseron.home.betaAppVid");
     	waitForElement( "home.whywedoit", webDriver, 15 );
     	BayerWebElement whywedo = getElement( "home.whywedoit", webDriver );
     	whywedo.click();
-    	waitForElement( "waitForFlag", webDriver, 15 );
+    	//waitForElement( "waitForFlag2", webDriver, 15 );
+    	//BayerWebElement flag = getElement( "waitForFlag2", webDriver );
     	webDriver.navigate().to(url);
     	
-    	
+    	waitForElement( "home.findProduct", webDriver, 15 );
+    	BayerWebElement findProduct = getElement( "home.findProduct", webDriver );
+    	findProduct.click();
+    	webDriver.navigate().to(url);
         
-        
+    	waitForElement( "home.chooseProduct", webDriver, 15 );
+    	BayerWebElement chooseProduct = getElement( "home.chooseProduct", webDriver );
+    	chooseProduct.click();
+    	webDriver.navigate().to(url);
         return true;
     }
 

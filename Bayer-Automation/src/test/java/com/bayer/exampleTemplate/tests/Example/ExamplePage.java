@@ -16,11 +16,11 @@ public class ExamplePage extends AbstractTest {
     public void navigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.bayer.com/" ), new ExampleStep() } );
     }
-    /*
+    
     @TestDescriptor( testName="Example Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void timedNavigateTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new TimedNavigate( "https://www.bayer.com/", 3000) } );
+        executeSteps( new Step[] { new TimedNavigate( "https://www.bayer.com/", 4000) } );
     }
     
     @TestDescriptor( testName="Example Structure Test" )
@@ -28,7 +28,7 @@ public class ExamplePage extends AbstractTest {
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.bayer.com/" ), new StructureValidator( "ISI" ) } );
     }
-    */
+    
 }
 
 // push test 5
