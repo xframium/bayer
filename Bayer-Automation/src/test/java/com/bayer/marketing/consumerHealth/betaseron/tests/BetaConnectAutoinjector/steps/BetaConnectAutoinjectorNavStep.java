@@ -51,13 +51,13 @@ public class BetaConnectAutoinjectorNavStep extends AbstractStep {
 		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 15);
 		
 		BayerWebElement btnFour = getElement("betaconnect.autoinjector.btn.four", webDriver);
-<<<<<<< HEAD
+
 		//Util.scrollToElement(webDriver, btnFour, wait);
 		waitForElement("betaconnect.autoinjector.btn.four", webDriver, 15);
-=======
+
 		Util.scrollToElement(webDriver, btnFour, wait);
 		waitForElement("betaconnect.autoinjector.btn.four", webDriver, 15);	
->>>>>>> stash
+
 		btnFour.click();
 		waitForElement("betaconnect.autoinjector.btn.four.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectAutoinjectorUrl);
@@ -87,14 +87,14 @@ public class BetaConnectAutoinjectorNavStep extends AbstractStep {
 		Util.recallBaseURL(webDriver, betaConnectAutoinjectorUrl);
 		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 15);
 		
-		BayerWebElement btnEight = getElement("betaconnect.autoinjector.btn.eight", webDriver);
+		/*BayerWebElement btnEight = getElement("betaconnect.autoinjector.btn.eight", webDriver);
 		//Util.scrollToElement(webDriver, btnEight, wait);
 		waitForElement("betaconnect.autoinjector.btn.eight", webDriver, 15);
 		btnEight.click();
 		waitForElement("betaconnect.autoinjector.btn.eight.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectAutoinjectorUrl);
 		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 15); 
-
+	*/
 		return true;
 	}
 

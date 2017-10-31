@@ -25,5 +25,5 @@ public class BetaConnectAutoinjectorNavRun extends AbstractTest {
 		executeSteps(new Step[] { new TimedNavigate("https://www.betaseron.com/betaconnect-system/betaconnect-autoinjector/", 3000),
 				new StructureValidator("ISI"), new StructureValidator("Text Verification") });
 	}
-
+	
 }
