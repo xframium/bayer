@@ -25,20 +25,20 @@ public class ProductsAllSteps extends AbstractStep  {
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {
     
-    	BayerWebElement[] applyButton= new  BayerWebElement[5];
-    	BayerWebElement[] mobileFilter= new  BayerWebElement[5];
-    	BayerWebElement[] product1= new  BayerWebElement[5];
-    
+    	BayerWebElement[] applyButton= new  BayerWebElement[10];
+    	BayerWebElement[] mobileFilter= new  BayerWebElement[10];
+    	BayerWebElement[] product1= new  BayerWebElement[10];
+    	BayerWebElement[] seeMore= new  BayerWebElement[10];
  
     	waitForElement( "waittForFlag", webDriver, 15 );
     	
-    	openMobile(mobileFilter, webDriver);
+    	openMobile(mobileFilter, webDriver, seeMore);
     	waitForElement( "products.filter.fleas", webDriver, 15 );
     	BayerWebElement fleas = getElement( "products.filter.fleas", webDriver );
     	fleas.click();
     	applyFilter(applyButton, product1, webDriver);
     	
-    	openMobile(mobileFilter, webDriver);
+    	openMobile(mobileFilter, webDriver, seeMore);
     	waitForElement( "products.filter.ticks", webDriver, 15 );
     	BayerWebElement ticks = getElement( "products.filter.ticks", webDriver );
     	ticks.click();
@@ -83,20 +83,20 @@ public class ProductsAllSteps extends AbstractStep  {
 int i=0;
 
 
-public void openMobile(BayerWebElement mobileFilter[], BayerWebDriver webDriver){
+public void openMobile(BayerWebElement mobileFilter[], BayerWebDriver webDriver, BayerWebElement seeMore[]){
 		 waitForElement( "products.filter.mobile", webDriver, 15 );
 		 mobileFilter[i]= getElement( "products.filter.mobile", webDriver );
 		 if (mobileFilter[i].isDisplayed()) {
 			 mobileFilter[i].click();
 		 }
-	
+		 seeMore[i]= getElement( "products.filter.seeMore", webDriver );
 }
 public void applyFilter(BayerWebElement applyButton[],BayerWebElement product1[], BayerWebDriver webDriver){
 		
 		waitForElement( "products.filter.apply", webDriver, 15 );
 		applyButton[i]= getElement( "products.filter.apply", webDriver ); 
 		applyButton[i].click();
-		waitForElement( "products.product1", webDriver, 15 );
+		//waitForElement( "products.product1", webDriver, 15 );
 		product1[i]= getElement( "products.product1", webDriver ); 
 		product1[i].click();
 		waitForElement( "products.detailsVerify", webDriver, 15 );
