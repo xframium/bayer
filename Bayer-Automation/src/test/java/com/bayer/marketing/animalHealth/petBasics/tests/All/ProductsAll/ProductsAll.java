@@ -32,7 +32,7 @@ public class ProductsAll extends AbstractTest {
     
    
     @TestDescriptor( testName="Products All Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.petbasics.com/products/?pref=all"),
         						   new StructureValidator("H1 Test","/com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
