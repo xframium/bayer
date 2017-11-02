@@ -6,6 +6,8 @@ import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.HomePage;
 import com.bayer.test.step.AbstractStep;
+import com.sun.jna.platform.win32.Netapi32Util.User;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -28,14 +30,17 @@ public class SignInSteps extends AbstractStep  {
     		waitForElement( "modal.skip", webDriver, 15 );
         	BayerWebElement skipButton = getElement( "modal.skip", webDriver );
     		skipButton.click();
-    		
-    		
+    			
 		}
     	
     	//waitForElement( "waitForFlag", webDriver, 15 );
     	
     	BayerWebElement signin = getElement( "signin.button", webDriver );
     	signin.click();
+    	//if(signin.isDisplayed()==false){
+    		//section for iPhone and Galaxy	
+    	//}
+    	
     	
     	waitForElement("signin.popup", webDriver, 15);
     	
@@ -50,22 +55,30 @@ public class SignInSteps extends AbstractStep  {
         
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
 
-            while (((line = br.readLine()) != null) && (i < 1)) {
+            while (((line = br.readLine()) != null) && (i <= 1)) {
 
                 // use comma as separator
                 String[] userData = line.split(cvsSplitBy);
-                
+                if(i==0) {
+                	i++;  //skip test data header info
+                }
+                else {
+                waitForElement("signin.emailInput", webDriver, 15 );
                 BayerWebElement emailInput = getElement( "signin.emailInput", webDriver );
+                System.out.println("User Email: " + userData[3]);
             	emailInput.sendKeys(userData[3]);
             	BayerWebElement passwordInput = getElement( "signin.passwordInput", webDriver );
-             	passwordInput.sendKeys(userData[8]);
+            	System.out.println("User password: " + userData[8]);
+            	passwordInput.sendKeys(userData[8]);
+             	
              	BayerWebElement signIn2 = getElement( "signin.signin.btn", webDriver );
              	signIn2.click();
              	BayerWebElement error = getElement( "signin.errormsg", webDriver );
              	
              	if(error.isDisplayed()) {
                 //System.out.println("First Name:" + userData[1] + " , Last Name:" + userData[2] + "]");
-             		BayerWebElement started = getElement( "signin.signin.getStarted", webDriver );
+             		waitForElement("signin.register.getStarted", webDriver, 15 );
+             		BayerWebElement started = getElement( "signin.register.getStarted", webDriver );
                  	started.click();
                  	waitForElement("signin.register.fname", webDriver, 15 );
 	                BayerWebElement fname = getElement( "signin.register.fname", webDriver );
@@ -74,11 +87,16 @@ public class SignInSteps extends AbstractStep  {
 	                lname.sendKeys(userData[2]); 
 	                BayerWebElement email = getElement( "signin.register.email", webDriver );
 	                email.sendKeys(userData[3]); 
-	                BayerWebElement email2 = getElement( "signin.register.pword", webDriver );
-	                email2.sendKeys(userData[8]);
-	                BayerWebElement signUpNow = getElement( "signin.register.pword", webDriver );
-	                signUpNow.click();
+	                BayerWebElement password = getElement( "signin.register.pword", webDriver );
+	                password.sendKeys(userData[8]);
+	                BayerWebElement password2 = getElement( "signin.register.confpword", webDriver );
+	                password2.sendKeys(userData[8]);
+	                waitForElement("signin.register.success", webDriver, 15 );
+	                BayerWebElement gotoDash = getElement( "signin.register.success", webDriver );
+	                gotoDash.click();
              	}
+             	i++;
+                }//end else
             }
 
         } catch (IOException e) {

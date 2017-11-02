@@ -26,12 +26,12 @@ public class ExampleStep extends AbstractStep
         int x = 0;
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
 
-            while (((line = br.readLine()) != null) && (x <=1) ) {
+            while (((line = br.readLine()) != null) && (x <=2) ) {
         		
                 // use comma as separator
                 String[] userData = line.split(cvsSplitBy);
 
-                System.out.println("First Name:" + userData[1] + " , Last Name:" + userData[2] + "]");
+                System.out.println(userData[1] + " " + userData[2]);
                 x++; 	
             }
 

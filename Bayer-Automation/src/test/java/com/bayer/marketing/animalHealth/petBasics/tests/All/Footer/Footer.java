@@ -1,7 +1,7 @@
-package com.bayer.marketing.animalHealth.petBasics.tests.All.SignIn;
+package com.bayer.marketing.animalHealth.petBasics.tests.All.Footer;
 
 
-import com.bayer.marketing.animalHealth.petBasics.tests.All.SignIn.steps.SignInSteps;
+import com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.steps.HomePageNavSteps;
 import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
@@ -16,7 +16,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.URL;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 
-public class SignIn extends AbstractTest {	
+public class Footer extends AbstractTest {	
 	
 	public String url = "https://www.petbasics.com/";
     
@@ -24,39 +24,37 @@ public class SignIn extends AbstractTest {
 		return url;
 	}
 	
-	@TestDescriptor( testName="PetBasics Sign In Test" )
+	@TestDescriptor( testName="Footer Nav Test")
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
-		executeSteps( new Step[] { new Navigate(url), 
-        							new SignInSteps()
-        							//new TimedNavigate(url, 5000),
+		executeSteps( new Step[] { new Navigate(url),
+									new HomePageNavSteps()
         							
         } );
     }
     
-    
-    @TestDescriptor( testName="PetBasics Sign In Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+	
+    @TestDescriptor( testName="Footer Validation Test")
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url),
-        						   new StructureValidator("Disclaimer", "/HomePageValidation.xml"),
+        						   new StructureValidator("Copyright", "/HomePageValidation.xml"),
         						   //new StructureValidator("Key"),
         						   
         						    } );
     }
     
-    @TestDescriptor( testName="Home Page Link Validation" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    /*@TestDescriptor( testName="Home Page Link Validation" )
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
-    	System.out.println("The url currently being used it"+url);
+    	System.out.println("The url currently being used it" + url);
     	executeSteps(new Step[] { 
-    			new LinkValidator("https://www.petbasics.com/", 70)
+    			new LinkValidator("https://www.petbasics.com/", 297)
     			
    
     	});
     }
-   
-    	
+    */	
  
 } //end class
