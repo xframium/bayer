@@ -1,7 +1,7 @@
 package com.bayer.marketing.animalHealth.petBasics.tests.All.SignIn;
 
 
-import com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.steps.HomePageNavSteps;
+import com.bayer.marketing.animalHealth.petBasics.tests.All.SignIn.steps.SignInSteps;
 import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
@@ -23,31 +23,31 @@ public class SignIn extends AbstractTest {
 	public String getUrl(){ 
 		return url;
 	}
-	/*
-	@TestDescriptor( testName="PetBasics Home Nav Test" )
+	
+	@TestDescriptor( testName="PetBasics Sign In Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url), 
-        							new HomePageNavSteps(),
-        							new TimedNavigate(url, 4000),
+        							new SignInSteps(),
+        							//new TimedNavigate(url, 5000),
         							
         } );
     }
     
     
-    @TestDescriptor( testName="Home Page Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @TestDescriptor( testName="PetBasics Sign In Validation Test" )
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void structureTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
-        						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
+        executeSteps( new Step[] { new Navigate(url),
+        						   new StructureValidator("Disclaimer", "/HomePageValidation.xml"),
         						   //new StructureValidator("Key"),
         						   
         						    } );
     }
-    */
+    
     @TestDescriptor( testName="Home Page Link Validation" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void linkValidationTest(DeviceContainer dC){
     	System.out.println("The url currently being used it"+url);
     	executeSteps(new Step[] { 
@@ -56,6 +56,7 @@ public class SignIn extends AbstractTest {
    
     	});
     }
+   
     	
  
 } //end class

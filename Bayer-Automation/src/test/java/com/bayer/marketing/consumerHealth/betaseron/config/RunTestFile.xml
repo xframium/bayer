@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <!-- Run Invididual Tests Here --> 
-<suite name="RunTest1" verbose="1" >
+<suite name="BetaseronTest" verbose="1" >
   <test name="Run Test File"   >
     <packages>
 
-      <package name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaseronSafety" /> 
+      <package name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaConnectAutoinjector" /> 
 
    </packages>
  </test>
