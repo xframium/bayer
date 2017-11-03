@@ -9,13 +9,14 @@ import com.bayer.test.step.AbstractStep;
 
 public class FAQAllSet3NavSteps extends AbstractStep {
 
+	private static final String osType="WINDOWS";
+	
 	public FAQAllSet3NavSteps() {
 		super("Successful", "error message");
 	}
 
 	@Override
 	protected boolean _executeStep(BayerWebDriver webDriver) {
-		//String faqAll = webDriver.getCurrentUrl();
 		
 		waitForElement("petbasics.faq.all", webDriver, 30);
 		WebDriverWait wait = new WebDriverWait(webDriver, 30);
@@ -82,19 +83,19 @@ public class FAQAllSet3NavSteps extends AbstractStep {
 		BayerWebElement questionItem = getElement(question, webDriver);
 		Util.scrollToElement(webDriver, questionItem, wait);
 		waitForElement(question, webDriver, 30);
-		questionItem.click();
-		
-		waitForElement("petbasics.faq.all.question.answer", webDriver, 15);
-		BayerWebElement answerSection = getElement("petbasics.faq.all.question.answer", webDriver);
-		
-		if(answerSection.isDisplayed()) {
-			Util.scrollToElement(webDriver, answerSection, wait);
-			waitForElement("petbasics.faq.all.close.answer", webDriver, 15);
-			BayerWebElement closeButton = getElement("petbasics.faq.all.close.answer", webDriver);
-			Util.scrollToElement(webDriver, closeButton, wait);
-			waitForElement("petbasics.faq.all.close.answer", webDriver, 30);
-			closeButton.click();
-		}
-		
+		if(!osType.equals(webDriver.getOsType())) {
+			questionItem.click();
+			waitForElement("petbasics.faq.all.question.answer", webDriver, 15);
+			BayerWebElement answerSection = getElement("petbasics.faq.all.question.answer", webDriver);
+			
+			if(answerSection.isDisplayed()) {
+				Util.scrollToElement(webDriver, answerSection, wait);
+				waitForElement("petbasics.faq.all.close.answer", webDriver, 15);
+				BayerWebElement closeButton = getElement("petbasics.faq.all.close.answer", webDriver);
+				Util.scrollToElement(webDriver, closeButton, wait);
+				waitForElement("petbasics.faq.all.close.answer", webDriver, 30);
+				closeButton.click();
+			}
+	  }	
 	}
 }

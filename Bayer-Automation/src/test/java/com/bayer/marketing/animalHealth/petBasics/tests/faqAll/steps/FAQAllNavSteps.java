@@ -8,7 +8,9 @@ import com.bayer.marketing.consumerHealth.betaseron.tests.Utility.Util;
 import com.bayer.test.step.AbstractStep;
 
 public class FAQAllNavSteps extends AbstractStep {
-
+	
+	private static final String osType="WINDOWS";
+	
 	public FAQAllNavSteps() {
 		super("Successful", "error message");
 	}
@@ -90,19 +92,19 @@ public class FAQAllNavSteps extends AbstractStep {
 		BayerWebElement questionItem = getElement(question, webDriver);
 		Util.scrollToElement(webDriver, questionItem, wait);
 		waitForElement(question, webDriver, 30);
-		questionItem.click();
-		
-		waitForElement("petbasics.faq.all.question.answer", webDriver, 15);
-		BayerWebElement answerSection = getElement("petbasics.faq.all.question.answer", webDriver);
-		
-		if(answerSection.isDisplayed()) {
-			Util.scrollToElement(webDriver, answerSection, wait);
-			waitForElement("petbasics.faq.all.close.answer", webDriver, 15);
-			BayerWebElement closeButton = getElement("petbasics.faq.all.close.answer", webDriver);
-			Util.scrollToElement(webDriver, closeButton, wait);
-			waitForElement("petbasics.faq.all.close.answer", webDriver, 30);
-			closeButton.click();
+		if(!osType.equals(webDriver.getOsType())) {
+			questionItem.click();
+			waitForElement("petbasics.faq.all.question.answer", webDriver, 15);
+			BayerWebElement answerSection = getElement("petbasics.faq.all.question.answer", webDriver);
+			
+			if(answerSection.isDisplayed()) {
+				Util.scrollToElement(webDriver, answerSection, wait);
+				waitForElement("petbasics.faq.all.close.answer", webDriver, 15);
+				BayerWebElement closeButton = getElement("petbasics.faq.all.close.answer", webDriver);
+				Util.scrollToElement(webDriver, closeButton, wait);
+				waitForElement("petbasics.faq.all.close.answer", webDriver, 30);
+				closeButton.click();
+			}
 		}
-		
 	}
 }
