@@ -1,6 +1,7 @@
 package com.bayer.marketing.animalHealth.petBasics.tests.All.Footer;
 
 
+import com.bayer.marketing.animalHealth.petBasics.tests.All.Footer.steps.FooterNavSteps;
 import com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.steps.HomePageNavSteps;
 import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
 import org.testng.annotations.Test;
@@ -29,18 +30,17 @@ public class Footer extends AbstractTest {
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url),
-									new HomePageNavSteps()
+									new FooterNavSteps()
         							
         } );
     }
     
 	
     @TestDescriptor( testName="Footer Validation Test")
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url),
         						   new StructureValidator("Copyright", "/HomePageValidation.xml"),
-        						   //new StructureValidator("Key"),
         						   
         						    } );
     }

@@ -17,11 +17,11 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 public class SmartAllergyRun extends AbstractTest
 {
    
-    @TestDescriptor( testName="FAQ Test" )
+    @TestDescriptor( testName="Claritn Smart Allergy Link Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void faqTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://www.claritin.com/faq/" ), new LinkValidator("http://claritin.cm.ci.bch.inter.fe.claritin.us.build.dev-bbs.sitecore.bayer-ag.com", 12)  } );
+        executeSteps( new Step[] { new LinkValidator("http://claritin.cm.ci.bch.inter.fe.claritin.us.build.dev-bbs.sitecore.bayer-ag.com", 12)  } );
     }
     
 }
