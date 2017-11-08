@@ -35,12 +35,12 @@ public class ProductsAll extends AbstractTest {
     @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.petbasics.com/products/?pref=all"),
-        						   new StructureValidator("H1 Test","/com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
+        						   new StructureValidator("H1 Test", "/com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
         						   new StructureValidator("H2 Test","/com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
         						   
     						    } );
     }
     	
 
-   
+    
 } //end class

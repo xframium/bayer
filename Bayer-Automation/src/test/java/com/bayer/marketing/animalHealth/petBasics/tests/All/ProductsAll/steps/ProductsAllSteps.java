@@ -44,8 +44,24 @@ public class ProductsAllSteps extends AbstractStep  {
     	ticks.click();
     	applyFilter(applyButton, product1, webDriver);
   
+    	openMobile(mobileFilter, webDriver, seeMore);
+    	waitForElement( "products.filter.heartworms", webDriver, 15 );
+    	BayerWebElement heartworms = getElement( "products.filter.heartworms", webDriver );
+    	heartworms.click();
+    	applyFilter(applyButton, product1, webDriver);
     	
-
+    	openMobile(mobileFilter, webDriver, seeMore);
+    	waitForElement( "products.filter.worms", webDriver, 15 );
+    	BayerWebElement worms = getElement( "products.filter.worms", webDriver );
+    	worms.click();
+    	applyFilter(applyButton, product1, webDriver);
+    	
+    	openMobile(mobileFilter, webDriver, seeMore);
+    	waitForElement( "products.filter.bedBugs", webDriver, 15 );
+    	BayerWebElement bedBugs = getElement( "products.filter.bedBugs", webDriver );
+    	bedBugs.click();
+    	applyFilter(applyButton, product1, webDriver);
+    	
     	/*
     	clickClear(mobileClear,clear, mobileUpdate);
     	if (mobileFilter.isDisplayed()) {
@@ -96,10 +112,10 @@ public void applyFilter(BayerWebElement applyButton[],BayerWebElement product1[]
 		waitForElement( "products.filter.apply", webDriver, 15 );
 		applyButton[i]= getElement( "products.filter.apply", webDriver ); 
 		applyButton[i].click();
-		//waitForElement( "products.product1", webDriver, 15 );
+		waitForElement( "products.product1", webDriver, 15 );
 		product1[i]= getElement( "products.product1", webDriver ); 
 		product1[i].click();
-		waitForElement( "products.detailsVerify", webDriver, 15 );
+		waitForElement( "products.verify.signUp", webDriver, 15 );
 		webDriver.get(url);
 		i++;
 		
