@@ -27,6 +27,7 @@ public class HTTPLinkCheck
     private XPathFactory xPathFactory = XPathFactory.newInstance();
     private static int[][] CHAR_LIST = new int[][] { { 0, 9 }, { 11, 13 }, {128, 255 }, {38, 39 } };
     private Map<String, Integer> linkMap = new HashMap<String,Integer>( 10 );
+    private Map<String, List<String>> pageMap = new HashMap<String,List<String>>( 10 );
     private List<String> brokenLinks = new ArrayList<String>(20);
     private URL baseUrl;
     
@@ -61,7 +62,18 @@ public class HTTPLinkCheck
         
         if ( baseUrl == null )
             baseUrl = currentUrl;
-        Integer linkCount = linkMap.get( currentUrl.toString() );
+        Integer linkCount = linkMap.get( referencingUrl.toString() );
+        
+        List<String> linkList = pageMap.get( referencingUrl.toString() );
+        
+        if ( linkList == null )
+        {
+            linkList = new ArrayList<String>( 20 );
+            pageMap.put( referencingUrl.toString(), linkList );
+        }
+        
+        if ( !linkList.contains( currentUrl.toString() ) )
+            linkList.add( currentUrl.toString() );
         
         if ( linkCount == null )
             linkCount = linkMap.get( currentUrl.toString() + "/" );
