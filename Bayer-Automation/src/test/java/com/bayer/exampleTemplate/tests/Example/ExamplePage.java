@@ -18,13 +18,13 @@ public class ExamplePage extends AbstractTest {
     }
     
     @TestDescriptor( testName="Example Timed Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void timedNavigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new TimedNavigate( "https://www.bayer.com/", 4000) } );
     }
     
     @TestDescriptor( testName="Example Structure Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.bayer.com/" ), new StructureValidator( "ISI" ) } );
     }

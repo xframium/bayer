@@ -23,17 +23,12 @@ public class HomePageNavSteps extends AbstractStep  {
     	
     	
     	BayerWebElement window = getElement( "modal.window", webDriver );
-    	
     	if (window.isDisplayed()) {
     		waitForElement( "modal.skip", webDriver, 15 );
         	BayerWebElement skipButton = getElement( "modal.skip", webDriver );
-    		skipButton.click();
-    		
-    		
+    		skipButton.click();	
 		}
-    	
-    	
-   
+    
     	//scrollAndSearch("betaseron.home.betaAppVid");
     	waitForElement( "home.whywedoit", webDriver, 15 );
     	BayerWebElement whywedo = getElement( "home.whywedoit", webDriver );

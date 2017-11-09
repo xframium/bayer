@@ -28,17 +28,7 @@ public class couponsStep extends AbstractStep
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
-    	waitForElement( "aleve.coupon.iframe", webDriver, 15 );
-        WebElement iframe = getElement( "aleve.coupon.iframe", webDriver );
-        webDriver.switchTo().frame(0);
-
     	
-    	waitForElement( "aleve.coupon.aleveDCheck", webDriver, 15 );
-        BayerWebElement aleveDCheck = getElement( "aleve.coupon.aleveDCheck", webDriver );
-        aleveDCheck.click();
-   
-        BayerWebElement print = getElement( "aleve.coupon.print", webDriver );
-       // print.click();
          
        
         

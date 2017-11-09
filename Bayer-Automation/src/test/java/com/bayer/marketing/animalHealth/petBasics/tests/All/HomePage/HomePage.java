@@ -39,7 +39,7 @@ public class HomePage extends AbstractTest {
     @TestDescriptor( testName="PetBasics Home Validation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
+        executeSteps( new Step[] { new Navigate(url),
         						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
         						   //new StructureValidator("Key"),
         						   

@@ -3,6 +3,7 @@ package com.bayer.marketing.consumerHealth.aleve.tests.HomePage;
 import org.testng.annotations.Test;
 
 import com.bayer.common.Navigate;
+import com.bayer.common.utility.LinkValidator;
 import com.bayer.common.utility.StructureValidator;
 import com.bayer.marketing.consumerHealth.aleve.tests.HomePage.steps.HomePageNavStep;
 import com.bayer.test.AbstractTest;
@@ -24,7 +25,12 @@ public class HomePage extends AbstractTest
     {
         executeSteps( new Step[] { new Navigate( "https://www.aleve.com" ), new StructureValidator( "ISI" ), new Navigate("https://www.aleve.com/live-well/") } );
     }
-    
+    @TestDescriptor( testName="Link Test" )
+    @Test ( dataProvider = "deviceList", enabled=false)
+    public void linkTest( DeviceContainer dC )
+    {
+        executeSteps( new Step[] { new LinkValidator("https://www.aleve.com", 95) } );
+    }
 }
 
 // push test 6

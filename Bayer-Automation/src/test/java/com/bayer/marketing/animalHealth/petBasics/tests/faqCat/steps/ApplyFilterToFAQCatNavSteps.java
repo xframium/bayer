@@ -1,4 +1,4 @@
-package com.bayer.marketing.animalHealth.petBasics.tests.faqAll.steps;
+package com.bayer.marketing.animalHealth.petBasics.tests.faqCat.steps;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -7,9 +7,9 @@ import com.bayer.BayerWebElement;
 import com.bayer.marketing.consumerHealth.betaseron.tests.Utility.Util;
 import com.bayer.test.step.AbstractStep;
 
-public class ApplyFilterToFAQAllNavSteps extends AbstractStep {
+public class ApplyFilterToFAQCatNavSteps extends AbstractStep {
 
-	public ApplyFilterToFAQAllNavSteps() {
+	public ApplyFilterToFAQCatNavSteps() {
 		super("Successful", "error message");
 	}
 
@@ -25,11 +25,6 @@ public class ApplyFilterToFAQAllNavSteps extends AbstractStep {
 			Util.scrollToElement(webDriver, filterButton, wait);
 			filterButton.click();
 		}
-		
-		waitForElement("petbasics.faq.all.filter.cat", webDriver, 15);
-		BayerWebElement catImage = getElement("petbasics.faq.all.filter.cat", webDriver);
-		Util.scrollToElement(webDriver, catImage, wait);
-		catImage.click();
 		
 		waitForElement("petbasics.faq.all.filter.brands", webDriver, 15);
 		BayerWebElement brands = getElement("petbasics.faq.all.filter.brands", webDriver);

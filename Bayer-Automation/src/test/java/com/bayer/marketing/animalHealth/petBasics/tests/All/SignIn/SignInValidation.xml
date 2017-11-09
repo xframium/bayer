@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
     
-    <validation name="H1 Test">
-    <description>Text Verification</description>
+    <validation name="Disclaimer">
+    <description>Disclaimer</description>
    		<tag name="//*"> 
-    	<text type="contains">Your cherished companion</text>
+    	<text type="contains">I authorize Bayer to contact me via email, mail and/or text to provide me with informational and marketing materials, product reminders and news, special offers and invitations to participate in market research.</text>
     	</tag>
     </validation>
-    <validation name="Indication Test">
-    <description>Indications</description>
-   		<tag name="//*"> 
-    	<text type="contains">Our commitment to dependable care</text>
-    	</tag>
-    </validation>
+    
     
     
 </validationCollection>

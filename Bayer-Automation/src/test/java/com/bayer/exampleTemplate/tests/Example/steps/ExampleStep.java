@@ -7,6 +7,7 @@ import java.io.IOException;
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
+import com.sun.jna.platform.unix.X11;
 
 public class ExampleStep extends AbstractStep
 {
@@ -22,16 +23,16 @@ public class ExampleStep extends AbstractStep
     	String csvFile = "src/test/java/com/bayer/exampleTemplate/config/TestData.csv";
         String line = "";
         String cvsSplitBy = ",";
-
+        int x = 0;
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
 
-            while ((line = br.readLine()) != null) {
-
+            while (((line = br.readLine()) != null) && (x <=2) ) {
+        		
                 // use comma as separator
                 String[] userData = line.split(cvsSplitBy);
 
-                System.out.println("First Name:" + userData[1] + " , Last Name:" + userData[2] + "]");
-
+                System.out.println(userData[1] + " " + userData[2]);
+                x++; 	
             }
 
         } catch (IOException e) {
