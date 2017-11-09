@@ -26,21 +26,27 @@ public class ProductsAll extends AbstractTest {
     {
         executeSteps( new Step[] { new Navigate("https://www.petbasics.com/products/?pref=all"), 
         							new ProductsAllSteps(),
-        							//new TimedNavigate("https://www.petbasics.com/products/?pref=all", 10000)
+        					
         } );
     }
-    
+
    
     @TestDescriptor( testName="Products All Validation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
-    public void structureTest( DeviceContainer dC ) {
+    public void validateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.petbasics.com/products/?pref=all"),
         						   new StructureValidator("H1 Test", "/com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
         						   new StructureValidator("H2 Test","/com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
         						   
     						    } );
     }
-    	
+    @TestDescriptor( testName="Products All Timed Navigation Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void timedNavigateTest( DeviceContainer dC )
+    {
+        executeSteps( new Step[] { new TimedNavigate("https://www.petbasics.com/products/?pref=all", 4000)
+        } );
+    }
 
     
 } //end class

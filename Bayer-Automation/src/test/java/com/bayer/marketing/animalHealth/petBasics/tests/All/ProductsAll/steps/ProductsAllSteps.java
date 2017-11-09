@@ -25,10 +25,10 @@ public class ProductsAllSteps extends AbstractStep  {
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {
     
-    	BayerWebElement[] applyButton= new  BayerWebElement[10];
-    	BayerWebElement[] mobileFilter= new  BayerWebElement[10];
-    	BayerWebElement[] product1= new  BayerWebElement[10];
-    	BayerWebElement[] seeMore= new  BayerWebElement[10];
+    	BayerWebElement[] applyButton= new  BayerWebElement[20];
+    	BayerWebElement[] mobileFilter= new  BayerWebElement[20];
+    	BayerWebElement[] product1= new  BayerWebElement[20];
+    	BayerWebElement[] seeMore= new  BayerWebElement[20];
  
     	waitForElement( "waittForFlag", webDriver, 15 );
     	
@@ -62,38 +62,38 @@ public class ProductsAllSteps extends AbstractStep  {
     	bedBugs.click();
     	applyFilter(applyButton, product1, webDriver);
     	
-    	/*
-    	clickClear(mobileClear,clear, mobileUpdate);
-    	if (mobileFilter.isDisplayed()) {
-    		mobileFilter.click();
-		}
+    	openMobile(mobileFilter, webDriver, seeMore);
+    	waitForElement( "products.filter.cat", webDriver, 15 );
+    	BayerWebElement cat = getElement( "products.filter.cat", webDriver );
+    	cat.click();
+    	applyFilter(applyButton, product1, webDriver);
     	
-    	waitForElement( "products.filter.ticks", webDriver, 15 );
-    	BayerWebElement ticks = getElement( "products.filter.ticks", webDriver );
-    	ticks.click();
-   
-    	apply.click();
-    	clickClear(mobileClear,clear,mobileUpdate);
-    
+    	openMobile(mobileFilter, webDriver, seeMore);
+    	waitForElement( "products.filter.dog", webDriver, 15 );
+    	BayerWebElement dog = getElement( "products.filter.dog", webDriver );
+    	dog.click();
+    	applyFilter(applyButton, product1, webDriver);
     	
+    	openMobile(mobileFilter, webDriver, seeMore);
+    	waitForElement( "products.filter.dog", webDriver, 15 );
+    	BayerWebElement dog1 = getElement( "products.filter.dog", webDriver );
+    	dog1.click();
     	
-    	
+    	waitForElement( "products.filter.clear.mobile", webDriver, 15 );
+    	BayerWebElement mobileClear = getElement( "products.filter.clear.mobile", webDriver );
+    	BayerWebElement mobileUpdate = getElement( "products.filter.update.mobile", webDriver );
+    	BayerWebElement clear = getElement( "products.filter.clear", webDriver );
     	
     	if(mobileClear.isDisplayed()){
-    		
-    		mobileClear.click();
-    		
-    	}
-    		else{
-    		
+    		mobileClear.click();	
+    		mobileUpdate.click();
+    	}else{
     		clear.click();
-    		
     		}
     	
-    	*/
-        
-    	  
-        
+    	
+    	
+            
         return true;
     }
 int i=0;
@@ -106,6 +106,7 @@ public void openMobile(BayerWebElement mobileFilter[], BayerWebDriver webDriver,
 			 mobileFilter[i].click();
 		 }
 		 seeMore[i]= getElement( "products.filter.seeMore", webDriver );
+		 seeMore[i].click();
 }
 public void applyFilter(BayerWebElement applyButton[],BayerWebElement product1[], BayerWebDriver webDriver){
 		
@@ -119,24 +120,7 @@ public void applyFilter(BayerWebElement applyButton[],BayerWebElement product1[]
 		webDriver.get(url);
 		i++;
 		
-	 }
+	 }}
+    	
+	
 
-  
-    
-    public static void clickClear(BayerWebElement mobileClear, BayerWebElement clear, BayerWebElement mobileUpdate) {
-    	if(mobileClear.isDisplayed()){
-    		mobileClear.click();	
-    		mobileUpdate.click();
-    	}else{
-    		clear.click();
-    		}
-    	
-    	
-    class findButtons{
-    	private BayerWebElement mobileFilter;
-    	private BayerWebElement mobileApply;
-    	private BayerWebElement product1;
-    }
-    	
-	}
-}
