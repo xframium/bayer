@@ -108,6 +108,9 @@ public abstract class AbstractTest
 			String testVersion = "0.0.1";
 			List<String> tagString = new ArrayList<String>( 10 );
 			tagString.add( "Bayer Development" );
+			tagString.add( ConfigurationManager.instance().getProperty( "UserName" ) );
+			
+			
 			if ( tD != null )
 			{
 				if ( tD.testName() != null && !tD.testName().isEmpty() )
