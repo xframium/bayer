@@ -60,7 +60,7 @@ public class BetaConnectmyBETAappNavStep extends AbstractStep {
 		waitForElement("betaconnect.mybetaapp.btn.five.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectmyBETAappUrl);
 		waitForElement("betaconnect.mybetaapp.app.logo", webDriver, 15);
-		
+
 		BayerWebElement btnSix = getElement("betaconnect.mybetaapp.btn.six", webDriver);
 		Util.scrollToElement(webDriver, btnSix, wait);
 		waitForElement("betaconnect.mybetaapp.btn.six", webDriver, 15);
@@ -92,7 +92,7 @@ public class BetaConnectmyBETAappNavStep extends AbstractStep {
 		waitForElement("betaconnect.mybetaapp.link.three.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectmyBETAappUrl);
 		waitForElement("betaconnect.mybetaapp.app.logo", webDriver, 15);
-		
+				
 		BayerWebElement linkFour = getElement("betaconnect.mybetaapp.link.four", webDriver);
 		Util.scrollToElement(webDriver, linkFour, wait);
 		waitForElement("betaconnect.mybetaapp.link.four", webDriver, 15);
