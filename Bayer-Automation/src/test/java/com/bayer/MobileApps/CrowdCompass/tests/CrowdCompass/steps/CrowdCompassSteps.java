@@ -1,4 +1,4 @@
-package com.bayer.MobileApps.tests.CrowdCompass.steps;
+package com.bayer.MobileApps.CrowdCompass.tests.CrowdCompass.steps;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

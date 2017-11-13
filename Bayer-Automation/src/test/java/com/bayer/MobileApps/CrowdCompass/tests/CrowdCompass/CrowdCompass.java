@@ -1,4 +1,4 @@
-package com.bayer.MobileApps.tests.CrowdCompass;
+package com.bayer.MobileApps.CrowdCompass.tests.CrowdCompass;
 
 import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
 import org.testng.annotations.Test;
