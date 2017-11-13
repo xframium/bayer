@@ -52,7 +52,7 @@ public class BetaConnectmyBETAappNavStep extends AbstractStep {
 		waitForElement("betaconnect.mybetaapp.btn.four.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectmyBETAappUrl);
 		waitForElement("betaconnect.mybetaapp.app.logo", webDriver, 15);
-		
+		/*
 		BayerWebElement btnFive = getElement("betaconnect.mybetaapp.btn.five", webDriver);
 		Util.scrollToElement(webDriver, btnFive, wait);
 		waitForElement("betaconnect.mybetaapp.btn.five", webDriver, 15);
@@ -60,7 +60,7 @@ public class BetaConnectmyBETAappNavStep extends AbstractStep {
 		waitForElement("betaconnect.mybetaapp.btn.five.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectmyBETAappUrl);
 		waitForElement("betaconnect.mybetaapp.app.logo", webDriver, 15);
-		
+*/
 		BayerWebElement btnSix = getElement("betaconnect.mybetaapp.btn.six", webDriver);
 		Util.scrollToElement(webDriver, btnSix, wait);
 		waitForElement("betaconnect.mybetaapp.btn.six", webDriver, 15);
@@ -92,7 +92,7 @@ public class BetaConnectmyBETAappNavStep extends AbstractStep {
 		waitForElement("betaconnect.mybetaapp.link.three.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectmyBETAappUrl);
 		waitForElement("betaconnect.mybetaapp.app.logo", webDriver, 15);
-		
+				
 		BayerWebElement linkFour = getElement("betaconnect.mybetaapp.link.four", webDriver);
 		Util.scrollToElement(webDriver, linkFour, wait);
 		waitForElement("betaconnect.mybetaapp.link.four", webDriver, 15);
@@ -100,7 +100,7 @@ public class BetaConnectmyBETAappNavStep extends AbstractStep {
 		waitForElement("betaconnect.mybetaapp.link.four.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectmyBETAappUrl);
 		waitForElement("betaconnect.mybetaapp.app.logo", webDriver, 15);
-		
+		/*
 		BayerWebElement linkFive = getElement("betaconnect.mybetaapp.link.five", webDriver);
 		Util.scrollToElement(webDriver, linkFive, wait);
 		waitForElement("betaconnect.mybetaapp.link.five", webDriver, 15);
@@ -108,7 +108,7 @@ public class BetaConnectmyBETAappNavStep extends AbstractStep {
 		waitForElement("betaconnect.mybetaapp.link.five.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectmyBETAappUrl);
 		waitForElement("betaconnect.mybetaapp.app.logo", webDriver, 15);
-		
+		*/
 		BayerWebElement linkSix = getElement("betaconnect.mybetaapp.link.six", webDriver);
 		Util.scrollToElement(webDriver, linkSix, wait);
 		waitForElement("betaconnect.mybetaapp.link.six", webDriver, 15);
