@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
+    <validation name="HOME">
+        <description>Testing Home Page</description>
+        <tag name="//*">
+            <text type="contains">BETASERON can cause serious side effects, including:</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">Approval marks first treatment advance in nearly a decade and is based on data from the Phase III RESORCE study, in which Stivarga® (regorafenib) demonstrated significant improvement in overall survival in hepatocellular carcinoma (HCC) patients previously treated with Nexavar® (sorafenib) / Nexavar is the only approved first-line treatment and Stivarga the only approved second-line therapy in Europe and the United States for patients with HCC</text>
+            
+        </tag>
+    </validation>
+    
+    
+</validationCollection>
