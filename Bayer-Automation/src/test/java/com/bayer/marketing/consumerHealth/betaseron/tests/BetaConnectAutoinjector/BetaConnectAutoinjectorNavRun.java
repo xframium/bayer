@@ -20,7 +20,7 @@ public class BetaConnectAutoinjectorNavRun extends AbstractTest {
 	}
 
 	@TestDescriptor(testName = "Betaseron BetaConnect Autoinjecotr Structure Test")
-	@Test(dataProvider = "deviceList", enabled = true)
+	@Test(dataProvider = "deviceList", enabled = false)
 	public void BetaConnectAutoinjectorStructureTest(DeviceContainer dC) {
 		executeSteps(new Step[] { new TimedNavigate("https://www.betaseron.com/betaconnect-system/betaconnect-autoinjector/", 3000),
 				new StructureValidator("ISI"), new StructureValidator("Text Verification") });
