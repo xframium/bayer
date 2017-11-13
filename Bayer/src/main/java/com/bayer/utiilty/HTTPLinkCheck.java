@@ -25,7 +25,7 @@ import org.xml.sax.InputSource;
 public class HTTPLinkCheck
 {
     private XPathFactory xPathFactory = XPathFactory.newInstance();
-    private static int[][] CHAR_LIST = new int[][] { { 0, 9 }, { 11, 13 }, {128, 255 }, {38, 39 } };
+    private static int[][] CHAR_LIST = new int[][] { { 0, 9 }, { 11, 13 }, {128, 255}, {38, 39} };
     private Map<String, Integer> linkMap = new HashMap<String,Integer>( 10 );
     private Map<String, List<String>> pageMap = new HashMap<String,List<String>>( 10 );
     private List<String> brokenLinks = new ArrayList<String>(20);
@@ -37,9 +37,13 @@ public class HTTPLinkCheck
     	String url ="http://claritin.cm.ci.bch.inter.fe.claritin.us.build.dev-bbs.sitecore.bayer-ag.com";
     	HTTPLinkCheck h = new HTTPLinkCheck();
         h.process( new URL(url), new URL(url) );
-        System.out.println( h.linkMap.size() + " unique pages" );
-        for ( String key : h.linkMap.keySet() )
-            System.out.println( key + ": " + h.linkMap.get( key ) + " refereces" );
+        //System.out.println( h.linkMap.size() + " unique pages" );
+        //for ( String key : h.linkMap.keySet() )
+           // System.out.println( key + ": " + h.linkMap.get( key ) + " refereces" );
+        
+        System.out.println( h.pageMap.size() + " unique pages" );
+        for ( String key : h.pageMap.keySet() )
+            System.out.println( key + ": " + h.pageMap.get( key ) + " refereces" );
 
     }
 

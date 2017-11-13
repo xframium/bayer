@@ -1,4 +1,4 @@
-package com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.steps;
+package com.bayer.marketing.animalHealth.petBasics.tests.Cat.CatHomePage.steps;
 
 
 import java.awt.Dialog.ModalExclusionType;
@@ -8,10 +8,10 @@ import com.bayer.BayerWebElement;
 import com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.HomePage;
 import com.bayer.test.step.AbstractStep;
 
-public class HomePageNavSteps extends AbstractStep  {
+public class CatHomePageSteps extends AbstractStep  {
 	
 	//protected String url = "https://www.petbasics.com/";
-    public HomePageNavSteps() {
+    public CatHomePageSteps() {
         super( "Successful", "error message" );
     }
     

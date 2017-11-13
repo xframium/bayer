@@ -6,7 +6,7 @@
   <test name="Run Test File"  >
     <packages>
 
-      <package name="com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage" /> 
+      <package name="com.bayer.marketing.animalHealth.petBasics.tests.All.SignIn" /> 
 
    </packages>
  </test>
