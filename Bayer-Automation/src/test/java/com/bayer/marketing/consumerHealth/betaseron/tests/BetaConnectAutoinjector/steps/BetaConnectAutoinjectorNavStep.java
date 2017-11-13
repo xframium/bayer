@@ -51,13 +51,10 @@ public class BetaConnectAutoinjectorNavStep extends AbstractStep {
 		waitForElement("betaconnect.autoinjector.inj.logo", webDriver, 15);
 		
 		BayerWebElement btnFour = getElement("betaconnect.autoinjector.btn.four", webDriver);
-
 		//Util.scrollToElement(webDriver, btnFour, wait);
 		waitForElement("betaconnect.autoinjector.btn.four", webDriver, 15);
-
 		Util.scrollToElement(webDriver, btnFour, wait);
 		waitForElement("betaconnect.autoinjector.btn.four", webDriver, 15);	
-
 		btnFour.click();
 		waitForElement("betaconnect.autoinjector.btn.four.validate", webDriver, 30);
 		Util.recallBaseURL(webDriver, betaConnectAutoinjectorUrl);
