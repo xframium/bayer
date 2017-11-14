@@ -37,14 +37,16 @@ public class HTTPLinkCheck
     	String url ="http://claritin.cm.ci.bch.inter.fe.claritin.us.build.dev-bbs.sitecore.bayer-ag.com";
     	HTTPLinkCheck h = new HTTPLinkCheck();
         h.process( new URL(url), new URL(url) );
-        //System.out.println( h.linkMap.size() + " unique pages" );
-        //for ( String key : h.linkMap.keySet() )
-           // System.out.println( key + ": " + h.linkMap.get( key ) + " refereces" );
+        System.out.println( h.linkMap.size() + " unique pages" );
+        
+        for ( String key : h.linkMap.keySet() ) {
+          System.out.println( key + ": " + h.linkMap.get( key ) + " refereces" );
+        }
         
         System.out.println( h.pageMap.size() + " unique pages" );
-        for ( String key : h.pageMap.keySet() )
+        for ( String key : h.pageMap.keySet()) {
             System.out.println( key + ": " + h.pageMap.get( key ) + " refereces" );
-
+        }
     }
 
     
