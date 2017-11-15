@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
     
-    <validation name="H1 Test">
-    <description>Text Verification</description>
-   		<tag name="//*"> 
-    	<text type="contains">Your cherished companion</text>
-    	</tag>
+    <validation name="H1Tag">
+	    <description>H1 Text Verification</description>
+	   		<tag name="//h1/span"> 
+	    	<text type="contains">All Education</text>
+	    	</tag>
     </validation>
-    <validation name="Indication Test">
-    <description>Indications</description>
-   		<tag name="//*"> 
-    	<text type="contains">Our commitment to dependable care</text>
+    <validation name="H2Tag">
+    <description>H2 Text Verification</description>
+   		<tag name="//h2/span"> 
+	    	<text type="contains">seem to get rid of fleas?</text>
+	    	<text type="contains">Save on Bayer products today.</text>
+	    	<text type="contains">Looking for Bayer products?</text>
+	    	<text type="contains">The best is</text>
+    	</tag>
+    	<tag name="//p"> 
+    	<text type="contains">Fleas are tricky. For every one you see on your dog, there may be multiple flea eggs, larvae and pupae just waiting to emerge</text>
     	</tag>
     </validation>
     

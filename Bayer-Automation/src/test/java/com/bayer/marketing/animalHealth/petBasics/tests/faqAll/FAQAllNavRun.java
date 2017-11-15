@@ -70,9 +70,13 @@ public class FAQAllNavRun extends AbstractTest {
     }
 	
 	@TestDescriptor(testName = "PetBasics FAQ All Structure Test")
-	@Test(dataProvider = "deviceList", enabled = false)
+	@Test(dataProvider = "deviceList", enabled = true)
 	public void faqAllStructureTest(DeviceContainer dC) {
-		executeSteps(new Step[] {new StructureValidator("FAQ All", "/FAQAllValidation.xml") 
+		executeSteps(new Step[] {new Navigate(url),
+								 new StructureValidator("FAQH1Tag", "/com/bayer/marketing/animalHealth/petBasics/tests/faqAll/FAQAllValidation.xml"),
+								 new StructureValidator("FAQH2Tag", "/com/bayer/marketing/animalHealth/petBasics/tests/faqAll/FAQAllValidation.xml"),
+				 				 //new StructureValidator("FAQH1Tag"),
+				 				 //new StructureValidator("FAQH2Tag"),
 					 			 });
 	}
 	

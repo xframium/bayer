@@ -49,9 +49,12 @@ public class EducationDogNavRun extends AbstractTest {
     }
 	
 	@TestDescriptor(testName = "PetBasics Education Dog Structure Test")
-	@Test(dataProvider = "deviceList", enabled = false)
-	public void educationCatStructureTest(DeviceContainer dC) {
-		executeSteps(new Step[] {new StructureValidator("All Education", "/EducationDogtValidation.xml") 
+	@Test(dataProvider = "deviceList", enabled = true)
+	public void educationDogStructureTest(DeviceContainer dC) {
+		executeSteps(new Step[] {new Navigate(url),
+								 new StructureValidator("H1Tag", "/com/bayer/marketing/animalHealth/petBasics/tests/educationDog/EducationDogtValidation.xml"),
+								 new StructureValidator("H2Tag", "/com/bayer/marketing/animalHealth/petBasics/tests/educationDog/EducationDogtValidation.xml"),
+								// new StructureValidator("CommonH2Tag"),
 					 			 });
 	}
     

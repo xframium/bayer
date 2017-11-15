@@ -56,9 +56,12 @@ public class FAQDogNavRun extends AbstractTest {
     }
 	
 	@TestDescriptor(testName = "PetBasics FAQ Dog Structure Test")
-	@Test(dataProvider = "deviceList", enabled = false)
+	@Test(dataProvider = "deviceList", enabled = true)
 	public void faqDogStructureTest(DeviceContainer dC) {
-		executeSteps(new Step[] {new StructureValidator("FAQ Dog", "/FAQDogValidation.xml") 
+		executeSteps(new Step[] {new Navigate(url),
+								 new StructureValidator("FAQH1Tag", "/com/bayer/marketing/animalHealth/petBasics/tests/faqDog/FAQDogValidation.xml"),
+								 new StructureValidator("FAQH2Tag", "/com/bayer/marketing/animalHealth/petBasics/tests/faqDog/FAQDogValidation.xml"),
+
 					 			 });
 	}
 	
