@@ -51,9 +51,12 @@ public class EducationCatNavRun extends AbstractTest {
     }
 	
 	@TestDescriptor(testName = "PetBasics Education Cat Structure Test")
-	@Test(dataProvider = "deviceList", enabled = false)
+	@Test(dataProvider = "deviceList", enabled = true)
 	public void educationCatStructureTest(DeviceContainer dC) {
-		executeSteps(new Step[] {new StructureValidator("All Education", "/EducationCatValidation.xml") 
+		executeSteps(new Step[] {new Navigate(url),
+								 new StructureValidator("H1Tag", "/com/bayer/marketing/animalHealth/petBasics/tests/educationCat/EducationCatValidation.xml"),
+								 new StructureValidator("H2Tag", "/com/bayer/marketing/animalHealth/petBasics/tests/educationCat/EducationCatValidation.xml"),
+ 			 
 					 			 });
 	}
 	

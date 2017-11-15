@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
     
-    <validation name="All Education">
-    <description>Education</description>
-   		<tag name="//*"> 
-    	<text type="contains">All is well,all is well</text>
+    <validation name="H1Tag">
+	    <description>H1 Text Verification</description>
+	   		<tag name="//h1/span"> 
+	    	<text type="contains">Dog Education</text>
+	    	</tag>
+    </validation>
+    <validation name="H2Tag">
+    <description>H2 Text Verification</description>
+   		<tag name="//h2/span"> 
+	    	<text type="contains">Fleas aren’t just annoying – they can cause health issues</text>
+	    	<text type="contains">Save on Bayer products today.</text>
+		    <text type="contains">Looking for Bayer products?</text>
+		    <text type="contains">The best is</text>
+    	</tag>
+    	<tag name="//p"> 
+    	<text type="contains">Fleas can be intensely irritating for you and your dog and not just in the </text>
     	</tag>
     </validation>
-    <validation name="Indication Test">
-    <description>Indications</description>
-   		<tag name="//*"> 
-    	<text type="contains">Our commitment to dependable care</text>
-    	</tag>
-    </validation>
+    
     
     
 </validationCollection>

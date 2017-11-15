@@ -45,13 +45,22 @@ public class EducationAllNavRun extends AbstractTest {
 	@TestDescriptor( testName="PetBasics Timed Navigation for Education All" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void timedNavigation( DeviceContainer dC ) {
-		executeSteps( new Step[] { new TimedNavigate(url, 4000)} );
+		executeSteps( new Step[] { new TimedNavigate(url, 6000)} );
     }
 	
 	@TestDescriptor(testName = "PetBasics Education All Structure Test")
 	@Test(dataProvider = "deviceList", enabled = false)
 	public void educationAllStructureTest(DeviceContainer dC) {
 		executeSteps(new Step[] {new StructureValidator("All Education", "/EducationAllValidation.xml") 
+					 			 });
+	}
+	
+	@TestDescriptor(testName = "PetBasics Education All Structure Test")
+	@Test(dataProvider = "deviceList", enabled = true)
+	public void allEducationStructureTest(DeviceContainer dC) {
+		executeSteps(new Step[] {   new Navigate(url),
+									new StructureValidator("H1Tag", "/com/bayer/marketing/animalHealth/petBasics/tests/educationAll/EducationAllValidation.xml"),
+									new StructureValidator("H2Tag", "/com/bayer/marketing/animalHealth/petBasics/tests/educationAll/EducationAllValidation.xml"),
 					 			 });
 	}
 	
