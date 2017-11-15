@@ -24,9 +24,9 @@ public class CatHomePageSteps extends AbstractStep  {
     	
     	BayerWebElement window = getElement( "modal.window", webDriver );
     	if (window.isDisplayed()) {
-    		waitForElement( "modal.skip", webDriver, 15 );
-        	BayerWebElement skipButton = getElement( "modal.skip", webDriver );
-    		skipButton.click();	
+    		waitForElement( "modal.cat", webDriver, 15 );
+        	BayerWebElement catButton = getElement( "modal.cat", webDriver );
+        	catButton.click();	
 		}
     
     	//scrollAndSearch("betaseron.home.betaAppVid");
@@ -45,6 +45,11 @@ public class CatHomePageSteps extends AbstractStep  {
     	waitForElement( "home.chooseProduct", webDriver, 15 );
     	BayerWebElement chooseProduct = getElement( "home.chooseProduct", webDriver );
     	chooseProduct.click();
+    	webDriver.navigate().to(url);
+    	
+    	waitForElement( "home.partner", webDriver, 15 );
+    	BayerWebElement partners = getElement( "home.partner", webDriver );
+    	partners.click();
     	webDriver.navigate().to(url);
     	
         return true;

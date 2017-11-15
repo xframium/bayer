@@ -1,7 +1,8 @@
 package com.bayer.marketing.animalHealth.petBasics.tests.Cat.CatHomePage;
 
 
-import com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.steps.HomePageNavSteps;
+
+import com.bayer.marketing.animalHealth.petBasics.tests.Cat.CatHomePage.steps.CatHomePageSteps;
 import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
@@ -24,13 +25,12 @@ public class CatHomePage extends AbstractTest {
 		return url;
 	}
 	
-	@TestDescriptor( testName="PetBasics Home Nav Test" )
+	@TestDescriptor( testName="PetBasics Cat Home Nav Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url),
-									new HomePageNavSteps(),
-        							//new TimedNavigate(url, 5000),
+									new CatHomePageSteps(),
         							
         } );
     }
