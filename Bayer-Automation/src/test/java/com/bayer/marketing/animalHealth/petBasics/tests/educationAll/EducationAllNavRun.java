@@ -23,7 +23,7 @@ public class EducationAllNavRun extends AbstractTest {
 		return url;
 	}
 	@TestDescriptor( testName="PetBasics Education All Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC ) {
 		executeSteps( new Step[] { new Navigate(url), 
         							new EducationAllNavSteps()/*,
@@ -33,7 +33,7 @@ public class EducationAllNavRun extends AbstractTest {
     }
 	
 	@TestDescriptor( testName="PetBasics Education All Filter Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void applyFilterTest( DeviceContainer dC ) {
 		executeSteps( new Step[] { new Navigate(url), 
         							new ApplyFilterToEducationAllNavSteps()/*,
@@ -49,9 +49,9 @@ public class EducationAllNavRun extends AbstractTest {
     }
 	
 	@TestDescriptor(testName = "PetBasics Education All Structure Test")
-	@Test(dataProvider = "deviceList", enabled = false)
+	@Test(dataProvider = "deviceList", enabled = true)
 	public void educationAllStructureTest(DeviceContainer dC) {
-		executeSteps(new Step[] {new StructureValidator("All Education", "/EducationAllValidation.xml") 
+		executeSteps(new Step[] {new StructureValidator("H1Tag", "/EducationAllValidation.xml") 
 					 			 });
 	}
 	
@@ -65,7 +65,7 @@ public class EducationAllNavRun extends AbstractTest {
 	}
 	
 	@TestDescriptor( testName="PetBasics Education All Link Validation" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void linkValidationTest(DeviceContainer dC){
     	executeSteps(new Step[] { 
     			new LinkValidator(url, 1)
