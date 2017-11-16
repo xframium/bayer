@@ -48,12 +48,12 @@ public class EducationAllNavRun extends AbstractTest {
 		executeSteps( new Step[] { new TimedNavigate(url, 6000)} );
     }
 	
-	@TestDescriptor(testName = "PetBasics Education All Structure Test")
+	/*@TestDescriptor(testName = "PetBasics Education All Structure Test")
 	@Test(dataProvider = "deviceList", enabled = true)
 	public void educationAllStructureTest(DeviceContainer dC) {
 		executeSteps(new Step[] {new StructureValidator("H1Tag", "/EducationAllValidation.xml") 
 					 			 });
-	}
+	}*/
 	
 	@TestDescriptor(testName = "PetBasics Education All Structure Test")
 	@Test(dataProvider = "deviceList", enabled = true)
