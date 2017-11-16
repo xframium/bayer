@@ -47,7 +47,7 @@ public class EducationCatNavRun extends AbstractTest {
 	@TestDescriptor( testName="PetBasics Timed Navigation for Education Cat" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void timedNavigation( DeviceContainer dC ) {
-		executeSteps( new Step[] { new TimedNavigate(url, 4000)} );
+		executeSteps( new Step[] { new TimedNavigate(url, 6000)} );
     }
 	
 	@TestDescriptor(testName = "PetBasics Education Cat Structure Test")

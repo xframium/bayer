@@ -15,26 +15,26 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class HomePage extends AbstractTest
 {
-    /*@TestDescriptor( testName="Navigation Test" )
+    @TestDescriptor( testName="Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC )
     {
         executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/" ), 
         							new HomePageNavSteps(),
-        							new TimedNavigate("https://www.betaseron.com/", 4000)
+        							new TimedNavigate("https://www.betaseron.com/", 6000)
         } );
     }
     
     
     @TestDescriptor( testName="Home Page Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
         						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
         						   //new StructureValidator("Key"),
         						    } );
     }
-    */
+    
     @TestDescriptor( testName="Home Page Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
