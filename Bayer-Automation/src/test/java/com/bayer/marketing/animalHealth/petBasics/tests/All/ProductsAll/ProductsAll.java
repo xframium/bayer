@@ -44,7 +44,7 @@ public class ProductsAll extends AbstractTest {
     @Test ( dataProvider = "deviceList", enabled=true)
     public void timedNavigateTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new TimedNavigate("https://www.petbasics.com/products/?pref=all", 4000)
+        executeSteps( new Step[] { new TimedNavigate("https://www.petbasics.com/products/?pref=all", 6000)
         } );
     }
 
