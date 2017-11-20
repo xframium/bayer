@@ -5,12 +5,15 @@
 	<test name="Master Site Test">
 		<packages>
 			<package
-				name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaConnectSys" />
-			<package
-				name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaPlusSupport" />
-			<package
 				name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaConnectAutoinjector">
 			</package>
+			<package
+				name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaConnectmyBETAapp">
+			</package>
+			<package
+				name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaConnectSys" />
+			<package
+				name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaPlusSupport" />			
 			<package
 				name="com.bayer.marketing.consumerHealth.betaseron.tests.BetasSereonAndHeritage">
 			</package>
