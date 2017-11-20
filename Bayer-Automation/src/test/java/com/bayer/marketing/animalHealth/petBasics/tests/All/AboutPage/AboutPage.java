@@ -38,8 +38,8 @@ public class AboutPage extends AbstractTest {
     @Test ( dataProvider = "deviceList", enabled=true)
     public void validateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.petbasics.com/about-bayer"),
-        						   new StructureValidator("H1 Test", "/com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
-        						   new StructureValidator("H2 Test","/com/bayer/marketing/animalHealth/petBasics/tests/All/ProductsAll/ProductsAllValidation.xml"),
+        						   new StructureValidator("H1 Test", "/com/bayer/marketing/animalHealth/petBasics/tests/All/AboutPage/AboutPageValidation.xml"),
+        						   new StructureValidator("H2 Test","/com/bayer/marketing/animalHealth/petBasics/tests/All/AboutPage/AboutPageValidation.xml"),
         						   
     						    } );
     }

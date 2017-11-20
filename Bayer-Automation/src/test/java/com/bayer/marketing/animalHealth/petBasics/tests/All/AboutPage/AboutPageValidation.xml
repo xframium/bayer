@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
+    
+    <validation name="H1 Tag">
+    <description>H1 Text Verification</description>
+   		<tag name="//*"> 
+    	<text type="contains">We're passionate about</text>
+    	</tag>
+    	<tag name="//*"> 
+    	<text type="contains">protecting your pet's health.</text>
+    	</tag>
+    </validation>
+    
+    <validation name="H2 Tag">
+    <description>H2 Text Verification</description>
+   		<tag name="//*"> 
+    	<text type="contains">Bayer Basics</text>
+    	</tag>
+    	<tag name="//*"> 
+    	<text type="contains">Our Heritage</text>
+    	</tag>
+    	<tag name="//*"> 
+    	<text type="contains">Partnering For Healthier Pets</text>
+    	</tag>    	
+    </validation>    
+  
+
+</validationCollection>
