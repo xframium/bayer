@@ -23,13 +23,22 @@ public class ConditionsOfUse extends AbstractStep
     protected boolean _executeStep( BayerWebDriver webDriver ) {
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
         
-        waitForElement( "bayer.conditions", webDriver, 15 );
+    	waitForElement( "bayer.key", webDriver, 15 );
+    	
+    	BayerWebElement cookiesPopup = getElement("bayer.cookiesVisible", webDriver);
+        if(cookiesPopup.isDisplayed()){
+        	BayerWebElement cookiesConf = getElement("bayer.cookiesConfirm", webDriver);
+        	cookiesConf.click();
+        }
+        
+        
+    	waitForElement( "bayer.conditions", webDriver, 15 );
         BayerWebElement conditions = getElement("bayer.conditions", webDriver);
         Util.scrollToElement(webDriver, conditions, wait);
         conditions.click();
         waitForElement( "bayer.key", webDriver, 15 );
         
-        new StructureValidator("Conditions");
+        new StructureValidator("Conditions", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
         
         
         ///////////////Example Code Structure///////////////////
