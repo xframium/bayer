@@ -1,6 +1,7 @@
-Active,manufacturer,model,platformName,platformVersion,browserName,browserVersion
-No,Apple,iPhone-7,IOS,,,
-No,Samsung,Galaxy S7,Android,,,
-No,Apple,iPhone-6,IOS,,,
-No,,,Windows,10,Chrome,60
-No,,,Windows,10,Firefox,55
+Active,manufacturer,model,platformName,platformVersion,browserName,browserVersion,
+No,Apple,iPhone-7,IOS,,,,
+No,Samsung,Galaxy S7,Android,,,,
+No,Apple,iPhone-6,IOS,,,,
+No,,,Windows,10,Chrome,61,
+Yes,,,Windows,10,Firefox,57,
+Yes,,,Windows,10,Firefox,57,1920x1080
