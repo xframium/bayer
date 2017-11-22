@@ -2,6 +2,8 @@ package com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage;
 
 
 import com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.steps.HomePageNavSteps;
+import com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.steps.AccessitilitySteps;
+
 import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
@@ -25,7 +27,7 @@ public class HomePage extends AbstractTest {
 	}
 	
 	@TestDescriptor( testName="PetBasics Home Nav Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url),
@@ -37,15 +39,23 @@ public class HomePage extends AbstractTest {
     
 	
     @TestDescriptor( testName="PetBasics Home Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url),
         						   new StructureValidator("H1 Tag", "/HomePageValidation.xml"),
+        						  
         						   //new StructureValidator("Key"),
         						   
         						    } );
     }
-    
+    @TestDescriptor( testName="PetBasics Home Accessibility Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void accessibilityTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url),
+        						   new AccessitilitySteps(),
+        						   
+        						    } );
+    }
     /*@TestDescriptor( testName="Home Page Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
