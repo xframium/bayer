@@ -27,7 +27,7 @@ public class AboutPage extends AbstractTest {
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate("https://www.petbasics.com/about-bayer"), 
+        executeSteps( new Step[] { new Navigate("https://www.petbasics.com/about-bayer/?pref=all"), 
         							new AboutPageNavSteps(),
         					
         } );
@@ -37,7 +37,7 @@ public class AboutPage extends AbstractTest {
     @TestDescriptor( testName="About Bayer Validation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void validateTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate( "https://www.petbasics.com/about-bayer"),
+        executeSteps( new Step[] { new Navigate( "https://www.petbasics.com/about-bayer/?pref=all"),
         						   new StructureValidator("H1 Test", "/com/bayer/marketing/animalHealth/petBasics/tests/All/AboutPage/AboutPageValidation.xml"),
         						   new StructureValidator("H2 Test","/com/bayer/marketing/animalHealth/petBasics/tests/All/AboutPage/AboutPageValidation.xml"),
         						   
@@ -47,7 +47,7 @@ public class AboutPage extends AbstractTest {
     @Test ( dataProvider = "deviceList", enabled=true)
     public void timedNavigateTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new TimedNavigate("https://www.petbasics.com/about-bayer", 6000)
+        executeSteps( new Step[] { new TimedNavigate("https://www.petbasics.com/about-bayer/?pref=all", 6000)
         } );
     }
 
