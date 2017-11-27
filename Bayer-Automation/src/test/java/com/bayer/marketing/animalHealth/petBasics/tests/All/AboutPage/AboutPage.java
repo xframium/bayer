@@ -17,7 +17,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class AboutPage extends AbstractTest {	
 	
-	protected String url = "https://www.petbasics.com/about-bayer";
+	protected String url = "https://www.petbasics.com/about-bayer/?pref=all";
 	
 	public String getUrl(){ 
 		return url;
