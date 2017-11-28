@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.aspirin.tests.HomePage;
+package com.bayer.marketing.consumerHealth.aspirin.tests.ContactUs;
 
 
 import com.bayer.marketing.consumerHealth.aspirin.tests.HomePage.steps.HomePageNavSteps;
@@ -16,7 +16,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.URL;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 
-public class HomePage extends AbstractTest {	
+public class ContactUs extends AbstractTest {	
 	
 	public String url = "http://test.bayeraspirin.com/";
     
@@ -35,7 +35,7 @@ public class HomePage extends AbstractTest {
         } );
     }
     
-	
+	/*
     @TestDescriptor( testName="Home Page Validation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
@@ -45,7 +45,7 @@ public class HomePage extends AbstractTest {
         						   
         						    } );
     }
-    
+    */
     /*@TestDescriptor( testName="Home Page Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){

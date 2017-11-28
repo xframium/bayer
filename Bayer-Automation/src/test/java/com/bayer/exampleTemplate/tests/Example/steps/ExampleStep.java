@@ -20,7 +20,7 @@ public class ExampleStep extends AbstractStep
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
-    	String csvFile = "src/test/java/com/bayer/exampleTemplate/config/TestData.csv";
+    	/*String csvFile = "src/test/java/com/bayer/exampleTemplate/config/TestData.csv";
         String line = "";
         String cvsSplitBy = ",";
         int x = 0;
@@ -38,13 +38,13 @@ public class ExampleStep extends AbstractStep
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
         
-        
-    	/*waitForElement( "bayer.home.img1", webDriver, 15 );
+    	waitForElement( "bayer.home.img1", webDriver, 15 );
         BayerWebElement exampleImage = getElement("bayer.home.img1", webDriver);
         exampleImage.click();
         waitForElement( "betaseron.key", webDriver, 15 );
-        webDriver.navigate().to("https://www.betaseron.com/");
+        webDriver.navigate().to("https://www.bayer.com/");
         
         waitForElement( "bayer.home.search", webDriver, 15 );
         BayerWebElement exampleSearch = getElement("bayer.home.search", webDriver);
@@ -53,7 +53,7 @@ public class ExampleStep extends AbstractStep
         BayerWebElement exampleSearchBTN = getElement("bayer.home.searchBtn", webDriver);
         exampleSearchBTN.click();
         waitForElement( "bayer.key", webDriver, 15 );
-        webDriver.navigate().to("https://www.betaseron.com/");
+        webDriver.navigate().to("https://www.bayer.com/");
         ///////////////Example Code Structure///////////////////
         /*BayerWebElement emailAddress = getElement( "login.emailAddress", webDriver );
         emailAddress.sendKeys( "test@bayer.com" );

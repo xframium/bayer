@@ -14,10 +14,14 @@ public class ExamplePage extends AbstractTest {
 	
     @TestDescriptor( testName="Example Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
-    public void navigateTest( DeviceContainer dC ) {
+    public void conditionsTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( "https://www.bayer.com/" ), new ConditionsOfUse() } );
     }
-    
+    @TestDescriptor( testName="Example Navigation Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void navigateTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate( "https://www.bayer.com/" ), new ExampleStep() } );
+    }
     @TestDescriptor( testName="Example Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void timedNavigateTest( DeviceContainer dC ) {
