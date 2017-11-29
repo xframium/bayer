@@ -2,6 +2,7 @@ package com.bayer.marketing.consumerHealth.aspirin.tests.HomePage;
 
 
 import com.bayer.marketing.consumerHealth.aspirin.tests.HomePage.steps.HomePageNavSteps;
+import com.bayer.marketing.consumerHealth.aspirin.tests.HomePage.steps.ConditionsOfUse;
 import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
@@ -24,38 +25,35 @@ public class HomePage extends AbstractTest {
 		return url;
 	}
 	
-	@TestDescriptor( testName="PetBasics Home Nav Test" )
+	@TestDescriptor( testName="Aspirin Home Nav Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url), 
-        							//new HomePageNavSteps(),
-        							new TimedNavigate(url, 4000),
         							
+        							new TimedNavigate(url, 15000)   							
         } );
     }
     
 	
-    @TestDescriptor( testName="Home Page Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
-    public void structureTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
-        						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
-        						   //new StructureValidator("Key"),
-        						   
+    @TestDescriptor( testName="Aspirin Conditons of Use Validation" )
+    @Test ( dataProvider = "deviceList", enabled= true)
+    public void conditionsTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate( url),
+        						   new ConditionsOfUse(),
         						    } );
     }
     
-    /*@TestDescriptor( testName="Home Page Link Validation" )
+    @TestDescriptor( testName="Aspirin Home Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
-    	System.out.println("The url currently being used it" + url);
+    	//System.out.println("The url currently being used it" + url);
     	executeSteps(new Step[] { 
-    			new LinkValidator("http://test.bayeraspirin.com/", 188),
+    			new LinkValidator(url, 42),
     			
    
     	});
     }
-    */	
+    	
  
 } //end class

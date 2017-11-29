@@ -32,14 +32,18 @@ public class PrivacyPolicy extends AbstractStep
         }
         
         
-    	waitForElement( "bayer.conditions", webDriver, 15 );
-        BayerWebElement conditions = getElement("bayer.conditions", webDriver);
+    	waitForElement( "bayer.privacy", webDriver, 15 );
+        BayerWebElement conditions = getElement("bayer.privacy", webDriver);
         Util.scrollToElement(webDriver, conditions, wait);
         conditions.click();
         waitForElement( "bayer.key", webDriver, 15 );
         
-        new StructureValidator("Conditions", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
         
+        new StructureValidator("Privacy", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
+        new StructureValidator("Data", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
+        new StructureValidator("PersonalData", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
+        new StructureValidator("Use", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
+        new StructureValidator("Access Rights", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
         
         ///////////////Example Code Structure///////////////////
         /*BayerWebElement emailAddress = getElement( "login.emailAddress", webDriver );

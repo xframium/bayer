@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
+    <validation name="Conditions">
+        <description>Conditions of Use</description>
+        <tag name="//*">
+            <text type="contains">Conditions of Use</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">This website (the “Site”) is sponsored by Bayer U.S., and/or its affiliates (“BAYER”). Access to and use of the Site is subject to the terms and conditions described herein and all applicable laws and regulations, including laws and regulations governing copyright and trademark. BY ACCESSING THE SITE, YOU AGREE TO ACCEPT, WITHOUT LIMITATION OR QUALIFICATION, ALL OF THE TERMS AND CONDITIONS IN THESE CONDITIONS OF USE (“CONDITIONS OF USE”). Bayer reserves the right to change these terms and conditions from time to time by updating this posting.</text>  
+        </tag>
+        <tag name="//*">
+         <text type="contains">These Conditions of Use solely govern access to and use of the Site. They do not relate to the purchase of any product displayed on the Site. As such, these Conditions of Use do not constitute, in whole or in part, the terms and conditions of an offer to a consumer relating to the purchase of any product described or displayed on the Site and do not form a consumer contract or constitute a consumer warranty, notice or sign relating to the purchase of any such product.</text>  
+        </tag>
+        <tag name="//*">
+         <text type="contains">The materials used and displayed on the Site, including, but not limited to text, software, photographs, graphics, illustrations, and artwork, video, music, and sound, and names, logos, trademarks and service marks, except where noted, are the property of Bayer, or its licensors and are protected by copyright, trademark, and other laws. Any such content may be displayed solely for your personal, non-commercial use. You agree not to modify, reproduce, retransmit, distribute, disseminate, sell, publish, broadcast, or circulate any such material without the written permission of Bayer. Bayer will use reasonable efforts to include accurate and up-to-date information on this Site, but makes no warranties or representations as to its accuracy. This Site and its contents are designed to comply with U.S. laws and regulations.</text>  
+        </tag>
+        <tag name="//*">
+         <text type="contains">THE SITE IS PROVIDED ON AN "AS IS" BASIS WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO WARRANTIES OF TITLE OR IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, OTHER THAN THOSE WARRANTIES WHICH ARE IMPOSED BY, AND INCAPABLE OF EXCLUSION, RESTRICTION OR MODIFICATION UNDER THE LAWS APPLICABLE TO THIS AGREEMENT.</text>  
+        </tag>
+        <tag name="//*">
+         <text type="contains">TO THE EXTENT PERMITTED BY LAW, NEITHER BAYER NOR ANY OF ITS PARENT, SUBSIDIARIES, DIVISIONS, AFFILIATES, AGENTS, REPRESENTATIVE OR LICENSORS SHALL BE LIABLE TO YOU OR ANYONE ELSE FOR ANY LOSS OR INJURY OR ANY DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, PUNITIVE OR SIMILAR DAMAGES ARISING OUT OF YOUR ACCESS OR USE OF, OR YOUR INABILITY TO ACCESS OR USE, THIS SITE.</text>  
+        </tag>
+        <tag name="//*">
+         <text type="contains">Due to the nature of the Internet, the risk of unauthorized use, disclosure, and interception of communications or materials you send to Bayer via the Internet can never be entirely eliminated, and users should be aware of these risks before communicating with Bayer via the Internet. Additionally, we cannot guarantee that the availability of this Site will be uninterrupted and that transmissions will be error-free. Your access to the Site may be occasionally suspended or restricted for a variety of reasons including, for example, to allow for maintenance or the introduction of new services.</text>  
+        </tag>
+        <tag name="//*">
+         <text type="contains">Please review our Privacy Policy, which is a part of these Conditions of Use and also governs your use of the Site, to understand how we collect, use, store, and share your personal information.</text>  
+        </tag>
+        <tag name="//*">
+         <text type="contains">BAYER IS IN NO WAY RESPONSIBLE FOR ANY THIRD PARTY CONTENT THAT IS POSTED, UPLOADED, CREATED ON, SHARED THROUGH, OR THAT OTHERWISE EXISTS ON ANY WEB PRESENCE OF BAYER TO WHICH THESE TERMS APPLY. BAYER HAS NO LIABILITY TO YOU OR ANY OTHER PARTY FOR THE EXISTENCE OF OR THE TAKING DOWN OF ANY SUCH THIRD PARTY CONTENT. THIRD PARTY CONTENT DOES NOT REFLECT THE OPINIONS, BELIEFS, STATEMENTS, OR ACTIONS OF BAYER, AND BAYER SPECIFICALLY DISCLAIMS ALL LIABILITY STEMMING THEREFROM.</text>  
+        </tag>
+        <tag name="//*">
+         <text type="contains">Bayer respects the intellectual property of others. If any content uploaded to this Site infringes upon your proprietary copyrights, you may send us a notice as described in Section 512(c)(2) of the United States Copyright Code. This process applies only to copyright issues. Other issues (e.g., impersonation, violations of someone's right of publicity, etc.), should be brought to our attention by contacting Bayer DMCA Agent: c/o Bayer, Attn: Law Department, 100 Bayer Boulevard, Whippany, NJ 07981-0915, ch_dmca_agent@bayer.com</text>  
+        </tag>
+        <tag name="//*">
+         <text type="contains">Last updated November 28, 2017</text>  
+        </tag>
+        
+    </validation>
+    
+    
+    
+    
+</validationCollection>
