@@ -3,11 +3,11 @@ package com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage;
 
 import com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.steps.HomePageNavSteps;
 import com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.steps.AccessitilitySteps;
-
 import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
+import com.bayer.common.Accessibility;
 import com.bayer.common.utility.LinkValidator;
 import com.bayer.common.utility.StructureValidator;
 import com.bayer.test.AbstractTest;
@@ -27,7 +27,7 @@ public class HomePage extends AbstractTest {
 	}
 	
 	@TestDescriptor( testName="PetBasics Home Nav Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url),
@@ -37,17 +37,16 @@ public class HomePage extends AbstractTest {
         } );
     }
     
-	
     @TestDescriptor( testName="PetBasics Home Validation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url),
-        						   new StructureValidator("H1 Tag", "/HomePageValidation.xml"),
-        						  
+        						   new StructureValidator("H1 Tag", "/HomePageValidation.xml"),    						  
         						   //new StructureValidator("Key"),
         						   
         						    } );
     }
+    
     @TestDescriptor( testName="PetBasics Home Accessibility Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void accessibilityTest( DeviceContainer dC ) {
@@ -56,8 +55,8 @@ public class HomePage extends AbstractTest {
         						   
         						    } );
     }
-    /*@TestDescriptor( testName="Home Page Link Validation" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @TestDescriptor( testName="Home Page Link Validation" )
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void linkValidationTest(DeviceContainer dC){
     	System.out.println("The url currently being used it" + url);
     	executeSteps(new Step[] { 
@@ -66,6 +65,6 @@ public class HomePage extends AbstractTest {
    
     	});
     }
-    */	
+    
  
 } //end class

@@ -42,13 +42,13 @@ public class AccessitilitySteps extends AbstractStep  {
     	waitForElement( "home.findProduct", webDriver, 15 );
     	BayerWebElement findProduct = getElement( "home.findProduct", webDriver );
     	findProduct.click();
-    	//new Accessibility();
+    	new Accessibility();
     	webDriver.navigate().to(url);
         
     	waitForElement( "home.chooseProduct", webDriver, 15 );
     	BayerWebElement chooseProduct = getElement( "home.chooseProduct", webDriver );
     	chooseProduct.click();
-    	//new Accessibility();
+    	new Accessibility();
     	webDriver.navigate().to(url);
     	
         return true;

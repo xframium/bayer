@@ -1,22 +1,18 @@
-package com.bayer.exampleTemplate.tests.Example.steps;
+package com.bayer.marketing.consumerHealth.miralax.tests.Footer.steps;
 
 import java.io.BufferedReader;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import java.io.FileReader;
 import java.io.IOException;
-import com.bayer.common;
-import com.bayer.common.utility.StructureValidator;
+
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 import com.sun.jna.platform.unix.X11;
 
-public class ExampleStep extends AbstractStep
+public class FooterStep extends AbstractStep
 {
 
-    public ExampleStep()
+    public FooterStep()
     {
         super( "message", "error message" );
     }

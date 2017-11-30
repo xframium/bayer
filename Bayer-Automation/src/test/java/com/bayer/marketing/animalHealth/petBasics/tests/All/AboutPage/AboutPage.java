@@ -44,7 +44,7 @@ public class AboutPage extends AbstractTest {
     						    } );
     }
     @TestDescriptor( testName="About Bayer Timed Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void timedNavigateTest( DeviceContainer dC )
     {
         executeSteps( new Step[] { new TimedNavigate("https://www.petbasics.com/about-bayer/?pref=all", 6000)

@@ -3,6 +3,7 @@ package com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.steps;
 
 import java.awt.Dialog.ModalExclusionType;
 
+
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.marketing.animalHealth.petBasics.tests.All.HomePage.HomePage;
@@ -21,18 +22,22 @@ public class HomePageNavSteps extends AbstractStep  {
     	String url = urlVar.getUrl();
     	System.out.println("Page url: " + url);
     	
-    	
-    	BayerWebElement window = getElement( "modal.window", webDriver );
-    	if (window.isDisplayed()) {
-    		waitForElement( "modal.skip", webDriver, 15 );
-        	BayerWebElement skipButton = getElement( "modal.skip", webDriver );
-    		skipButton.click();	
+    	try {
+	    	BayerWebElement window = getElement( "modal.window", webDriver );
+	    	if (window.isDisplayed()) {
+	    		waitForElement( "modal.skip", webDriver, 15 );
+	        	BayerWebElement skipButton = getElement( "modal.skip", webDriver );
+	    		skipButton.click();	
+			}
+    	}
+    	catch (Exception e) {
+			// TODO: handle exception
 		}
     
     	//scrollAndSearch("betaseron.home.betaAppVid");
     	waitForElement( "home.whywedoit", webDriver, 15 );
     	BayerWebElement whywedo = getElement( "home.whywedoit", webDriver );
-    	whywedo.click();
+    	whywedo.click(); 
     	//waitForElement( "waitForFlag2", webDriver, 15 );
     	//BayerWebElement flag = getElement( "waitForFlag2", webDriver );
     	webDriver.navigate().to(url);

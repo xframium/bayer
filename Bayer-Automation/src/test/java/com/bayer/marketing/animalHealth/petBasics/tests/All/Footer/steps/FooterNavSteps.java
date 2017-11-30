@@ -24,14 +24,16 @@ public class FooterNavSteps extends AbstractStep  {
     	String url = urlVar.getUrl();
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
     	
-    	
-    	BayerWebElement window = getElement( "modal.window", webDriver );
-    	if (window.isDisplayed()) {
-    		waitForElement( "modal.skip", webDriver, 15 );
-        	BayerWebElement skipButton = getElement( "modal.skip", webDriver );
-    		skipButton.click();	 
+    	try {
+    		BayerWebElement window = getElement( "modal.window", webDriver );
+        	if (window.isDisplayed()) {
+        		waitForElement( "modal.skip", webDriver, 15 );
+            	BayerWebElement skipButton = getElement( "modal.skip", webDriver );
+        		skipButton.click();	 
+    		}
+		} catch (Exception e) {
+			System.out.println("Popup window not displayed.");
 		}
-    
     	
     	waitForElement( "footer.logo", webDriver, 15 );
     	BayerWebElement footerLogo = getElement( "footer.logo", webDriver );
