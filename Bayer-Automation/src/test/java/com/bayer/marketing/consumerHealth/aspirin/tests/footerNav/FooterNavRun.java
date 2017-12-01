@@ -32,16 +32,16 @@ public class FooterNavRun extends AbstractTest {
 	}
 
 	@TestDescriptor(testName = "Aspirin Footer Structure Test")
-	@Test(dataProvider = "deviceList", enabled = false)
+	@Test(dataProvider = "deviceList", enabled = true)
 	public void footerStructureTest(DeviceContainer dC) {
 		executeSteps(new Step[] { new Navigate(url),
-				new StructureValidator("FooterH1Tag",
+				new StructureValidator("H1Tag",
 						"/com/bayer/marketing/consumerHealth/aspirin/tests/footerNav/FooterNavValidation.xml"),
 				});
 	}
 
 	@TestDescriptor(testName = "Aspirin Footer Link Validation")
-	@Test(dataProvider = "deviceList", enabled = false)
+	@Test(dataProvider = "deviceList", enabled = true)
 	public void linkValidationTest(DeviceContainer dC) {
 		executeSteps(new Step[] { new LinkValidator(url, 1)
 

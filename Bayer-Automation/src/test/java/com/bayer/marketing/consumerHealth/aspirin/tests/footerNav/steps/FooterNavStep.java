@@ -88,7 +88,8 @@ public class FooterNavStep extends AbstractStep {
 		
 		this.validate("aspirin.footer.herosmiths", webDriver, "aspirin.footer.herosmiths.validate", wait, "aspirin.footer.surviving.attack.plus", true);
 		Util.recallBaseURL(webDriver, footerUrl);
-		waitForElement("aspirin.base.image", webDriver, 15);
+		waitForElement("aspirin.base.image", webDriver, 15); 
+		
 		
 		//pain-relief
 		this.validate("aspirin.footer.pain.relief", webDriver, "aspirin.footer.pain.relief.validate", wait, null, false);
@@ -158,14 +159,20 @@ public class FooterNavStep extends AbstractStep {
 		waitForElement("aspirin.base.image", webDriver, 15);
 		
 		this.socialMediaNavigation("aspirin.footer.share.facebook", webDriver, "aspirin.footer.share.facebook.close", wait);
-		this.validate("aspirin.footer.share.facebook", webDriver, "aspirin.footer.share.facebook.close", wait, null, false);
-		 Util.recallBaseURL(webDriver, footerUrl);
-		 waitForElement("aspirin.base.image", webDriver, 15);
-		
 		this.socialMediaNavigation("aspirin.footer.share.twitter", webDriver, "aspirin.footer.share.twitter.close", wait);
 		this.socialMediaNavigation("aspirin.footer.find.support.facebook", webDriver, "aspirin.footer.find.support.facebook.close", wait);
-		this.socialMediaNavigation("aspirin.footer.where.to.buy", webDriver, "aspirin.footer.where.to.buy.close", wait);
 		
+		Util.recallBaseURL(webDriver, footerUrl);
+		waitForElement("aspirin.base.image", webDriver, 15);
+		
+		waitForElement("aspirin.footer.where.to.buy", webDriver, 15);
+		BayerWebElement wheretobuy = getElement("aspirin.footer.where.to.buy", webDriver);
+		Util.scrollToElement(webDriver, wheretobuy, wait);
+		wheretobuy.click();
+		
+		webDriver.navigate().to(footerUrl);
+		waitForElement("aspirin.base.image", webDriver, 30);
+						
 		return true;
 	}
 
