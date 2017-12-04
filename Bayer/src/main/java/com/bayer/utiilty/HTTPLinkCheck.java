@@ -34,7 +34,7 @@ public class HTTPLinkCheck
     
     public static void main( String[] args ) throws Exception {
         System.out.println("Link checker initiated");
-    	String url ="http://test.bayeraspirin.com/";
+    	String url ="http://claritin.cd.uat.bch.inter.fe.claritin.build.dev-bbs.sitecore.bayer-ag.com/";
     	HTTPLinkCheck h = new HTTPLinkCheck();
         h.process( new URL(url), new URL(url) );
         System.out.println( h.linkMap.size() + " unique pages" );
