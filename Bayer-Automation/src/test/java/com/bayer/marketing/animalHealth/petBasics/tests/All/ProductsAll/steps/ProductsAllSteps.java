@@ -118,6 +118,7 @@ public void applyFilter(BayerWebElement applyButton[],BayerWebElement product1[]
 		product1[i].click();
 		waitForElement( "products.verify.signUp", webDriver, 15 );
 		webDriver.get(url);
+		System.out.println(i);
 		i++;
 		
 	 }}
