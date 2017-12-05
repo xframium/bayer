@@ -23,7 +23,7 @@ public class EducationAllNavRun extends AbstractTest {
 		return url;
 	}
 	@TestDescriptor( testName="PetBasics Education All Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
 		executeSteps( new Step[] { new Navigate(url), 
         							new EducationAllNavSteps()/*,
@@ -33,7 +33,7 @@ public class EducationAllNavRun extends AbstractTest {
     }
 	
 	@TestDescriptor( testName="PetBasics Education All Filter Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void applyFilterTest( DeviceContainer dC ) {
 		executeSteps( new Step[] { new Navigate(url), 
         							new ApplyFilterToEducationAllNavSteps()/*,
@@ -65,7 +65,7 @@ public class EducationAllNavRun extends AbstractTest {
 	}
 	
 	@TestDescriptor( testName="PetBasics Education All Link Validation" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
     	executeSteps(new Step[] { 
     			new LinkValidator(url, 1)
