@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
+    
+    <validation name="H1 Tag">
+    <description>H1 Text Verification</description>
+    </validation>
+    
+    <validation name="H2 Tag">
+    <description>H2 Text Verification</description>
+   		<tag name="//*"> 
+    	<text type="contains">Bayer Products for less.</text>
+    	</tag>
+    	<tag name="//*"> 
+    	<text type="contains">Choose your filters to find the offer that's right for you and your pet.</text>
+    	</tag>   	
+    </validation>    
+  
+
+</validationCollection>
