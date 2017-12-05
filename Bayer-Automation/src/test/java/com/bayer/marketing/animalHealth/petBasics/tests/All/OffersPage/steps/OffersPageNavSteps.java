@@ -30,32 +30,48 @@ public class OffersPageNavSteps extends AbstractStep  {
         	BayerWebElement skipButton = getElement( "modal.skip", webDriver );
     		skipButton.click();	
 		}
-    
-    	//scrollAndSearch("betaseron.home.betaAppVid");
-    	BayerWebElement image = getElement( "petbasics.offers.image", webDriver );
-    	//Util.scrollToElement(webDriver, btn1, wait);
+    	
+    	// confirm offers page header image
     	waitForElement("petbasics.offers.image", webDriver, 15 ); 
-    	
-    	BayerWebElement nocoupon = getElement( "petbasics.offers.nocoupon", webDriver );
-    	//Util.scrollToElement(webDriver, btn2, wait);
+    	// confirm no offers on initial page
     	waitForElement("petbasics.offers.nocoupon", webDriver, 15 );
-    	
+    	// open filter menu in mobile
     	BayerWebElement filtermenu = getElement( "petbasics.offers.filtermenu", webDriver );
-    	//Util.scrollToElement(webDriver, btn3, wait);
     	waitForElement("petbasics.offers.filtermenu", webDriver, 15 );    	
     	filtermenu.click();
     	waitForElement("petbasics.offers.menuopen", webDriver, 15 );
+    	
+    	// select item 1, confirm offer, clear screen
     	BayerWebElement filteritem1 = getElement( "petbasics.offers.filteritem1", webDriver );
-    	waitForElement("petbasics..offers.filteritem1", webDriver, 15 );  
+    	waitForElement("petbasics.offers.filteritem1", webDriver, 15 );  
     	filteritem1.click();
     	BayerWebElement applyfilter = getElement( "petbasics.offers.applyfilter", webDriver );
     	applyfilter.click();
+    	//validate offer
     	waitForElement("petbasics.offers.applyfilter.validate", webDriver, 15 );
+    	//clear filter and update
     	BayerWebElement clearfilter = getElement( "petbasics.offers.clearfilter", webDriver );
     	clearfilter.click();
     	BayerWebElement cleanscreen = getElement( "petbasics.offers.cleanscreen", webDriver );
     	cleanscreen.click();
-    	waitForElement("petbasics.offers.cleanscreen.validate", webDriver, 15 );   	
+    	waitForElement("petbasics.offers.cleanscreen.validate", webDriver, 15 ); 
+    	
+    	// select item 2, confirm offer, clear screen
+    	BayerWebElement filteritem2 = getElement( "petbasics.offers.filteritem2", webDriver );
+    	waitForElement("petbasics.offers.filteritem2", webDriver, 15 );  
+    	filteritem2.click();
+    	BayerWebElement applyfilter2 = getElement( "petbasics.offers.applyfilter", webDriver );
+    	applyfilter2.click();
+    	//validate offer
+    	waitForElement("petbasics.offers.applyfilter.validate", webDriver, 15 );
+    	//clear filter and update
+    	BayerWebElement clearfilter2 = getElement( "petbasics.offers.clearfilter", webDriver );
+    	clearfilter2.click();
+    	BayerWebElement cleanscreen2 = getElement( "petbasics.offers.cleanscreen", webDriver );
+    	cleanscreen2.click();
+    	waitForElement("petbasics.offers.cleanscreen.validate", webDriver, 15 );
+    	
+
     	
     	webDriver.navigate().to(url);
     	
