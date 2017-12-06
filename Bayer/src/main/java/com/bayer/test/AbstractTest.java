@@ -236,7 +236,7 @@ public abstract class AbstractTest
             {
                 log.error( "Could not create reporting instance" );
             }
-            webDriver.manage().timeouts().implicitlyWait( 5, TimeUnit.SECONDS );
+            //webDriver.manage().timeouts().implicitlyWait( 5, TimeUnit.SECONDS );
             rtCaps = webDriver.getCapabilities();
             webDriver.setOsType( rtCaps.getCapability( "platformName" ) + "" );
             webDriver.setDeviceId( rtCaps.getCapability( "deviceName" ) + "" );
