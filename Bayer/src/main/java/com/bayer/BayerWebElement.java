@@ -12,11 +12,13 @@ import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.internal.Coordinates;
+import org.openqa.selenium.internal.Locatable;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
-public class BayerWebElement implements WebElement
+public class BayerWebElement implements WebElement, Locatable
 {
     public WebElement getWebElement() {
 		return webElement;
@@ -37,6 +39,11 @@ public class BayerWebElement implements WebElement
     {
         this.webElement = webElement;
         this.webDriver = webDriver;
+    }
+    
+    public WebElement getUnderlyingElement()
+    {
+        return this.webElement;
     }
     
     @Override
@@ -71,6 +78,9 @@ public class BayerWebElement implements WebElement
         
         return webElement != null;
     }
+    
+    
+    
     
     public boolean exists( boolean handlePopups , int intTimeOut)
     {
@@ -246,6 +256,12 @@ public class BayerWebElement implements WebElement
             if ( webElement == null )
                 populationFailed = true;
         }
+    }
+
+    @Override
+    public Coordinates getCoordinates()
+    {
+        return ( (Locatable) webElement).getCoordinates();
     }
 
 }
