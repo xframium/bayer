@@ -13,6 +13,9 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.HasInputDevices;
+import org.openqa.selenium.interactions.Keyboard;
+import org.openqa.selenium.interactions.Mouse;
 import org.openqa.selenium.internal.FindsByClassName;
 import org.openqa.selenium.internal.FindsByCssSelector;
 import org.openqa.selenium.internal.FindsById;
@@ -21,11 +24,12 @@ import org.openqa.selenium.internal.FindsByName;
 import org.openqa.selenium.internal.FindsByTagName;
 import org.openqa.selenium.internal.FindsByXPath;
 import com.bayer.utiilty.XMLEscape;
+import com.google.common.hash.HashingInputStream;
 import com.perfecto.reportium.client.ReportiumClient;
 import io.appium.java_client.AppiumDriver;
 
 public class BayerWebDriver implements WebDriver, FindsByClassName, FindsByCssSelector, FindsById, FindsByLinkText,
-		FindsByName, FindsByTagName, FindsByXPath, JavascriptExecutor, TakesScreenshot, HasCapabilities, ContextAware {
+		FindsByName, FindsByTagName, FindsByXPath, JavascriptExecutor, TakesScreenshot, HasCapabilities, ContextAware, HasInputDevices {
 	private WebDriver nativeDriver;
 	private ReportiumClient reportiumClient;
 	private String currentContext;
@@ -442,6 +446,24 @@ public class BayerWebDriver implements WebDriver, FindsByClassName, FindsByCssSe
             return ( (ContextAware) nativeDriver ).getContext();
         
         return null;
+    }
+
+    @Override
+    public Keyboard getKeyboard()
+    {
+        if ( nativeDriver instanceof HasInputDevices )
+            return ( (HasInputDevices) nativeDriver ).getKeyboard();
+        else
+            return null;
+    }
+
+    @Override
+    public Mouse getMouse()
+    {
+        if ( nativeDriver instanceof HasInputDevices )
+            return ( (HasInputDevices) nativeDriver ).getMouse();
+        else
+            return null;
     }
 
 }
