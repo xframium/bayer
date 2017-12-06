@@ -261,6 +261,8 @@ public class BayerWebElement implements WebElement, Locatable
     @Override
     public Coordinates getCoordinates()
     {
+        if ( webElement == null && !populationFailed )
+            populateElement( true );
         return ( (Locatable) webElement).getCoordinates();
     }
 
