@@ -198,7 +198,7 @@ public abstract class AbstractTest
                     else
                     {
                         webDriver = new BayerWebDriver( new RemoteWebDriver( new URL( cloudUrl ), dC ) );
-                        webDriver.manage().timeouts().implicitlyWait( 5, TimeUnit.SECONDS );
+                        //webDriver.manage().timeouts().implicitlyWait( 5, TimeUnit.SECONDS );
                         String initialUrl = (String) dC.getCapability( "initialUrl" );
                         if ( initialUrl != null && !initialUrl.isEmpty() )
                             webDriver.get( initialUrl );
