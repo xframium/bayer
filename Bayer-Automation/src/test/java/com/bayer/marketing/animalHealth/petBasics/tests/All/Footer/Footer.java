@@ -45,8 +45,8 @@ public class Footer extends AbstractTest {
         						    } );
     }
     
-    /*@TestDescriptor( testName="Home Page Link Validation" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @TestDescriptor( testName="Home Page Link Validation" )
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void linkValidationTest(DeviceContainer dC){
     	System.out.println("The url currently being used it" + url);
     	executeSteps(new Step[] { 
@@ -55,6 +55,6 @@ public class Footer extends AbstractTest {
    
     	});
     }
-    */	
+    	
  
 } //end class
