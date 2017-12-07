@@ -6,7 +6,7 @@
   <test name="Run Test File"  >
     <packages>
 
-      <package name="package com.bayer.marketing.consumerHealth.MiddleEast.claratine.tests.HomePage" /> 
+      <package name="com.bayer.marketing.consumerHealth.MiddleEast.claratine.tests.HomePage" /> 
 
    </packages>
  </test>
