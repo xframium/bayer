@@ -1,6 +1,12 @@
 package com.bayer.marketing.animalHealth.petBasics.tests.All.OffersPage.steps;
 
 
+import java.sql.Driver;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.marketing.animalHealth.petBasics.tests.All.OffersPage.OffersPage;
@@ -12,7 +18,18 @@ public class OffersPageNavSteps extends AbstractStep  {
         super( "Successful", "error message" );
     }
     
-    @Override
+    private BayerWebElement findElement(By className) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+    
+    public void configItemCount()
+    {
+    	BayerWebElement brands = findElement(By.className("brands-section"));
+    	List<WebElement> itemCount = brands.findElements(By.xpath("//li"));
+    }      
+
+	@Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {
     	OffersPage urlVar = new OffersPage();
     	String url = urlVar.getUrl();
@@ -25,6 +42,15 @@ public class OffersPageNavSteps extends AbstractStep  {
         	BayerWebElement skipButton = getElement( "modal.skip", webDriver );
     		skipButton.click();	
 		}
+    	
+    	//for (int i = 0; i < configItemCount(); i++) {
+    	    // get the data from the dataProvider
+    		//String filteritem = "filteritem"+i;
+    	    // create the instance of the dataRecord class with the data record for this
+    	    //FlightData tripInfo = new FlightData(trip);
+    	    //rest of the test script
+
+    	    //}
     	
     	// confirm offers page header image
     	waitForElement("petbasics.offers.image", webDriver, 15 ); 
@@ -50,10 +76,40 @@ public class OffersPageNavSteps extends AbstractStep  {
     	applyFilters( webDriver );
     	clearFilters( webDriver );  
     	
+    	// select item 3, confirm offer, clear screen
+    	BayerWebElement filteritem3 = getElement( "petbasics.offers.filteritem3", webDriver );
+    	waitForElement("petbasics.offers.filteritem3", webDriver, 15 );  
+    	filteritem3.click();
+    	applyFilters( webDriver );
+    	clearFilters( webDriver );  
+    	
+    	// select item 4, confirm offer, clear screen
+    	BayerWebElement filteritem4 = getElement( "petbasics.offers.filteritem4", webDriver );
+    	waitForElement("petbasics.offers.filteritem4", webDriver, 15 );  
+    	filteritem4.click();
+    	applyFilters( webDriver );
+    	clearFilters( webDriver );  
+    	
+    	// select item 5, confirm offer, clear screen
+    	BayerWebElement filteritem5 = getElement( "petbasics.offers.filteritem5", webDriver );
+    	waitForElement("petbasics.offers.filteritem5", webDriver, 15 );  
+    	filteritem5.click();
+    	applyFilters( webDriver );
+    	clearFilters( webDriver );      	
+    	
+    	// select item 6, confirm offer, clear screen
+    	BayerWebElement filteritem6 = getElement( "petbasics.offers.filteritem6", webDriver );
+    	waitForElement("petbasics.offers.filteritem6", webDriver, 15 );  
+    	filteritem6.click();
+    	applyFilters( webDriver );
+    	clearFilters( webDriver );  
+    	
     	webDriver.navigate().to(url);
     	
         return true;
     }
+    
+
     
     public void applyFilters( BayerWebDriver webDriver ) {
     	// apply selected filter
