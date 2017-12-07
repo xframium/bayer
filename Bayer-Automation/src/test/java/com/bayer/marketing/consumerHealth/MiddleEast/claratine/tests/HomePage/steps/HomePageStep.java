@@ -46,23 +46,23 @@ public class HomePageStep extends AbstractStep
         }
         */
         //new Accessibility();
-    	waitForElement( "bayer.home.about", webDriver, 15 );
+    	waitForElement( "claritin.home.about", webDriver, 15 );
         BayerWebElement exampleImage = getElement("bayer.home.about", webDriver);
         exampleImage.click();
-        waitForElement( "betaseron.key", webDriver, 15 );
+        waitForElement( "claritin.key", webDriver, 15 );
        
         new Accessibility();
         
         webDriver.navigate().to(url);
         
-        waitForElement( "bayer.home.search", webDriver, 15 );
-        BayerWebElement exampleSearch = getElement("bayer.home.search", webDriver);
+        waitForElement( "claritin.home.search", webDriver, 15 );
+        BayerWebElement exampleSearch = getElement("claritin.home.search", webDriver);
         exampleSearch.click();
         exampleSearch.sendKeys("Bayer 04");
-        BayerWebElement exampleSearchBTN = getElement("bayer.home.searchBtn", webDriver);
+        BayerWebElement exampleSearchBTN = getElement("claritin.home.searchBtn", webDriver);
         exampleSearchBTN.click();
         new Accessibility();
-        waitForElement( "bayer.key", webDriver, 15 );
+        waitForElement( "claritin.key", webDriver, 15 );
         webDriver.navigate().to(url);
         ///////////////Example Code Structure///////////////////
         /*BayerWebElement emailAddress = getElement( "login.emailAddress", webDriver );

@@ -1,6 +1,6 @@
 package com.bayer.marketing.consumerHealth.MiddleEast.claratine.tests.HomePage;
 
-import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
+import com.bayer.marketing.consumerHealth.MiddleEast.claratine.tests.HomePage.steps.HomePageStep;
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
@@ -23,13 +23,13 @@ public String url = "http://claritin.cd.uat.bch.inter.fe.claritin.build.dev-bbs.
 	public String getUrl(){ 
 		return url;
 	}
-    @TestDescriptor( testName="Conditions of Use Test" )
+    @TestDescriptor( testName=" Claratine Home Conditions of Use Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void conditionsTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new ConditionsOfUse() } );
     }
     
-    @TestDescriptor( testName="Privacy Policy Validation" )
+    @TestDescriptor( testName="Claratine Home Privacy Policy Validation" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void privacyPolicyTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
@@ -41,10 +41,15 @@ public String url = "http://claritin.cd.uat.bch.inter.fe.claritin.build.dev-bbs.
         executeSteps( new Step[] { new Navigate(url)  } );
     }
     
-    @TestDescriptor( testName="Example Timed Navigation Test" )
+    @TestDescriptor( testName="Claratine Home Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void timedNavigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new TimedNavigate(url, 6000) } );
+    }
+    @TestDescriptor( testName="Claratine Home Link Checker Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void linkCheckerTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new LinkValidator(url, 15)} );
     }
      
 }

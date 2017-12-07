@@ -6,6 +6,7 @@ import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBe
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
+import com.bayer.common.Accessibility;
 import com.bayer.common.utility.LinkValidator;
 import com.bayer.common.utility.StructureValidator;
 import com.bayer.test.AbstractTest;
@@ -24,30 +25,30 @@ public class ContactUs extends AbstractTest {
 		return url;
 	}
 	
-	@TestDescriptor( testName="PetBasics Home Nav Test" )
+	@TestDescriptor( testName="Aspirin Home Accessibility Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url), 
         							//new HomePageNavSteps(),
-        							new TimedNavigate(url, 4000),
+        							new Accessibility()
         							
         } );
     }
     
-	/*
+	
     @TestDescriptor( testName="Home Page Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void structureTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate( "https://www.betaseron.com/"),
+        executeSteps( new Step[] { new Navigate(url),
         						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),
         						   //new StructureValidator("Key"),
         						   
         						    } );
     }
-    */
-    /*@TestDescriptor( testName="Home Page Link Validation" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    
+    @TestDescriptor( testName="Home Page Link Validation" )
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void linkValidationTest(DeviceContainer dC){
     	System.out.println("The url currently being used it" + url);
     	executeSteps(new Step[] { 
@@ -56,6 +57,6 @@ public class ContactUs extends AbstractTest {
    
     	});
     }
-    */	
+    	
  
 } //end class
