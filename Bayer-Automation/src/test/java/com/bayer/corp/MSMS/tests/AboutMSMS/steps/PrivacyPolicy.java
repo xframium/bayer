@@ -11,10 +11,10 @@ import com.bayer.marketing.consumerHealth.betaseron.tests.Utility.Util;
 import com.bayer.test.step.AbstractStep;
 import com.sun.jna.platform.unix.X11;
 
-public class ConditionsOfUse extends AbstractStep
+public class PrivacyPolicy extends AbstractStep
 {
 
-    public ConditionsOfUse()
+    public PrivacyPolicy()
     {
         super( "message", "error message" );
     }
@@ -25,26 +25,25 @@ public class ConditionsOfUse extends AbstractStep
         
     	waitForElement( "bayer.key", webDriver, 15 );
     	
-    	try{
-	    	BayerWebElement cookiesPopup = getElement("bayer.cookiesVisible", webDriver);
-	        if(cookiesPopup.isDisplayed()){
-	        	BayerWebElement cookiesConf = getElement("bayer.cookiesConfirm", webDriver);
-	        	cookiesConf.click();
-	        }
-    	}
-    	catch (Exception e) {
-			System.out.println("Cookie popup not displayed");
-		}
+    	BayerWebElement cookiesPopup = getElement("bayer.cookiesVisible", webDriver);
+        if(cookiesPopup.isDisplayed()){
+        	BayerWebElement cookiesConf = getElement("bayer.cookiesConfirm", webDriver);
+        	cookiesConf.click();
+        }
         
         
-    	waitForElement( "bayer.conditions", webDriver, 15 );
-        BayerWebElement conditions = getElement("bayer.conditions", webDriver);
+    	waitForElement( "bayer.privacy", webDriver, 15 );
+        BayerWebElement conditions = getElement("bayer.privacy", webDriver);
         Util.scrollToElement(webDriver, conditions, wait);
         conditions.click();
         waitForElement( "bayer.key", webDriver, 15 );
         
-        new StructureValidator("Conditions", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
         
+        new StructureValidator("Privacy", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
+        new StructureValidator("Data", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
+        new StructureValidator("PersonalData", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
+        new StructureValidator("Use", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
+        new StructureValidator("Access Rights", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
         
         ///////////////Example Code Structure///////////////////
         /*BayerWebElement emailAddress = getElement( "login.emailAddress", webDriver );

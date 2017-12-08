@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <!-- Run Invididual Tests Here --> 
-<suite name="Aspirin Test" verbose="1" >
+<suite name="PetBasics Test" verbose="1" >
   <test name="Run Test File"  >
     <packages>
 
-      <package name="com.bayer.marketing.consumerHealth.aspirin.tests.Cart" /> 
+      <package name="com.bayer.corp.MSMS.tests.AboutMSMS" /> 
 
    </packages>
  </test>
