@@ -14,7 +14,6 @@ import com.bayer.test.step.AbstractStep;
 
 public class CartTestSteps extends AbstractStep  {
 	
-	//protected String url = "https://www.petbasics.com/";
     public CartTestSteps() {
         super( "Successful", "error message" );
     }
@@ -26,8 +25,7 @@ public class CartTestSteps extends AbstractStep  {
     	System.out.println(url);
     	
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
-        
-    	waitForElement( "aspirin.key", webDriver, 15 );
+        waitForElement( "aspirin.key", webDriver, 15 );
     	
     	/* Check for pop-up window
     	 BayerWebElement cookiesPopup = getElement("bayer.cookiesVisible", webDriver);
@@ -38,17 +36,14 @@ public class CartTestSteps extends AbstractStep  {
         */
         
         
-    	waitForElement( "bayer.conditions", webDriver, 15 );
-        BayerWebElement conditions = getElement("bayer.conditions", webDriver);
-        Util.scrollToElement(webDriver, conditions, wait);
-        conditions.click();
-        waitForElement( "bayer.key", webDriver, 15 );
-        
-        new StructureValidator("Conditions", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
+    	waitForElement( "aspirin.home.button", webDriver, 15 );
+        BayerWebElement home = getElement("aspirin.home.button", webDriver);
+        Util.scrollToElement(webDriver, home, wait);
+        home.click();
+        waitForElement( "aspirin.key", webDriver, 15 );
+        webDriver.navigate().to(url);
+        //new StructureValidator("Conditions", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
     	
-    	
-        
-        
         return true;
     }
 
