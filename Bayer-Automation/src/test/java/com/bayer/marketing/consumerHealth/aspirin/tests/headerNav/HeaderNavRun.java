@@ -13,7 +13,7 @@ import com.bayer.test.step.factory.Step;
 
 public class HeaderNavRun extends AbstractTest {
 
-	public String url = "http://test.bayeraspirin.com/";
+	public String url = "http://www.bayeraspirin.com/";
 
 	public String getUrl() {
 		return url;
