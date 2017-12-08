@@ -30,13 +30,13 @@ public String url = "https://www.bayer.com/";
     }
     
     @TestDescriptor( testName="Privacy Policy Validation" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void privacyPolicyTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
     }
     
     @TestDescriptor( testName="Example Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
     }

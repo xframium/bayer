@@ -6,8 +6,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.io.FileReader;
 import java.io.IOException;
-import com.bayer.common;
-import com.bayer.common.utility.StructureValidator;
+import com.bayer.common.Accessibility;
+import com.bayer.common.utility.*;
+import com.bayer.exampleTemplate.tests.Example.ExamplePage;
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
@@ -22,9 +23,45 @@ public class ExampleStep extends AbstractStep
     }
     
     @Override
-    protected boolean _executeStep( BayerWebDriver webDriver )
-    {
-    	/*String csvFile = "src/test/java/com/bayer/exampleTemplate/config/TestData.csv";
+    protected boolean _executeStep( BayerWebDriver webDriver ) {	
+    	ExamplePage urlVar = new ExamplePage();
+    	String url = urlVar.getUrl();
+    	
+    	waitForElement( "bayer.home.about", webDriver, 15 );
+        BayerWebElement exampleImage = getElement("bayer.home.about", webDriver);
+        exampleImage.click();
+        waitForElement( "betaseron.key", webDriver, 15 );
+       
+        new Accessibility();
+        
+        webDriver.navigate().to(url);
+        
+        waitForElement( "bayer.home.search", webDriver, 15 );
+        BayerWebElement exampleSearch = getElement("bayer.home.search", webDriver);
+        exampleSearch.click();
+        exampleSearch.sendKeys("Bayer 04");
+        BayerWebElement exampleSearchBTN = getElement("bayer.home.searchBtn", webDriver);
+        exampleSearchBTN.click();
+        new Accessibility();
+        waitForElement( "bayer.key", webDriver, 15 );
+        webDriver.navigate().to(url);
+        
+        ///////////////Example Code Structure///////////////////
+        /*BayerWebElement emailAddress = getElement( "login.emailAddress", webDriver );
+        emailAddress.sendKeys( "test@bayer.com" );
+        
+        BayerWebElement confirmEmailAddress = getElement( "login.confirmEmailAddress", webDriver );
+        confirmEmailAddress.sendKeys( "test@bayer.com" );
+        
+        BayerWebElement password = getElement( "login.password", webDriver );
+        password.sendKeys( "password" );
+        
+        
+        String bImage = password.getCssValue( "color" );
+        */
+        
+        
+        /*String csvFile = "src/test/java/com/bayer/exampleTemplate/config/TestData.csv";
         String line = "";
         String cvsSplitBy = ",";
         int x = 0;
@@ -43,35 +80,7 @@ public class ExampleStep extends AbstractStep
             e.printStackTrace();
         }
         */
-        
-    	waitForElement( "bayer.home.img1", webDriver, 15 );
-        BayerWebElement exampleImage = getElement("bayer.home.img1", webDriver);
-        exampleImage.click();
-        waitForElement( "betaseron.key", webDriver, 15 );
-        webDriver.navigate().to("https://www.bayer.com/");
-        
-        waitForElement( "bayer.home.search", webDriver, 15 );
-        BayerWebElement exampleSearch = getElement("bayer.home.search", webDriver);
-        exampleSearch.click();
-        exampleSearch.sendKeys("Bayer 04");
-        BayerWebElement exampleSearchBTN = getElement("bayer.home.searchBtn", webDriver);
-        exampleSearchBTN.click();
-        waitForElement( "bayer.key", webDriver, 15 );
-        webDriver.navigate().to("https://www.bayer.com/");
-        ///////////////Example Code Structure///////////////////
-        /*BayerWebElement emailAddress = getElement( "login.emailAddress", webDriver );
-        emailAddress.sendKeys( "test@bayer.com" );
-        
-        BayerWebElement confirmEmailAddress = getElement( "login.confirmEmailAddress", webDriver );
-        confirmEmailAddress.sendKeys( "test@bayer.com" );
-        
-        BayerWebElement password = getElement( "login.password", webDriver );
-        password.sendKeys( "password" );
-        
-        
-        String bImage = password.getCssValue( "color" );
-        */
-        
+        //new Accessibility();
         return true;
         
     }
