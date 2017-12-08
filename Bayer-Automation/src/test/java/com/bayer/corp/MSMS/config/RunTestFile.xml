@@ -6,7 +6,7 @@
   <test name="Run Test File"  >
     <packages>
 
-      <package name="com.bayer.corp.MSMS.tests.HomePage" /> 
+      <package name="com.bayer.corp.MSMS.tests.AboutMSMS" /> 
 
    </packages>
  </test>

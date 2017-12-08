@@ -31,7 +31,7 @@ public String url = "http://test.makingsciencemakesense.com/";
     
     @TestDescriptor( testName="Home Page Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
-    public void privacyPolicyTest( DeviceContainer dC ) {
+    public void validationTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), 
         		new StructureValidator("HomeValidation", "/com/bayer/corp/MSMS/tests/HomePage/HomePageValidation.xml"),
         				} );

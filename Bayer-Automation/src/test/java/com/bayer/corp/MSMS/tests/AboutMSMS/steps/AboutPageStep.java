@@ -1,4 +1,4 @@
-package com.bayer.corp.MSMS.tests.HomePage.steps;
+package com.bayer.corp.MSMS.tests.AboutMSMS.steps;
 
 import java.io.BufferedReader;
 import javax.swing.ImageIcon;
@@ -14,10 +14,10 @@ import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 import com.sun.jna.platform.unix.X11;
 
-public class HomePageStep extends AbstractStep
+public class AboutPageStep extends AbstractStep
 {
 
-    public HomePageStep()
+    public AboutPageStep()
     {
         super( "message", "error message" );
     }

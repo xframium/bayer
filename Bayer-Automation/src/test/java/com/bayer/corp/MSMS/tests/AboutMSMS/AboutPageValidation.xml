@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
-    <validation name="HomeValidation">
+    <validation name="AboutPageValidation">
         <description>MSMS Home Text Validation</description>
         <tag name="//*">
             <text type="contains">Proud of our legacy, excited for the future</text>
@@ -17,7 +17,7 @@
         </tag>
         <tag name="//*">
          <text type="contains">
-         An integral part of the Making Science Make Sense initiative is Bayer’s work to forge long-standing, deep-rooted partnerships that change the way science comes to life both inside and outside of the classroom. We collaborate with industry leaders, government organizations, school districts, education associations, and parents/caregivers to advance STEM education. Together, we focus on programs that support youth development and achievement, gender and ethnic diversity, teacher training, and family engagement. Making Science Make Sense programs also introduce students to valuable career skills such as critical thinking, creativity and adapting to change.
+         An integral 8ygijpart of the Making Science Make Sense initiative is Bayer’s work to forge long-standing, deep-rooted partnerships that change the way science comes to life both inside and outside of the classroom. We collaborate with industry leaders, government organizations, school districts, education associations, and parents/caregivers to advance STEM education. Together, we focus on programs that support youth development and achievement, gender and ethnic diversity, teacher training, and family engagement. Making Science Make Sense programs also introduce students to valuable career skills such as critical thinking, creativity and adapting to change.
          </text>    
         </tag>
         <tag name="//*">

@@ -1,4 +1,4 @@
-package com.bayer.corp.MSMS.tests.HomePage;
+package com.bayer.corp.MSMS.tests.AboutMSMS;
 
 import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
@@ -16,7 +16,7 @@ import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.javascript.host.URL;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
-public class HomePage extends AbstractTest {
+public class AboutPage extends AbstractTest {
 	
 public String url = "https://www.makingsciencemakesense.com/";
     
@@ -31,9 +31,9 @@ public String url = "https://www.makingsciencemakesense.com/";
     
     @TestDescriptor( testName="Home Page Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
-    public void privacyPolicyTest( DeviceContainer dC ) {
+    public void validationTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), 
-        		new StructureValidator("HomeValidation", "/com/bayer/corp/MSMS/tests/HomePage/HomePageValidation.xml"),
+        		new StructureValidator("AboutPageValidation", "/com/bayer/corp/MSMS/tests/AboutMSMS/AboutPageValidation.xml"),
         				} );
     }
     
