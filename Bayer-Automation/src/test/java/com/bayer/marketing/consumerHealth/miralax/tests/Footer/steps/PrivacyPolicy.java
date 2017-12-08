@@ -1,4 +1,4 @@
-package com.bayer.exampleTemplate.tests.Example.steps;
+package com.bayer.marketing.consumerHealth.miralax.tests.Footer.steps;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

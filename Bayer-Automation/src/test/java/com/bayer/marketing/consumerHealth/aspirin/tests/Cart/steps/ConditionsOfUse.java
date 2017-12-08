@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.aspirin.tests.HomePage.steps;
+package com.bayer.marketing.consumerHealth.aspirin.tests.Cart.steps;
 
 
 import java.awt.Dialog.ModalExclusionType;
