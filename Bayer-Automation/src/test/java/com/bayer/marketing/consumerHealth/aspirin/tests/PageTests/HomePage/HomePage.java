@@ -1,8 +1,8 @@
-package com.bayer.marketing.consumerHealth.aspirin.tests.HomePage;
+package com.bayer.marketing.consumerHealth.aspirin.tests.PageTests.HomePage;
 
 
-import com.bayer.marketing.consumerHealth.aspirin.tests.HomePage.steps.HomePageNavSteps;
-import com.bayer.marketing.consumerHealth.aspirin.tests.HomePage.steps.ConditionsOfUse;
+import com.bayer.marketing.consumerHealth.aspirin.tests.PageTests.HomePage.steps.HomePageNavSteps;
+import com.bayer.marketing.consumerHealth.aspirin.tests.PageTests.HomePage.steps.ConditionsOfUse;
 import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;

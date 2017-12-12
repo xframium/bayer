@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.aspirin.tests.Products;
+package com.bayer.marketing.consumerHealth.aspirin.tests.PageTests.Products;
 
 import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
 import org.testng.annotations.Test;

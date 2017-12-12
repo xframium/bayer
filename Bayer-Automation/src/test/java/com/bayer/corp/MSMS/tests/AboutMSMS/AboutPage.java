@@ -18,7 +18,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class AboutPage extends AbstractTest {
 	
-public String url = "https://www.makingsciencemakesense.com/";
+public String url = "http://test.makingsciencemakesense.com/about-msms/";
     
 	public String getUrl(){ 
 		return url;

@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.aspirin.tests.footerNav.steps;
+package com.bayer.marketing.consumerHealth.aspirin.tests.SiteWideTests.footerNav.steps;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;

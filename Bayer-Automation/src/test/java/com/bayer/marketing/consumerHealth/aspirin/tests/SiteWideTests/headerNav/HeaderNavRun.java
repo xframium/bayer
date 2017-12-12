@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.aspirin.tests.headerNav;
+package com.bayer.marketing.consumerHealth.aspirin.tests.SiteWideTests.headerNav;
 
 import org.testng.annotations.Test;
 
@@ -6,7 +6,7 @@ import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
 import com.bayer.common.utility.LinkValidator;
 import com.bayer.common.utility.StructureValidator;
-import com.bayer.marketing.consumerHealth.aspirin.tests.headerNav.steps.HeaderNavStep;
+import com.bayer.marketing.consumerHealth.aspirin.tests.SiteWideTests.headerNav.steps.HeaderNavStep;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
