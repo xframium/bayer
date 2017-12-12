@@ -32,7 +32,7 @@ public class WhereToBuyNavRun extends AbstractTest {
 	}
 
 	@TestDescriptor(testName = "Aspirin Where To Buy Structure Test")
-	@Test(dataProvider = "deviceList", enabled = true)
+	@Test(dataProvider = "deviceList", enabled = false)
 	public void whereToBuyStructureTest(DeviceContainer dC) {
 		executeSteps(new Step[] { new Navigate(url),
 				new StructureValidator("H1Tag",
@@ -41,7 +41,7 @@ public class WhereToBuyNavRun extends AbstractTest {
 	}
 
 	@TestDescriptor(testName = "Aspirin Where To Buy Link Validation")
-	@Test(dataProvider = "deviceList", enabled = true)
+	@Test(dataProvider = "deviceList", enabled = false)
 	public void linkValidationTest(DeviceContainer dC) {
 		executeSteps(new Step[] { new LinkValidator(url, 1)
 
