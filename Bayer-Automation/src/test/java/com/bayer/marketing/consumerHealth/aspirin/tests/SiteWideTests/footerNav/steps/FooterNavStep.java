@@ -1,5 +1,8 @@
 package com.bayer.marketing.consumerHealth.aspirin.tests.SiteWideTests.footerNav.steps;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -172,6 +175,22 @@ public class FooterNavStep extends AbstractStep {
 		
 		webDriver.navigate().to(footerUrl);
 		waitForElement("aspirin.base.image", webDriver, 30);
+		
+String parentWindow = webDriver.getWindowHandle();
+		
+		//External links opened in new browser tab
+		this.switchToNewTabAndClose("aspirin.footer.bayer.global", webDriver, wait, parentWindow);
+		Util.recallBaseURL(webDriver, footerUrl);
+		this.switchToNewTabAndClose("aspirin.footer.bayer.consumer.health", webDriver, wait, parentWindow);
+		Util.recallBaseURL(webDriver, footerUrl);
+		this.switchToNewTabAndClose("aspirin.footer.bayer.privacy.statement", webDriver, wait, parentWindow);
+		Util.recallBaseURL(webDriver, footerUrl);
+		this.switchToNewTabAndClose("aspirin.footer.bayer.condition.use", webDriver, wait, parentWindow);
+		Util.recallBaseURL(webDriver, footerUrl);
+		this.switchToNewTabAndClose("aspirin.footer.bayer.imprint", webDriver, wait, parentWindow);
+		Util.recallBaseURL(webDriver, footerUrl);
+		this.switchToNewTabAndClose("aspirin.footer.bayer.transparency.chain", webDriver, wait, parentWindow);
+			
 						
 		return true;
 	}
@@ -197,6 +216,25 @@ public class FooterNavStep extends AbstractStep {
 		waitForElement(closeButtonPath, webDriver, 30);
 		BayerWebElement close = getElement(closeButtonPath, webDriver);
 		close.click();
+	}
+	
+	public void switchToNewTabAndClose(String externalLink,BayerWebDriver webDriver,WebDriverWait wait,String parentWindow) {
+		wait =new WebDriverWait(webDriver, 50);
+		waitForElement(externalLink, webDriver, 30);
+		BayerWebElement link = getElement(externalLink, webDriver);
+		Util.scrollToElement(webDriver, link, wait);
+		link.click();
+		String childWindow;
+		Set<String> childWindows=webDriver.getWindowHandles();
+		Iterator tabIterator = childWindows.iterator();
+		while(tabIterator.hasNext()) {
+			childWindow = tabIterator.next().toString();
+			if(!childWindow.equals(parentWindow)){
+				webDriver.switchTo().window(childWindow);
+				wait = new WebDriverWait(webDriver,70);
+				webDriver.close();
+			}
+		} 
 	}
 
 }
