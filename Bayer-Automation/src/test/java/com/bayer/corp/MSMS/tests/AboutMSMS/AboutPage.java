@@ -1,4 +1,4 @@
-package com.bayer.exampleTemplate.tests.Example;
+package com.bayer.corp.MSMS.tests.AboutMSMS;
 
 import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
@@ -16,27 +16,29 @@ import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.javascript.host.URL;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
-public class ExamplePage extends AbstractTest {
+public class AboutPage extends AbstractTest {
 	
-public String url = "https://www.bayer.com/";
+public String url = "http://test.makingsciencemakesense.com/about-msms/";
     
 	public String getUrl(){ 
 		return url;
 	}
     @TestDescriptor( testName="Conditions of Use Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void conditionsTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new ConditionsOfUse() } );
     }
     
-    @TestDescriptor( testName="Privacy Policy Validation" )
-    @Test ( dataProvider = "deviceList", enabled=false)
-    public void privacyPolicyTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
+    @TestDescriptor( testName="Home Page Validation" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void validationTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url), 
+        		new StructureValidator("AboutPageValidation", "/com/bayer/corp/MSMS/tests/AboutMSMS/AboutPageValidation.xml"),
+        				} );
     }
     
     @TestDescriptor( testName="Example Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
     }

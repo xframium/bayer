@@ -3,7 +3,7 @@
     
     <validation name="H1Tag">
 	    <description>H1 Text Verification</description>
-	   		<tag name="//h1/span"> 
+	   		<tag name="//*"> 
 	    	<text type="contains">All Education</text>
 	    	</tag>
     </validation>

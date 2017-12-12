@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.miralax.tests.Footer.steps;
+package com.bayer.marketing.consumerHealth.MiddleEast.claratine.tests.HomePage.steps;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -25,11 +25,16 @@ public class ConditionsOfUse extends AbstractStep
         
     	waitForElement( "bayer.key", webDriver, 15 );
     	
-    	BayerWebElement cookiesPopup = getElement("bayer.cookiesVisible", webDriver);
-        if(cookiesPopup.isDisplayed()){
-        	BayerWebElement cookiesConf = getElement("bayer.cookiesConfirm", webDriver);
-        	cookiesConf.click();
-        }
+    	try{
+	    	BayerWebElement cookiesPopup = getElement("bayer.cookiesVisible", webDriver);
+	        if(cookiesPopup.isDisplayed()){
+	        	BayerWebElement cookiesConf = getElement("bayer.cookiesConfirm", webDriver);
+	        	cookiesConf.click();
+	        }
+    	}
+    	catch (Exception e) {
+			System.out.println("Cookie popup not displayed");
+		}
         
         
     	waitForElement( "bayer.conditions", webDriver, 15 );

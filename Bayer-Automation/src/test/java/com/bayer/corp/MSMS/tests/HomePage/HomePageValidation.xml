@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
+    <validation name="Test1">
+        <description>MSMS Test</description>
+        
+        <tag name="//*">
+         <text type="contains">the</text>    
+        </tag>
+        
+    </validation>
+    <validation name="HomeValidation">
+        <description>MSMS Home Text Validation</description>
+        <tag name="//*">
+         <text type="contains">As an industry-leading Life Science company, Bayer has a unique understanding of the integral role science plays in everyday life. Making Science Make Sense®, Bayer’s companywide, presidential award-winning STEM education initiative, seeks to advance science literacy and STEM education outreach across the United States through hands-on, inquiry-based learning activities, purpose-driven employee volunteerism, national and community-focused partnerships and programs, and a public education campaign led by astronaut <link  xlink:href="/about-msms/chief-ambassador/">Dr. Mae C. Jemison</link>, the world’s first woman of color to go into space</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">With more than 20 years of promoting science through our Making Science Make Sense initiative, Bayer is committed to advancing STEM education and ensuring that all individuals are scientifically literate. Together with our Making Science Make Sense partners, Bayer is working to educate, engage and inspire the next generation of scientists, engineers, technologists and innovators. At Bayer, we strongly believe it is about making STEM education more accessible and less intimidating – to kids and adults</text>    
+        </tag>
+        
+    </validation>
+       
+</validationCollection>

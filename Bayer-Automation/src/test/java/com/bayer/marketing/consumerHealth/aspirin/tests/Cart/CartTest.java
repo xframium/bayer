@@ -36,7 +36,7 @@ public class CartTest extends AbstractTest {
     
 	
     @TestDescriptor( testName="Aspirin Conditons of Use Validation" )
-    @Test ( dataProvider = "deviceList", enabled= true)
+    @Test ( dataProvider = "deviceList", enabled= false)
     public void conditionsTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate( url),
         						   new ConditionsOfUse(),
@@ -44,7 +44,7 @@ public class CartTest extends AbstractTest {
     }
     
     @TestDescriptor( testName="Aspirin Home Link Validation" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void linkValidationTest(DeviceContainer dC){
     	//System.out.println("The url currently being used it" + url);
     	executeSteps(new Step[] { 

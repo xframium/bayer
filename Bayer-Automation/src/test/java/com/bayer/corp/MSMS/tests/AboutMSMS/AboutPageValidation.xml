@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
+    <validation name="AboutPageValidation">
+        <description>MSMS Home Text Validation</description>
+        <tag name="//*">
+            <text type="contains">Proud of our legacy, excited for the future</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">
+         For more than 150 years, Bayer has been an innovation company deeply rooted in science. With core competencies in the Life Science fields of health care and agriculture, we are dedicated to advancing science, technology, engineering and math (STEM) education and ensuring that all individuals are scientifically literate. Making Science Make Sense®, Bayer’s companywide, presidential award-winning STEM education initiative, seeks to advance science literacy and STEM education outreach across the United States through hands-on, inquiry-based learning activities, purpose-driven employee volunteerism, national and community-focused partnerships and programs, and a public education campaign led by astronaut Dr. Mae C. Jemison, the world’s first woman of color to go into space.
+         </text>    
+        </tag>
+        <tag name="//*">
+         <text type="contains">
+         Bayer formalized Making Science Make Sense across the company in 1995; however, the spirit of the initiative dates back more than 50 years, when Bayer volunteers began helping teachers teach and students learn science the way scientists do – by doing it. Today, in Bayer site communities nationwide, hundreds of employee volunteers continue to foster science literacy and ignite student interest in STEM education through the local and national programs Bayer supports as part of our Making Science Make Sense initiative.
+         </text>    
+        </tag>
+        <tag name="//*">
+         <text type="contains">
+         An integral 8ygijpart of the Making Science Make Sense initiative is Bayer’s work to forge long-standing, deep-rooted partnerships that change the way science comes to life both inside and outside of the classroom. We collaborate with industry leaders, government organizations, school districts, education associations, and parents/caregivers to advance STEM education. Together, we focus on programs that support youth development and achievement, gender and ethnic diversity, teacher training, and family engagement. Making Science Make Sense programs also introduce students to valuable career skills such as critical thinking, creativity and adapting to change.
+         </text>    
+        </tag>
+        <tag name="//*">
+         <text type="contains">
+         A variety of tools and resources are available to students, teachers and families through the Making Science Make Sense initiative, some of which are accessible in the Science Library section of this website. Bayer has also published and made available several STEM resource guides. These reports provide valuable information about best practice K-20 STEM education programs as well as practical advice for how to support and/or replicate such programs nationally or in local communities. Additionally, Bayer’s ongoing commitment to research through its Facts of Science Education surveys continues to gauge public opinion on the state of science education in the United States, offer support for education reform, dig deeper into current topics surrounding STEM education, and shine a public spotlight on the important role that science and science literacy plays in everyday life.
+         </text>    
+        </tag>
+        <tag name="//*">
+         <text type="contains">
+         With more than 20 years of promoting science through our Making Science Make Sense initiative, Bayer knows firsthand how critical it is to continue our support of STEM education. Our company’s foundation in research, innovation and technology, Bayer’s success, and our nation’s economic future, will rely heavily on a robust workforce pipeline of STEM talent. Together with our Making Science Make Sense partners, Bayer is working to inspire the next generation of scientists, engineers, technologists and innovators. We strongly believe it is about making STEM education more accessible and less intimidating – to kids and adults. At Bayer, STEM education is vital to our ability to preserve human, animal and nutritional health in the future. By educating and engaging the youth of today in STEM through our Making Science Make Sense initiative, we ensure that Bayer will continue to benefit society in innovative new ways for generations to come.
+         </text>    
+        </tag>
+        
+    </validation>
+       
+</validationCollection>

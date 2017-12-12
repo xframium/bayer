@@ -1,7 +1,7 @@
-package com.bayer.marketing.consumerHealth.aspirin.tests.ContactUs;
+package com.bayer.marketing.consumerHealth.aspirin.tests.SiteWideTests.ContactUs;
 
 
-import com.bayer.marketing.consumerHealth.aspirin.tests.HomePage.steps.HomePageNavSteps;
+import com.bayer.marketing.consumerHealth.aspirin.tests.SiteWideTests.ContactUs.steps.ContactUsSteps;
 import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;

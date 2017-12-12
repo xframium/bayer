@@ -1,4 +1,4 @@
-package com.bayer.exampleTemplate.tests.Example.steps;
+package com.bayer.corp.MSMS.tests.AboutMSMS.steps;
 
 import java.io.BufferedReader;
 import javax.swing.ImageIcon;
@@ -8,23 +8,23 @@ import java.io.FileReader;
 import java.io.IOException;
 import com.bayer.common.Accessibility;
 import com.bayer.common.utility.*;
-import com.bayer.exampleTemplate.tests.Example.ExamplePage;
+import com.bayer.corp.MSMS.tests.HomePage.*;
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 import com.sun.jna.platform.unix.X11;
 
-public class ExampleStep extends AbstractStep
+public class AboutPageStep extends AbstractStep
 {
 
-    public ExampleStep()
+    public AboutPageStep()
     {
         super( "message", "error message" );
     }
     
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {	
-    	ExamplePage urlVar = new ExamplePage();
+    	HomePage urlVar = new HomePage();
     	String url = urlVar.getUrl();
     	
     	waitForElement( "bayer.home.about", webDriver, 15 );
