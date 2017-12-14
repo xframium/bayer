@@ -77,6 +77,47 @@ public class SiteMapNavStep extends AbstractStep {
 		this.validate("aspirin.sitemap.heart.health.terms", webDriver, "aspirin.sitemap.heart.health.terms.validate", wait);
 		Util.recallBaseURL(webDriver, siteMap);
 		waitForElement("aspirin.sitemap.base.test", webDriver, 15);
+		
+		this.validate("aspirin.sitemap.live.heart.health", webDriver, "aspirin.sitemap.live.heart.health.validate", wait);
+		Util.recallBaseURL(webDriver, siteMap);
+		waitForElement("aspirin.sitemap.base.test", webDriver, 15);
+		
+		this.validate("aspirin.sitemap.exercise.after.attack", webDriver, "aspirin.sitemap.exercise.after.attack.validate", wait);
+		Util.recallBaseURL(webDriver, siteMap);
+		waitForElement("aspirin.sitemap.base.test", webDriver, 15);
+		
+		this.validate("aspirin.sitemap.cardiac.rehab", webDriver, "aspirin.sitemap.cardiac.rehab.validate", wait);
+		Util.recallBaseURL(webDriver, siteMap);
+		waitForElement("aspirin.sitemap.base.test", webDriver, 15);
+		
+		this.validate("aspirin.sitemap.heart.healthy.foods", webDriver, "aspirin.sitemap.heart.healthy.foods.validate", wait);
+		Util.recallBaseURL(webDriver, siteMap);
+		waitForElement("aspirin.sitemap.base.test", webDriver, 15);
+		
+		this.validate("aspirin.sitemap.exercise.heart.health", webDriver, "aspirin.sitemap.exercise.heart.health.validate", wait);
+		Util.recallBaseURL(webDriver, siteMap);
+		waitForElement("aspirin.sitemap.base.test", webDriver, 15);
+		
+		this.validate("aspirin.sitemap.stick.exercise.routine", webDriver, "aspirin.sitemap.stick.exercise.routine.validate", wait);
+		Util.recallBaseURL(webDriver, siteMap);
+		waitForElement("aspirin.sitemap.base.test", webDriver, 15);
+		
+		this.validate("aspirin.sitemap.fun.exercise", webDriver, "aspirin.sitemap.fun.exercise.validate", wait);
+		Util.recallBaseURL(webDriver, siteMap);
+		waitForElement("aspirin.sitemap.base.test", webDriver, 15);
+		
+		this.validate("aspirin.sitemap.support.system", webDriver, "aspirin.sitemap.support.system.validate", wait);
+		Util.recallBaseURL(webDriver, siteMap);
+		waitForElement("aspirin.sitemap.base.test", webDriver, 15);
+		
+		this.validate("aspirin.sitemap.exercise.basics", webDriver, "aspirin.sitemap.exercise.basics.validate", wait);
+		Util.recallBaseURL(webDriver, siteMap);
+		waitForElement("aspirin.sitemap.base.test", webDriver, 15);
+		
+		this.validate("aspirin.sitemap.coping.depression", webDriver, "aspirin.sitemap.coping.depression.validate", wait);
+		Util.recallBaseURL(webDriver, siteMap);
+		waitForElement("aspirin.sitemap.base.test", webDriver, 15);
+		
 			
 		return true;
 	}
