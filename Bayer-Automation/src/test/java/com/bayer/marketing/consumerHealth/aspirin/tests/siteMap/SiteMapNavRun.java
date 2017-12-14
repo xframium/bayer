@@ -13,7 +13,7 @@ import com.bayer.test.step.factory.Step;
 
 public class SiteMapNavRun extends AbstractTest {
 
-	public String url = "http://test.bayeraspirin.com/";
+	public String url = "http://test.bayeraspirin.com/sitemap/";
 
 	public String getUrl() {
 		return url;
@@ -32,7 +32,7 @@ public class SiteMapNavRun extends AbstractTest {
 	}
 
 	@TestDescriptor(testName = "Aspirin SiteMap Structure Test")
-	@Test(dataProvider = "deviceList", enabled = false)
+	@Test(dataProvider = "deviceList", enabled = true)
 	public void siteMapStructureTest(DeviceContainer dC) {
 		executeSteps(new Step[] { new Navigate(url),
 				new StructureValidator("H1Tag",
@@ -41,7 +41,7 @@ public class SiteMapNavRun extends AbstractTest {
 	}
 
 	@TestDescriptor(testName = "Aspirin SiteMap Link Validation")
-	@Test(dataProvider = "deviceList", enabled = false)
+	@Test(dataProvider = "deviceList", enabled = true)
 	public void linkValidationTest(DeviceContainer dC) {
 		executeSteps(new Step[] { new LinkValidator(url, 1)
 
