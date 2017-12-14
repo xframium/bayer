@@ -7,6 +7,7 @@ import com.bayer.common.TimedNavigate;
 import com.bayer.common.utility.LinkValidator;
 import com.bayer.common.utility.StructureValidator;
 import com.bayer.marketing.consumerHealth.aspirin.tests.siteMap.steps.SiteMapNavStep;
+import com.bayer.marketing.consumerHealth.aspirin.tests.siteMap.steps.SiteMapStrokeNavStep;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
@@ -23,6 +24,12 @@ public class SiteMapNavRun extends AbstractTest {
 	@Test(dataProvider = "deviceList", enabled = true)
 	public void navigateSiteMap(DeviceContainer dC) {
 		executeSteps(new Step[] { new Navigate(url), new SiteMapNavStep()});
+	}
+	
+	@TestDescriptor(testName = "Aspirin SiteMap Stroke Navigation Test")
+	@Test(dataProvider = "deviceList", enabled = true)
+	public void navigateStrokeSiteMap(DeviceContainer dC) {
+		executeSteps(new Step[] { new Navigate(url), new SiteMapStrokeNavStep()});
 	}
 
 	@TestDescriptor(testName = "Aspirin SiteMap Timed Navigation Test")
