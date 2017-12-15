@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <!-- Run Invididual Tests Here -->
-<suite name="CI Tests" verbose="2">
+<suite name="CI Tests" verbose="10" parallel="classes">
   <test name="CI Test">
     <groups>
       <run>
