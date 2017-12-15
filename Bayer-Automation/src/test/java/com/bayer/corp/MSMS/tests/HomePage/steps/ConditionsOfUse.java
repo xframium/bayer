@@ -1,15 +1,11 @@
-package com.bayer.exampleTemplate.tests.Example.steps;
+package com.bayer.corp.MSMS.tests.HomePage.steps;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.common.utility.StructureValidator;
 import com.bayer.marketing.consumerHealth.betaseron.tests.Utility.Util;
 import com.bayer.test.step.AbstractStep;
-import com.sun.jna.platform.unix.X11;
 
 public class ConditionsOfUse extends AbstractStep
 {

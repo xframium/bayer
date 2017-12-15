@@ -16,6 +16,7 @@ public class Navigate extends AbstractStep implements Step
     @Override 
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
+        webDriver.manage().window().maximize();
         webDriver.get( url );
         return true;
     }

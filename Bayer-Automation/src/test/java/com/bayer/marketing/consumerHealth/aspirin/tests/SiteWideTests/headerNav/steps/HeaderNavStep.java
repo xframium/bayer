@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.aspirin.tests.headerNav.steps;
+package com.bayer.marketing.consumerHealth.aspirin.tests.SiteWideTests.headerNav.steps;
 
 import org.apache.commons.collections.functors.IfClosure;
 import org.openqa.selenium.interactions.Actions;

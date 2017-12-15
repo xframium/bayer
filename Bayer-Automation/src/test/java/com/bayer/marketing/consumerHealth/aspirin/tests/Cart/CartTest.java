@@ -1,20 +1,14 @@
 package com.bayer.marketing.consumerHealth.aspirin.tests.Cart;
 
 
-import com.bayer.marketing.consumerHealth.aspirin.tests.Cart.steps.*;
-import com.bayer.marketing.consumerHealth.aspirin.tests.HomePage.steps.ConditionsOfUse;
-import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
-import com.bayer.common.TimedNavigate;
 import com.bayer.common.utility.LinkValidator;
-import com.bayer.common.utility.StructureValidator;
+import com.bayer.marketing.consumerHealth.aspirin.tests.Cart.steps.CartTestSteps;
+import com.bayer.marketing.consumerHealth.aspirin.tests.Cart.steps.ConditionsOfUse;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
-import com.gargoylesoftware.htmlunit.Page;
-import com.gargoylesoftware.htmlunit.javascript.host.URL;
-import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 
 public class CartTest extends AbstractTest {	

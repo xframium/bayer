@@ -155,8 +155,7 @@ public abstract class AbstractStep implements Step
         WebDriverWait waitFor = new WebDriverWait( webDriver, waitTime, 500 );
 
         final By useBy;
-        
-        
+
         switch ( orLookup.getOrType() )
         {
             case "XPATH":
@@ -166,8 +165,8 @@ public abstract class AbstractStep implements Step
                 useBy = By.cssSelector( orLookup.getOrValue() );
                 break;
             case "ID":
-               useBy = By.id( orLookup.getOrValue() );
-               break;
+                useBy = By.id( orLookup.getOrValue() );
+                break;
             case "NAME":
                 useBy = By.name( orLookup.getOrValue() );
                 break;
@@ -177,7 +176,7 @@ public abstract class AbstractStep implements Step
             default:
                 useBy = By.xpath( orLookup.getOrValue() );
         }
-        
+
         BayerWebElement webElement = (BayerWebElement) waitFor.until( new Function<WebDriver, WebElement>()
         {
 
@@ -188,7 +187,7 @@ public abstract class AbstractStep implements Step
             }
 
         } );
-        
+
         return webElement;
     }
 }

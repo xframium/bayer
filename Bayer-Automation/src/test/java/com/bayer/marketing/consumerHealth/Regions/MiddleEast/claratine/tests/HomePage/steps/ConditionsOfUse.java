@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.MiddleEast.claratine.tests.HomePage.steps;
+package com.bayer.marketing.consumerHealth.Regions.MiddleEast.claratine.tests.HomePage.steps;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

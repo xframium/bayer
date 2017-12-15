@@ -1,20 +1,14 @@
-package com.bayer.marketing.consumerHealth.MiddleEast.claratine.tests.HomePage;
+package com.bayer.marketing.consumerHealth.Regions.MiddleEast.claratine.tests.HomePage;
 
-import com.bayer.marketing.consumerHealth.MiddleEast.claratine.tests.HomePage.steps.HomePageStep;
-import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
-import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
+import com.bayer.common.utility.LinkValidator;
+import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
+import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
-import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
-import com.bayer.common.utility.LinkValidator;
-import com.bayer.common.utility.StructureValidator;
-import com.gargoylesoftware.htmlunit.Page;
-import com.gargoylesoftware.htmlunit.javascript.host.URL;
-import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class HomePage extends AbstractTest {
 	

@@ -92,7 +92,7 @@ public abstract class AbstractTest
 		}
 	}
 
-	@BeforeMethod
+	@BeforeMethod( alwaysRun=true )
 	public void beforeMethod( Method currentMethod, ITestContext testContext, Object[] testArgs ) {
 		try
 		{

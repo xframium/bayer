@@ -28,7 +28,9 @@ public class LinkValidator extends AbstractStep
         {
             linkCheck.process( new URL( initialUrl ), new URL( initialUrl ) );
             
-            assertTrue( pageCount == linkCheck.getLinkMap().size() );
+            if ( pageCount >= 0 )
+                assertTrue( pageCount == linkCheck.getLinkMap().size() );
+            
             assertTrue( linkCheck.getBrokenLinks().isEmpty() );
             
         }
