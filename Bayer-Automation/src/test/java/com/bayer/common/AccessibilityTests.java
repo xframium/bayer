@@ -41,5 +41,23 @@ public class AccessibilityTests extends AbstractTest
         executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl ) } );
     }
 
+    @TestDescriptor ( testName = "Aspirin General Testing ")
+    @Test ( dataProvider = "deviceList", enabled = true, groups = "ci" )
+    public void aspirinAccessibility( DeviceContainer dC )
+    {
+        String baseUrl = "https://www.aspirin.com";
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl ) } );
+    }
+    
+    @TestDescriptor ( testName = "MSMS General Testing ")
+    @Test ( dataProvider = "deviceList", enabled = true, groups = "ci" )
+    public void msmsAccessibility( DeviceContainer dC )
+    {
+        String baseUrl = "http://test.makingsciencemakesense.com";
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl ) } );
+    }
+    
+    
 
+    
 }
