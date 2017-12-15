@@ -18,7 +18,7 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <testngXmlDir>src/test/com/bayer/common</testngXmlDir>
+    <testngXmlDir>src/test/java/com/bayer/common</testngXmlDir>
     <testngXmlFile>CI.xml</testngXmlFile>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
