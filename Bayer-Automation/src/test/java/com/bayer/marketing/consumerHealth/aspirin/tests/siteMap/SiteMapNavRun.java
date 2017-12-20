@@ -58,6 +58,8 @@ public class SiteMapNavRun extends AbstractTest {
 		executeSteps(new Step[] { new Navigate(url),
 				new StructureValidator("H1Tag",
 						"/com/bayer/marketing/consumerHealth/aspirin/tests/siteMap/SiteMapValidation.xml"),
+				new StructureValidator("H2Tag",
+						"/com/bayer/marketing/consumerHealth/aspirin/tests/siteMap/SiteMapValidation.xml"),
 				});
 	}
 
