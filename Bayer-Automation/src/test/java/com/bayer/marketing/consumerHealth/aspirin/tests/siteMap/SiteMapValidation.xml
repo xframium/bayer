@@ -3,9 +3,23 @@
     
     <validation name="H1Tag">
 	    <description>H1 Text Verification</description>
-	   		<tag name="//h1/span"> 
-		    	<text type="contains">BAYER</text>
-		    	<text type="contains">THE WONDER DRUG</text>
+	   		<tag name="//h1"> 
+		    	<text type="contains">Bayer Sitemap</text>
+	    	</tag>
+    </validation>
+    <validation name="H2Tag">
+	    <description>H2 Text Verification</description>
+	   		<tag name="//h2/a"> 
+		    	<text type="contains">Heart Health</text>
+		    	<text type="contains">Stroke</text>
+		    	<text type="contains">Surviving a Heart Attack</text>
+		    	<text type="contains">Pain Relief</text>
+		    	<text type="contains">Products</text>
+		    	<text type="contains">KNOW YOUR RISK</text>
+		    	<text type="contains">offers</text>
+		    	<text type="contains">search results</text>
+		    	<text type="contains">faqs</text>
+		    	<text type="contains">where to buy</text>
 	    	</tag>
     </validation>
        

@@ -7,7 +7,9 @@ import com.bayer.common.TimedNavigate;
 import com.bayer.common.utility.LinkValidator;
 import com.bayer.common.utility.StructureValidator;
 import com.bayer.marketing.consumerHealth.aspirin.tests.siteMap.steps.SiteMapNavStep;
+import com.bayer.marketing.consumerHealth.aspirin.tests.siteMap.steps.SiteMapProductsAndOthersNavStep;
 import com.bayer.marketing.consumerHealth.aspirin.tests.siteMap.steps.SiteMapStrokeNavStep;
+import com.bayer.marketing.consumerHealth.aspirin.tests.siteMap.steps.SiteMapSurvivingAndPainReliefNavStep;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
@@ -27,9 +29,21 @@ public class SiteMapNavRun extends AbstractTest {
 	}
 	
 	@TestDescriptor(testName = "Aspirin SiteMap Stroke Navigation Test")
-	@Test(dataProvider = "deviceList", enabled = true)
+	@Test(dataProvider = "deviceList", enabled = false)
 	public void navigateStrokeSiteMap(DeviceContainer dC) {
 		executeSteps(new Step[] { new Navigate(url), new SiteMapStrokeNavStep()});
+	}
+	
+	@TestDescriptor(testName = "Aspirin SiteMap Surviving And Pain Relief Navigation Test")
+	@Test(dataProvider = "deviceList", enabled = false)
+	public void navigateSurvivingAndPainReliefSiteMap(DeviceContainer dC) {
+		executeSteps(new Step[] { new Navigate(url), new SiteMapSurvivingAndPainReliefNavStep()});
+	}
+	
+	@TestDescriptor(testName = "Aspirin SiteMap Products And Others Navigation Test")
+	@Test(dataProvider = "deviceList", enabled = false)
+	public void navigateProductsAndOthersSiteMap(DeviceContainer dC) {
+		executeSteps(new Step[] { new Navigate(url), new SiteMapProductsAndOthersNavStep()});
 	}
 
 	@TestDescriptor(testName = "Aspirin SiteMap Timed Navigation Test")
@@ -43,6 +57,8 @@ public class SiteMapNavRun extends AbstractTest {
 	public void siteMapStructureTest(DeviceContainer dC) {
 		executeSteps(new Step[] { new Navigate(url),
 				new StructureValidator("H1Tag",
+						"/com/bayer/marketing/consumerHealth/aspirin/tests/siteMap/SiteMapValidation.xml"),
+				new StructureValidator("H2Tag",
 						"/com/bayer/marketing/consumerHealth/aspirin/tests/siteMap/SiteMapValidation.xml"),
 				});
 	}

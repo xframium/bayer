@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Active,manufacturer,model,platformName,platformVersion,browserName,browserVersion,
 No,Apple,iPhone-7,IOS,,,,
 Yes,Samsung,Galaxy S7,Android,,,,
@@ -6,12 +5,5 @@ No,Apple,iPhone-6,IOS,,,,
 No,,,Windows,10,Chrome,61,
 No,,,Windows,10,Firefox,57,
 No,,,Windows,10,Firefox,57,1920x1080
-=======
-Active,manufacturer,model,platformName,platformVersion,browserName,browserVersion
-Yes,Apple,iPhone-X,IOS,,,
-Yes,Samsung,Galaxy S7,Android,,,
-No,Apple,iPhone-6,IOS,,,
-Yes,,,Windows,10,Chrome,62
-No,,,Windows,10,Firefox,57
-No,,,Windows,7,Firefox,57
->>>>>>> branch 'master' of https://github.com/xframium/bayer
+
+

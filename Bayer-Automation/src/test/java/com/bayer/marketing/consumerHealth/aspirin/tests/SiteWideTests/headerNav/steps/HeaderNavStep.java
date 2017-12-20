@@ -384,6 +384,7 @@ public class HeaderNavStep extends AbstractStep {
 	    	waitForElement( "aspirin.menu.heartHealth.bayerGlobal.validate", webDriver, 15 );
 	    	
 	    	
+	    
 	    	
 		}else{
     	//Desktop
@@ -397,7 +398,16 @@ public class HeaderNavStep extends AbstractStep {
 	    	actions.moveToElement(desktopHeartHealth).moveToElement(desktopHeartHealthRisk).click().build().perform();
 	    	
 	    	waitForElement( "aspirin.menu.heartHealth.risk.validate", webDriver, 15 );
+		
+	    	
+	    	
+	    	
+	    	waitForElement("aspirin.desktop.menu.heartHealth", webDriver, 15);
+	    	
+	    	
+		
 		}
+    	
 		
 		
 		return true;
