@@ -38,6 +38,7 @@ public class LinkValidator extends AbstractStep
         {
             log.error( "Error processing URL", e );
             return false;
+ 
         }
 
         

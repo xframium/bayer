@@ -13,7 +13,7 @@ import com.bayer.test.step.factory.Step;
 public class HomePage extends AbstractTest
 {
     @TestDescriptor( testName="Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=true, groups = "bayer" )
     public void navigateTest( DeviceContainer dC )
     {
         executeSteps( new Step[] { new Navigate( "https://www.aleve.com/" ),new HomePageNavStep() } );
