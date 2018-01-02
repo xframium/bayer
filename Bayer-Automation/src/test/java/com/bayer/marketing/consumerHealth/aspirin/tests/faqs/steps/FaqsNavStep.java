@@ -74,6 +74,33 @@ public class FaqsNavStep extends AbstractStep {
 		
 		waitForElement("aspirin.faq.base.text", webDriver, 30);
 		
+		this.validate("aspirin.faq.direction.safety", webDriver, "aspirin.faq.direction.safety.header", wait);
+		this.validate("aspirin.faq.direction.safety.section2.collapse", webDriver, "aspirin.faq.direction.safety.section2.collapse.validate", wait);
+		this.validate("aspirin.faq.direction.safety.section3.collapse", webDriver, "aspirin.faq.direction.safety.section3.collapse.validate", wait);
+		this.validate("aspirin.faq.direction.safety.section3.link1", webDriver, "aspirin.faq.direction.safety.section3.link1.validate", wait);
+		Util.recallBaseURL(webDriver, faqs);
+		
+		waitForElement("aspirin.faq.base.text", webDriver, 30);
+		this.validate("aspirin.faq.direction.safety", webDriver, "aspirin.faq.direction.safety.header", wait);
+		this.validate("aspirin.faq.direction.safety.section4.collapse", webDriver, "aspirin.faq.direction.safety.section4.collapse.validate", wait);
+		this.validate("aspirin.faq.direction.safety.section5.collapse", webDriver, "aspirin.faq.direction.safety.section5.collapse.validate", wait);
+		this.validate("aspirin.faq.direction.safety.section6.collapse", webDriver, "aspirin.faq.direction.safety.section6.collapse.validate", wait);
+		this.validate("aspirin.faq.direction.safety.section7.collapse", webDriver, "aspirin.faq.direction.safety.section7.collapse.validate", wait);
+		this.validate("aspirin.faq.direction.safety.section7.link1", webDriver, "aspirin.faq.direction.safety.section7.link1.validate", wait);
+		Util.recallBaseURL(webDriver, faqs);
+		
+		waitForElement("aspirin.faq.base.text", webDriver, 30);
+		this.validate("aspirin.faq.direction.safety", webDriver, "aspirin.faq.direction.safety.header", wait);
+		this.validate("aspirin.faq.direction.safety.section7.collapse", webDriver, "aspirin.faq.direction.safety.section7.collapse.validate", wait);
+		this.validate("aspirin.faq.direction.safety.section7.link2", webDriver, "aspirin.faq.direction.safety.section7.link2.validate", wait);
+		Util.recallBaseURL(webDriver, faqs);
+		
+		waitForElement("aspirin.faq.base.text", webDriver, 30);
+		this.validate("aspirin.faq.direction.safety", webDriver, "aspirin.faq.direction.safety.header", wait);
+		this.validate("aspirin.faq.direction.safety.section8.collapse", webDriver, "aspirin.faq.direction.safety.section8.collapse.validate", wait);
+		this.validate("aspirin.faq.direction.safety.section9.collapse", webDriver, "aspirin.faq.direction.safety.section9.collapse.validate", wait);
+		this.validate("aspirin.faq.direction.safety.section10.collapse", webDriver, "aspirin.faq.direction.safety.section10.collapse.validate", wait);
+		
 		return true;
 	}
 	
