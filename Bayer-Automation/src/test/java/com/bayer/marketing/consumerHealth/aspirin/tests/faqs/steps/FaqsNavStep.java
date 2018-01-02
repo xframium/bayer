@@ -144,6 +144,11 @@ public class FaqsNavStep extends AbstractStep {
 		this.validate("aspirin.faq.offers.link", webDriver, "aspirin.faq.offers.header", wait);
 		this.validate("aspirin.faq.offers.section1.collapse", webDriver, "aspirin.faq.offers.section1.collapse.validate", wait);
 		
+		BayerWebElement contactUs = getElement("aspirin.faq.cant.find.answer", webDriver);
+		Util.scrollToElement(webDriver, contactUs, wait);
+		this.validate("aspirin.faq.cant.find.answer.contact.us", webDriver, "aspirin.faq.cant.find.answer.contact.us.validate", wait);
+		Util.recallBaseURL(webDriver, faqs);
+		waitForElement("aspirin.faq.base.text", webDriver, 30);
 		
 		return true;
 	}
