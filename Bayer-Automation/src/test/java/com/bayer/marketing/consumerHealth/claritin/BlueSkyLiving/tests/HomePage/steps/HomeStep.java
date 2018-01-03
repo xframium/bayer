@@ -1,4 +1,4 @@
-package com.bayer.exampleTemplate.tests.Example.steps;
+package com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.HomePage.steps;
 
 import java.io.BufferedReader;
 import javax.swing.ImageIcon;
@@ -8,23 +8,24 @@ import java.io.FileReader;
 import java.io.IOException;
 import com.bayer.common.Accessibility;
 import com.bayer.common.utility.*;
+import com.bayer.corp.MSMS.tests.HomePage.HomePage;
 import com.bayer.exampleTemplate.tests.Example.ExamplePage;
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 import com.sun.jna.platform.unix.X11;
 
-public class ExampleStep extends AbstractStep
+public class HomeStep extends AbstractStep
 {
 
-    public ExampleStep()
+    public HomeStep()
     {
         super( "message", "error message" );
     }
     
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {	
-    	ExamplePage urlVar = new ExamplePage();
+    	HomePage urlVar = new HomePage();
     	String url = urlVar.getUrl();
     	
     	waitForElement( "bayer.home.about", webDriver, 15 );

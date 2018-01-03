@@ -6,7 +6,7 @@
   <test name="Run Test File"   >
     <packages>
 
-      <package name="com.bayer.marketing.consumerHealth.betaseron.tests.BetaConnectAutoinjector" /> 
+      <package name="com.bayer.marketing.consumerHealth.betaseron.tests.HomePage" /> 
 
    </packages>
  </test>

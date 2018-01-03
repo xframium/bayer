@@ -4,8 +4,13 @@
 <!-- Run Invididual Tests Here --> 
 <suite name="Suite1" verbose="1" >
   <test name="Run Test File">
+  		<groups>
+      <run>
+        <include name="bayer" />
+      </run>
+      </groups>
     <packages>
-      <package name="com.bayer.marketing.consumerHealth.aleve.tests.Contact" />  
+      <package name="com.bayer.marketing.consumerHealth.aleve.tests.HomePage" />  
     </packages>
- </test>
+  </test>
 </suite>
