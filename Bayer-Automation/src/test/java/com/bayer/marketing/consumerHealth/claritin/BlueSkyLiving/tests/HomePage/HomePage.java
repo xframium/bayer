@@ -1,6 +1,6 @@
-package com.bayer.exampleTemplate.tests.Example;
+package com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.HomePage;
 
-import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
+import com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.HomePage.steps.HomeStep;
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
@@ -16,9 +16,9 @@ import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.javascript.host.URL;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
-public class ExamplePage extends AbstractTest {
+public class HomePage extends AbstractTest {
 	
-public String url = "https://www.bayer.com/";
+public String url = "http://03342-bslqa.photoninfotech.com:8080/";
     
 	public String getUrl(){ 
 		return url;
@@ -38,7 +38,7 @@ public String url = "https://www.bayer.com/";
     @TestDescriptor( testName="Example Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
+        executeSteps( new Step[] { new Navigate(url), new HomeStep() } );
     }
     
     @TestDescriptor( testName="Example Timed Navigation Test" )
