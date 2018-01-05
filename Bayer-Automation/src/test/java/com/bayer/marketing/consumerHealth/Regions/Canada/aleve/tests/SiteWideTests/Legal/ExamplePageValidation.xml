@@ -1,52 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
     
-    <validation name="Top Nav">
-    <description>Text Verification</description>
-   		<tag name="//*"> 
-    	<text type="contains">
-			    About Bayer
-			    Innovation
-			    Products
-			    Sustainability
-			    Media
-			    Investors
-			    Career
-			    Magazine	
-		</text>
+    <validation name="H1tag">
+    <description>Header information</description>
+   		<tag name="//h1"> 
+    	<text type="contains">Énoncé sur la confidentialité</text>
     	</tag>
-    </validation>
-    <validation name="Footer">
-    <description>Footer Elements</description>
-		<tag name="//*"> 
-			<text type="contains">Innovation
-		
-		    Science For A Better Life Tour
-		    Research at Bayer
-		    Leaps by Bayer
-		    Bayer LifeScience iHUB
-		    Open Innovation
-		    research – The Bayer Scientific Magazine
-		    Inventive Talent
-		    Otto Bayer Medal
-
-			</text>
-			</tag>
-			<tag name="//*"> 
-			<text type="contains">Products
-		
-		    Product Areas
-		    Chempark Management
-		    Information for Patients
-		    Beware of Counterfeits
-		    Report a Side-Effect
-		    Products from A to Z
-
-			</text>
-				
-    	</tag>
-			
     </validation>
     
+    <validation name="Paragraphs">
+    <description>Paragraph information</description>
+   		<tag name="//*"> 
+    	<text type="contains">Énoncé sur la confidentialité</text>
+    	<text type="contains">Ce site s'adresse exclusivement aux résidents du Canada et est assujetti aux lois canadiennes applicables.</text>
+    	<text type="contains">Le présent énoncé sur la confidentialité indique les renseignements que Bayer Inc. (ci-après appelée « Bayer ») recueille sur ce site Web et à quelles fins, ainsi que la façon de communiquer avec nous au sujet des renseignements personnels recueillis et la marche à suivre si vous ne voulez pas que vos renseignements personnels soient recueillis.</text>
+    	<text type="contains">À titre d’exploitant de ce site Web, Bayer affichera sur cette page toute modification au présent énoncé sur la confidentialité afin que vous soyez toujours au fait du type d'information recueillie et de son utilisation, ainsi que de la façon dont vous pouvez communiquer avec nous.</text>
+    	<text type="contains">Bayer est consciente de l’importance que vous attachez à la sécurité de l’information personnelle qui pourrait être recueillie à la suite de votre utilisation de ce site. Nous prenons la protection de telles données très au sérieux. C'est pourquoi nous tenons à vous aviser des renseignements que nous conservons et de ceux que nous supprimons. Cet énoncé sur la confidentialité a pour but de vous informer sur nos diverses mesures de sécurité.</text>
+    	<text type="contains">Respect de la vie privée</text>
+    	<text type="contains">Bayer respecte la vie privée de chaque personne avec qui elle entre en relation, qu'il s'agisse d'un client ou d'un visiteur de ce site Web. C’est pourquoi Bayer ne donne pas, ne loue pas et ne vend pas de renseignements sur ses clients ou sur les visiteurs de ce site Web à des organismes ou à des personnes.</text>
+    	<text type="contains">Collecte de renseignements</text>
+    	<text type="contains">Vous pouvez utiliser notre site Web sans nous fournir de renseignements personnels. La transmission de renseignements personnels ne constitue nullement une condition d'utilisation de ce site, à moins qu'elle ne soit rendue nécessaire à la suite d'une demande de produit ou de service de votre part. Lorsque vous utilisez notre site, nous conservons certaines données sur nos serveurs à des fins de sécurité. Ces données peuvent inclure le nom de votre fournisseur de services Internet, le site Web à partir duquel vous avez accédé à notre site, les sites Web que vous visitez à partir de notre site et votre adresse IP. Ces données peuvent, dans certains cas, permettre de vous identifier, mais elles ne sont pas utilisées à cette fin. Nous utilisons ces données à l’occasion à des fins de statistiques, mais nous prenons soin de préserver l’anonymat de chaque utilisateur de ce site afin qu’il ne puisse être identifié. Dans le cas où des renseignements personnels doivent être transmis à des tiers afin de répondre à votre demande de produit ou service, ou pour tout autre usage autorisé par vous,nous utilisons des moyens techniques et organisationnels afin de nous assurer que toutes les règles de sécurité applicables aux renseignements personnels sont respectées.</text>
+    	<text type="contains">Collecte et traitement de renseignements personnels</text>
+    	<text type="contains">Nous recueillons des renseignements personnels uniquement lorsque vous nous les soumettez, soit en vous inscrivant, en remplissant un formulaire ou en envoyant un message par courrier électronique, dans le cadre d’une demande de produit ou de service, d’une demande de renseignements ou de documentation ou dans toute autre situation où vous nous soumettez volontairement ces données. Si vous ne voulez pas que vos renseignements personnels soient recueillis, ne nous les transmettez pas.</text>
+    	<text type="contains">La base de données et son contenu demeurent au sein de notre société et sont traités et conservés par des fournisseurs de services agissant en notre nom et qui relèvent de nous. Ni nous ni aucun de nos mandataires ne transmettrons vos renseignements personnels à des tiers, sous quelque forme que ce soit, à moins d’avoir préalablement obtenu votre consentement explicite ou d’y être légalement tenus.</text>
+    	<text type="contains">Nous surveillons l'utilisation de toutes données personnelles que vous nous transmettez et en assumons la responsabilité. Certaines données peuvent être conservées ou traitées par des systèmes informatiques situés dans d'autres territoires, notamment aux États-Unis, où les lois régissant la protection des données peuvent être différentes de celles du territoire où vous résidez. Conformément aux lois applicables dans les territoires concernés nous nous assurerons que toutes les protections appropriées sont en place afin que le fournisseur de services de traitement de données soit tenu de maintenir une protection équivalente à celle qui est en vigueur dans votre pays de résidence.</text>
+    	<text type="contains">Bayer peut transférer tout renseignement reçu de vous à l’une ou à plusieurs de ses sociétés affiliées dans d’autres pays ou régions du monde. Nous ne vendons ni ne transférons à l’extérieur de la société les renseignements que vous nous communiquez, sauf à des entités externes chargées uniquement du traitement et du publipostage.</text>
+    	<text type="contains">Utilisation des données</text>
+    	<text type="contains">Les données que nous recueillons servent uniquement à répondre à vos demandes de produits ou de services ou pour tout autre usage autorisé par vous, sauf lorsque la loi le prévoit autrement.</text>
+    	<text type="contains">Les données recueillies seront également utilisées en vue d’améliorer le contenu de notre site Web et pourront servir à vous faire parvenir, par courriel ou par la poste, de l’information qui, selon nous, pourrait vous intéresser; ces renseignements pourront aussi être traités et stockés afin de nous permettre de mieux comprendre vos besoins, d’améliorer nos produits et services et de vous fournir de l’information ou des services liés à la santé que nous estimons être d’intérêt pour vous.</text>
+    	<text type="contains">Droit d’accès et de correction Vous avez le droit de consulter et de modifier tous les renseignements personnels conservés dans nos systèmes, si vous les croyez périmés ou inexacts. Vous n’avez qu’à écrire à l’adresse de courrier électronique apparaissant dans la notice ou à communiquer avec l'agente de la protection des renseignements personnels ou le responsable de la sécurité des données à l’adresse ci-dessous.</text>
+    	<text type="contains">Droit d’annulation</text>
+    	<text type="contains">Vous pouvez à tout moment retirer votre consentement à ce que vos renseignements personnels soient utilisés ultérieurement. Encore une fois, vous n’avez qu’à écrire à l’adresse de courrier électronique apparaissant dans la notice ou à communiquer avec l'agente de la protection des renseignements personnels ou le responsable de la sécurité des données à l’adresse ci-dessous.</text>
+    	<text type="contains">Conservation des données</text>
+    	<text type="contains">Nous conservons vos renseignements personnels uniquement le temps de procéder au service demandé ou pour lequel vous avez donné votre autorisation, sauf lorsque la loi le prévoit autrement (par exemple, dans le cas d’un litige en suspens).</text>
+    	<text type="contains">Votre consentement</text>
+    	<text type="contains">En choisissant d’utiliser ce site Web et en nous soumettant volontairement des renseignements personnels vous concernant, vous acceptez les termes de l’énoncé sur la confidentialité et les conditions d’utilisation stipulés plus haut.</text>
+    	<text type="contains">Utilisation de témoins (cookies)</text>
+    	<text type="contains">Dans certains sites Web, nous utilisons des « témoins » (cookies) pour améliorer l’usage personnel que vous faites de ces sites. Les témoins sont des éléments d'information que notre serveur Web pourrait envoyer à votre ordinateur afin d'identifier l'ordinateur utilisé au cours de la séance. La plupart des navigateurs Web sont configurés pour accepter automatiquement les témoins. Vous pouvez cependant désactiver leur entreposage ou régler votre navigateur de façon à ce qu’il vous informe avant que des témoins soient entreposés dans votre ordinateur.</text>
+    	<text type="contains">Utilisation de témoins</text>
+    	<text type="contains">Nous utilisons deux catégories de témoins : (1) les témoins requis à des fins techniques, sans lesquels la fonctionnalité de notre site Web serait réduite, et (2) les témoins facultatifs :</text>
+    	</tag>
+    </validation>
+    
+    <validation name="H3tag">
+    <description>H3 information</description>
+   		<tag name="//h3"> 
+    	<text type="contains">Témoins (cookies) requis à des fins techniques</text>
+    	<text type="contains">Témoins (cookies) facultatifs</text>
+    	</tag>
+    </validation>
+    
+    <validation name="H3TableData">
+    <description>Table Data</description>
+   		<tag name="//*"> 
+    	     <text type="contains">Témoins (cookies)</text>
+    	     <text type="contains">Durée de vie</text>
+    	     <text type="contains">Objectif et contenu</text>
+    	     <text type="contains">PHPSESSID</text>
+    	     <text type="contains">1 heure</text>
+    	     <text type="contains">Identifiant de données PHP activé lorsque la méthode session() de PHP est employée.</text>
+    		 <text type="contains">UniqueID</text>
+    	     <text type="contains">6 mois</text>
+    	     <text type="contains">Identification anonyme de la durée d’une visite pour analyser l’utilisation faite du site Internet et optimiser l’offre proposée. Aucune donnée personnelle n'est collectée.</text>
+    		 <text type="contains">WHGACE</text>
+    	     <text type="contains">1 jour</text>
+    	     <text type="contains">Equilibreur de charge : cookie garantissant le bon comportement du site Internet.</text>
+    		 <text type="contains">WHGCOOKIECONSENT</text>
+    	     <text type="contains">6 mois</text>
+    	     <text type="contains">Enregistre votre choix sur l'utilisation des cookies optionnels. Aucune donnée personnelle ne sera collectée.</text>
+    		 <text type="contains">Témoins (cookies)</text>
+    	     <text type="contains">Objectif et contenu</text>
+    	     <text type="contains">Consentement</text>
+    	     <text type="contains">Adobe Analytics</text>
+    	     <text type="contains"> Analyse Web : Ces témoins nous permettent d’analyser l’utilisation que vous faites de ce site Web en assignant à votre appareil un numéro d’identification unique et généré au hasard qui nous permettra de reconnaître votre appareil à votre prochaine visite.</text>
+    		 <text type="contains">Durée de vie : 2 ans</text>
+    	     <text type="contains">Fournisseur : Adobe Systems Software Ireland Ltd.</text>
+    		 <text type="contains">Google Tag Manager</text>
+    	     <text type="contains">Analyse Web : Ces témoins nous permettent d’analyser l’utilisation que vous faites de ce site Web en assignant à votre appareil un numéro d’identification unique et généré au hasard qui nous permettra de reconnaître votre appareil à votre prochaine visite.</text>
+    		 <text type="contains">Durée de vie : 6 mois</text>
+    	     <text type="contains">Fournisseur : Google Inc.</text>
+    	</tag>
+    </validation>
+    
+    <validation name="Paragraphs_2">
+    <description>Paragraphs information Section Two</description>
+   		<tag name="//*"> 
+    		<text type="contains">Nous n’utiliserons pas de témoins facultatifs sans votre consentement préalable. La première fois que vous accédez à notre site Web, une bannière apparaît, vous demandant de consentir à l’utilisation de témoins facultatifs. Si vous y consentez, nous placerons un témoin sur votre ordinateur et la bannière cessera d’apparaître pour la durée de vie du témoin. Après cette période, ou si vous décidez de supprimer le témoin, la bannière apparaîtra de nouveau la prochaine fois que vous visiterez notre site Web et on vous demandera encore votre consentement.</text>
+    		<text type="contains">Vous pouvez retirer votre consentement à l’utilisation de témoins facultatifs en tout temps en modifiant l’option correspondante dans le tableau ci-dessus. Bien entendu, vous pouvez utiliser notre site Web sans qu’aucun témoin ne soit utilisé (y compris les témoins utilisés à des fins techniques). Dans votre navigateur, vous pouvez à tout moment restreindre ou désactiver l’utilisation de témoins. Cela peut, cependant, avoir dans une certaine mesure une incidence négative sur la fonctionnalité et la convivialité de notre site.</text>
+    		<text type="contains">Analyse Web</text>
+    	    <text type="contains">Notre site Web utilise Google Analytics, un service d’analyse Web de Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, États-Unis (« </text>
+    		<text type="contains">Avec votre consentement préalable, Google analysera pour nous l’utilisation que vous faites de notre site Web. À cette fin, nous utilisons, entre autres, les témoins décrits plus en détail dans le tableau ci-dessus. Les renseignements recueillis par Google concernant l’utilisation que vous faites de notre site Web (p. ex. l’adresse URL, laquelle de nos pages Web vous visitez, votre type de navigateur, vos paramètres linguistiques, votre système d’exploitation, la résolution de votre écran) seront transmis à un serveur de Google aux États-Unis, où ils seront conservés et analysés; les résultats correspondants nous seront ensuite communiqués dans un formulaire anonymisé. Dans le cadre de ce processus, vos données d’utilisation ne seront pas liées à votre adresse IP complète. Nous avons activé sur notre site Web la fonction d’anonymisation IP offerte par Google, de sorte que les huit derniers chiffres (type IPv4) ou les 80 derniers bits (type IPv6) de votre adresse IP sont supprimés. De plus, Google est certifié en vertu du</text>
+    		<text type="contains">offert par Google ou en modifiant votre consentement dans le tableau ci-dessus, et un témoin de refus sera configuré. Les deux options empêchent l’utilisation d’analyse Web uniquement si vous utilisez le navigateur sur lequel vous avez installé le module d’extension ou si vous ne supprimez pas le témoin de refus.</text>
+    		<text type="contains">Pour obtenir de plus amples renseignements sur Google Analytics, veuillez vous reporter aux</text>
+    		<text type="contains">Sécurité</text>
+    		<text type="contains">Bayer applique des mesures de sécurité techniques et organisationnelles pour protéger vos renseignements personnels contre leur manipulation, leur perte, leur destruction ou l’accès non autorisé à ceux-ci. Toute information personnelle que vous fournissez à Bayer sera chiffrée en cours de transmission afin de prévenir tout usage inapproprié par des tiers. Nos procédures de sécurité sont continuellement actualisées en fonction des progrès technologiques.</text>
+    		<text type="contains">Enfants</text>
+    		<text type="contains">Étant donné l'importance de protéger la vie privée des enfants, nous ne recueillons, ne traitons, ni n'utilisons de renseignements provenant de personnes que nous savons âgées de moins de 13 ans sans le consentement préalable et vérifiable de leur représentant légal. Ce représentant a le droit de consulter, sur demande, les renseignements fournis par l'enfant et d'exiger, le cas échéant, qu'ils soient supprimés.</text>
+    		<text type="contains">Bayer ne destine pas ce site à un jeune auditoire et n’a nullement l’intention de recueillir des renseignements nominatifs (nom, adresse, numéro de téléphone, etc.) sur des personnes âgées de moins de 18 ans. Si un parent ou tuteur découvre que son enfant nous a fourni des renseignements nominatifs, il doit communiquer avec nous, à l’adresse</text>
+    		<text type="contains">Personnes-ressources</text>
+    		<text type="contains">Si vous désirez savoir quels renseignements nous avons sur vous dans nos dossiers, poser des questions sur ces renseignements ou demander leur modification, veuillez communiquer avec :</text>
+    		<text type="contains">Jacqueline De Gagné</text>
+    		<text type="contains">PAgente de la protection des renseignements personnels</text>
+    		<text type="contains">Téléphone: 905-282-5555</text>
+    		<text type="contains">Télécopieur: 905-282-5727</text>
+    		<text type="contains">Courriel</text>
+    		<text type="contains">Chef, Protection des données</text>
+    		<text type="contains">Eva Gardyan-Eisenlohr</text>
+    		<text type="contains">Téléphone: +49 (0) 30 468 16924</text>
+    		<text type="contains">Modifications</text>
+    		<text type="contains">Toute modification du présent énoncé sur la confidentialité sera affichée aussi rapidement que possible sur la présente page. Communiquez avec l’administrateur du site Web pour transmettre tout problème, ainsi que toute question ou suggestion que vous pouvez avoir. L’évolution constante d’Internet exige la révision occasionnelle de notre énoncé sur la confidentialité. Nous nous réservons donc le droit d’y apporter des modifications au besoin.</text>
+    	
+    	</tag>
+    </validation>
     
 </validationCollection>
