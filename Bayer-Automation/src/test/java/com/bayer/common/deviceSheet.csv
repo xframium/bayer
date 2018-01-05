@@ -4,7 +4,7 @@ No,Samsung,Galaxy S7,Android,,,,,
 No,Apple,iPhone-6,IOS,,,,,
 No,,,Windows,10,Chrome,61,,
 No,,,Windows,10,Firefox,57,,
-No,,,Windows,10,Firefox,57,1920x1080,
+Yes,,,Windows,10,Firefox,57,1920x1080,US East
 Yes,,,Windows,10,Firefox,56,1280x1024,US East
 Yes,,,Windows,10,Chrome,62,1280x1024,US East
 Yes,,,Windows,10,Edge,16,1280x1024,US East
@@ -12,3 +12,6 @@ No,,,Windows,10,Internet Explorer,11,1280x1024,US East
 Yes,,,Windows,10,Chrome,62,1920x1080,US East
 Yes,,,Windows,10,Edge,16,1920x1080,US East
 No,,,Windows,10,Internet Explorer,11,1920x1080,US East
+Yes,,,Windows,10,Firefox,57,1440x900,US East
+Yes,,,Windows,10,Chrome,57,1440x900,US East
+Yes,,,Windows,10,Firefox,57,1440x900,US East

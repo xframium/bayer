@@ -1,6 +1,6 @@
-package com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.HomePage;
+package com.bayer.marketing.consumerHealth.Regions.Canada.aleve.tests.SiteWideTests.Legal;
 
-import com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.HomePage.steps.HomeStep;
+import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
@@ -16,26 +16,32 @@ import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.javascript.host.URL;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
-public class HomePage extends AbstractTest {
+public class LegalPages extends AbstractTest {
 	
-public String url = "http://03342-bslqa.photoninfotech.com:8080/";
+public String url = "https://www.bayer.com/";
     
 	public String getUrl(){ 
 		return url;
 	}
-    @TestDescriptor( testName="BlueSkyLiving Conditions of Use Test" )
+    @TestDescriptor( testName="Conditions of Use Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void conditionsTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new ConditionsOfUse() } );
     }
     
-    @TestDescriptor( testName="BlueSkyLiving Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
-    public void navigateTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url) } );
+    @TestDescriptor( testName="Privacy Policy Validation" )
+    @Test ( dataProvider = "deviceList", enabled=false)
+    public void privacyPolicyTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
     }
     
-    @TestDescriptor( testName="BlueSkyLiving Timed Navigation Test" )
+    @TestDescriptor( testName="Example Navigation Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void navigateTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
+    }
+    
+    @TestDescriptor( testName="Example Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void timedNavigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new TimedNavigate(url, 6000) } );

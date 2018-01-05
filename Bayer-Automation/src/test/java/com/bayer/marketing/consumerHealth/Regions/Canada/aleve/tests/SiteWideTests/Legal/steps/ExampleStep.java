@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.HomePage.steps;
+package com.bayer.exampleTemplate.tests.Example.steps;
 
 import java.io.BufferedReader;
 import javax.swing.ImageIcon;
@@ -8,33 +8,25 @@ import java.io.FileReader;
 import java.io.IOException;
 import com.bayer.common.Accessibility;
 import com.bayer.common.utility.*;
-import com.bayer.corp.MSMS.tests.HomePage.HomePage;
 import com.bayer.exampleTemplate.tests.Example.ExamplePage;
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 import com.sun.jna.platform.unix.X11;
 
-public class HomeStep extends AbstractStep
+public class ExampleStep extends AbstractStep
 {
 
-    public HomeStep()
+    public ExampleStep()
     {
         super( "message", "error message" );
     }
     
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {	
-    	HomePage urlVar = new HomePage();
+    	ExamplePage urlVar = new ExamplePage();
     	String url = urlVar.getUrl();
     	
-    	/*webDriver.switchTo().alert();
-    	//Selenium-WebDriver Java Code for entering Username & Password as below:
-    	webDriver.findElement(By.id("userID")).sendKeys("CHD102832\bsluser");
-    	webDriver.findElement(By.id("password")).sendKeys("Photon@123");
-    	webDriver.switchTo().alert().accept();
-    	webDriver.switchTo().defaultContent();
-    	*/
     	waitForElement( "bayer.home.about", webDriver, 15 );
         BayerWebElement exampleImage = getElement("bayer.home.about", webDriver);
         exampleImage.click();
@@ -44,7 +36,15 @@ public class HomeStep extends AbstractStep
         
         webDriver.navigate().to(url);
         
-        
+        waitForElement( "bayer.home.search", webDriver, 15 );
+        BayerWebElement exampleSearch = getElement("bayer.home.search", webDriver);
+        exampleSearch.click();
+        exampleSearch.sendKeys("Bayer 04");
+        BayerWebElement exampleSearchBTN = getElement("bayer.home.searchBtn", webDriver);
+        exampleSearchBTN.click();
+        //new Accessibility();
+        waitForElement( "bayer.key", webDriver, 15 );
+        webDriver.navigate().to(url);
         
         ///////////////Example Code Structure///////////////////
         /*BayerWebElement emailAddress = getElement( "login.emailAddress", webDriver );
