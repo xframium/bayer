@@ -57,7 +57,7 @@ public class HeaderNavStep extends AbstractStep {
 	    	waitForElement( "aspirin.mobile.menu.heartHealth.prevention", webDriver, 15 );
 	    	BayerWebElement mobilePrevention = getElement( "aspirin.mobile.menu.heartHealth.prevention", webDriver );
 	    	mobilePrevention.click();
-	    	waitForElement( "aspirin.menu.heartHealth.prevention.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.prevention.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -68,10 +68,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus1b = getElement( "aspirin.mobile.menu.plus1", webDriver );
 	    	plus1b.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.talking", webDriver, 15 );
-	    	BayerWebElement mobileTalking = getElement( "aspirin.menu.heartHealth.talking", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.talking", webDriver, 15 );
+	    	BayerWebElement mobileTalking = getElement( "aspirin.menu.mobile.talking", webDriver );
 	    	mobileTalking.click();
-	    	waitForElement( "aspirin.menu.heartHealth.talking.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.talking.validate", webDriver, 15 );
 			
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -82,8 +82,8 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus1c = getElement( "aspirin.mobile.menu.plus1", webDriver );
 	    	plus1c.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.after", webDriver, 15 );
-	    	BayerWebElement mobileAfter = getElement( "aspirin.menu.heartHealth.after", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.after", webDriver, 15 );
+	    	BayerWebElement mobileAfter = getElement( "aspirin.menu.mobile.after", webDriver );
 	    	mobileAfter.click();
 	    	waitForElement( "aspirin.menu.heartHealth.after.validate", webDriver, 15 );
 	    	
@@ -96,10 +96,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus2 = getElement( "aspirin.mobile.menu.plus2", webDriver );
 	    	plus2.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.stroke", webDriver, 15 );
-	    	BayerWebElement mobileStroke = getElement( "aspirin.menu.heartHealth.stroke", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.stroke", webDriver, 15 );
+	    	BayerWebElement mobileStroke = getElement( "aspirin.menu.mobile.stroke", webDriver );
 	    	mobileStroke.click();
-	    	waitForElement( "aspirin.menu.heartHealth.stroke.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.stroke.validate", webDriver, 15 );
 									
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -110,10 +110,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus2a = getElement( "aspirin.mobile.menu.plus2", webDriver );
 	    	plus2a.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.strokeCauses", webDriver, 15 );
-	    	BayerWebElement mobileStrokeCauses = getElement( "aspirin.menu.heartHealth.strokeCauses", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.strokeCauses", webDriver, 15 );
+	    	BayerWebElement mobileStrokeCauses = getElement( "aspirin.menu.mobile.strokeCauses", webDriver );
 	    	mobileStrokeCauses.click();
-	    	waitForElement( "aspirin.menu.heartHealth.strokeCauses.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.strokeCauses.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -124,10 +124,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus2b = getElement( "aspirin.mobile.menu.plus2", webDriver );
 	    	plus2b.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.clot", webDriver, 15 );
-	    	BayerWebElement mobileClot = getElement( "aspirin.menu.heartHealth.clot", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.clot", webDriver, 15 );
+	    	BayerWebElement mobileClot = getElement( "aspirin.menu.mobile.clot", webDriver );
 	    	mobileClot.click();
-	    	waitForElement( "aspirin.menu.heartHealth.clot.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.clot.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -138,10 +138,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus2c = getElement( "aspirin.mobile.menu.plus2", webDriver );
 	    	plus2c.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.life", webDriver, 15 );
-	    	BayerWebElement mobileLife = getElement( "aspirin.menu.heartHealth.life", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.life", webDriver, 15 );
+	    	BayerWebElement mobileLife = getElement( "aspirin.menu.mobile.life", webDriver );
 	    	mobileLife.click();
-	    	waitForElement( "aspirin.menu.heartHealth.life.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.life.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -152,10 +152,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus2d = getElement( "aspirin.mobile.menu.plus2", webDriver );
 	    	plus2d.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.ASA", webDriver, 15 );
-	    	BayerWebElement mobileASA = getElement( "aspirin.menu.heartHealth.ASA", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.ASA", webDriver, 15 );
+	    	BayerWebElement mobileASA = getElement( "aspirin.menu.mobile.ASA", webDriver );
 	    	mobileASA.click();
-	    	waitForElement( "aspirin.menu.heartHealth.ASA.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.ASA.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -166,10 +166,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus3 = getElement( "aspirin.mobile.menu.plus3", webDriver );
 	    	plus3.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.warning", webDriver, 15 );
-	    	BayerWebElement mobileWarning = getElement( "aspirin.menu.heartHealth.warning", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.warning", webDriver, 15 );
+	    	BayerWebElement mobileWarning = getElement( "aspirin.menu.mobile.warning", webDriver );
 	    	mobileWarning.click();
-	    	waitForElement( "aspirin.menu.heartHealth.warning.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.warning.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -180,10 +180,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus3a = getElement( "aspirin.mobile.menu.plus3", webDriver );
 	    	plus3a.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.how", webDriver, 15 );
-	    	BayerWebElement mobileHow = getElement( "aspirin.menu.heartHealth.how", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.how", webDriver, 15 );
+	    	BayerWebElement mobileHow = getElement( "aspirin.menu.mobile.how", webDriver );
 	    	mobileHow.click();
-	    	waitForElement( "aspirin.menu.heartHealth.how.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.how.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -194,10 +194,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus3b = getElement( "aspirin.mobile.menu.plus3", webDriver );
 	    	plus3b.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.hero", webDriver, 15 );
-	    	BayerWebElement mobileHero = getElement( "aspirin.menu.heartHealth.hero", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.hero", webDriver, 15 );
+	    	BayerWebElement mobileHero = getElement( "aspirin.menu.mobile.hero", webDriver );
 	    	mobileHero.click();
-	    	waitForElement( "aspirin.menu.heartHealth.hero.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.hero.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -208,10 +208,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus4 = getElement( "aspirin.mobile.menu.plus4", webDriver );
 	    	plus4.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.learn", webDriver, 15 );
-	    	BayerWebElement mobileLearn = getElement( "aspirin.menu.heartHealth.learn", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.learn", webDriver, 15 );
+	    	BayerWebElement mobileLearn = getElement( "aspirin.menu.mobile.learn", webDriver );
 	    	mobileLearn.click();
-	    	waitForElement( "aspirin.menu.heartHealth.learn.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.learn.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -222,10 +222,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus4a = getElement( "aspirin.mobile.menu.plus4", webDriver );
 	    	plus4a.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.trusted", webDriver, 15 );
-	    	BayerWebElement mobileTrusted = getElement( "aspirin.menu.heartHealth.trusted", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.trusted", webDriver, 15 );
+	    	BayerWebElement mobileTrusted = getElement( "aspirin.menu.mobile.trusted", webDriver );
 	    	mobileTrusted.click();
-	    	waitForElement( "aspirin.menu.heartHealth.trusted.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.trusted.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -236,10 +236,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus4b = getElement( "aspirin.mobile.menu.plus4", webDriver );
 	    	plus4b.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.take", webDriver, 15 );
-	    	BayerWebElement mobileTake = getElement( "aspirin.menu.heartHealth.take", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.take", webDriver, 15 );
+	    	BayerWebElement mobileTake = getElement( "aspirin.menu.mobile.take", webDriver );
 	    	mobileTake.click();
-	    	waitForElement( "aspirin.menu.heartHealth.take.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.take.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -250,10 +250,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus5 = getElement( "aspirin.mobile.menu.plus5", webDriver );
 	    	plus5.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.lowDose", webDriver, 15 );
-	    	BayerWebElement mobileLowDose = getElement( "aspirin.menu.heartHealth.lowDose", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.lowDose", webDriver, 15 );
+	    	BayerWebElement mobileLowDose = getElement( "aspirin.menu.mobile.lowDose", webDriver );
 	    	mobileLowDose.click();
-	    	waitForElement( "aspirin.menu.heartHealth.lowDose.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.lowDose.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -264,10 +264,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus5a = getElement( "aspirin.mobile.menu.plus5", webDriver );
 	    	plus5a.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.women", webDriver, 15 );
-	    	BayerWebElement mobileWomen = getElement( "aspirin.menu.heartHealth.women", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.women", webDriver, 15 );
+	    	BayerWebElement mobileWomen = getElement( "aspirin.menu.mobile.women", webDriver );
 	    	mobileWomen.click();
-	    	waitForElement( "aspirin.menu.heartHealth.women.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.women.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -278,10 +278,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus5b = getElement( "aspirin.mobile.menu.plus5", webDriver );
 	    	plus5b.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.chewable", webDriver, 15 );
-	    	BayerWebElement mobileChewable = getElement( "aspirin.menu.heartHealth.chewable", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.chewable", webDriver, 15 );
+	    	BayerWebElement mobileChewable = getElement( "aspirin.menu.mobile.chewable", webDriver );
 	    	mobileChewable.click();
-	    	waitForElement( "aspirin.menu.heartHealth.chewable.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.chewable.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -292,10 +292,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus5c = getElement( "aspirin.mobile.menu.plus5", webDriver );
 	    	plus5c.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.regularDose", webDriver, 15 );
-	    	BayerWebElement mobileRegularDose = getElement( "aspirin.menu.heartHealth.regularDose", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.regularDose", webDriver, 15 );
+	    	BayerWebElement mobileRegularDose = getElement( "aspirin.menu.mobile.regularDose", webDriver );
 	    	mobileRegularDose.click();
-	    	waitForElement( "aspirin.menu.heartHealth.regularDose.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.regularDose.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -306,10 +306,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus5d = getElement( "aspirin.mobile.menu.plus5", webDriver );
 	    	plus5d.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.genuine", webDriver, 15 );
-	    	BayerWebElement mobileGenuine = getElement( "aspirin.menu.heartHealth.genuine", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.genuine", webDriver, 15 );
+	    	BayerWebElement mobileGenuine = getElement( "aspirin.menu.mobile.genuine", webDriver );
 	    	mobileGenuine.click();
-	    	waitForElement( "aspirin.menu.heartHealth.genuine.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.genuine.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -320,10 +320,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus5e = getElement( "aspirin.mobile.menu.plus5", webDriver );
 	    	plus5e.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.extra", webDriver, 15 );
-	    	BayerWebElement mobileExtra = getElement( "aspirin.menu.heartHealth.extra", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.extra", webDriver, 15 );
+	    	BayerWebElement mobileExtra = getElement( "aspirin.menu.mobile.extra", webDriver );
 	    	mobileExtra.click();
-	    	waitForElement( "aspirin.menu.heartHealth.extra.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.extra.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -334,10 +334,10 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus5f = getElement( "aspirin.mobile.menu.plus5", webDriver );
 	    	plus5f.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.back", webDriver, 15 );
-	    	BayerWebElement mobileBack = getElement( "aspirin.menu.heartHealth.back", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.back", webDriver, 15 );
+	    	BayerWebElement mobileBack = getElement( "aspirin.menu.mobile.back", webDriver );
 	    	mobileBack.click();
-	    	waitForElement( "aspirin.menu.heartHealth.back.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.back.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
@@ -348,40 +348,40 @@ public class HeaderNavStep extends AbstractStep {
 	    	BayerWebElement plus5g = getElement( "aspirin.mobile.menu.plus5", webDriver );
 	    	plus5g.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.genuine2", webDriver, 15 );
-	    	BayerWebElement mobileGenuine2 = getElement( "aspirin.menu.heartHealth.genuine2", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.genuine2", webDriver, 15 );
+	    	BayerWebElement mobileGenuine2 = getElement( "aspirin.menu.mobile.genuine2", webDriver );
 	    	mobileGenuine2.click();
-	    	waitForElement( "aspirin.menu.heartHealth.genuine.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.genuine.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
 	    	BayerWebElement mobileMenu23 = getElement( "aspirin.mobile.menu", webDriver );
 	    	mobileMenu23.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.offers", webDriver, 15 );
-	    	BayerWebElement mobileOffers = getElement( "aspirin.menu.heartHealth.offers", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.offers", webDriver, 15 );
+	    	BayerWebElement mobileOffers = getElement( "aspirin.menu.mobile.offers", webDriver );
 	    	mobileOffers.click();
-	    	waitForElement( "aspirin.menu.heartHealth.offers.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.offers.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
 	    	BayerWebElement mobileMenu24 = getElement( "aspirin.mobile.menu", webDriver );
 	    	mobileMenu24.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.offers", webDriver, 15 );
-	    	BayerWebElement mobileFAQ = getElement( "aspirin.menu.heartHealth.faq", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.offers", webDriver, 15 );
+	    	BayerWebElement mobileFAQ = getElement( "aspirin.menu.mobile.faq", webDriver );
 	    	mobileFAQ.click();
-	    	waitForElement( "aspirin.menu.heartHealth.faq.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.faq.validate", webDriver, 15 );
 	    	
 	    	
 	    	waitForElement( "aspirin.mobile.menu", webDriver, 15 );
 	    	BayerWebElement mobileMenu25 = getElement( "aspirin.mobile.menu", webDriver );
 	    	mobileMenu25.click();
 	    	
-	    	waitForElement( "aspirin.menu.heartHealth.bayerGlobal", webDriver, 15 );
-	    	BayerWebElement mobileBayerGlobal = getElement( "aspirin.menu.heartHealth.bayerGlobal", webDriver );
+	    	waitForElement( "aspirin.menu.mobile.bayerGlobal", webDriver, 15 );
+	    	BayerWebElement mobileBayerGlobal = getElement( "aspirin.menu.mobile.bayerGlobal", webDriver );
 	    	mobileBayerGlobal.click();
-	    	waitForElement( "aspirin.menu.heartHealth.bayerGlobal.validate", webDriver, 15 );
+	    	waitForElement( "aspirin.menu.mobile.bayerGlobal.validate", webDriver, 15 );
 	    	
 	    	
 	    
@@ -389,20 +389,25 @@ public class HeaderNavStep extends AbstractStep {
 		}else{
     	//Desktop
     	
-			waitForElement( "aspirin.desktop.menu.heartHealth", webDriver, 15 );
-	    	BayerWebElement desktopHeartHealth = getElement( "aspirin.desktop.menu.heartHealth", webDriver );
-	    	BayerWebElement desktopHeartHealthRisk = getElement( "aspirin.desktop.menu.heartHealth.risk", webDriver );
-	    	
+			waitForElement( "aspirin.menu.desktop.heartHealth", webDriver, 15 );
+	    	BayerWebElement desktopHeartHealth = getElement( "aspirin.menu.desktop.heartHealth", webDriver );
+	    	BayerWebElement desktopHeartHealthRisk = getElement( "aspirin.menu.desktop.heartHealth.risk", webDriver );
 	    	
 	    	Actions actions= new Actions(webDriver);
 	    	actions.moveToElement(desktopHeartHealth).moveToElement(desktopHeartHealthRisk).click().build().perform();
-	    	
 	    	waitForElement( "aspirin.menu.heartHealth.risk.validate", webDriver, 15 );
 		
 	    	
+	    	waitForElement( "aspirin.desktop.menu.heartHealth", webDriver, 15 );
+	    	BayerWebElement desktopHeartHealth2 = getElement( "aspirin.menu.desktop.heartHealth", webDriver );
+	    	BayerWebElement desktopPrevention= getElement( "aspirin.menu.desktop.prevention", webDriver );
+	    	
+	    	actions.moveToElement(desktopHeartHealth2).moveToElement(desktopPrevention).click().build().perform();
+	    	waitForElement( "aspirin.menu.mobile.prevention.validate", webDriver, 15 );
+		
+	   
 	    	
 	    	
-	    	waitForElement("aspirin.desktop.menu.heartHealth", webDriver, 15);
 	    	
 	    	
 		
