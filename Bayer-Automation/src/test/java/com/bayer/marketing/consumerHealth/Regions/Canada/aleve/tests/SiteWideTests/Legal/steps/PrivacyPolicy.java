@@ -31,7 +31,7 @@ public class PrivacyPolicy extends AbstractStep
         	cookiesConf.click();
         }
         
-        new StructureValidator("H1tag","/com/bayer/marketing/consumerHealth/Regions/Canada/aleve/tests/SiteWideTests/Legal/PrivacyPageValidation.xml")
+        new StructureValidator("H1tag","/com/bayer/marketing/consumerHealth/Regions/Canada/aleve/tests/SiteWideTests/Legal/PrivacyPageValidation.xml");
     	waitForElement( "bayer.privacy", webDriver, 15 );
         BayerWebElement conditions = getElement("bayer.privacy", webDriver);
         Util.scrollToElement(webDriver, conditions, wait);
