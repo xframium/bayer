@@ -3,7 +3,7 @@
     
     <validation name="H1tag">
     <description>Header information</description>
-   		<tag name="//h1"> 
+   		<tag name="//*"> 
     	<text type="contains">Énoncé sur la confidentialité</text>
     	</tag>
     </validation>

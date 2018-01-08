@@ -1,4 +1,4 @@
-package com.bayer.exampleTemplate.tests.Example.steps;
+package com.bayer.marketing.consumerHealth.Regions.Canada.aleve.tests.SiteWideTests.Legal.steps;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -31,19 +31,12 @@ public class PrivacyPolicy extends AbstractStep
         	cookiesConf.click();
         }
         
-        
+        new StructureValidator("H1tag","/com/bayer/marketing/consumerHealth/Regions/Canada/aleve/tests/SiteWideTests/Legal/PrivacyPageValidation.xml")
     	waitForElement( "bayer.privacy", webDriver, 15 );
         BayerWebElement conditions = getElement("bayer.privacy", webDriver);
         Util.scrollToElement(webDriver, conditions, wait);
         conditions.click();
         waitForElement( "bayer.key", webDriver, 15 );
-        
-        
-        new StructureValidator("Privacy", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
-        new StructureValidator("Data", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
-        new StructureValidator("PersonalData", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
-        new StructureValidator("Use", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
-        new StructureValidator("Access Rights", "/com/bayer/exampleTemplate/config/legal/ConditionsValidation.xml");
         
         ///////////////Example Code Structure///////////////////
         /*BayerWebElement emailAddress = getElement( "login.emailAddress", webDriver );

@@ -8,7 +8,15 @@ import com.bayer.test.step.factory.Step;
 
 public class AccessibilityTests extends AbstractTest
 {
-
+	
+	@TestDescriptor ( testName = "Claritin Blue Sky General Testing ")
+    @Test ( dataProvider = "deviceList", enabled = true, groups = "ci" )
+    public void claristinBSLTest( DeviceContainer dC )
+    {
+        String baseUrl = "http://colin:Bayer123@03342-bslqa.photoninfotech.com:8080/";
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl ) } );
+    }
+	
     @TestDescriptor ( testName = "Pet Basics General Testing ")
     @Test ( dataProvider = "deviceList", enabled = true, groups = "ci" )
     public void petBasicAccessibility( DeviceContainer dC )
@@ -56,7 +64,7 @@ public class AccessibilityTests extends AbstractTest
         String baseUrl = "http://test.makingsciencemakesense.com";
         executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl ) } );
     }
-    
+   
     
 
     

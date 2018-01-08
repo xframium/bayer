@@ -18,7 +18,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class LegalPages extends AbstractTest {
 	
-public String url = "https://www.bayer.com/";
+public String url = "https://test.aleve.ca/fr/enonce-confidentialite/";
     
 	public String getUrl(){ 
 		return url;
@@ -30,13 +30,17 @@ public String url = "https://www.bayer.com/";
     }
     
     @TestDescriptor( testName="Privacy Policy Validation" )
-    @Test ( dataProvider = "deviceList", enabled=false)
-    public void privacyPolicyTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
-    }
-    
-    @TestDescriptor( testName="Example Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
+    public void privacyPolicyTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url), new StructureValidator("H1tag","/com/bayer/marketing/consumerHealth/Regions/Canada/aleve/tests/SiteWideTests/Legal/PrivacyPageValidation.xml") } );
+    }
+    @TestDescriptor( testName="URL TEST" )
+    @Test ( dataProvider = "deviceList", enabled=false)
+    public void navTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url),  } );
+    }
+    @TestDescriptor( testName="Example Navigation Test" )
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
     }
