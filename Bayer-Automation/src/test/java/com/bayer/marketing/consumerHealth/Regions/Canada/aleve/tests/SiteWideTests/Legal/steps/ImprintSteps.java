@@ -1,4 +1,4 @@
-package com.bayer.exampleTemplate.tests.Example.steps;
+package com.bayer.marketing.consumerHealth.Regions.Canada.aleve.tests.SiteWideTests.Legal.steps;
 
 import java.io.BufferedReader;
 import javax.swing.ImageIcon;
@@ -14,10 +14,10 @@ import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 import com.sun.jna.platform.unix.X11;
 
-public class ExampleStep extends AbstractStep
+public class ImprintSteps extends AbstractStep
 {
 
-    public ExampleStep()
+    public ImprintSteps()
     {
         super( "message", "error message" );
     }

@@ -49,7 +49,7 @@ public class VideosAndResourceNavStep extends AbstractStep {
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
-		//Assert.assertEquals(videoValidator.getText(), "Chapter 2 - Ongoing personal support from BETAPLUS®");
+		//Assert.assertEquals(videoValidator.getText(), "Chapter 2 - Ongoing personal support from BETAPLUS");
 		
 		this.playVideo("betaseron.videos.resource.chapter.three",webDriver,wait);
 		
@@ -97,13 +97,13 @@ public class VideosAndResourceNavStep extends AbstractStep {
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
-		//Assert.assertEquals(videoValidator.getText(), "Chapter 4 - Injecting BETASERON with BETACONNECT™ electronic autoinjector");
+		//Assert.assertEquals(videoValidator.getText(), "Chapter 4 - Injecting BETASERON with BETACONNECTï¿½ electronic auto");
 	
 		this.playVideo("betaseron.videos.resource.chapter.five",webDriver,wait);
 		
 		videoValidator= getElement("betaseron.videos.resource.chapter.one.validate", webDriver);
 		Util.scrollToElement(webDriver, videosection, wait);
-		//Assert.assertEquals(videoValidator.getText(), "Chapter 5 - myBETAapp™");
+		//Assert.assertEquals(videoValidator.getText(), "Chapter 5 - myBETAapp");
 	
 		this.playVideo("betaseron.videos.resource.chapter.six",webDriver,wait);
 		

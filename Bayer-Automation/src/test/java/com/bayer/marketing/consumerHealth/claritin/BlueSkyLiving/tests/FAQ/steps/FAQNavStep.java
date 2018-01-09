@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.claritin.tests.FAQ.steps;
+package com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.FAQ.steps;
 
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;

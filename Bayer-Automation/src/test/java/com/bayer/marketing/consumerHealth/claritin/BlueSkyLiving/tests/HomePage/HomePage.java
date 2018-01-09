@@ -4,9 +4,12 @@ import com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.HomePage.
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
+
+import com.bayer.common.Accessibility;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
 import com.bayer.test.AbstractTest;
+import com.bayer.test.AbstractTest.TestDescriptor;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
 import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
@@ -30,11 +33,17 @@ public String url = "http://03342-bslqa.photoninfotech.com:8080/";
     }
     
     @TestDescriptor( testName="BlueSkyLiving Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url) } );
     }
-    
+    @TestDescriptor ( testName = "Claritin Blue Sky General Testing ")
+    @Test ( dataProvider = "deviceList", enabled = true)
+    public void claristinBSLTest( DeviceContainer dC )
+    {
+        String baseUrl = "http://colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081/";
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl ) } );
+    }
     @TestDescriptor( testName="BlueSkyLiving Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void timedNavigateTest( DeviceContainer dC ) {

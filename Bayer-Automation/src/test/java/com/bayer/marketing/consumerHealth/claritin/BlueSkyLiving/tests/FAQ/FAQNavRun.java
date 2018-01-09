@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.claritin.tests.FAQ;
+package com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.FAQ;
 
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
