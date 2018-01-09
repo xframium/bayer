@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
+    
+    <validation name="Top Nav">
+    <description>Text Verification</description>
+   		<tag name="//*"> 
+    	<text type="contains">
+			    About Bayer
+			    Innovation
+			    Products
+			    Sustainability
+			    Media
+			    Investors
+			    Career
+			    Magazine	
+		</text>
+    	</tag>
+    </validation>
+    <validation name="Footer">
+    <description>Footer Elements</description>
+		<tag name="//*"> 
+			<text type="contains">Innovation
+		
+		    Science For A Better Life Tour
+		    Research at Bayer
+		    Leaps by Bayer
+		    Bayer LifeScience iHUB
+		    Open Innovation
+		    research – The Bayer Scientific Magazine
+		    Inventive Talent
+		    Otto Bayer Medal
+
+			</text>
+			</tag>
+			<tag name="//*"> 
+			<text type="contains">Products
+		
+		    Product Areas
+		    Chempark Management
+		    Information for Patients
+		    Beware of Counterfeits
+		    Report a Side-Effect
+		    Products from A to Z
+
+			</text>
+				
+    	</tag>
+			
+    </validation>
+    
+    
+</validationCollection>
