@@ -55,7 +55,6 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>2.19.1</version>
         <configuration>
-          <argLine>-DdeviceSheet=com/bayer/common/deviceSheet.csv -Dconfig.properties=com/bayer/common/config.properties</argLine>
           <systemPropertyVariables>
             <application.properties.file>resources/application.properties</application.properties.file>
           </systemPropertyVariables>

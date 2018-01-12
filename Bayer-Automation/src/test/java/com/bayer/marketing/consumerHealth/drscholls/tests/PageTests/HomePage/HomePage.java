@@ -1,8 +1,8 @@
 package com.bayer.marketing.consumerHealth.drscholls.tests.PageTests.HomePage;
 
-import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
-import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
-import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
+import com.bayer.marketing.consumerHealth.drscholls.tests.PageTests.HomePage.steps.HomePageStep;
+import com.bayer.marketing.consumerHealth.drscholls.tests.PageTests.HomePage.steps.PrivacyPolicy;
+import com.bayer.marketing.consumerHealth.drscholls.tests.PageTests.HomePage.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
@@ -18,7 +18,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class HomePage extends AbstractTest {
 	
-public String url = "http://test.redesign.drscholls.com/";
+public String url = "https://www.drscholls.com/";
     
 	public String getUrl(){ 
 		return url;
@@ -35,12 +35,16 @@ public String url = "http://test.redesign.drscholls.com/";
         executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
     }
     
-    @TestDescriptor( testName="Example Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @TestDescriptor( testName="Dr. Scholl's Navigation Test" )
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
+        executeSteps( new Step[] { new Navigate(url), new HomePageStep() } );
     }
-    
+    @TestDescriptor( testName="Dr. Scholl's Link Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void linkTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url), new LinkValidator(url, 44) } );
+    }
     @TestDescriptor( testName="Example Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void timedNavigateTest( DeviceContainer dC ) {
