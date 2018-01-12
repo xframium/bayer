@@ -1,0 +1,6642 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="Bayer - Front-End Dev guidelines" name="description">
+    <title>Test Scripting guidelines</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="./assets/favicon.ico" rel="icon" type=
+    "image/vnd.microsoft.icon">
+    <link href="./assets/kickoff.css" rel="stylesheet">
+</head>
+<body class="clearfix">
+    <div class="sidebar">
+        <header class="masthead">
+            <ol>
+			 <li>
+                    <a href="#section-overview">Overview</a>
+                </li>
+			 <li>
+                    <a href="#section-start">Getting Started</a>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <a href="#section-intro">General Guidelines</a>
+                        </summary>
+                        <ol>
+                            <li>
+                                <a href="#section-intro-separation">Separation
+                                of concerns</a>
+                            </li>
+                            <li>
+                                <a href=
+                                "#section-intro-indentation">Indentation</a>
+                            </li>
+                            <li>
+                                <a href="#section-intro-trailing">Trailing
+                                Whitespace</a>
+                            </li>
+                            <li>
+                                <a href=
+                                "#section-intro-capitalization">Capitalization</a>
+                            </li>
+                            <li>
+                                <a href=
+                                "#section-intro-comments">Commenting</a>
+                            </li>
+                            <li>
+                                <a href="#section-intro-file">File naming</a>
+                            </li>
+                            <li>
+                                <a href="#section-intro-testing">Testing</a>
+                            </li>
+                        </ol>
+                    </details>
+                </li>
+                <li>
+                    <a href="#section-browsersupport">Browser Support</a>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <a href="#section-markup">HTML Markup</a>
+                        </summary>
+                        <ol>
+                            <li>
+                                <a href="#section-markup-general">General
+                                Markup Guidelines</a>
+                            </li>
+                            <li>
+                                <a href="#section-markup-html5">Doctype</a>
+                            </li>
+                            <li>
+                                <a href=
+                                "#section-markup-semantic-markup">Semantic
+                                Markup</a>
+                            </li>
+							<li>
+                                <a href=
+                                "#section-markup-language-attr">Language
+                                Attribute</a>
+                            </li>
+                            <li>
+                                <a href="#section-markup-attributes">Quoting
+                                Attributes</a>
+                            </li>
+                            <li>
+                                <a href="#section-markup-encoding">Character
+                                Encoding</a>
+                            </li>
+                            <li>
+                                <a href="#section-markup-comments">Comments</a>
+                            </li>
+                            <li>
+                                <a href="#section-markup-meta">Meta Tags</a>
+                            </li>
+                            <li>
+                                <a href="#section-markup-favicon">Favicon</a>
+                            </li>
+                            <li>
+                                <a href="#section-markup-usage">HTML5 Usage</a>
+                            </li>
+                            <li>
+                                <a href="#section-markup-form-validation">HTML5
+                                Form Validation</a>
+                            </li>
+							
+                            <li>
+                                <a href="#section-markup-protocol">Protocol</a>
+                            </li>
+                            <li>
+                                <a href="#section-markup-html-entities">HTML
+                                Entities</a>
+                            </li>
+                            <li>
+                                <a href="#section-markup-404">404
+                                Configuration</a>
+                            </li>
+                            <li>
+                                <a href="#section-markup-urls">Friendly
+                                URLs</a>
+                            </li>
+                            <li>
+                                <a href=
+                                "#section-markup-accessibility">Accessibility</a>
+                            </li>
+                            <li>
+                                <a href=
+                                "#section-markup-resources">Resources</a>
+                            </li>
+                        </ol>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>
+                            <a href="#section-css">CSS</a>
+                        </summary>
+                        <ol>
+                            <li>
+                                <a href="#section-css-general">General CSS
+                                Principles</a>
+                            </li>
+                            <li>
+                                <a href="#section-css-formatting">Syntax and
+                                formatting</a>
+                            </li>
+
+                            <li>
+
+                                <a href="#section-css-delimiters">Name
+
+                                Delimiters</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-css-indenting">Indenting</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-css-encoding">Encoding</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-css-reset">Reset vs
+
+                                Normalisation</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-css-comments">Comments</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-css-specificity">Specificity,
+
+                                IDs and classes</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-css-important">!important</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-css-magicnumbers">Magic
+
+                                Numbers and absolutes</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-css-images">Images</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href=
+
+                                "#section-css-preprocessors">Preprocessors</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-sass">Sass</a>
+
+                                <ol>
+
+                                    <li>
+
+                                        <a href="#section-sass-general">General
+
+                                        Sass Principles</a>
+
+                                    </li>
+
+                                    <li>
+
+                                        <a href=
+
+                                        "#section-sass-nesting">Nesting</a>
+
+                                    </li>
+
+                                    <li>
+
+                                        <a href=
+
+                                        "#section-sass-extend">@extend</a>
+
+                                    </li>
+
+                                    <li>
+
+                                        <a href=
+
+                                        "#section-sass-compilation">Sass
+
+                                        Compilation</a>
+
+                                    </li>
+
+                                </ol>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-css-tools">Resources</a>
+
+                            </li>
+
+                        </ol>
+
+                    </details>
+
+                </li>
+
+                <li>
+
+                    <details>
+
+                        <summary>
+
+                            <a href="#section-rwd">Responsive Design</a>
+
+                        </summary>
+
+                        <ol>
+
+                            <li>
+
+                                <a href="#section-rwd-mobilefirst">Mobile
+
+                                First</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-rwd-coding">Coding</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-rwd-resources">Resources</a>
+
+                            </li>
+
+                        </ol>
+
+                    </details>
+
+                </li>
+
+                <li>
+
+                    <details>
+
+                        <summary>
+
+                            <a href="#section-js">JavaScript</a>
+
+                        </summary>
+
+                        <ol>
+
+                            <li>
+
+                                <a href="#section-js-general">General
+
+                                JavaScript Principles</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-js-formatting">Formatting and
+
+                                code sensibility</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-js-jquery">jQuery Best
+
+                                Practices</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-js-debugging">Debugging</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-js-resources">Libraries &
+
+                                Tools</a>
+
+                            </li>
+
+                        </ol>
+
+                    </details>
+
+                </li>
+
+                <li>
+
+                    <details>
+
+                        <summary>
+
+                            <a href="#section-accessibility">Accessibility</a>
+
+                        </summary>
+
+                        <ol>
+
+                            <li>
+
+                                <a href="#section-accessibility-source">Source
+
+                                Order</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-accessibility-js">JavaScript
+
+                                Content</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-accessibility-page">Page
+
+                                Titles</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-accessibility-aria">ARIA
+
+                                Roles</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-accessibility-skip">Skip
+
+                                Links</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-accessibility-alt">Alt
+
+                                Attributes</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href=
+
+                                "#section-accessibility-tables">Tables</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-accessibility-form">Form
+
+                                Concepts</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href=
+
+                                "#section-accessibility-resources">Resources</a>
+
+                            </li>
+
+                        </ol>
+
+                    </details>
+
+                </li>
+
+                <li>
+
+                    <details>
+
+                        <summary>
+
+                            <a href="#section-performance">Performance and
+
+                            Optimization</a>
+
+                        </summary>
+
+                        <ol>
+
+                            <li>
+
+                                <a href="#section-performance-assets">Page
+
+                                Speed</a>
+
+                            </li>
+
+							<li>
+
+                                <a href="#section-performance-caching">Browser
+
+                                Caching</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#section-performance-images">Image
+
+                                optimization</a>
+
+                            </li>
+
+                            <li>
+
+                                <a href=
+
+                                "#section-performance-tools">Resources</a>
+
+                            </li>
+
+                        </ol>
+
+                    </details>
+
+                </li>
+
+				<li>
+
+                    <a href="#section-analytics">Web Analytics</a>
+
+                </li>
+
+                <li>
+
+                    <a href="#section-seo">SEO</a>
+
+                </li>
+
+                <li>
+
+                    <a href="#section-robots">Robots.txt</a>
+
+                </li>
+
+            </ol>
+
+			 	<h2><a href="mailto:bayer_na_its_marketing_support@bayer.com?Subject=I have a question/comment" target="_top">Contact us</a></h2>	
+
+        </header>
+
+    </div><a id="top" name="top"></a>
+
+    <div class="content">
+
+        <article class="content-inner entry entry--single" role="main">
+
+            <div class="logo">
+
+                <a class="logo" href="#"><img alt="Bayer" aria-label="Bayer"
+
+                src="https://shared.bayer.com/img/logo.svg"></a>
+
+            </div>
+
+            <div class="entry-content">
+
+                <h1 class="entry-title entry-title--single">Test Scripting Standards</h1>
+
+                <h2><a id="section-overview" name="section-intro"></a>Overview</h2>
+
+                <p>This document is an overview of Test Scripting Standards
+
+                standards that we established at Bayer, and all web
+
+                applications built should take these into consideration. It is
+
+                an evolving document and should be reviewed as and when
+
+                required to keep up with changes in technology and best
+
+                practice.</p>
+
+                <p>These guidelines are collected from the experiences we've
+
+                had with numerous projects, as well as a looking at various
+
+                previously written guidelines and in some sections been
+
+                directly quoted.</p>
+
+                <p>Always aim to meet the standards knowing you'll have to
+
+                break the rules at some point. Be thoughtful about when you
+
+                deviate and check with a senior software engineer for
+
+                guidance.</p>
+
+                <h3>Expectations:</h3>
+
+                <ul>
+
+                    <li>Understand and follow the standards outlined in this
+
+                    document.</li>
+
+                    <li>Write code knowing that someone else might be
+
+                    maintaining it.</li>
+
+                    <li>Select tools that benefit the project.</li>
+
+                </ul>
+
+                <hr>
+
+							
+
+                <h1><a id="section-start" name="section-intro"></a>Getting Started
+
+                </h1>
+
+				<p>At the outset of the project it is essential to <strong>properly understand the goals of the project</strong> and <strong>identify the specific deliverables</strong> expected of the front-end team. Where your responsibilities begin and end should not be taken for granted or assumed.</p>
+
+				<p>All project teams should get a reasonable understanding of the what client's <strong>browser and device requirements</strong> are. Make no assumptions as to the technology available either from the client or their audience.</p>
+
+				<h2>Pillars of Front-end Development</h2>
+
+				<p>Whenever possible, the front-end technology solutions produced shall adhere to industry best practices honoring as strict a separation of concerns as possible between:</p>
+
+				<ul>
+
+<li>Semantic HyperText Markup Language (HTML) for structure</li>
+
+<li>Cascading Style Sheets (CSS) for presentation</li>
+
+<li>JavaScript (JS) for behavior and interaction</li>
+
+</ul>
+
+				<hr>
+
+                <h1><a id="section-intro" name="section-intro"></a>General
+
+                Guidelines</h1>
+
+                <ul>
+
+                    <li>All front-end code should display clear separation of
+
+                    presentation, content, and behaviour.</li>
+
+                    <li>Markup should be well formed, semantically correct and
+
+                    generally valid.</li>
+
+                    <li>JavaScript should progressively enhance the experience
+
+                        <ul>
+
+                            <li>Use feature detection rather than browser
+
+                            sniffing (edge cases such as performance are
+
+                            acceptable)</li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>Gracefully degrade functionality when not present (e.g
+
+                    GPS, box-shadow, forms etc).</li>
+
+                </ul>
+
+                <h2><a id="section-intro-separation" name=
+
+                "section-intro-separation"></a>Separation of concerns</h2>
+
+                <p>Separate <em>structure</em> from <em>presentation</em> from
+
+                <em>behaviour</em> to aid maintainability and
+
+                understanding.</p>
+
+                <ul>
+
+                    <li>Keep CSS (presentation), JS (behaviour) and HTML
+
+                    (structure) in separate files</li>
+
+                    <li>Avoid writing inline CSS or Javascript in HTML</li>
+
+                    <li>Avoid writing CSS or HTML in Javascript</li>
+
+                    <li>Don't choose HTML elements to imply style</li>
+
+                    <li>Where appropriate, use CSS rather than Javascript for
+
+                    animations and transitions</li>
+
+                    <li>Try to use templates when defining markup in
+
+                    Javascript</li>
+
+                </ul>
+
+                <h2><a id="section-intro-indentation" name=
+
+                "section-intro-indentation"></a>Indentation</h2>
+
+                <p>Only one style should exist across the entire source of your
+
+                project. Always be consistent in your use of whitespace. Use
+
+                whitespace to improve the readability of any code.</p>
+
+                <ul>
+
+                    <li>Never mix spaces and tabs for indentation.</li>
+
+                    <li>Choose between soft indents (spaces) or real tabs.
+
+                    Stick to your choice without fail.</li>
+
+                    <li>If using spaces, choose the number of characters used
+
+                    per indentation level. (Preference: 4 spaces / Tab size
+
+                    4)</li>
+
+                </ul>
+
+                <p>Use indentation consistently to enhance the readability of
+
+                the code. When elements carry over more than one line of code,
+
+                indent the contents of elements between the start tag and the
+
+                end tag. This will make it easy to see where the element begins
+
+                and ends. Also, use indentation to align code at attribute
+
+                names.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">div</span>&gt;
+
+    &lt;<span class="pl-ent">ul</span>&gt;
+
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class=
+
+"pl-ent">a</span> <span class="pl-e">href</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>page.html<span class=
+
+"pl-pds">"</span></span>&gt;Link&lt;/<span class=
+
+"pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class=
+
+"pl-ent">a</span> <span class="pl-e">href</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>page.html<span class=
+
+"pl-pds">"</span></span>&gt;Link&lt;/<span class=
+
+"pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+
+    &lt;/<span class="pl-ent">ul</span>&gt;
+
+&lt;/<span class="pl-ent">div</span>&gt;</pre>
+
+                </div>
+
+                <p>When using templating logic to generate markup, indent each
+
+                new line 4 additional space</p>
+
+                <div class="highlight">
+
+                    <pre>{{#if}}
+
+    &lt;<span class="pl-ent">div</span>&gt;
+
+        ...
+
+    &lt;/<span class="pl-ent">div</span>&gt;
+
+{{/if}}</pre>
+
+                </div>
+
+                <h2><a id="section-intro-trailing" name=
+
+                "section-intro-trailing"></a>Trailing Whitespace</h2>
+
+                <p>Remove all trailing whitespace.</p>
+
+                <h2><a id="section-intro-capitalization" name=
+
+                "section-intro-capitalization"></a>Capitalization</h2>
+
+                <p>Use only lowercase. This applies to element names,
+
+                attributes, and attribute values (unless strings).</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">img</span> <span class=
+
+                    "pl-e">src</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>felix.png<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">alt</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>Felix, a cat, wrestles with his yarn playfully<span class=
+
+                    "pl-pds">"</span></span> /&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-intro-comments" name=
+
+                "section-intro-comments"></a>Commenting</h2>
+
+                <p>Explain design or architectural decisions that cannot be
+
+                conveyed in code alone by adding comments to your code.</p>
+
+                <p>Be sure that in conjunction with writing code that adheres
+
+                to these guidelines, someone can pick up your code and
+
+                immediately understand it.</p>
+
+                <p>Be verbose with your comments but ensure:</p>
+
+                <ul>
+
+                    <li>Your comments add something to the code, they don't
+
+                    just repeat what is there</li>
+
+                    <li>They are kept up to date, if you change something that
+
+                    has been commented, ensure you update the comment as
+
+                    well</li>
+
+                    <li>If code needs extensive commenting, can it be
+
+                    refactored to make it less complex / easier to
+
+                    understand?</li>
+
+                    <li>You focus on <em>why</em> rather than <em>how</em> -
+
+                    unless your code is too complex, it should be self
+
+                    documenting</li>
+
+                </ul>
+
+                <p>Don't leave commented out chunks of code in the codebase. It
+
+                makes the code look unfinished, and can be confusing for other
+
+                developers.</p>
+
+                <p>More information about commenting style can be found in the
+
+                HTML, CSS and JavaScript sections.</p>
+
+                <h2><a id="section-intro-file" name=
+
+                "section-intro-file"></a>File naming</h2>
+
+                <ul>
+
+                    <li>Don't use whitespaces in file names - they can lead to
+
+                    problems including text escaping and are harder to read
+
+                    when encoded in URLs</li>
+
+                    <li>Use hyphens for word separators</li>
+
+                </ul>
+
+                <h2><a id="section-intro-testing" name=
+
+                "section-intro-testing"></a> Testing and QA should find no
+
+                problems</h2>
+
+                <ul>
+
+                    <li>Code is a craft - make it your responsibility to ensure
+
+                    it is the best it can be; that it's tested, bug free, and
+
+                    adheres to these guidelines. Testing and QA folks aren't
+
+                    responsible for quality - developers are.</li>
+
+                    <li>Don't use testers as bug catchers - testers should find
+
+                    no problems after you have committed your code. When
+
+                    testers find bugs, tickets need to be opened, developers
+
+                    assigned and scheduled in to fix the problem. This
+
+                    lengthens the time it takes from identifying to resolving a
+
+                    bug.</li>
+
+                    <li>Make sure, as much as possible, you have tested your
+
+                    code on a reasonable number of devices so you can catch
+
+                    problems before you commit the code.</li>
+
+                </ul>
+
+                <hr>
+
+                <h1><a id="section-browsersupport" name=
+
+                "section-browsersupport"></a>Browser Support</h1>
+
+                <ul>
+
+                    <li>Internet Explorer 8+</li>
+
+                    <li>Firefox</li>
+
+                    <li>Google Chrome</li>
+
+                    <li>Safari</li>
+
+                    <li>Opera</li>
+
+                </ul>
+
+                <p>We test in the latest 3 versions of Firefox, Chrome and
+
+                Safari due to them using incremental auto-updates.</p>
+
+                <p>Note that based on the client's analytics, sometimes legacy
+
+                browsers such as IE 8.0 might need to be supported. A
+
+                conversation around this should happen if current usage on the
+
+                specific site is above 3% for a specific browser and not
+
+                projected to drop below that until the go live date of the site
+
+                or if specific business reasons demand support.</p>
+
+                <hr>
+
+                <h1><a id="section-markup" name="section-markup"></a>HTML
+
+                Markup</h1>
+
+                <h2><a id="section-markup-general" name=
+
+                "section-markup-general"></a>General Markup Guidelines</h2>
+
+                <p>The following are general guidelines for structuring your
+
+                HTML markup. Authors are reminded to always use markup which
+
+                represents the semantics of the content in the document being
+
+                created.</p>
+
+                <ul>
+
+                    <li>Use <code>&lt;p&gt;</code> elements for paragraph
+
+                    delimiters as opposed to multiple <code>&lt;br /&gt;</code>
+
+                    tags.</li>
+
+                    <li>Items in list form should always be housed in a
+
+                    <code>&lt;ul&gt;</code> , <code>&lt;ol&gt;</code> , or
+
+                    <code>&lt;dl&gt;</code> , never a set of
+
+                    <code>&lt;div&gt;</code> s or <code>&lt;p&gt;</code>
+
+                    s.</li>
+
+                    <li>Place an HTML comment around DIV tags that contain a
+
+                    larger amount of markup to indicate the element you're
+
+                    closing. It will help when there is a lot of nesting and
+
+                    indentation. For example:</li>
+
+                </ul>
+
+                <div class="highlight">
+
+                    <pre><code class="language-html" data-lang=
+
+                    "html"><span class=
+
+                    "c">&lt;!-- Start of .contentWrap --&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class=
+
+"s">"contentWrap"</span><span class="nt">&gt;</span>
+
+    //some markup goes here
+
+<span class="nt">&lt;/div&gt;</span> <span class=
+
+"c">&lt;!-- End of .contentWrap --&gt;</span>
+
+</code></pre>
+
+                </div>
+
+                <ul>
+
+                    <li>Make use of <code>&lt;thead&gt;</code> ,
+
+                    <code>&lt;tbody&gt;</code> , and <code>&lt;th&gt;</code>
+
+                    tags (and <code>Scope</code> attribute) when
+
+                    appropriate.</li>
+
+					<li><ul>
+
+					<li>Usage (an example of each of them):</li> 
+
+					<li>The <code>&lt;thead&gt;</code> tag is used to group header content in an HTML table.</li>
+
+					<li>The <code>&lt;thead&gt;</code> element is used in conjunction with the <code>&lt;tbody&gt;</code> and <code>&lt;tfoot&gt;</code> elements to specify each part of a table (header, body, footer).</li></ul></li>
+
+                    <li>Make use of <code>&lt;dl&gt;</code> (definition lists)
+
+                    and <code>&lt;blockquote&gt;</code> , when
+
+                    appropriate.</li>
+
+					<li>
+
+					<ul><li>Usage:</li><li>The <code>&lt;dl&gt;</code> tag is used in conjunction with <code>&lt;dt&gt;</code> (defines terms/names) and <code>&lt;dd&gt;</code> (describes each term/name).</li>
+
+					<li>The blockquote element represents a section that is quoted from another source</li></ul>
+
+					</li>
+
+                    <li>Use <code>&lt;label&gt;</code> fields to label each
+
+                    form field. The <code>for</code> attribute should associate
+
+                    itself with the input field, so users can click the labels
+
+                    and obtain focus.</li>
+
+                    <li>Do not use the <code>size</code> attribute on your
+
+                    input fields. The <code>size</code> attribute is relative
+
+                    to the font-size of the text inside the input. Instead use
+
+                    CSS width.</li>
+
+                    <li>Always use title-case for headers and titles. Do not
+
+                    use all caps or all lowercase titles in markup, instead
+
+                    apply the CSS property <code>text-transform:
+
+                    uppercase/lowercase</code> .</li>
+
+                    <li>Use microformats and/or Microdata where appropriate,
+
+                    specifically <code>hCard</code> and <code>adr</code> .</li>
+
+                </ul>
+
+                <p>...and the single most important rule...</p>
+
+                <ul>
+
+                    <li>Tables <strong>shouldn't ever</strong> be used for page
+
+                    layout – only for tabular data.</li>
+
+                </ul>
+
+                <h2><a id="section-markup-html5" name=
+
+                "section-markup-html5"></a>HTML5</h2>
+
+                <h3>HTML5 Doctype</h3>
+
+                <div class="highlight">
+
+                    <pre><code class="language-html" data-lang="html">
+
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+
+<span class="nt">&lt;html&gt;</span>
+
+    <span class="nt">&lt;head&gt;</span>
+
+    <span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span></code></pre>
+
+                </div>
+
+                <h3>CSS and JavaScript includes</h3>
+
+                <p>When working with the HTML5 doctype, omit <code>type</code>
+
+                attributes for stylesheets and scripts.</p>
+
+                <div class="highlight">
+
+                    <pre><code class="language-html" data-lang=
+
+                    "html"><span class="c">&lt;!-- External CSS --&gt;</span>
+
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class=
+
+"s">"stylesheet"</span> <span class="na">href=</span><span class=
+
+"s">"code-guide.css"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- In-document CSS --&gt;</span>
+
+<span class="nt">&lt;style&gt;</span>
+
+<span class="c">/* ... */</span>
+
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="c">&lt;!-- JavaScript --&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class=
+
+"s">"code-guide.js"</span><span class=
+
+"nt">&gt;&lt;/script&gt;</span></code></pre>
+
+                </div>
+
+                <h3>Legacy Doctypes</h3>
+
+                <p>When working with legacy doctypes older than HTML5, include
+
+                <code>type</code> attributes for stylesheets and scripts.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">link</span> <span class=
+
+                    "pl-e">rel</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>stylesheet<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">href</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>screen.css<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">type</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>text/css<span class=
+
+                    "pl-pds">"</span></span> /&gt;
+
+&lt;<span class="pl-ent">script</span> <span class=
+
+"pl-e">src</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>global.js<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>text/javascript<span class=
+
+"pl-pds">"</span></span> /&gt;</pre>
+
+                </div>
+
+                <p>To ensure HTML5 markup compatibility with older browsers,
+
+                use either:</p>
+
+                <ul>
+
+                    <li>
+
+                        <a href="http://www.modernizr.com/" target=
+
+                        "_blank">Modernizr</a> - consider bloat, use the build
+
+                        generator to decrease its size
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://code.google.com/p/html5shiv/" target=
+
+                        "_blank">HTML5shiv</a> - no feature detection, simply
+
+                        ensures markup compatibility
+
+                    </li>
+
+                </ul>
+
+                <p>We will test our markup against the <a href=
+
+                "http://validator.w3.org/" target="_blank">W3C validator</a>,
+
+                to ensure that the markup is well formed. 100% valid code is
+
+                not a goal, but validation certainly helps to write more
+
+                maintainable sites as well as debugging code. We are not asking
+
+                for 100% valid markup, but instead assures the cross-browser
+
+                experience is consistent.</p>
+
+                <h2><a id="section-markup-semantic-markup" name=
+
+                "section-markup-semantic-markup"></a>Semantic Markup</h2>
+
+                <p>Write clean semantic markup that clearly reinforces the
+
+                meaning of the page content.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">nav</span>&gt;
+
+    &lt;<span class="pl-ent">ul</span>&gt;
+
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class=
+
+"pl-ent">a</span> <span class="pl-e">href</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>#<span class=
+
+"pl-pds">"</span></span>&gt;Home&lt;/<span class=
+
+"pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class=
+
+"pl-ent">a</span> <span class="pl-e">href</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>#<span class=
+
+"pl-pds">"</span></span>&gt;About Us&lt;/<span class=
+
+"pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class=
+
+"pl-ent">a</span> <span class="pl-e">href</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>#<span class=
+
+"pl-pds">"</span></span>&gt;Resources&lt;/<span class=
+
+"pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+
+        &lt;<span class="pl-ent">li</span>&gt;&lt;<span class=
+
+"pl-ent">a</span> <span class="pl-e">href</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>#<span class=
+
+"pl-pds">"</span></span>&gt;Contact&lt;/<span class=
+
+"pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+
+    &lt;/<span class="pl-ent">ul</span>&gt;
+
+&lt;/<span class="pl-ent">nav</span>&gt;</pre>
+
+                </div>
+
+                <p>When generic containers are needed, use
+
+                <code>&lt;div&gt;</code> for block level elements and
+
+                <code>&lt;span&gt;</code> for inline elements.</p>
+
+                <h2><a id="section-markup-language-attr" name=
+
+                "section-markup-language-attr"></a>Language attribute</h2>
+
+                <p>Authors are encouraged to specify a lang attribute on the
+
+                root html element, giving the document's language. This aids
+
+                speech synthesis tools to determine what pronunciations to use,
+
+                translation tools to determine what rules to use, and so
+
+                forth.</p>
+
+                <div class="highlight">
+
+                    <pre><code class="language-html" data-lang=
+
+                    "html"><span class="nt">&lt;html</span> <span class=
+
+                    "na">lang=</span><span class="s">"en-us"</span><span class=
+
+                    "nt">&gt;</span>
+
+<span class="c">&lt;!-- ... --&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span></code></pre>
+
+                </div>
+
+                <h2><a id="section-markup-attributes" name=
+
+                "section-markup-attributes"></a>Quoting Attributes</h2>
+
+                <p>While the HTML5 specification defines quotes around
+
+                attributes as optional for consistency with attributes that
+
+                accept whitespace, all attributes should be quoted.</p>
+
+                <div class="highlight">
+
+                    <pre><code class="language-html" data-lang=
+
+                    "html"><span class="nt">&lt;a</span> <span class=
+
+                    "na">href=</span><span class=
+
+                    "s">"mylink.html"</span> <span class=
+
+                    "na">title=</span><span class=
+
+                    "s">"My Link Title"</span> <span class=
+
+                    "na">data-attribute=</span><span class=
+
+                    "s">"32"</span><span class=
+
+                    "nt">&gt;</span>This is my Link<span class=
+
+                    "nt">&lt;/a&gt;</span>
+
+</code></pre>
+
+                </div>
+
+                <h2><a id="section-markup-encoding" name=
+
+                "section-markup-encoding"></a>Character Encoding</h2>
+
+                <p>All markup should be delivered as UTF-8, as it's the most
+
+                friendly for internationalization. It should be designated in
+
+                both the HTTP header and the head of the document.</p>
+
+                <p>Set the character set using <code>&lt;meta&gt;</code>
+
+                tags:</p>
+
+                <div class="highlight">
+
+                    <pre><code class="language-html" data-lang=
+
+                    "html"><span class="nt">&lt;meta</span> <span class=
+
+                    "na">charset=</span><span class=
+
+                    "s">"utf-8"</span><span class="nt">&gt;</span>
+
+</code></pre>
+
+                </div>
+
+                <h2><a id="section-markup-comments" name=
+
+                "section-markup-comments"></a>HTML Comments</h2>
+
+                <p>HTML comments have the following syntax:</p>
+
+                <div class="highlight">
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class=
+
+"com">&lt;!-- this is a comment --&gt;</span><span class="pln">
+
+    </span><span class="com">&lt;!-- and so is this one,
+
+      which occupies more than one line --&gt;</span><span class="pln">
+
+    </span></code></pre>
+
+                </div>
+
+                <p>White space is not permitted between the markup declaration
+
+                open delimiter("&lt;!") and the comment open delimiter ("--"),
+
+                but is permitted between the comment close delimiter ("--") and
+
+                the markup declaration close delimiter ("&gt;"). Avoid
+
+                multi-level html comments. (shown above)</p>
+
+                <h3>Conditional Comments</h3>
+
+                <p>Conditional comments are the preferred means of
+
+                differentiating Cascading Style Sheets (CSS) rules intended for
+
+                specific versions of Internet Explorer.</p>
+
+                <p>The basic syntax of each type of comment is shown in the
+
+                following table. The first comment shown is the basic HTML
+
+                Comment, which is included for the purpose of comparison and to
+
+                illustrate the different syntax used by each type of
+
+                conditional comment.</p><br>
+
+        
+
+                <div class="highlight">
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="com">&lt;!--[if IE 8]&gt;
+
+      &lt;p&gt;Welcome to Internet Explorer 8.&lt;/p&gt;
+
+    &lt;![endif]--&gt;</span><span class="pln">
+
+    
+
+    </span><span class="com">&lt;!--[if gte IE 7]&gt;
+
+      &lt;SCRIPT LANGUAGE="javascript"&gt;
+
+        alert("Congratulations! You are running Internet Explorer 7 or greater.");
+
+      &lt;/SCRIPT&gt;
+
+        &lt;P&gt;Thank you for closing the message box.&lt;/P&gt;
+
+    &lt;![endif]--&gt;</span><span class="pln">
+
+    
+
+    </span><span class=
+
+"com">&lt;!-- Will only be read by IE versions less then IE 7--&gt;</span><span class="pln">
+
+    </span><span class="com">&lt;!--[if lt IE 7]&gt;
+
+       &lt;link rel="stylesheet" type="text/css" href="Demo/iestyles.css" /&gt; 
+
+    &lt;![endif]--&gt;</span><span class="pln"> 
+
+      </span></code></pre>
+
+                </div>
+
+                <h2><a id="section-markup-meta" name=
+
+                "section-markup-meta"></a>Meta Tags</h2>
+
+                <p>HTML meta tags are officially page data tags that we include
+
+                between the open and closing head tags in the HTML code of a
+
+                document.</p>
+
+                <p>The text in these tags is not displayed, but pars-able and
+
+                tells the browsers (or other web services) specific information
+
+                about the page. Simply, it “explains" the page so a browser can
+
+                understand it.</p>
+
+                <p>Also using these is a great way for web masters to provide
+
+                search engines with information about their sites.</p><br>
+
+                <details>
+
+                    <summary>
+
+                        Most commonly used meta tags
+
+                    </summary>
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"description"</span><span class=
+
+"pln"> </span><span class="atn">content</span><span class=
+
+"pun">=</span><span class="atv">"goes here..."</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>This tag provides a short description of the page. The
+
+description is used as a part of the snippet shown in the search results, so
+
+it's definitely relevant - if it's teasing users to click your site in the
+
+search results it did the trick. Needs to be tailored to the specific page it's
+
+on and should typically be crafted by an editor.
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"keywords"</span><span class=
+
+"pln"> </span><span class="atn">content</span><span class=
+
+"pun">=</span><span class="atv">"keyword 1, keyword 2"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>The keywords are used by some search engines to index
+
+your document in addition to words from the title and document body. Typically
+
+used for synonyms and alternates of title words. Not quite as relevant for SEO
+
+anymore these days as they were hit by a lot of keyword spamming, but if you
+
+have tags in say your CMS for a specific page, it's still worth feeding them in
+
+here. Should definitely be unique per page.
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"viewport"</span><span class=
+
+"pln"> </span><span class="atn">content</span><span class=
+
+"pun">=</span><span class=
+
+"atv">"width=device-width, initial-scale=1, maximum-scale=1"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>(control zoom in mobile browsers) The <code>
+
+                    &lt;meta name="viewport"/&gt;</code> meta tag can be used
+
+                    to control how HTML content will appear in mobile browsers.
+
+                    This can have multiple properties with comma-separated.
+
+                    <code>name=value, name=value, ...</code> Please note that
+
+                    the "value"s are not enclosed in quotation marks.
+
+                    <h3>Meta tags for search engine optimization (SEO)</h3>
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"robots"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>It controls the behavior of search engine crawling and
+
+indexing. The robots meta tag applies to all search engines. It is still one of
+
+the most important meta tags. Believe it or not, it is still common for a site
+
+to be deindexed because someone accidentally added a noindex tag to the entire
+
+site. Understanding this tag is vitally important. The default values are
+
+"index, follow" (the same as "all") and do not need to be specified.
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"google"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>When we recognize that the contents of a page are not
+
+in the language that the user is likely to want to read, we often provide a
+
+link to a translation in the search results. In general, this gives you the
+
+chance to provide your unique and compelling content to a much larger group of
+
+users. However, there may be situations where this is not desired.
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    &lt;link rel="canonical" href="</span><span class=
+
+"tag">&lt;a</span><span class="pln"> </span><span class=
+
+"atn">href</span><span class="pun">=</span><span class=
+
+"atv">"http://www.example.com/original/&amp;quot"</span><span class=
+
+"tag">&gt;</span><span class=
+
+"pln">http://www.example.com/original/&amp;quot</span><span class=
+
+"tag">&lt;/a&gt;</span><span class="pln">; /&gt;
+
+    </span></code></pre>Not strictly a meta-tag, but still very useful - this
+
+allows you to avoid the <a href=
+
+"http://googlewebmastercentral.blogspot.de/2009/02/specify-your-canonical.html"
+
+                    target="_blank">duplicate-content</a> problem with search
+
+                    engines by telling it that it should list another URI
+
+                    instead of the current one for the content it's seeing on
+
+                    the current page.
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"googlebot"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>The tag provides a list of search engine directives,
+
+consisting of special predefined terms separated by commas, that provide
+
+instructions for Google's search engine crawler. The below table represents the
+
+values to be used for both “robots" and “googlebot" meta tags. The robots meta
+
+tag applies to all search engines, while the "googlebot" meta tag is specific
+
+to Google.
+
+                    <table style="border: 1px solid black;">
+
+                        <tbody>
+
+                            <tr>
+
+                                <th>noarchive</th>
+
+                                <td>The value noarchive indicates that a
+
+                                current snapshot of the page should not be
+
+                                permanently stored by Google. Otherwise a
+
+                                cached version of a web page, which shows how
+
+                                it looked when the page was last crawled, is
+
+                                available via a "Cache" link on Google's search
+
+                                engine results pages (SERPs).</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>nofollow</th>
+
+                                <td>The value nofollow tells Google's search
+
+                                engine robot that it should not access any web
+
+                                pages linked to by the current page.</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>noindex</th>
+
+                                <td>The value noindex tells Google to exclude
+
+                                the current page from their results.</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>noodp</th>
+
+                                <td>The value NOODP indicates that any site
+
+                                information in the Open Directory Project
+
+                                (dmoz.org) should not be used in Google's
+
+                                search engine results.</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>nosnippet</th>
+
+                                <td>The value nosnippet indicates that verbatim
+
+                                content from the web page should not be used by
+
+                                Google in the search engine results page
+
+                                (SERP).</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table><br>
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"verify"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>You can use this tag on the top-level page of your site
+
+to verify ownership for Webmaster Tools. Please note that while the values of
+
+the "name" and "content" attributes must match exactly what is provided to you
+
+(including upper and lower case), it doesn't matter if you change the tag from
+
+XHTML to HTML or if the format of the tag matches the format of your page.
+
+                    <pre class="prettyprint lang-html"><code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">http-equiv</span><span class=
+
+"pun">=</span><span class="atv">"X-UA-Compatible"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>X-UA-Compatible is used to indicate to an IE browser
+
+which version of the rendering engine should be used to display the page. This
+
+meta tag does not affect other browsers such as Firefox and Opera, which in
+
+general attempt to avoid bloating the size of the browser code by displaying
+
+web pages only one way according to established standards (Supporting multiple
+
+rendering engines presents some major challenges, especially when content
+
+rendered by one engine accesses embedded content rendered by a different
+
+engine). If at all possible it's more bulletproof to serve this directive and
+
+as HTTP Header. 
+
+                    <h3>Meta tags for HTML pages on Mobile / handheld
+
+                    devices</h3>
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;link</span><span class=
+
+"pln"> </span><span class="atn">rel</span><span class=
+
+"pun">=</span><span class="atv">"apple-touch-icon"</span><span class=
+
+"pln"> </span><span class="tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>(for Web Clips) A Web Clip is a link to a web page or
+
+content from a web page that has been saved to a device along with an icon on
+
+the home screen that can be used to display it.
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"format-detection"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>When running in a browser on a mobile phone, this tag
+
+determines whether or not telephone numbers in the HTML content will appear as
+
+hypertext links. The user can click a link with a telephone number to initiate
+
+a phone call to that phone number.
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"format-detection"</span><span class=
+
+"pln"> </span><span class="atn">content</span><span class=
+
+"pun">=</span><span class="atv">"telephone=yes"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>(default on Safari in iOS)
+
+<code>content="telephone=yes"</code> indicates that telephone numbers in the
+
+HTML code should appear as hypertext links that can be clicked to make a phone
+
+call.
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"format-detection"</span><span class=
+
+"pln"> </span><span class="atn">content</span><span class=
+
+"pun">=</span><span class="atv">"telephone=no"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre><code>content="telephone=no"</code> indicates that
+
+telephone numbers in the HTML code should not appear as hypertext links.
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"HandheldFriendly"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>This tag indicates to the browser that the page has
+
+been laid out by the developer to be viewable on a small screen, and that the
+
+browser should not attempt any further layout enhancements. While somewhat
+
+effective, it does not offer any granular control over the layout width – it’s
+
+just a true/false flag.
+
+                    <h3>Meta tags for apps on Mobile / handheld devices</h3>
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class=
+
+"atv">"apple-mobile-web-app-capable"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>For a mobile app, the apple-mobile-web-app-capable meta
+
+tag determines whether the application runs in web mode, with an address bar
+
+and navigation bar, or in full screen mode without them. <code>
+
+                    content="yes"</code> - the application will run in full
+
+                    screen mode, without the address bar at the top and the
+
+                    navigation bar at the bottom. The JavaScript boolean
+
+                    variable window.navigator.standalone will be set to true.
+
+                    <code>content="no"</code> - the application will run in web
+
+                    mode, with an address bar at the top and a navigation area
+
+                    at the bottom. The JavaScript boolean variable
+
+                    window.navigator.standalone will be set to false.
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class=
+
+"atv">"apple-mobile-web-app-status-bar-style"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>This meta tag specifies the style of the status bar for
+
+a mobile app. This is relevant only if the this tag with <code>
+
+                    content="yes"</code> is also included.
+
+                    <code>content="default"</code> - The status bar color is
+
+                    the normal gray gradient and it does not overlap the HTML
+
+                    content. <code>content="black"</code> - The status bar is
+
+                    black and does not overlap the HTML content.
+
+                    <code>content="black-translucent"</code> - The status bar
+
+                    is translucent black and overlays a small strip at the top
+
+                    of the HTML content.
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;link</span><span class=
+
+"pln"> </span><span class="atn">rel</span><span class=
+
+"pun">=</span><span class="atv">"apple-touch-startup-image"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    </span></code></pre>This meta tag specifies a startup image, which is an
+
+image that is displayed while an offline web application is being launched on
+
+the mobile device. For the iPhone and iPod Touch, the image must be in portrait
+
+orientation 320 pixels wide by 460 pixels high.
+
+                </details>
+
+                <h2><a id="section-markup-favicon" name=
+
+                "section-markup-favicon"></a>Favicon</h2>
+
+                <p>Your Favicon should sit in the root folder - that way you
+
+                don't need a <code>&lt;link rel="icon shortcut"
+
+                href=""/&gt;</code> in your html. If you have to put the
+
+                favicon in a different folder, create a redirect rule for
+
+                it.</p>
+
+                <h2><a id="section-markup-apple-touch" name=
+
+                "section-markup-apple-touch"></a>Apple-touch icons</h2>
+
+                <p>Have a designer create touch icons for your site. That way
+
+                your bookmark will look pretty when mobile users place it on
+
+                their home screens. You should use this snippet instead of
+
+                placing the files in the document root:</p>
+
+                <div class="highlight">
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class=
+
+"com">&lt;!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: --&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;link</span><span class=
+
+"pln"> </span><span class="atn">rel</span><span class=
+
+"pun">=</span><span class="atv">"apple-touch-icon-precomposed"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"apple-touch-icon-precomposed.png"</span><span class="tag">&gt;</span><span class="pln">
+
+    </span><span class=
+
+"com">&lt;!-- For first- and second-generation iPad: --&gt;</span><span class=
+
+"pln">
+
+    </span><span class="tag">&lt;link</span><span class=
+
+"pln"> </span><span class="atn">rel</span><span class=
+
+"pun">=</span><span class="atv">"apple-touch-icon-precomposed"</span><span class="pln"> </span><span class="atn">sizes</span><span class="pun">=</span><span class="atv">"72x72"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"apple-touch-icon-72x72-precomposed.png"</span><span class="tag">&gt;</span><span class="pln">
+
+    </span><span class=
+
+"com">&lt;!-- For iPhone with high-resolution Retina display: --&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;link</span><span class=
+
+"pln"> </span><span class="atn">rel</span><span class=
+
+"pun">=</span><span class="atv">"apple-touch-icon-precomposed"</span><span class="pln"> </span><span class="atn">sizes</span><span class="pun">=</span><span class="atv">"114x114"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"apple-touch-icon-114x114-precomposed.png"</span><span class="tag">&gt;</span><span class="pln">
+
+    </span><span class=
+
+"com">&lt;!-- For third-generation iPad with high-resolution Retina display: --&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;link</span><span class=
+
+"pln"> </span><span class="atn">rel</span><span class=
+
+"pun">=</span><span class="atv">"apple-touch-icon-precomposed"</span><span class="pln"> </span><span class="atn">sizes</span><span class="pun">=</span><span class="atv">"144x144"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"apple-touch-icon-144x144-precomposed.png"</span><span class="tag">&gt;</span><span class="pln">
+
+    </span></code></pre>
+
+                </div>
+
+                <h3>And now - everybody together!</h3>
+
+                <div class="highlight">
+
+                    <pre class="prettyprint lang-html" data-rel=
+
+                    "standard HTML head structure"><code><span class="pln">
+
+    </span><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;html</span><span class=
+
+"pln"> </span><span class="atn">class</span><span class=
+
+"pun">=</span><span class="atv">"no-js"</span><span class=
+
+"pln"> </span><span class="atn">lang</span><span class=
+
+"pun">=</span><span class="atv">"en"</span><span class=
+
+"tag">&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;head&gt;</span><span class="pln">
+
+        </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">charset</span><span class=
+
+"pun">=</span><span class="atv">"utf-8"</span><span class=
+
+"tag">&gt;</span><span class="pln">
+
+        </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">http-equiv</span><span class=
+
+"pun">=</span><span class="atv">"X-UA-Compatible"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+        </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"description"</span><span class=
+
+"pln"> </span><span class="atn">content</span><span class=
+
+"pun">=</span><span class="atv">"goes here..."</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+        </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"keywords"</span><span class=
+
+"pln"> </span><span class="atn">content</span><span class=
+
+"pun">=</span><span class="atv">"keyword 1, keyword 2"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+        </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"viewport"</span><span class=
+
+"pln"> </span><span class="atn">content</span><span class=
+
+"pun">=</span><span class=
+
+"atv">"width=device-width, initial-scale=1, maximum-scale=1"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+        </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"robots"</span><span class=
+
+"tag">/&gt;</span><span class="pln">
+
+    
+
+        </span><span class="tag">&lt;link</span><span class=
+
+"pln"> </span><span class="atn">rel</span><span class=
+
+"pun">=</span><span class="atv">"stylesheet"</span><span class=
+
+"pln"> </span><span class="atn">href</span><span class=
+
+"pun">=</span><span class=
+
+"atv">"your-single-deployment-stylesheet.css"</span><span class=
+
+"tag">&gt;</span><span class="pln">
+
+        </span><span class="tag">&lt;link</span><span class=
+
+"pln"> </span><span class="atn">rel</span><span class=
+
+"pun">=</span><span class="atv">"apple-touch-icon-precomposed"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"apple-touch-icon-precomposed.png"</span><span class="tag">&gt;</span><span class="pln">
+
+        </span><span class="tag">&lt;link</span><span class=
+
+"pln"> </span><span class="atn">rel</span><span class=
+
+"pun">=</span><span class="atv">"apple-touch-icon-precomposed"</span><span class="pln"> </span><span class="atn">sizes</span><span class="pun">=</span><span class="atv">"72x72"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"apple-touch-icon-72x72-precomposed.png"</span><span class="tag">&gt;</span><span class="pln">
+
+        </span><span class="tag">&lt;link</span><span class=
+
+"pln"> </span><span class="atn">rel</span><span class=
+
+"pun">=</span><span class="atv">"apple-touch-icon-precomposed"</span><span class="pln"> </span><span class="atn">sizes</span><span class="pun">=</span><span class="atv">"114x114"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"apple-touch-icon-114x114-precomposed.png"</span><span class="tag">&gt;</span><span class="pln">
+
+        </span><span class="tag">&lt;link</span><span class=
+
+"pln"> </span><span class="atn">rel</span><span class=
+
+"pun">=</span><span class="atv">"apple-touch-icon-precomposed"</span><span class="pln"> </span><span class="atn">sizes</span><span class="pun">=</span><span class="atv">"144x144"</span><span class="pln"> </span><span class="atn">href</span><span class="pun">=</span><span class="atv">"apple-touch-icon-144x144-precomposed.png"</span><span class="tag">&gt;</span><span class="pln">
+
+        </span><span class=
+
+"com">&lt;!-- JS Links should sit on the bottom of the page! --&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;/head&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;body&gt;</span><span class="pln">
+
+    ... content
+
+    </span><span class="tag">&lt;script</span><span class=
+
+"pln"> </span><span class="atn">src</span><span class=
+
+"pun">=</span><span class="atv">"yourJavascript.js"</span><span class=
+
+"tag">&gt;&lt;/script&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;/body&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;/html&gt;</span><span class="pln">
+
+    </span></code></pre>
+
+                </div>
+
+                <h2><a id="section-markup-usage" name=
+
+                "section-markup-usage"></a>HTML5 Usage</h2>
+
+                <p>Not all projects warrant the use of HTML5 elements, but when
+
+                they do, use HTML5 elements and attributes that progressively
+
+                enhance modern browsers.</p>
+
+                <p>Use</p>
+
+				
+
+                <ul>
+
+                    <li><code>&lt;div data-controller="exampleDataController"&gt;&lt;/div&gt;</code></li>
+
+                    <li><code>&lt;input type="email" placeholder="example@domain.com" /&gt;</code></li>
+
+                    <li><code>&lt;input type="search" /&gt;</code></li>
+
+                    <li><code>&lt;input type="tel" /&gt;</code></li>
+
+                    <li><code>&lt;input type="url" /&gt;</code></li>
+
+                    <li><code>&lt;input type="text" required /&gt;</code></li>
+
+                    <li><code>&lt;article&gt;&lt;/article&gt;</code></li>
+
+                    <li><code>&lt;aside&gt;&lt;/aside&gt;</code></li>
+
+                    <li><code>&lt;figure&gt;&lt;/figure&gt;</code></li>
+
+                    <li><code>&lt;footer&gt;&lt;/footer&gt;</code></li>
+
+                    <li><code>&lt;header&gt;&lt;/header&gt;</code></li>
+
+                    <li><code>&lt;mark&gt;&lt;/mark&gt;</code></li>
+
+                    <li><code>&lt;nav&gt;&lt;/nav&gt;</code></li>
+
+                    <li><code>&lt;section&gt;&lt;/section&gt;</code></li>
+
+                    <li><code>&lt;time&gt;&lt;/time&gt;</code></li>
+
+                    <li><code>&lt;small&gt;&amp;copy; 2016
+
+                    Bayer&lt;/small&gt;</code></li>
+
+                </ul>
+
+                <p>Use with Caution</p>
+
+                <ul>
+
+                    <li><code>&lt;audio&gt;&lt;/audio&gt;</code></li>
+
+                    <li><code>&lt;canvas&gt;&lt;/canvas&gt;</code></li>
+
+                    <li><code>&lt;video&gt;&lt;/video&gt;</code></li>
+
+                    <li><code>&lt;figcaption&gt;&lt;/figcaption&gt;</code></li>
+
+                    <li><code>&lt;keygen&gt;&lt;/keygen&gt;</code></li>
+
+                    <li><code>&lt;main&gt;&lt;/main&gt;</code></li>
+
+                    <li><code>&lt;meter&gt;&lt;/meter&gt;</code></li>
+
+                    <li><code>&lt;progress&gt;&lt;/progress&gt;</code></li>
+
+                    <li><code>&lt;output&gt;&lt;/output&gt;</code></li>
+
+                </ul>
+
+                <p>Do Not Use</p>
+
+                <ul>
+
+                    <li><code>&lt;datalist&gt;&lt;/datalist&gt;</code></li>
+
+                    <li><code>&lt;dialog&gt;&lt;/dialog&gt;</code></li>
+
+                    <li><code>&lt;details&gt;&lt;/details&gt;</code></li>
+
+                    <li><code>&lt;summary&gt;&lt;/summary&gt;</code></li>
+
+                    <li><code>&lt;menu&gt;&lt;/menu&gt;</code></li>
+
+                    <li><code>&lt;menuitem&gt;&lt;/menuitem&gt;</code></li>
+
+                    <li><code>&lt;hgroup&gt;&lt;/hgroup&gt;</code></li>
+
+                    <li><code>&lt;wbr&gt;</code></li>
+
+                    <li><code>&lt;bdi&gt;</code></li>
+
+                </ul>
+
+                <h3>Special Consideration</h3>
+
+                <p>Entirely new elements like <code>&lt;video&gt;</code> should
+
+                use appropriate markup based fallbacks so the content is still
+
+                accessible even if the browser can't render it.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">video</span> <span class=
+
+                    "pl-e">width</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>640<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">height</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>360<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">controls</span>&gt;
+
+    &lt;<span class="pl-ent">source</span> <span class=
+
+"pl-e">src</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>cats.mp4<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>video/mp4<span class="pl-pds">"</span></span> /&gt;
+
+    &lt;<span class="pl-ent">source</span> <span class=
+
+"pl-e">src</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>cats.ogv<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>video/ogg<span class="pl-pds">"</span></span> /&gt;
+
+    &lt;<span class="pl-ent">object</span> <span class=
+
+"pl-e">width</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>640<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">height</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>360<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>application/x-shockwave-flash<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">data</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>cats.swf<span class=
+
+"pl-pds">"</span></span>&gt;
+
+        &lt;<span class="pl-ent">param</span> <span class=
+
+"pl-e">name</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>movie<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">value</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>cats.swf<span class="pl-pds">"</span></span> /&gt;
+
+        &lt;<span class="pl-ent">param</span> <span class=
+
+"pl-e">name</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>flashvars<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">value</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>controlbar=over<span class=
+
+"pl-c1">&amp;amp;</span>image=cats.jpg<span class=
+
+"pl-c1">&amp;amp;</span>file=cats.mp4<span class="pl-pds">"</span></span> /&gt;
+
+        &lt;<span class="pl-ent">img</span> <span class=
+
+"pl-e">src</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>cats.jpg<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">width</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>640<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">height</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>360<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">alt</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>Download the video below<span class=
+
+"pl-pds">"</span></span> /&gt;
+
+        &lt;<span class="pl-ent">a</span> <span class=
+
+"pl-e">href</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>cats.mp4<span class=
+
+"pl-pds">"</span></span>&gt;Download cats mp4 file&lt;/<span class=
+
+"pl-ent">a</span>&gt;
+
+        &lt;<span class="pl-ent">a</span> <span class=
+
+"pl-e">href</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>cats.OGV<span class=
+
+"pl-pds">"</span></span>&gt;Download cats ogv file&lt;/<span class=
+
+"pl-ent">a</span>&gt;
+
+    &lt;/<span class="pl-ent">object</span>&gt;
+
+&lt;/<span class="pl-ent">video</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-markup-form-validation" name=
+
+                "section-markup-form-validation"></a>HTML5 Form Validation</h2>
+
+                <p>By default, many HTML5 form inputs include validation that
+
+                is provided by the browser. Error messages are on by default,
+
+                though in many cases the browser implemented messages are not
+
+                what a designer wants. In order to remove validation (and
+
+                thereby the messages) use the <code>novalidate</code> attribute
+
+                on the containing form.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">form</span> <span class=
+
+                    "pl-e">action</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>#<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">method</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>post<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">novalidate</span>&gt;
+
+    &lt;<span class="pl-ent">label</span> <span class=
+
+"pl-e">for</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>email<span class=
+
+"pl-pds">"</span></span>&gt;Email address:&lt;/<span class=
+
+"pl-ent">label</span>&gt;
+
+    &lt;<span class="pl-ent">input</span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>email<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">placeholder</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>example@domain.com<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">id</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>email<span class=
+
+"pl-pds">"</span></span> /&gt;
+
+    &lt;<span class="pl-ent">button</span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>submit<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">id</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>submit<span class=
+
+"pl-pds">"</span></span>&gt;Submit&lt;/<span class="pl-ent">button</span>&gt;
+
+&lt;/<span class="pl-ent">form</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-markup-protocol" name=
+
+                "section-markup-protocol"></a>Protocol</h2>
+
+                <p>Whenever possible, omit the protocol portion
+
+                (<code>http:</code>, <code>https:</code>) from URLs to prevent
+
+                unintended security warnings through accidentally mixing
+
+                protocols:</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">link</span> <span class=
+
+                    "pl-e">rel</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>stylesheet<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">href</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>//www.bayer.com/assets/styles/screen.css<span class=
+
+                    "pl-pds">"</span></span> /&gt;
+
+&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>//www.bayer.com/<span class=
+
+"pl-pds">"</span></span>&gt;Bayer&lt;/<span class="pl-ent">a</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-markup-html-entities" name=
+
+                "section-markup-html-entities"></a>HTML Entities</h2>
+
+                <p>Use the appropriate HTML entity names or numbers for special
+
+                and reserved characters.</p>
+
+                <div class="highlight">
+
+                    <pre><span class=
+
+                    "pl-c1">&amp;copy;</span> 2012-2015 Bayer <span class=
+
+                    "pl-c1">&amp;amp;</span> Pharmaceuticals <span class=
+
+                    "pl-c1">&amp;#8482;</span></pre>
+
+                </div>
+
+                <h2><a id="section-markup-404" name=
+
+                "section-markup-404"></a>404 Configuration</h2>
+
+                <p>When a random URL is accessed, the server should return a
+
+                404 response - not a 302, 200 or any other.</p>
+
+                <h2><a id="section-markup-urls" name=
+
+                "section-markup-urls"></a>Friendly URLs</h2>
+
+                <p>Use “friendly”, persistent URLs throughout your
+
+                application.</p>
+
+                <h3 id="friendly-urls">Friendly URLs</h3>
+
+                <p>A “friendly” URL provides a clear description of a resource.
+
+                For example, the following URL clearly describes the page the
+
+                user would access:</p>
+
+                <div class="language-bash highlighter-rouge">
+
+                    <pre class="highlight"><code><span class=
+
+                    "c"># GOOD PRACTICE</span>
+
+https://www.bayer.com/staff/john-smith
+
+</code></pre>
+
+                </div>
+
+                <p>In contrast, the following URL is more cryptic:</p>
+
+                <div class="language-bash highlighter-rouge">
+
+                    <pre class="highlight"><code><span class=
+
+                    "c"># BAD PRACTICE</span>
+
+http://www.bayer.com/page.php?id<span class=
+
+"o">=</span>63&amp;amp;staff<span class="o">=</span>john%20smith
+
+</code></pre>
+
+                </div>
+
+                <p>“Friendly” URLs are more accessible to both the users
+
+                visiting the URLs as well as search engine crawlers attempting
+
+                to index your website. Use the following recommendations to
+
+                create friendly URLs:</p>
+
+                <ul>
+
+                    <li>Don’t include file extensions (e.g., <code class=
+
+                    "highlighter-rouge">.aspx</code>, <code class=
+
+                    "highlighter-rouge">.php</code>, <code class=
+
+                    "highlighter-rouge">.html</code>) in the URL</li>
+
+                    <li>Avoid cryptic numbers and identifiers (e.g.,
+
+                    <code class=
+
+                    "highlighter-rouge">?id=94&amp;key=s34a</code>)</li>
+
+                    <li>Use dashes/hyphens instead of underscores or spaces
+
+                    (Google does not recognize an underscore as a
+
+                    separator)</li>
+
+                    <li>Ensure that the text of the URL describes resource
+
+                    being accessed via the URL</li>
+
+                    <li>Avoid query strings</li>
+
+                </ul>
+
+                <h3 id="persistent-urls">Persistent URLs</h3>
+
+                <p>A persistent URL indefinitely directs a user to a particular
+
+                web page.</p>
+
+                <p>It’s important to maintain persistent URLs as users may have
+
+                bookmarked a page from your website or another website may be
+
+                linking to your website. If you “break” this URL by moving or
+
+                removing the page to which the URL points, you create a poor
+
+                experience for the user.</p>
+
+                <p>If a URL must change, be sure to redirect users who visit
+
+                the existing URL. If a resource has been permanently moved,
+
+                respond with the “301” HTTP status code:</p>
+
+                <div class="language-bash highlighter-rouge">
+
+                    <pre class="highlight"><code>HTTP/1.1 301 Moved Permanently
+
+</code></pre>
+
+                </div>
+
+                <p>If a resource has only been temporarily moved, respond with
+
+                a “307” HTTP status code (or “302” for HTTP 1.0):</p>
+
+                <div class="language-bash highlighter-rouge">
+
+                    <pre class="highlight">
+
+                    <code>HTTP/1.1 307 Temporary Redirect
+
+</code></pre>
+
+                </div>
+
+                <h3 id="third-level-domain-names">Third-Level Domain Names</h3>
+
+                <p>Websites should be available via both their specific
+
+                third-level domain name (e.g., <code class=
+
+                "highlighter-rouge">https://bayer.com</code>) and the WWW
+
+                domain (e.g., <code class=
+
+                "highlighter-rouge">https://www.bayer.com</code>), so that
+
+                users may access a site using either URL.</p>
+
+                <h2><a id="section-markup-accessibility" name=
+
+                "section-markup-accessibility"></a>Accessibility</h2>
+
+                <p>Consider ARIA integration for high accessibility sites.</p>
+
+                <p>For our full guidelines on Accessibility, refer to the
+
+                <a href="#section-accessibility">Accessibility Guidelines</a>
+
+                section of this document.</p>
+
+                <h2><a id="section-markup-resources" name=
+
+                "section-markup-resources"></a>Resources</h2>
+
+                <ul>
+
+                    <li>
+
+                        <a href="https://validator.w3.org/" target=
+
+                        "_blank">Markup Validation Service</a>: checks the
+
+                        markup of your Web documents.
+
+                    </li>
+
+                    <li>
+
+                        <a href="https://validator.w3.org/checklink" target=
+
+                        "_blank">W3C Link Checker</a>: checks your web pages
+
+                        for broken links.
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://wave.webaim.org/" target="_blank">Wave
+
+                        Accessibility tester</a>: to evaluate the accessibility
+
+                        of web pages.
+
+                    </li>
+
+                </ul>
+
+                <hr>
+
+                <h1><a id="section-css" name="section-css"></a>CSS</h1>
+
+                <h2><a id="section-css-general" name=
+
+                "section-css-general"></a>General CSS Principles</h2>
+
+                <ul>
+
+                    <li>Every time you write inline styles in your markup, a
+
+                    front-end developer somewhere dies - whether it's in a
+
+                    style tag or directly in the markup. Don't do it.</li>
+
+                    <li>Add CSS through external files, minimizing the number
+
+                    of files, if possible. CSS should always be included in the
+
+                    <code>&lt;head&gt;</code> of the document.</li>
+
+                    <li>Use the <code>&lt;link&gt;</code> tag to include, never
+
+                    <code>@import</code> .</li>
+
+                    <li>Ensure markup and style stays separate (some style
+
+                    classes are allowed, e.g imageReplace etc). Only use style
+
+                    only markup if you absolutely have to (e.g extra wrapping
+
+                    elements); consider <code>:before</code> and
+
+                    <code>:after</code> CSS pseudo-elements if styles are not
+
+                    100% necessary.</li>
+
+                </ul>
+
+                <h2><a id="section-css-formatting" name=
+
+                "section-css-formatting"></a>Syntax and formatting</h2>
+
+                <ul>
+
+                    <li>Use multi-line CSS declarations. This helps with
+
+                    version control (diff-ing single line CSS can be a
+
+                    nightmare). Group CSS declarations by type - keeping font
+
+                    related styling together, layout styling together etc - and
+
+                    ordered by relevance, not alphabetized.</li>
+
+                    <li>All CSS rules should have a space after the selector
+
+                    colon and a trailing semi-colon.</li>
+
+                    <li>Selectors should be specified using a simplified
+
+                    version of BEM:</li>
+
+                </ul>
+
+                <div class="highlight">
+
+                    <pre><code class="language-css" data-lang="css"><span class=
+
+                    "c">/* Descriptors use camel-casing if more than one word: e.g. twoWords */</span>
+
+<span class="nc">.skipToContent</span> <span class="p">{</span>
+
+                    <span class="o">...</span>
+
+<span class="p">}</span>
+
+<span class="c">/* ========= */</span>
+
+<span class="c">/* Child elements use single hyphens: - */</span>
+
+<span class="nc">.form-controlGroup</span> <span class="p">{</span>
+
+                    <span class="o">...</span>
+
+<span class="p">}</span>
+
+<span class="c">/* ========= */</span>
+
+<span class="c">/* Modifier element use a double hyphen: -- */</span>
+
+<span class="nc">.btn.btn--primary</span> <span class="p">{</span>
+
+                    <span class="o">...</span>
+
+<span class="p">}</span>
+
+<span class="c">/* ========= */</span>
+
+<span class="c">/* Element state: .is- */</span>
+
+<span class="nc">.is-active</span> <span class="p">{</span>
+
+                    <span class="o">...</span>
+
+<span class="p">}</span>
+
+<span class="c">/* ========= */</span>
+
+<span class="c">/* Sass variables are dash-case */</span>
+
+<span class="nt">a</span> <span class="p">{</span>
+
+                    <span class="k">color</span><span class=
+
+"o">:</span> <span class="err">$</span><span class="k">color</span><span class=
+
+"o">-</span><span class="n">primary</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+</code></pre>
+
+                </div>
+
+                <ul>
+
+                    <li>Use shorthand when specifying multiple values. Remember
+
+                    longhand can be shorter for single values.</li>
+
+                    <li>Multi-attribute selectors should go on separate
+
+                    lines.</li>
+
+                    <li>Don't over qualify class or ID selectors. Leads to
+
+                    specificity issues further down the line.</li>
+
+                </ul>
+
+                <div class="highlight">
+
+                    <pre><code class="language-css" data-lang="css"><span class=
+
+                    "o">//</span> <span class="nt">Bad</span>
+
+<span class="nt">div</span><span class="nc">.content</span> <span class=
+
+"p">{}</span>
+
+<span class="o">//</span> <span class="nt">Good</span>
+
+<span class="nc">.content</span> <span class="p">{}</span>
+
+</code></pre>
+
+                </div>
+
+                <ul>
+
+                    <li>0 requires no units</li>
+
+                </ul>
+
+                <div class="highlight">
+
+                    <pre><code class="language-css" data-lang="css"><span class=
+
+                    "o">//</span> <span class="nt">Good</span>
+
+<span class="nc">.bar</span><span class="o">,</span>
+
+<span class="nc">.foo</span><span class="o">[</span><span class=
+
+"nt">href</span><span class="o">=</span><span class=
+
+"s2">"bar"</span><span class="o">]</span> <span class="p">{</span>
+
+                    <span class="k">position</span><span class=
+
+"o">:</span> <span class="k">absolute</span><span class="p">;</span>
+
+                    <span class="k">top</span><span class=
+
+"o">:</span> <span class="m">0</span><span class="p">;</span>
+
+                    <span class="k">right</span><span class=
+
+"o">:</span> <span class="m">0</span><span class="p">;</span>
+
+                    <span class="k">bottom</span><span class=
+
+"o">:</span> <span class="m">0</span><span class="p">;</span>
+
+                    <span class="k">left</span><span class=
+
+"o">:</span> <span class="m">0</span><span class="p">;</span>
+
+                    <span class="k">padding</span><span class=
+
+"o">:</span> <span class="m">10px</span> <span class="m">0</span> <span class=
+
+"m">0</span> <span class="m">0</span><span class="p">;</span>
+
+                    <span class="k">margin</span><span class=
+
+"o">:</span> <span class="m">10px</span> <span class="m">0</span><span class=
+
+"p">;</span>
+
+                    <span class="k">background</span><span class=
+
+"o">:</span> <span class="nb">red</span><span class="p">;</span>
+
+                    <span class="k">border</span><span class=
+
+"o">-</span><span class="n">radius</span><span class="o">:</span> <span class=
+
+"m">10px</span><span class="p">;</span>
+
+                    <span class="o">-</span><span class=
+
+"n">moz</span><span class="o">-</span><span class="k">border</span><span class=
+
+"o">-</span><span class="n">radius</span><span class="o">:</span> <span class=
+
+"m">10px</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+</code></pre>
+
+                </div>
+
+                <h2><a id="section-css-delimiters" name=
+
+                "section-css-delimiters"></a>Name Delimiters</h2>
+
+                <h3>Class Names</h3>
+
+                <p>Use camelCase for class names.</p>
+
+                <div class="highlight highlight-source-css">
+
+                    <pre><span class="pl-e">.featurePromo</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">padding</span></span>: <span class="pl-c1">10<span class=
+
+"pl-k">px</span></span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">border</span></span>: <span class="pl-c1">1<span class=
+
+"pl-k">px</span></span> <span class="pl-c1">solid</span> <span class=
+
+"pl-c1">#bbbbbb</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">background</span></span>: <span class="pl-c1">#ffffff</span>;
+
+}</pre>
+
+                </div>
+
+                <h3>Sub Components</h3>
+
+                <p>Use a hyphen before a class member (sub-component) name,
+
+                prefixed with the base class name. The class member name is
+
+                camelCased.</p>
+
+                <div class="highlight highlight-source-css">
+
+                    <pre><span class="pl-e">.featurePromo-hd</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">margin-bottom</span></span>: <span class="pl-c1">10<span class=
+
+"pl-k">px</span></span>;
+
+}
+
+<span class="pl-e">.featurePromo-bd</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">position</span></span>: <span class="pl-c1">relative</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">padding</span></span>: <span class="pl-c1">5<span class=
+
+"pl-k">px</span></span>;
+
+}
+
+<span class="pl-e">.featurePromo-ft</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">border-top</span></span>: <span class="pl-c1">1<span class=
+
+"pl-k">px</span></span> <span class="pl-c1">solid</span> <span class=
+
+"pl-c1">#000000</span>;
+
+}
+
+<span class="pl-e">.featurePromo-statusMessage</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">padding</span></span>: <span class="pl-c1">10<span class=
+
+"pl-k">px</span></span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">border</span></span>: <span class="pl-c1">1<span class=
+
+"pl-k">px</span></span> <span class="pl-c1">dotted</span> <span class=
+
+"pl-c1">#ff0000</span>;
+
+}</pre>
+
+                </div>
+
+                <h3>Extensions</h3>
+
+                <p>Use an underscore before a class extension name, prefixed
+
+                with the base class or sub-component class it extends. The
+
+                extension name is camelCased.</p>
+
+                <div class="highlight highlight-source-css">
+
+                    <pre><span class="pl-e">.featurePromo_primary</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">border-color</span></span>: <span class="pl-c1">#ff0000</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">background</span></span>: <span class="pl-c1">#aa6600</span>;
+
+}
+
+<span class="pl-e">.featurePromo_lastChild</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">border</span></span>: <span class="pl-c1">none</span>;
+
+}
+
+<span class="pl-e">.featurePromo-bd_inset</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">padding</span></span>: <span class="pl-c1">20<span class=
+
+"pl-k">px</span></span>;
+
+}</pre>
+
+                </div>
+
+                <h3>Mixins</h3>
+
+                <p>Use <code>mix-</code> followed by the base class, then the
+
+                rest of the class extension name. The extension name is
+
+                camelCased.</p>
+
+                <div class="highlight highlight-source-css">
+
+                    <pre><span class="pl-e">.hdg</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">font-family</span></span>: <span class=
+
+"pl-c1">arial</span>, <span class="pl-c1">helvetica</span>, <span class=
+
+"pl-c1">sans-serif</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">font-size</span></span>: <span class="pl-c1">32<span class=
+
+"pl-k">px</span></span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">font-weight</span></span>: <span class="pl-c1">bold</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">text-transform</span></span>: <span class="pl-c1">uppercase</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">color</span></span>: <span class="pl-c1">#000000</span>;
+
+}
+
+<span class="pl-e">.hdg_1</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">font-size</span></span>: <span class="pl-c1">30<span class=
+
+"pl-k">px</span></span>;
+
+}
+
+<span class="pl-e">.hdg_2</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">font-size</span></span>: <span class="pl-c1">20<span class=
+
+"pl-k">px</span></span>;
+
+}
+
+<span class="pl-e">.mix-hdg_brandColor</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">color</span></span>: <span class="pl-c1">#cccccc</span>;
+
+}</pre>
+
+                </div>
+
+                <h3>States</h3>
+
+                <p>Use an underscore between a state class and the class it
+
+                extends. Prefix the state class name with <code>is</code>. The
+
+                state name is camelCased</p>
+
+                <div class="highlight highlight-source-css">
+
+                    <pre><span class="pl-e">.menuItem_isActive</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">font-weight</span></span>: <span class="pl-c1">bold</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">text-decoration</span></span>: <span class="pl-c1">underline</span>;
+
+}</pre>
+
+                </div>
+
+                <h2><a id="section-css-indenting" name=
+
+                "section-css-indenting"></a>Indenting</h2>
+
+                <p>For each level of markup nesting, indent your CSS to match.
+
+                For example:</p>
+
+                <div class="highlight">
+
+                    <pre><code class="language-css" data-lang="css"><span class=
+
+                    "nt">nav</span> <span class="p">{}</span>
+
+                    <span class="nt">nav</span> <span class=
+
+"nt">li</span> <span class="p">{}</span>
+
+                    <span class="nt">nav</span> <span class=
+
+"nt">li</span> <span class="nt">a</span> <span class="p">{}</span>
+
+<span class="nc">.content</span> <span class="p">{}</span>
+
+                    <span class="nc">.content</span> <span class=
+
+"nt">p</span> <span class="p">{}</span>
+
+</code></pre>
+
+                </div>
+
+                <h2><a id="section-css-encoding" name=
+
+                "section-css-encoding"></a>Encoding</h2>
+
+                <p>Do not declare a <code>@charset</code> in the CSS.</p>
+
+                <div class="highlight">
+
+                    <pre><span class="pl-c">/* DO NOT */</span>
+
+<span class="pl-k">@charset</span> <span class="pl-s"><span class=
+
+"pl-pds">"</span>UTF-8<span class="pl-pds">"</span></span>;
+
+<span class="pl-e">.selector</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">color</span></span>: <span class="pl-c1">#ff0000</span>;
+
+}</pre>
+
+                </div>
+
+                <h2><a id="section-css-reset" name=
+
+                "section-css-reset"></a>Reset vs Normalisation</h2>
+
+                <p>There is no set preference to using a reset CSS file or
+
+                using a normalisation technique, as long as consistency is
+
+                applied throughout projects.</p>
+
+                <p>If a reset is preferred, the <a href=
+
+                "http://html5doctor.com/html-5-reset-stylesheet/" target=
+
+                "_blank">Eric Meyer reloaded reset</a> should be used.</p>
+
+                <p>For normalisation, the excellent <a href=
+
+                "http://necolas.github.com/normalize.css/" target=
+
+                "_blank">normalise.css</a> should be included.</p>
+
+                <h2><a id="section-css-comments" name=
+
+                "section-css-comments"></a>CSS Comments</h2>
+
+                <p>Comment as much as you can as often as you can. Where it
+
+                might be useful, include a commented out piece of markup which
+
+                can help put the current CSS into context.</p>
+
+                <p>CSS will be minified before it hits live servers, so don't
+
+                worry about excessive commenting bloating code - the benefits
+
+                far outweigh any file-size worries.</p>
+
+                <p>This is especially true for responsive layouts where
+
+                percentage width/margin's have been worked out. Always comment
+
+                in the ratio so that the resulting % values mean something to
+
+                the next developer viewing your CSS. A random 6dp percentage
+
+                will mean nothing to anyone else looking at your code.</p>
+
+                <p>e.g.</p>
+
+                <div class="highlight">
+
+                    <pre><code class="language-css" data-lang="css"><span class=
+
+                    "nt">width</span><span class="o">:</span> <span class=
+
+                    "nt">34</span><span class="nc">.042553</span><span class=
+
+                    "o">%</span> <span class="c">/* 320 / 940 */</span>
+
+</code></pre>
+
+                </div>
+
+                <h2><a id="section-css-specificity" name=
+
+                "section-css-specificity"></a>Specificity, IDs and classes</h2>
+
+                <p>CSS is designed to cascade, so make sure you understand
+
+                cascading and selector specificity. It will enable you to write
+
+                very terse and effective code.</p>
+
+                <p>Use of IDs and classes effect specificity massively. Only
+
+                use IDs where deemed necessary, especially on larger builds.
+
+                Classes are much more modular and portable. If you want to use
+
+                an ID solely as a JavaScript hook, consider using the ID
+
+                alongside a class for CSS styling.</p>
+
+                <p>Acceptable uses for <code>id</code> include:</p>
+
+                <ul>
+
+                    <li>JavaScript selection - prefix these with
+
+                    <code>js-</code> to indicate they are for JavaScript
+
+                    only</li>
+
+                    <li>Assigning form labels to inputs</li>
+
+                    <li>Jump links between sections of a page</li>
+
+                </ul>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">div</span> <span class=
+
+                    "pl-e">class</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>carousel<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">id</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>js-carousel<span class=
+
+                    "pl-pds">"</span></span>&gt; ... &lt;/<span class=
+
+                    "pl-ent">div</span>&gt;</pre>
+
+                </div>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">label</span> <span class=
+
+                    "pl-e">for</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>firstName<span class=
+
+                    "pl-pds">"</span></span>&gt;First Name&lt;/<span class=
+
+                    "pl-ent">label</span>&gt;
+
+&lt;<span class="pl-ent">input</span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">id</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>firstName<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>input input_txt<span class=
+
+"pl-pds">"</span></span> /&gt;</pre>
+
+                </div>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">a</span> <span class=
+
+                    "pl-e">href</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>#mainContent<span class=
+
+                    "pl-pds">"</span></span>&gt;Skip to Main Content&lt;/<span class=
+
+                    "pl-ent">a</span>&gt;
+
+...
+
+&lt;<span class="pl-ent">div</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>content<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">id</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>mainContent<span class=
+
+"pl-pds">"</span></span>&gt; ... &lt;/<span class="pl-ent">div</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-css-important" name=
+
+                "section-css-important"></a>!important</h2>
+
+                <p>It is okay to use <code>!important</code> on helper classes
+
+                only. To add <code>!important</code> pre-emptively is fine,
+
+                e.g. .error { color:red!important }, as you know you will
+
+                always want this rule to take precedence.</p>
+
+                <p>Using <code>!important</code> reactively, e.g. to get
+
+                yourself out of nasty specificity situations, is not advised.
+
+                Rework your CSS and try to combat these issues by refactoring
+
+                your selectors. Keeping selectors short and avoiding IDs will
+
+                help you out here massively.</p>
+
+                <h2><a id="section-css-magicnumbers" name=
+
+                "section-css-magicnumbers"></a>Magic numbers and absolutes</h2>
+
+                <p>A magic number is a number which is used because ‘it just
+
+                works’. These are bad because they rarely work for any real
+
+                reason and are not usually very futureproof or
+
+                flexible/forgiving. They tend to fix symptoms and not
+
+                problems.</p>
+
+                <p>For example, using .dropdown-nav li:hover ul { top: 37px; }
+
+                to move a dropdown to the bottom of the nav on hover is bad, as
+
+                37px is a magic number. 37px only works here because in this
+
+                particular scenario the .dropdown-nav happens to be 37px
+
+                tall.</p>
+
+                <p>Instead you should use .dropdown-nav li:hover ul { top:
+
+                100%; } which means no matter how tall the .dropdown-nav gets,
+
+                the dropdown will always sit 100% from the top.</p>
+
+                <p>Every time you hard code a number think twice; if you can
+
+                avoid it by using keywords or ‘aliases’ (i.e. top: 100% to mean
+
+                ‘all the way from the top’) or—even better—no measurements at
+
+                all then you probably should.</p>
+
+                <p>Every hard-coded measurement you set is a commitment you
+
+                might not necessarily want to keep.</p>
+
+                <h2><a id="section-css-images" name=
+
+                "section-css-images"></a>Images</h2>
+
+                <p>Image names should use dashes and be named so that their use
+
+                is clear i.e. icon-facebook-blue.png</p>
+
+                <p>It is hard to advise on a one size fits all solution for
+
+                images currently. Instead there are a number of methods that
+
+                should be considered and chosen from when approaching images in
+
+                CSS.</p>
+
+                <p>CSS sprites can be very useful for combining the number of
+
+                images on your site into a single HTTP request. Sprites work in
+
+                every browser, although care should be taken when including
+
+                large sprites on mobile devices as memory limits can be reached
+
+                when large image files are used. <a href=
+
+                "http://css.spritegen.com/">CSS Sprite</a> is a great tool for
+
+                generating for generating a sprite out
+
+                of the images used on your site and the CSS required for positioning.</p>
+
+                <p>Alternatively, converting your images to data URI's and
+
+                including them in the CSS avoids HTTP requests entirely. This
+
+                is however at the expense of older browser support, <a href=
+
+                "http://caniuse.com/datauri" target="_blank">namely Internet
+
+                Explorer 7 and earlier</a>.</p>
+
+                <h2><a id="section-css-preprocessors" name=
+
+                "section-css-preprocessors"></a>Preprocessors</h2>
+
+                <p>Use of a preprocessor should be used on a per project basis
+
+                where it is deemed necessary.</p>
+
+                <p>Where a preprocessor is used, we shall use <a href=
+
+                "http://sass-lang.com/" target="_blank">Sass</a>. Teamsite
+
+                framework, contains a set of Sass base files that should be
+
+                used.</p>
+
+                <p>Be sure to know the ins-and-outs of excellent vanilla CSS
+
+                and where a preprocessor can aid that, not hinder or undo it.
+
+                Learn the downsides of preprocessors inside-out and then fuse
+
+                the best aspects of the two with the bad bits of neither.</p>
+
+                <p>For more specific guidelines on using Sass, read the
+
+                <a href="#section-sass">Sass section of these
+
+                guidelines</a>.</p>
+
+                <h2><a id="section-css-tools" name=
+
+                "section-css-tools"></a>Resources</h2>
+
+                <ul>
+
+                    <li>
+
+                        <a href="http://www.css-validator.org/" target=
+
+                        "_blank">CSS Validation Service</a> - to validate your
+
+                        CSS
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://procssor.com/" target=
+
+                        "_blank">Procssor</a> - cleans and organizes your css
+
+                        the way you want it
+
+                    </li>
+
+					<li>
+
+					<a href=
+
+                "http://css.spritegen.com/">CSS Sprite</a> -- allow you to combine multiple images into a single file.
+
+					</li>
+
+					
+
+                </ul>
+
+                <hr>
+
+                <h1><a id="section-sass" name="section-sass"></a>Sass</h1>
+
+                <h2><a id="section-sass-general" name=
+
+                "section-sass-general"></a>General Sass Principles</h2>
+
+                <ul>
+
+                    <li>Be sure to know the ins-and-outs of excellent vanilla
+
+                    CSS and where a preprocessor can aid that, not hinder or
+
+                    undo it. Learn the downsides of preprocessors inside-out
+
+                    and then fuse the best aspects of the two with the bad bits
+
+                    of neither.</li>
+
+                    <li>One of the most powerful features of using a
+
+                    preprocessor is simply being able to separate your CSS into
+
+                    a number of different files that are pulled in and combined
+
+                    at compile time. This makes it easier to make your code
+
+                    more maintainable and better structured than having all of
+
+                    your code in one file.</li>
+
+                </ul>
+
+                <h2><a id="section-sass-nesting" name=
+
+                "section-sass-nesting"></a>Nesting</h2>
+
+                <p>When nesting selectors, try not to nest more than 3 levels
+
+                deep. If you find yourself writing deeply nested selectors, it
+
+                is usually a sign that you should rethink how you have
+
+                structured your markup or class declarations.</p>
+
+                <p>Nest only when it would actually be necessary in vanilla
+
+                CSS, e.g.</p>
+
+                <div class="highlight">
+
+                    <pre><code class="language-css" data-lang="css"><span class=
+
+                    "nc">.header</span> <span class="p">{}</span>
+
+<span class="nc">.header</span> <span class="nc">.site-nav</span> <span class=
+
+"p">{}</span>
+
+<span class="nc">.header</span> <span class="nc">.site-nav</span> <span class=
+
+"nt">li</span> <span class="p">{}</span>
+
+<span class="nc">.header</span> <span class="nc">.site-nav</span> <span class=
+
+"nt">li</span> <span class="nt">a</span> <span class="p">{}</span>
+
+</code></pre>
+
+                </div>
+
+                <p>Would be wholly unnecessary in normal CSS, so the following
+
+                would be bad Sass:</p>
+
+                <div class="highlight">
+
+                    <pre><code class="language-css" data-lang="css"><span class=
+
+                    "nc">.header</span> <span class="p">{</span>
+
+                    <span class="o">.</span><span class=
+
+"n">site</span><span class="o">-</span><span class="n">nav</span> <span class=
+
+"err">{</span>
+
+                    <span class="n">li</span> <span class="err">{</span>
+
+                    <span class="n">a</span> <span class=
+
+"err">{</span><span class="p">}</span>
+
+                    <span class="err">}</span>
+
+                    <span class="err">}</span>
+
+<span class="err">}</span>
+
+</code></pre>
+
+                </div>
+
+                <p>If you were to write this in Sass, it would look more
+
+                like:</p>
+
+                <div class="highlight">
+
+                    <pre><code class="language-css" data-lang="css"><span class=
+
+                    "nc">.header</span> <span class="p">{}</span>
+
+<span class="nc">.site-nav</span> <span class="p">{</span>
+
+                    <span class="n">li</span> <span class=
+
+"err">{</span><span class="p">}</span>
+
+                    <span class="nt">a</span> <span class="p">{}</span>
+
+<span class="err">}</span>
+
+</code></pre>
+
+                </div>
+
+                <h2><a id="section-sass-extend" name=
+
+                "section-sass-extend"></a>@extend</h2>
+
+                <p>Use caution when using the @extend operator. It can give
+
+                unexpected results in the compiled CSS when used too liberally
+
+                and can usually be avoided by using classes to extend styling
+
+                in a more modular fashion.</p>
+
+                <p>For example, rather than writing the following:</p>
+
+                <div class="highlight">
+
+                    <pre><code class="language-css" data-lang="css"><span class=
+
+                    "nc">.section-centered</span> <span class="p">{</span>
+
+                    <span class="k">display</span><span class=
+
+"o">:</span> <span class="k">block</span><span class="p">;</span>
+
+                    <span class="k">margin</span><span class=
+
+"o">:</span> <span class="m">0</span> <span class="k">auto</span><span class=
+
+"p">;</span>
+
+<span class="p">}</span>
+
+<span class="nc">.masthead</span> <span class="p">{</span>
+
+                    <span class="o">@</span><span class=
+
+"n">extends</span> <span class="o">.</span><span class=
+
+"n">section</span><span class="o">-</span><span class=
+
+"n">centered</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+</code></pre>
+
+                </div>
+
+                <p>Simply add the class to the masthead markup instead:</p>
+
+                <div class="highlight">
+
+                    <pre><code class="language-html" data-lang=
+
+                    "html"><span class="nt">&lt;div</span> <span class=
+
+                    "na">class=</span><span class=
+
+                    "s">"masthead section-centered"</span><span class=
+
+                    "nt">&gt;</span>
+
+    …
+
+<span class="nt">&lt;/div&gt;</span>
+
+</code></pre>
+
+                </div>
+
+                <p>Doing this will help to keep your styling modular and more
+
+                reusable.</p>
+
+                <p>There are of course times that using @extend can be very
+
+                useful, but don't use it as a defacto when sensible use of
+
+                vanilla CSS would be just as simple.</p>
+
+                <h2><a id="section-sass-compilation" name=
+
+                "section-sass-compilation"></a>Sass Compilation</h2>
+
+                <p>Sass webkit is available on Teamsite CMS, here are the
+
+                insturctions on how to use the compiler <a href=
+
+                "http://guidelines.bayerbbs-hosting.com/auth/wiki/webkits-use/sass-compilation/"
+
+                target="_blank">SASS Compilation</a></p>
+
+                <hr>
+
+                <h2><a id="section-rwd" name="section-rwd"></a>Responsive
+
+                Design</h2>
+
+                <p>All work is considered in a responsive, mobile first, way
+
+                unless the project dictates otherwise.</p>
+
+                <p>Responsive design isn't just a way of developing, it is a
+
+                way of thinking that needs to flow through the entire site
+
+                development process from content, UX, design and
+
+                development.</p>
+
+                <p>It is out of the scope of this document to go through the
+
+                specifics of developing responsively, but some suggested
+
+                techniques that we use during development are talked about in
+
+                <a href="#section-rwd-mobilefirst">Responsive – Mobile
+
+                First</a>.</p>
+
+                <h2><a id="section-rwd-mobilefirst" name=
+
+                "section-rwd-mobilefirst"></a>Mobile first</h2>
+
+                <p>In the majority of cases, sites should be built mobile
+
+                first, specifiying the mobile styles as your base CSS and
+
+                adding media queries to progressively enhance the experience
+
+                for larger width devices and screens.</p>
+
+                <p>The problem with doing this is that Internet Explorer
+
+                version 8 and earlier doesn't support media queries and so
+
+                ignore them and render just the mobile styles. There is a way
+
+                of solving this problem using JavaScript, but our preferred
+
+                solution is to solve the problem using Sass.</p>
+
+                <h2><a id="section-rwd-coding" name="section-rwd-coding"></a>
+
+                Coding</h2>
+
+                <p>Responsive design relies on fluid grids. Thus, you should
+
+                use the following rules of thumb for front-end coding:</p>
+
+                <ul>
+
+                    <li>Avoid <code>px</code> units</li>
+
+                    <li>Use <code>em</code> or <code>rem</code> units for font
+
+                    sizes, line heights and directly text-related padding</li>
+
+                    <li>Use <code>%</code> units for all module and page
+
+                    layouts</li>
+
+                    <li>Consider using <a data-reference="true" href=
+
+                    "http://quirksmode.org/css/user-interface/boxsizing.html"
+
+                        target="_blank">box-sizing: border-box</a>
+
+                    </li>
+
+                    <li>Decide on a base (might be in <code>px</code>
+
+                    virtually) that allows you to create a (typographic)
+
+                    grid</li>
+
+                    <li>Don't strive for pixel-perfection, maintain
+
+                    proportions!</li>
+
+                </ul>
+
+                <h2><a id="section-rwd-viewport" name=
+
+                "section-rwd-viewport"></a>Viewport Meta Tag</h2>
+
+                <p>Mobiles, tablets, desktop screens - all differ especially in
+
+                size and resolution. Due to displays with higher pixel-density
+
+                mobile-vendors started to define a "best-viewed-in" resolution,
+
+                which is usually very reliable.</p>
+
+                <div class="highlight">
+
+                    <pre class="prettyprint lang-html" data-rel="html">
+
+                    <code><span class="pln">
+
+    </span><span class="tag">&lt;meta</span><span class=
+
+"pln"> </span><span class="atn">name</span><span class=
+
+"pun">=</span><span class="atv">"viewport"</span><span class=
+
+"pln"> </span><span class="atn">content</span><span class=
+
+"pun">=</span><span class=
+
+"atv">"width=device-width; initial-scale=1.0"</span><span class=
+
+"pun">/</span><span class="atn">l</span><span class=
+
+"tag">&gt;</span><span class="pln">
+
+    </span></code></pre>
+
+                </div>
+
+                <h2><a id="section-rwd-resources" name=
+
+                "section-rwd-resources"></a>Resources</h2>
+
+                <ul>
+
+                    <li>
+
+                        <a href=
+
+                        "http://guidelines.bayerbbs-hosting.com/scripts/include/TFW/tools/download.php?f=/static/documents/wiki/ResponsiveWebsitesGuidelines_v005.pdf"
+
+                        target="_blank">Responsive Websites Guidelines</a>
+
+                    </li>
+
+                </ul>
+
+                <hr>
+
+                <h1><a id="section-js" name="section-js"></a>Javascript</h1>
+
+                <h2><a id="section-js-general" name=
+
+                "section-js-general"></a>General JavaScript Principles</h2>
+
+                <ul>
+
+                    <li>99% of JavaScript should be included in external
+
+                    JavaScript files and included at the END of the BODY tag.
+
+                    One exception to this rule is <a href=
+
+                    "http://modernizr.com/" target="_blank">Modernizr</a> which
+
+                    should be included at the end of the
+
+                    <code>&lt;head&gt;</code> .
+
+                    </li>
+
+                    <li>Feature detect, don't browser detect. <a href=
+
+                    "http://modernizr.com/" target="_blank">Modernizr</a> is a
+
+                    great resource for doing this.
+
+                    </li>
+
+                    <li>Name variables and functions logically and in
+
+                    camelCase. Sensible names that are long are preferred to
+
+                    short names that make no sense.</li>
+
+                    <li>Try to write functions to follow the principle that
+
+                    they should do one thing and do it well. If you can see
+
+                    that a function is becoming more complex, abstract it out
+
+                    into multiple functions – it will become more readable,
+
+                    reusable and will make more sense to someone unfamiliar to
+
+                    the code.</li>
+
+                    <li>Prefix jQuery collection variables with the dollar (
+
+                    <code>$</code> ) character e.g
+
+                    <code>$headerChildren</code></li>
+
+                    <li>Class declarations should start with a capital
+
+                    letter.</li>
+
+                    <li>Constants or configuration variables should be at the
+
+                    start of a class and written in CAPS.</li>
+
+                    <li>Build using the object literal pattern e.g.</li>
+
+                </ul>
+
+                <div class="highlight">
+
+                    <pre><code class="language-js" data-lang="js"><span class=
+
+                    "kd">var</span> <span class=
+
+                    "nx">SiteSetup</span> <span class="o">=</span> <span class=
+
+                    "p">{</span>
+
+                    <span class="nx">init</span><span class=
+
+"o">:</span> <span class="kd">function</span> <span class=
+
+"p">()</span> <span class="p">{</span>
+
+                    <span class="k">this</span><span class=
+
+"p">.</span><span class="nx">$sections</span> <span class=
+
+"o">=</span> <span class="nx">$</span><span class="p">(</span><span class=
+
+"s1">'#container section'</span><span class="p">);</span>
+
+                    <span class="k">this</span><span class=
+
+"p">.</span><span class="nx">$additionalTextNodes</span> <span class=
+
+"o">=</span> <span class="nx">$</span><span class="p">(</span><span class=
+
+"s1">'section a &gt; span'</span><span class="p">);</span>
+
+                    <span class="k">this</span><span class=
+
+"p">.</span><span class="nx">createMarkup</span><span class="p">();</span>
+
+                    <span class="p">},</span>
+
+                    <span class="nx">createMarkup</span><span class=
+
+"o">:</span> <span class="kd">function</span><span class="p">(){</span>
+
+                    <span class="kd">var</span> <span class=
+
+"nx">$additionalTextNodes</span> <span class="o">=</span> <span class=
+
+"k">this</span><span class="p">.</span><span class=
+
+"nx">$sections</span><span class="p">.</span><span class=
+
+"nx">remove</span><span class="p">();</span>
+
+                    <span class="o">&amp;</span><span class=
+
+"nx">additionalTextNodes</span><span class="p">.</span><span class=
+
+"nx">css</span><span class="p">({</span>
+
+                    <span class="nx">position</span><span class=
+
+"o">:</span> <span class="s1">'absolute'</span><span class="p">,</span>
+
+                    <span class="nx">top</span><span class=
+
+"o">:</span> <span class="k">this</span><span class="p">.</span><span class=
+
+"nx">style</span><span class="p">.</span><span class=
+
+"nx">left</span> <span class="o">-</span> <span class=
+
+"nx">$sections</span><span class="p">[</span><span class=
+
+"mi">0</span><span class="p">].</span><span class="nx">style</span><span class=
+
+"p">.</span><span class="nx">width</span> <span class="o">/</span> <span class=
+
+"mi">2</span>
+
+                    <span class="p">});</span>
+
+                    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="nx">SiteSetup</span><span class="p">.</span><span class=
+
+"nx">init</span><span class="p">();</span>
+
+</code></pre>
+
+                </div>
+
+                <ul>
+
+                    <li>Structure and formatting should follow the example
+
+                    below:</li>
+
+                </ul>
+
+                <div class="highlight">
+
+                    <pre><code class="language-js" data-lang="js"><span class=
+
+                    "nx">$</span><span class="p">(</span><span class=
+
+                    "kd">function</span><span class="p">(){</span>
+
+                    <span class="kd">var</span> <span class=
+
+"nx">SiteSetup</span> <span class="o">=</span> <span class="p">{</span>
+
+                    <span class="nx">ANIMATION_SPEED</span><span class=
+
+"o">:</span> <span class="mi">100</span><span class="p">,</span>
+
+                    <span class="nx">init</span> <span class=
+
+"o">:</span> <span class="kd">function</span> <span class=
+
+"p">()</span> <span class="p">{</span>
+
+                    <span class="c1">//fire off all other classes</span>
+
+                    <span class="k">if</span> <span class=
+
+"p">(</span><span class="nx">LightBox</span><span class=
+
+"p">.</span><span class="nx">$lightbox</span><span class=
+
+"p">.</span><span class="nx">length</span> <span class=
+
+"o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class=
+
+"p">{</span>
+
+                    <span class="nx">LightBox</span><span class=
+
+"p">.</span><span class="nx">init</span><span class="p">();</span>
+
+                    <span class="p">}</span>
+
+                    <span class="p">}</span>
+
+                    <span class="p">},</span>
+
+                    <span class="nx">LightBox</span> <span class=
+
+"o">=</span> <span class="p">{</span>
+
+                    <span class="nx">$lightbox</span><span class=
+
+"o">:</span> <span class="nx">$</span><span class="p">(</span><span class=
+
+"s1">'.lightbox'</span><span class="p">),</span>
+
+                    <span class="nx">init</span> <span class=
+
+"o">:</span> <span class="kd">function</span> <span class=
+
+"p">()</span> <span class="p">{},</span>
+
+                    <span class="nx">open</span> <span class=
+
+"o">:</span> <span class="kd">function</span> <span class=
+
+"p">()</span> <span class="p">{},</span>
+
+                    <span class="nx">close</span> <span class=
+
+"o">:</span> <span class="kd">function</span> <span class=
+
+"p">()</span> <span class="p">{}</span>
+
+                    <span class="p">};</span>
+
+                    <span class="nx">SiteSetup</span><span class=
+
+"p">.</span><span class="nx">init</span><span class="p">();</span>
+
+<span class="p">});</span>
+
+</code></pre>
+
+                </div>
+
+                <ul>
+
+                    <li>As with all code, document as frequently as you can -
+
+                    the more detail the better. At the very least, document
+
+                    each function you create.</li>
+
+                </ul>
+
+                <h2><a id="section-js-formatting" name=
+
+                "section-js-formatting"></a>Formatting and code
+
+                sensibility</h2>
+
+                <ul>
+
+                    <li>Separate operators/comparators with spacing</li>
+
+                </ul>
+
+                <div class="highlight">
+
+                    <pre><code class="language-js" data-lang="js"><span class=
+
+                    "c1">// Good</span>
+
+<span class="k">if</span> <span class="p">(</span><span class=
+
+"nx">foo</span> <span class="o">&amp;&amp;</span> <span class=
+
+"nx">foo</span><span class="p">.</span><span class="nx">bar</span> <span class=
+
+"o">&amp;&amp;</span> <span class="k">typeof</span> <span class=
+
+"nx">foo</span><span class="p">.</span><span class="nx">bar</span> <span class=
+
+"o">===</span> <span class="s1">'object'</span><span class=
+
+"p">)</span> <span class="p">{</span>
+
+                    <span class="nx">foo</span><span class=
+
+"p">.</span><span class="nx">bar</span><span class="p">.</span><span class=
+
+"nx">call</span><span class="p">();</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Terrible</span>
+
+<span class="k">if</span><span class="p">(</span><span class=
+
+"nx">foo</span><span class="o">&amp;&amp;</span><span class=
+
+"nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class=
+
+"o">&amp;&amp;</span><span class="k">typeof</span> <span class=
+
+"nx">foo</span><span class="p">.</span><span class="nx">bar</span><span class=
+
+"o">===</span><span class="s1">'object'</span><span class="p">){</span>
+
+                    <span class="nx">foo</span><span class=
+
+"p">.</span><span class="nx">bar</span><span class="p">.</span><span class=
+
+"nx">call</span><span class="p">();</span>
+
+<span class="p">}</span>
+
+</code></pre>
+
+                </div>
+
+                <ul>
+
+                    <li>Use braces for logic evaluations. If evaluation
+
+                    execution is simple, keep non-braced logic on a single line
+
+                    e.g:</li>
+
+                </ul>
+
+                <div class="highlight">
+
+                    <pre><code class="language-js" data-lang="js"><span class=
+
+                    "c1">// Good</span>
+
+<span class="k">if</span> <span class="p">(</span><span class=
+
+"nx">i</span> <span class="o">&lt;</span> <span class=
+
+"mi">10</span><span class="p">)</span> <span class=
+
+"k">return</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="c1">// Good</span>
+
+<span class="k">if</span><span class="p">(</span><span class=
+
+"nx">foo</span> <span class="o">&amp;&amp;</span> <span class=
+
+"nx">foo</span><span class="p">.</span><span class="nx">bar</span> <span class=
+
+"o">&amp;&amp;</span> <span class="nx">foo</span><span class=
+
+"p">.</span><span class="nx">bar</span> <span class=
+
+"o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class=
+
+"p">{</span>
+
+                    <span class="nx">foo</span><span class=
+
+"p">.</span><span class="nx">baz</span> <span class="o">=</span> <span class=
+
+"nx">foo</span><span class="p">.</span><span class="nx">bar</span> <span class=
+
+"o">-</span> <span class="mi">100</span> <span class="o">*</span> <span class=
+
+"mf">2.7</span> <span class="o">+</span> <span class="s1">'rad'</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Bad</span>
+
+<span class="k">if</span><span class="p">(</span><span class=
+
+"nx">foo</span> <span class="o">&amp;&amp;</span> <span class=
+
+"nx">foo</span><span class="p">.</span><span class="nx">bar</span> <span class=
+
+"o">&amp;&amp;</span> <span class="nx">foo</span><span class=
+
+"p">.</span><span class="nx">bar</span> <span class=
+
+"o">&gt;</span> <span class="mi">10</span><span class="p">)</span>
+
+                    <span class="nx">foo</span><span class=
+
+"p">.</span><span class="nx">baz</span> <span class="o">=</span> <span class=
+
+"nx">foo</span><span class="p">.</span><span class="nx">bar</span> <span class=
+
+"o">-</span> <span class="mi">100</span> <span class="o">*</span> <span class=
+
+"mf">2.7</span> <span class="o">+</span> <span class="s1">'rad'</span>
+
+<span class="c1">// Bad</span>
+
+<span class="k">if</span><span class="p">(</span><span class=
+
+"nx">i</span> <span class="o">&lt;</span> <span class=
+
+"mi">10</span><span class="p">)</span>
+
+                    <span class="k">return</span> <span class=
+
+"kc">true</span><span class="p">;</span>
+
+<span class="c1">// Bad</span>
+
+<span class="k">if</span><span class="p">(</span><span class=
+
+"nx">i</span> <span class="o">&lt;</span> <span class=
+
+"mi">10</span><span class="p">)</span>
+
+<span class="p">{</span>
+
+                    <span class="k">return</span> <span class=
+
+"kc">true</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+</code></pre>
+
+                </div>
+
+                <ul>
+
+                    <li>Remap this to self when passing context</li>
+
+                    <li>Always use <code>===</code> as a comparator (unless you
+
+                    really need flexible evaluations e.g comparison to
+
+                    null)</li>
+
+                    <li>Always add a second radix param to parseInt() to
+
+                    prevent accidental octal issues</li>
+
+                    <li>Never bother comparing variables to <code>true</code> /
+
+                    <code>false</code></li>
+
+                    <li>For large loops, either cache the length variable to
+
+                    prevent re-evaluation or use a reverse while loop</li>
+
+                    <li>Don't create functions in loops - its slow (and
+
+                    stupid)</li>
+
+                    <li>When creating functions with many parameters, pass in
+
+                    an object rather than listing numerous parameters.
+
+                        <ul>
+
+                            <li>use <code>$.extend</code> if you are using
+
+                            jQuery to extend a passed in object while providing
+
+                            defaults</li>
+
+                        </ul>
+
+                    </li>
+
+                    <li>If possible, avoid using bitwise operations unless they
+
+                    really help. If used, document them with comments</li>
+
+                </ul>
+
+                <div class="highlight">
+
+                    <pre><code class="language-js" data-lang="js"><span class=
+
+                    "c1">// inverting bits to ease comparison to -1</span>
+
+<span class="k">if</span> <span class="p">(</span><span class=
+
+"o">~</span><span class="nx">foo</span><span class="p">.</span><span class=
+
+"nx">bar</span><span class="p">.</span><span class=
+
+"nx">indexOf</span><span class="p">(</span><span class=
+
+"s1">'leetness'</span><span class="p">)){</span>
+
+                    <span class="nx">alert</span><span class=
+
+"p">(</span><span class="s1">'w00t!'</span><span class="p">)</span>
+
+<span class="p">}</span>
+
+</code></pre>
+
+                </div>
+
+                <h2><a id="section-js-jquery" name=
+
+                "section-js-jquery"></a>jQuery Best Practices</h2>
+
+                <ul>
+
+                    <li>Always cache DOM selection if you plan to re-use
+
+                    data</li>
+
+                    <li>Use efficient query selectors. Write for many browsers,
+
+                    don't assume document.querySelector()</li>
+
+                    <li>Avoid using $.each for repeated or performance critical
+
+                    functionality. Instead use a <code>for</code> or reverse
+
+                    <code>while</code> loop (especially for large objects)</li>
+
+                    <li>Use <code>on()</code> and <code>off()</code> handlers
+
+                    for events. Everything else is now deprecated (live,
+
+                    delegate, bind)</li>
+
+                    <li>When using simple html5 attribute data, simply use
+
+                    <code>$selected.attr('data-foo')</code> unless working with
+
+                    complex data types (where you can use
+
+                    <code>$selected.data()</code> )</li>
+
+                    <li>Try to understand the underlying JavaScript
+
+                    functionality of jQuery methods. This will help you write
+
+                    much more efficient selectors (watch Paul Irish's talk -
+
+                    <a href=
+
+                    "http://paulirish.com/2010/10-things-i-learned-from-the-jquery-source/">
+
+                        10 Things I Learned from the jQuery Source</a>)
+
+                    </li>
+
+                </ul>
+
+                <h2><a id="section-js-debugging" name=
+
+                "section-js-debugging"></a>Debugging</h2>
+
+                <p>Learn how to use your browser tools properly as it will save
+
+                you hours in debugging.</p>
+
+                <p>If you're using <code>alert()</code> you're doing it wrong.
+
+                Use <code>console.log()</code></p>
+
+                <h2><a id="section-js-resources" name=
+
+                "section-js-resources"></a>Libraries & Tools</h2>
+
+                <p>This section describes our most often used used tools.</p>
+
+                <h3>General utility/DOM abstraction</h3>
+
+                <p><a href="http://jquery.com/" target="_blank">jQuery</a>:
+
+                Mostly used tool for DOM abstraction and aligning Browser
+
+                capabilities.</p>
+
+                <p><a href="http://twitter.github.com/bootstrap/" target=
+
+                "_blank">Twitter Bootstrap</a> allows you to rapidly prototype
+
+                and style simple web apps.</p>
+
+                <h3>Browser Normalization and Feature Detection</h3>
+
+                <p>Modernizr contains a range of feature detection tests and a
+
+                HTML5 shiv for IE support. It should be customised to include
+
+                only the features you require. <a data-reference="true" href=
+
+                "http://modernizr.com/" target="_blank">Modernizr</a></p>
+
+                <h3>Front-End Templating</h3>
+
+                <ul>
+
+                    <li>
+
+                        <a href="https://html5boilerplate.com/" target=
+
+                        "_blank">HTML5 Boilerplate</a> a good starting point
+
+                        for any project.
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://handlebarsjs.com/" target=
+
+                        "_blank">Handlebars.js</a> let you build semantic
+
+                        templates effectively.
+
+                    </li>
+
+                </ul>
+
+                <h3>Asynchronous Loading</h3>
+
+                <p>The less there is to initialize and to process in the
+
+                beginning, the faster your website loads. This is not directly
+
+                affecting your JavaScript performance, but at the end of the
+
+                day the user only cares about the performance of your
+
+                website.</p>
+
+                <hr>
+
+                <h1><a id="section-accessibility" name=
+
+                "section-accessibility"></a>Accessibility</h1>
+
+                <p>Accessibility is hugely important in the modern web. It's a
+
+                legal requirement in many geographies, an excellent indicator
+
+                of a quality product and shows you care! Projects should set
+
+                out to develop to meet WCAG 2.0 Level AA. <a href=
+
+                "http://www.w3.org/WAI/WCAG20/glance/" target="_blank">WCAG 2.0
+
+                at a Glance</a></p>
+
+                <p>Markup and code should be written in a way that is
+
+                inherently accessibile, irrespective of the project being
+
+                worked on.</p>
+
+                <p>When marking up content, ARIA roles are the preferred method
+
+                of designating the role of sections in our markup when its use
+
+                may be ambiguous.</p>
+
+                <h2><a id="section-accessibility-source" name=
+
+                "section-accessibility-source"></a>Source Order</h2>
+
+                <p>Use logical source order as assistive devices follow source
+
+                top to bottom.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">div</span> <span class=
+
+                    "pl-e">class</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>masthead<span class=
+
+                    "pl-pds">"</span></span>&gt;
+
+    ...
+
+&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;<span class="pl-ent">div</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>navigation<span class="pl-pds">"</span></span>&gt;
+
+    ...
+
+&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;<span class="pl-ent">div</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>contentMain<span class="pl-pds">"</span></span>&gt;
+
+    ...
+
+&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;<span class="pl-ent">div</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>contentRelated<span class="pl-pds">"</span></span>&gt;
+
+    ...
+
+&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;<span class="pl-ent">div</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>footer<span class="pl-pds">"</span></span>&gt;
+
+    ...
+
+&lt;/<span class="pl-ent">div</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-js" name=
+
+                "section-accessibility-js"></a>JavaScript Content</h2>
+
+                <p>JavaScript content should be accessible to screen readers.
+
+                The best option for this is to use a logical source order and
+
+                keep appended / prepended items near the element that triggers
+
+                their appearance.</p>
+
+                <p>If this isn't an option rely on ARIA techniques instead.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">div</span> <span class=
+
+                    "pl-e">class</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>contentMain<span class=
+
+                    "pl-pds">"</span></span>&gt;
+
+    &lt;<span class="pl-ent">a</span> <span class=
+
+"pl-e">href</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>#myModal<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>js-spawn-modal<span class=
+
+"pl-pds">"</span></span>&gt;View Larger Image&lt;/<span class=
+
+"pl-ent">a</span>&gt;
+
+    &lt;<span class="pl-ent">div</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>modal<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">id</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>myModal<span class="pl-pds">"</span></span>&gt;
+
+        ...
+
+    &lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;<span class="pl-ent">div</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>footer<span class="pl-pds">"</span></span>&gt;
+
+    ...
+
+&lt;/<span class="pl-ent">div</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-page" name=
+
+                "section-accessibility-page"></a>Page Titles</h2>
+
+                <p>Include a unique title for each page.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class=
+
+                    "pl-ent">title</span>&gt;Bayer: Science For A Better Life&lt;/<span class=
+
+                    "pl-ent">title</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-aria" name=
+
+                "section-accessibility-aria"></a>ARIA Roles</h2>
+
+                <h3>Landmark Roles</h3>
+
+                <p>Use landmark ARIA roles on all projects.</p>
+
+                <p>The landmark ARIA roles include:</p>
+
+                <ul>
+
+                    <li><strong>banner</strong> - wraps the typical site
+
+                    masthead. Use only once per page.</li>
+
+                    <li><strong>search</strong> - place on a form that performs
+
+                    search.</li>
+
+                    <li><strong>navigation</strong> - place on your navigation
+
+                    container (for in-document and site-wide navigation).</li>
+
+                    <li><strong>main</strong> - place on container that holds
+
+                    the main page content. Use only once per page.</li>
+
+                    <li><strong>complementary</strong> - place on containers
+
+                    that are akin to the <code>&lt;aside&gt;</code> HTML5
+
+                    element.</li>
+
+                    <li><strong>contentinfo</strong> - place on element that
+
+                    contains meta information about the page or content, often
+
+                    the site footer. Use only once per page.</li>
+
+                </ul>
+
+                <p>When using HTML5 elements, like <code>&lt;header&gt;</code>
+
+                and <code>&lt;footer&gt;</code>, provide progressive
+
+                enhancement for screen readers by including ARIA landmark roles
+
+                on these elements as well, even though some screen readers may
+
+                see this as redundant.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">div</span> <span class=
+
+                    "pl-e">class</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>masthead<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">role</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>banner<span class=
+
+                    "pl-pds">"</span></span>&gt;
+
+    ...
+
+    &lt;<span class="pl-ent">form</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>search<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">action</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">method</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>post<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">role</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>search<span class="pl-pds">"</span></span>&gt;
+
+        ...
+
+    &lt;/<span class="pl-ent">form</span>&gt;
+
+    ...
+
+&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;<span class="pl-ent">div</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>navigation<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">role</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>navigation<span class="pl-pds">"</span></span>&gt;
+
+    ...
+
+&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;<span class="pl-ent">div</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>contentMain<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">role</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>main<span class="pl-pds">"</span></span>&gt;
+
+    ...
+
+&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;<span class="pl-ent">div</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>contentRelated<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">role</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>complementary<span class=
+
+"pl-pds">"</span></span>&gt;
+
+    ...
+
+&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;<span class="pl-ent">footer</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>footer<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">role</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>contentinfo<span class="pl-pds">"</span></span>&gt;
+
+    ...
+
+&lt;/<span class="pl-ent">footer</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-skip" name=
+
+                "section-accessibility-skip"></a>Skip Links</h2>
+
+                <p>In order for keyboard users to easily skip to the main
+
+                content of a site without tabbing through all the previous
+
+                content, use a "skip to content" link. It is also acceptable to
+
+                include a "skip to navigation" link if it takes an excessive
+
+                number of tabs to get focus on the navigation.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">body</span>&gt;
+
+    &lt;<span class="pl-ent">a</span> <span class=
+
+"pl-e">href</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>#page-content<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>isVisuallyHidden<span class=
+
+"pl-pds">"</span></span>&gt;Skip to Content&lt;/<span class=
+
+"pl-ent">a</span>&gt;
+
+    &lt;<span class="pl-ent">div</span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>masthead<span class="pl-pds">"</span></span>&gt;
+
+        ...
+
+    &lt;/<span class="pl-ent">div</span>&gt;
+
+    &lt;<span class="pl-ent">div</span> <span class=
+
+"pl-e">id</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>page-content<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">class</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>contentMain<span class="pl-pds">"</span></span>&gt;
+
+        ...
+
+    &lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;/<span class="pl-ent">body</span>&gt;</pre>
+
+                </div>
+
+                <div class="highlight highlight-source-css">
+
+                    <pre><span class="pl-e">.isVisuallyHidden</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">width</span></span>: <span class="pl-c1">1<span class=
+
+"pl-k">px</span></span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">height</span></span>: <span class="pl-c1">1<span class=
+
+"pl-k">px</span></span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">margin</span></span>: <span class="pl-c1">-1<span class=
+
+"pl-k">px</span></span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">padding</span></span>: <span class="pl-c1">0</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">border</span></span>: <span class="pl-c1">0</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">position</span></span>: <span class="pl-c1">absolute</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">clip</span></span>: <span class="pl-c1">rect</span>(<span class=
+
+"pl-c1">0</span> <span class="pl-c1">0</span> <span class=
+
+"pl-c1">0</span> <span class="pl-c1">0</span>);
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">overflow</span></span>: <span class="pl-c1">hidden</span>;
+
+}</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-alt" name=
+
+                "section-accessibility-alt"></a>Alt Attributes</h2>
+
+                <p>Use <code>alt</code> attributes on all images.</p>
+
+                <p>If the image is in a link, the alt text should specify the
+
+                action that will be taken upon clicking the image.</p>
+
+                <p>Include any text content that appears in an image in the
+
+                <code>alt</code> attribute.</p>
+
+                <div class="highlight">
+
+                    <pre><span class="pl-c">&lt;!-- DO --&gt;</span>
+
+&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>index.html<span class=
+
+"pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">img</span> <span class=
+
+"pl-e">src</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>../images/logo.png<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>Crispen <span class=
+
+"pl-ii">&amp;</span> Mulberry Home<span class=
+
+"pl-pds">"</span></span> /&gt;&lt;/<span class="pl-ent">a</span>&gt;
+
+<span class="pl-c">&lt;!-- DO NOT --&gt;</span>
+
+&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>index.html<span class=
+
+"pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">img</span> <span class=
+
+"pl-e">src</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>../images/logo.png<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>Logo<span class=
+
+"pl-pds">"</span></span> /&gt;&lt;/<span class="pl-ent">a</span>&gt;</pre>
+
+                </div>
+
+                <p>If a content image contains no useful information or text,
+
+                include the <code>alt</code> attribute but leave the value
+
+                empty.</p>
+
+                <p>Do not describe the image. Never use the phrases "image of"
+
+                or "picture of" in <code>alt</code> values.</p>
+
+                <div class="highlight">
+
+                    <pre><span class="pl-c">&lt;!-- DO --&gt;</span>
+
+&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>../images/business.jpg<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span> /&gt;
+
+<span class="pl-c">&lt;!-- DO NOT --&gt;</span>
+
+&lt;<span class="pl-ent">img</span> <span class="pl-e">src</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>../images/business.jpg<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">alt</span>=<span class=
+
+"pl-s"><span class=
+
+"pl-pds">"</span>Picture of two gentlemen shaking hands with a blue sky and tree in the background<span class="pl-pds">"</span></span> /&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-longdesc" name=
+
+                "section-accessibility-longdesc"></a>Longdesc Attributes</h2>
+
+                <p>Do not rely on the longdesc attribute for consistent
+
+                accessibility. Instead, opt for including the content as text
+
+                on the page or provide a link to the text alternative on the
+
+                page.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">img</span> <span class=
+
+                    "pl-e">src</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>infographic.jpg<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">alt</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>A list of all the presidents with facial hair listed chronologically<span class="pl-pds">"</span></span> /&gt;
+
+&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class=
+
+"pl-s"><span class=
+
+"pl-pds">"</span>presidents-with-facial-hair.html<span class="pl-pds">"</span></span>&gt;See the list of presidents who had facial hair while in office.&lt;/<span class="pl-ent">a</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-tables" name=
+
+                "section-accessibility-tables"></a>Tables</h2>
+
+                <p>Include <code>thead</code>, <code>tbody</code> and
+
+                <code>tfoot</code> to indicate the table header, table body and
+
+                table footer.</p>
+
+                <p>Declare table header cells and scope them properly.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">table</span>&gt;
+
+    &lt;<span class="pl-ent">thead</span>&gt;
+
+        &lt;<span class="pl-ent">tr</span>&gt;
+
+            &lt;<span class="pl-ent">th</span> <span class=
+
+"pl-e">scope</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>col<span class=
+
+"pl-pds">"</span></span>&gt;Name&lt;/<span class="pl-ent">th</span>&gt;
+
+            &lt;<span class="pl-ent">th</span> <span class=
+
+"pl-e">scope</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>col<span class=
+
+"pl-pds">"</span></span>&gt;Goals&lt;/<span class="pl-ent">th</span>&gt;
+
+            &lt;<span class="pl-ent">th</span> <span class=
+
+"pl-e">scope</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>col<span class=
+
+"pl-pds">"</span></span>&gt;Assists&lt;/<span class="pl-ent">th</span>&gt;
+
+        &lt;/<span class="pl-ent">tr</span>&gt;
+
+    &lt;/<span class="pl-ent">thead</span>&gt;
+
+    &lt;<span class="pl-ent">tbody</span>&gt;
+
+        &lt;<span class="pl-ent">tr</span>&gt;
+
+            &lt;<span class=
+
+"pl-ent">td</span>&gt;Evgeni Malkin&lt;/<span class="pl-ent">td</span>&gt;
+
+            &lt;<span class="pl-ent">td</span>&gt;50&lt;/<span class=
+
+"pl-ent">td</span>&gt;
+
+            &lt;<span class="pl-ent">td</span>&gt;59&lt;/<span class=
+
+"pl-ent">td</span>&gt;
+
+        &lt;/<span class="pl-ent">tr</span>&gt;
+
+        &lt;<span class="pl-ent">tr</span>&gt;
+
+            &lt;<span class=
+
+"pl-ent">td</span>&gt;Ilya Kovalchuk&lt;/<span class="pl-ent">td</span>&gt;
+
+            &lt;<span class="pl-ent">td</span>&gt;37&lt;/<span class=
+
+"pl-ent">td</span>&gt;
+
+            &lt;<span class="pl-ent">td</span>&gt;46&lt;/<span class=
+
+"pl-ent">td</span>&gt;
+
+        &lt;/<span class="pl-ent">tr</span>&gt;
+
+    &lt;/<span class="pl-ent">tbody</span>&gt;
+
+&lt;/<span class="pl-ent">table</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-form" name=
+
+                "section-accessibility-form"></a>Form Labels</h2>
+
+                <p>All form controls, except <code>&lt;button&gt;</code>,
+
+                require a corresponding <code>&lt;label&gt;</code>, even if the
+
+                label is hidden from view.</p>
+
+                <p>The <code>for</code> attribute is required on all
+
+                labels.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">label</span> <span class=
+
+                    "pl-e">for</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>name<span class=
+
+                    "pl-pds">"</span></span>&gt;Name:&lt;/<span class=
+
+                    "pl-ent">label</span>&gt;
+
+&lt;<span class="pl-ent">input</span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>text<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">id</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>name<span class="pl-pds">"</span></span> /&gt;</pre>
+
+                </div>
+
+                <p>If possible, it is preferable to wrap inputs with the
+
+                corresponding label.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">label</span> <span class=
+
+                    "pl-e">for</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>professionDoctor<span class=
+
+                    "pl-pds">"</span></span>&gt;Doctor &lt;<span class=
+
+                    "pl-ent">input</span> <span class=
+
+                    "pl-e">type</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>radio<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">name</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>profession<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">id</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>professionDoctor<span class=
+
+                    "pl-pds">"</span></span> /&gt;&lt;/<span class=
+
+                    "pl-ent">label</span>&gt;
+
+&lt;<span class="pl-ent">label</span> <span class=
+
+"pl-e">for</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>professionLawyer<span class=
+
+"pl-pds">"</span></span>&gt;Lawyer &lt;<span class=
+
+"pl-ent">input</span> <span class="pl-e">type</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>radio<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">name</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>profession<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">id</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>professionLawyer<span class=
+
+"pl-pds">"</span></span> /&gt;&lt;/<span class="pl-ent">label</span>&gt;
+
+&lt;<span class="pl-ent">label</span> <span class=
+
+"pl-e">for</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>professionOther<span class=
+
+"pl-pds">"</span></span>&gt;Other &lt;<span class=
+
+"pl-ent">input</span> <span class="pl-e">type</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>radio<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">name</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>profession<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">id</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>professionOther<span class=
+
+"pl-pds">"</span></span> /&gt;&lt;/<span class="pl-ent">label</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-form-button" name=
+
+                "section-accessibility-form-button"></a>Form Button Values</h2>
+
+                <p>Form input buttons require a <code>value</code>
+
+                attribute.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">input</span> <span class=
+
+                    "pl-e">type</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>submit<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">value</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>Submit<span class=
+
+                    "pl-pds">"</span></span> /&gt;</pre>
+
+                </div>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">input</span> <span class=
+
+                    "pl-e">type</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>reset<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">value</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>Reset<span class=
+
+                    "pl-pds">"</span></span> /&gt;</pre>
+
+                </div>
+
+                <p>Image type inputs require an <code>alt</code> attribute.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">input</span> <span class=
+
+                    "pl-e">type</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>image<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">src</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>button.png<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">alt</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>Submit<span class=
+
+                    "pl-pds">"</span></span> /&gt;</pre>
+
+                </div>
+
+                <p>Button elements require a value between the opening and
+
+                closing tags.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">button</span> <span class=
+
+                    "pl-e">type</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>submit<span class=
+
+                    "pl-pds">"</span></span>&gt;Submit&lt;/<span class=
+
+                    "pl-ent">button</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-form-placeholder" name=
+
+                "section-accessibility-form-placeholder"></a>Form Placeholder
+
+                Text</h2>
+
+                <p>Use placeholder text to provide a hint to the user.</p>
+
+                <p>Whenever possible, do not use <code>placeholder</code> text
+
+                as a replacement for a <code>&lt;label&gt;</code>. When
+
+                necessary, opt for visually hiding the label instead.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">label</span> <span class=
+
+                    "pl-e">for</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>email<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">class</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>isVisuallyHidden<span class=
+
+                    "pl-pds">"</span></span>&gt;Email&lt;/<span class=
+
+                    "pl-ent">label</span>&gt;
+
+&lt;<span class="pl-ent">input</span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>email<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">id</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>email<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">placeholder</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>user@domain.com<span class=
+
+"pl-pds">"</span></span> /&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-form-group" name=
+
+                "section-accessibility-form-group"></a>Form Grouped
+
+                Controls</h2>
+
+                <p>Use a <code>fieldset</code> to logically group form
+
+                controls.</p>
+
+                <p>If form labels don't clearly identify what information is
+
+                being collected, use a <code>legend</code> to label the
+
+                group.</p>
+
+                <p>Keep legend text short as it is read by screen readers
+
+                before each input in the fieldset.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">fieldset</span>&gt;
+
+    &lt;<span class="pl-ent">legend</span>&gt;Profession&lt;/<span class=
+
+"pl-ent">legend</span>&gt;
+
+    &lt;<span class="pl-ent">label</span> <span class=
+
+"pl-e">for</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>professionDoctor<span class=
+
+"pl-pds">"</span></span>&gt;Doctor &lt;<span class=
+
+"pl-ent">input</span> <span class="pl-e">type</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>radio<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">name</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>profession<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">id</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>professionDoctor<span class=
+
+"pl-pds">"</span></span> /&gt;&lt;/<span class="pl-ent">label</span>&gt;
+
+&lt;<span class="pl-ent">label</span> <span class=
+
+"pl-e">for</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>professionLawyer<span class=
+
+"pl-pds">"</span></span>&gt;Lawyer &lt;<span class=
+
+"pl-ent">input</span> <span class="pl-e">type</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>radio<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">name</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>profession<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">id</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>professionLawyer<span class=
+
+"pl-pds">"</span></span> /&gt;&lt;/<span class="pl-ent">label</span>&gt;
+
+&lt;<span class="pl-ent">label</span> <span class=
+
+"pl-e">for</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>professionOther<span class=
+
+"pl-pds">"</span></span>&gt;Other &lt;<span class=
+
+"pl-ent">input</span> <span class="pl-e">type</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>radio<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">name</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>profession<span class=
+
+"pl-pds">"</span></span> <span class="pl-e">id</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>professionOther<span class=
+
+"pl-pds">"</span></span> /&gt;&lt;/<span class="pl-ent">label</span>&gt;
+
+&lt;/<span class="pl-ent">fieldset</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-form-validation" name=
+
+                "section-accessibility-form-validation"></a>Form
+
+                Validation</h2>
+
+                <p>Form inputs that have validation requirements - like
+
+                required fields, or an expected email format - should be
+
+                clearly labeled in an accessible manner indicating the
+
+                requirement. They should also include the
+
+                <code>aria-required</code> attribute with the value set to
+
+                <code>true</code>.</p>
+
+                <p>Form validation and submission should be accessible to both
+
+                the mouse and keyboard.</p>
+
+                <p>All form inputs that are validated client side should also
+
+                be validated in the same manner on the server side.</p>
+
+                <p>If a field returns as invalid, it should include the
+
+                <code>aria-invalid</code> attribute with the value set to the
+
+                proper value (<code>true</code>, <code>false</code>,
+
+                <code>grammar</code>, <code>spelling</code>).</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">form</span> <span class=
+
+                    "pl-e">action</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>#<span class=
+
+                    "pl-pds">"</span></span> <span class=
+
+                    "pl-e">method</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>post<span class=
+
+                    "pl-pds">"</span></span>&gt;
+
+    &lt;<span class="pl-ent">ul</span>&gt;
+
+        &lt;<span class="pl-ent">li</span>&gt;
+
+            &lt;<span class="pl-ent">label</span> <span class=
+
+"pl-e">for</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>formUsername<span class=
+
+"pl-pds">"</span></span>&gt;Username &lt;<span class=
+
+"pl-ent">span</span> <span class="pl-e">class</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>required<span class=
+
+"pl-pds">"</span></span>&gt;*&lt;/<span class=
+
+"pl-ent">span</span>&gt;&lt;/<span class="pl-ent">label</span>&gt;
+
+            &lt;<span class="pl-ent">input</span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>input<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">id</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>formUsername<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">required</span> <span class="pl-e">aria-required</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>true<span class=
+
+"pl-pds">"</span></span> /&gt;
+
+        &lt;/<span class="pl-ent">li</span>&gt;
+
+        &lt;<span class="pl-ent">li</span>&gt;
+
+            &lt;<span class="pl-ent">label</span> <span class=
+
+"pl-e">for</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>formEmail<span class=
+
+"pl-pds">"</span></span>&gt;Email Address &lt;<span class=
+
+"pl-ent">span</span> <span class="pl-e">class</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>required<span class=
+
+"pl-pds">"</span></span>&gt;*&lt;/<span class=
+
+"pl-ent">span</span>&gt;&lt;/<span class="pl-ent">label</span>&gt;
+
+            &lt;<span class="pl-ent">input</span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>email<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">id</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>formEmail<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">required</span> <span class="pl-e">aria-required</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>true<span class=
+
+"pl-pds">"</span></span> /&gt;
+
+        &lt;/<span class="pl-ent">li</span>&gt;
+
+        &lt;<span class="pl-ent">li</span>&gt;
+
+            &lt;<span class="pl-ent">label</span> <span class=
+
+"pl-e">for</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>formPassword<span class=
+
+"pl-pds">"</span></span>&gt;Password &lt;<span class=
+
+"pl-ent">span</span> <span class="pl-e">class</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>required<span class=
+
+"pl-pds">"</span></span>&gt;*&lt;/<span class=
+
+"pl-ent">span</span>&gt;&lt;/<span class="pl-ent">label</span>&gt;
+
+            &lt;<span class="pl-ent">input</span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>password<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">id</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>formPassword<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">required</span> <span class="pl-e">aria-required</span>=<span class=
+
+"pl-s"><span class="pl-pds">"</span>true<span class=
+
+"pl-pds">"</span></span> <span class=
+
+"pl-e">aria-describedby</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>password-requirements<span class=
+
+"pl-pds">"</span></span> /&gt;
+
+            &lt;<span class="pl-ent">span</span> <span class=
+
+"pl-e">id</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>password-requirements<span class=
+
+"pl-pds">"</span></span>&gt;Use 6-20 characters, at least 1 uppercase letter and 1 number.&lt;/<span class="pl-ent">span</span>&gt;
+
+        &lt;/<span class="pl-ent">li</span>&gt;
+
+        &lt;<span class="pl-ent">li</span>&gt;
+
+            &lt;<span class="pl-ent">input</span> <span class=
+
+"pl-e">type</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>submit<span class="pl-pds">"</span></span> <span class=
+
+"pl-e">value</span>=<span class="pl-s"><span class=
+
+"pl-pds">"</span>Sign Up<span class="pl-pds">"</span></span> /&gt;
+
+        &lt;/<span class="pl-ent">li</span>&gt;
+
+    &lt;/<span class="pl-ent">ul</span>&gt;
+
+&lt;/<span class="pl-ent">form</span>&gt;</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-hiding-content" name=
+
+                "section-accessibility-hiding-content"></a>Hiding Content</h2>
+
+                <p>When hiding content on a page, choose the appropriate
+
+                method.</p>
+
+                <p>Using <code>display: none;</code> or <code>visibility:
+
+                hidden;</code> will hide content from a screen reader.</p>
+
+                <p>If content is meant to be available to a screen reader but
+
+                not to a sighted user, hide the content by using a utility
+
+                class.</p>
+
+                <div class="highlight">
+
+                    <pre>&lt;<span class="pl-ent">h2</span> <span class=
+
+                    "pl-e">class</span>=<span class="pl-s"><span class=
+
+                    "pl-pds">"</span>isVisuallyHidden<span class=
+
+                    "pl-pds">"</span></span>&gt;Featured Articles&lt;/<span class=
+
+                    "pl-ent">h2</span>&gt;</pre>
+
+                </div>
+
+                <div class="highlight highlight-source-css">
+
+                    <pre><span class="pl-e">.isVisuallyHidden</span> {
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">width</span></span>: <span class="pl-c1">1<span class=
+
+"pl-k">px</span></span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">height</span></span>: <span class="pl-c1">1<span class=
+
+"pl-k">px</span></span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">margin</span></span>: <span class="pl-c1">-1<span class=
+
+"pl-k">px</span></span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">padding</span></span>: <span class="pl-c1">0</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">border</span></span>: <span class="pl-c1">0</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">position</span></span>: <span class="pl-c1">absolute</span>;
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">clip</span></span>: <span class="pl-c1">rect</span>(<span class=
+
+"pl-c1">0</span> <span class="pl-c1">0</span> <span class=
+
+"pl-c1">0</span> <span class="pl-c1">0</span>);
+
+                    <span class="pl-c1"><span class=
+
+"pl-c1">overflow</span></span>: <span class="pl-c1">hidden</span>;
+
+}</pre>
+
+                </div>
+
+                <h2><a id="section-accessibility-focus-styles" name=
+
+                "section-accessibility-focus-styles"></a>Focus Styles</h2>
+
+                <p>Include <code>:focus</code> styles to ensure proper keyboard
+
+                accessibility. Keep in mind, <code>:focus</code> is included in
+
+                <code>reset.css</code>, so it will need to be intentionally
+
+                styled to fit your project requirements.</p>
+
+                <h2><a id="section-accessibility-tabindex" name=
+
+                "section-accessibility-tabindex"></a>Tabindex</h2>
+
+                <p>A site should be navigable via keyboard. Write markup that
+
+                is semantic and supports a logical tab index. Modifying the
+
+                <code>tabindex</code> should be a last resort.</p>
+
+                <h2><a id="section-accessibility-maginification" name=
+
+                "section-accessibility-maginification"></a>Magnification</h2>
+
+                <p>Web pages should remain usable and understandable when the
+
+                text is magnified via the browser's magnification feature. This
+
+                includes "pinch zooming" on touch devices. The page may not
+
+                remain aesthetically pleasing, but it should remain
+
+                understandable and usable.</p>
+
+                <h2><a id="section-accessibility-resources" name=
+
+                "section-accessibility-resources"></a>Resources</h2>
+
+                <ul>
+
+                    <li>
+
+                        <a href=
+
+                        "https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_overview&levels=aaa"
+
+                        target="_blank">Web Content Accessibility Guidelines
+
+                        (WCAG) 2.0</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://wave.webaim.org/" target="_blank">Wave
+
+                        Accessibility tester</a>: to evaluate the accessibility
+
+                        of web pages.
+
+                    </li>
+
+                </ul>
+
+                <hr>
+
+                <h1><a id="section-performance" name=
+
+                "section-performance"></a>Performance and Optimization</h1>
+
+                <p>Performance should be treated as a constraint on your
+
+                project. It is no use making the most beautiful site on the web
+
+                if no one can be bothered to wait for it to download.</p>
+
+                <h2><a id="section-performance-assets" name=
+
+                "section-performance-assets"></a>Speed is a feature</h2>
+
+                <p>It isn’t just down to the size of your files, but the number
+
+                of them. Each additional request on mobile increases the
+
+                latency of your website.</p>
+
+                <p>CSS and JavaScript should be concatenated and minified on
+
+                production servers to minimse their footprint on your
+
+                website.</p>
+
+                <p>Load the least amount of JavaScript that is needed. Wherever
+
+                possible include script files at the end of your HTML document
+
+                just before the end body tag.</p>
+
+                <p>Images are a complex subject, especially in the realm of
+
+                Responsive Design, and is one that is constantly changing.</p>
+
+				
+
+				
+
+				<h2><a id="section-performance-caching" name=
+
+                "section-performance-images"></a>Browser Caching</h2>
+
+				<h2>What is browser caching?</h2>
+
+
+
+<ul>
+
+<li>Browser caching stores webpage resource files on a local computer when a user visits a webpage.
+
+</li></ul>
+
+
+
+<p>When a web browser displays your webpage it has to load several things like your logo, your CSS file, and other resources.</p>
+
+<p>What browser caching does is "remember" the resources that the browser has already loaded. When a visitor goes to another page on your website your logo, CSS files, etc. do not need to be loaded again, because the browser has them "remembered" (saved). This is the reason that the first view of a web page takes longer than repeat visits.</p>
+
+
+
+<p>When you leverage browser caching, your webpage files will get stored in the browser cache. Your pages will load much faster for repeat visitors and so will other pages that share those same resources.</p>
+
+<p>If you have tested your webpage for speed and found out that you need to leverage browser caching, here is how you do it.</p>
+
+<h2>How to leverage browser caching</h2>
+
+
+
+
+
+<p>Adding expires headers is a performance best practice that we should be taking advantage of. While adding headers is relatively easy, dealing with versioning is tricky, especially through CDN. 
+
+</p>
+
+<p>Hand-in-hand with browser caching is cache busting. Say the browser has the CSS file cached for one year (not uncommon). Then you want to change the CSS. You need a strategy for breaking the cache and forcing the browser to download a new copy of the CSS.
+
+</p>
+
+<p>
+
+Here are some ways.</p>
+
+
+
+
+
+				
+
+				
+
+			<h2>Cache Busting</h2>	
+
+			<p>	You have configured your web server to send out your media files with a so called cache control header: Your web server sets the cache header to some date a year in the future. Your user’s browser will never spend any time trying to retrieve an updated version.</p>
+
+			<p>What if you actually deploy an update to your site? Now you need to convince the browser to download new versions of your assets after all, but you have just told it not to bother to check for new versions. You work around this by modifying the URL with which the asset is included. There are two distinct ways to so:</p>
+
+				
+
+				<ol class="arabic">
+
+<li><p class="first">Append a version identifier as a querystring:</p>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>http://www.bayer.com/media/print.css?20160921
+
+</pre></div>
+
+</div>
+
+</li>
+
+<li><p class="first">Add a version identifier to the actual filename:</p>
+
+<div class="highlight-python"><div class="highlight"><pre><span></span>http://www.bayer.com/media/print.20160921.css
+
+</pre></div>
+
+</div>
+
+</li>
+
+</ol>
+
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+
+				
+
+                <h2><a id="section-performance-images" name=
+
+                "section-performance-images"></a>Image Optimization</h2>
+
+                <p><a target="_blank" href=
+
+                "./assets/WebImageBestPractices.pdf">
+
+                Web Image Best Practices</a></p>
+
+                <h2><a id="section-performance-tools" name=
+
+                "section-performance-tools"></a>Resources</h2>
+
+                <p>We recommend running your web pages through one of the
+
+                following tools to get feedback on the loading and optimization
+
+                of your site:</p>
+
+                <ul>
+
+                    <li>
+
+                        <a href=
+
+                        "https://developers.google.com/speed/pagespeed/"
+
+                        target="_blank">Google PageSpeed</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://www.yslow.org/" target=
+
+                        "_blank">YSlow</a>
+
+                    </li>
+
+                </ul>
+
+				<hr>
+
+				<h2><a id="section-analytics" name="section-analytics"></a>Web Analytics - <b style="color:red;">DRAFT</b></h2>
+
+                <hr>
+
+                <h2><a id="section-seo" name="section-seo"></a>Search Engine
+
+                Optimization (SEO)</h2>
+
+                <p><a href=
+
+                "http://guidelines.bayerbbs-hosting.com/static/documents/seo-guidelines/SEO-Guidelines-CDAs.pdf">
+
+                Guidelines for SEO-compliant website development</a></p>
+
+                <hr>
+
+                <h2><a id="section-robots" name=
+
+                "section-robots"></a>Robots.txt</h2>
+
+                <p>The robots exclusion protocol (REP), or robots.txt is a text
+
+                file webmasters create to instruct robots (typically search
+
+                engine robots) how to crawl and index pages on their
+
+                website.</p>
+
+                <h3>Cheat Sheet</h3>
+
+                <p>Block all web crawlers from all content</p>
+
+                <div class="highlight">
+
+                    <code>User-agent: *<br>
+
+                    Disallow: /</code>
+
+                </div>
+
+                <p>Block a specific web crawler from a specific folder</p>
+
+                <div class="highlight">
+
+                    <code>User-agent: Googlebot<br>
+
+                    Disallow: /no-google/</code>
+
+                </div>
+
+                <p>Block a specific web crawler from a specific web page</p>
+
+                <div class="highlight">
+
+                    <code>User-agent: Googlebot<br>
+
+                    Disallow: /no-google/blocked-page.html</code>
+
+                </div>
+
+                <p>Sitemap Parameter</p>
+
+                <div class="highlight"><code>User-agent: *<br>
+
+                    Disallow:<br>
+
+                    Sitemap:
+
+                    http://www.example.com/none-standard-location/sitemap.xml</code>
+
+                </div>
+
+                <h3>Optimal Format</h3>
+
+                <p>Robots.txt needs to be placed in the top-level directory of
+
+                a web server in order to be useful. Example:
+
+                http://www.bayer.com/robots.txt</p>
+
+				<hr>
+
+                <h2><a id="section-server" name="section-server"></a>Server Requirements</h2>
+
+				<ul>
+
+				<li>TeamSite Version: HP TeamSite 7.3.1.0.0 on Linux</li>
+
+				<li>phpMyAdmin - Version information: 3.5.2.1</li>
+
+				<li>ASP.NET 4.5</li>
+
+				<li>Database servers:
+
+				<ul>
+
+				<li>MySQL server (currently version 5.5).</li>
+
+				<li>Microsoft SQL Server</li>
+
+				<li>Oracle</li>
+
+				</ul>
+
+				<li>Web server:
+
+				<ul>
+
+				<li>Apache, version 2.2 running on Linux</li>
+
+				<li>PHP, version 5.3</li>
+
+				<li>Tomcat 7</li>
+
+				<li>Java version - Java7</li>	
+
+				<li>IIS7</li>
+
+				</ul>
+
+				</li>
+
+						
+
+				</ul>
+
+                <hr>
+
+                <h2><a id="section-tools" name="section-tools"></a>Resource &
+
+                Tools</h2>
+
+                <p>The following resources are vital for the standardisation of
+
+                code and interaction in a modern web page. They ensure that
+
+                CSS3 and HTML5 features are made accessible across a range of
+
+                browsers.</p><br>
+
+                <ul>
+
+                    <li>
+
+                        <a href=
+
+                        "http://guidelines.bayerbbs-hosting.com/en/wiki/index.php/Coding_Standards"
+
+                        target="_blank">Teamsite Guidelines</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href=
+
+                        "http://guidelines.bayerbbs-hosting.com/auth/wiki/introduction/coding-standards/"
+
+                        target="_blank">PHP Coding Standards</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://www.jquery.com" target=
+
+                        "_blank">jQuery</a> JavaScript helper library
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://twitter.github.com/bootstrap/" target=
+
+                        "_blank">Twitter Bootstrap</a> allows you to rapidly
+
+                        prototype and style simple web apps.
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://www.css-validator.org/" target=
+
+                        "_blank">CSS Validation Service</a> - to validate your
+
+                        CSS
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://procssor.com/" target=
+
+                        "_blank">Procssor</a> - cleans and organizes your css
+
+                        the way you want it
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://csslint.net/index.html" target=
+
+                        "_blank">CSS Lint</a> is a tool to help point out
+
+                        problems with your CSS code
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://jshint.com/" target="_blank">JSHint</a>
+
+                        is a tool that helps point out problems with your
+
+                        JavaScript code
+
+                    </li>
+
+					<li>
+
+					<a href=
+
+                "http://css.spritegen.com/">CSS Sprite</a> -- allow you to combine multiple images into a single file.
+
+					</li>
+
+                    <li>
+
+                        <a href="https://validator.w3.org/" target=
+
+                        "_blank">Markup Validation Service</a>: checks the
+
+                        markup of your Web documents.
+
+                    </li>
+
+                    <li>
+
+                        <a href="https://validator.w3.org/checklink" target=
+
+                        "_blank">W3C Link Checker</a>: checks your web pages
+
+                        for broken links.
+
+                    </li>
+
+                    <li>
+
+                        <a href=
+
+                        "https://www.w3.org/WAI/WCAG20/quickref/?currentsidebar=%23col_overview&levels=aaa"
+
+                        target="_blank">Web Content Accessibility Guidelines
+
+                        (WCAG) 2.0</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://wave.webaim.org/" target="_blank">Wave
+
+                        Accessibility tester</a>: to evaluate the accessibility
+
+                        of web pages.
+
+                    </li>
+
+                    <li>
+
+                        <a href="https://html5boilerplate.com/" target=
+
+                        "_blank">HTML5 Boilerplate</a> a good starting point
+
+                        for any project.
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://handlebarsjs.com/" target=
+
+                        "_blank">Handlebars.js</a>/<a href="https://mustache.github.io/" target=
+
+                        "_blank">mustache</a> let you build semantic
+
+                        templates effectively.
+
+                    </li>
+
+                </ul>
+
+                <h3>Developer Add-ons</h3>
+
+                <ul>
+
+                    <li>
+
+                        <a href="http://www.validity.org.uk/" target=
+
+                        "_blank">Validity</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://wave.webaim.org/" target=
+
+                        "_blank">Wave</a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="http://yslow.org/" target="_blank">YSlow</a>
+
+                    </li>
+
+					<li>
+
+                        <a href="https://chrispederick.com/work/web-developer/" target=
+
+                        "_blank">Web Developer</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            
+
+        </article>
+
+		<div class="pagination clearfix">
+
+	<div class="container">		
+
+			<a href="#" class="pagination-item pagination-item--older">&copy;BBTS</a>		
+
+	</div>
+
+</div>
+
+        <footer class="footer" role="contentinfo">            
+
+        </footer><a href="#top">
+
+        <div class="backToTop"></div></a> 
+
+        <script src="./assets/jquery.js">
+
+        </script> 
+
+        <script>
+
+            $(function() {
+
+                // Add conditional classname based on support
+
+                $('html').addClass($.fn.details.support ? 'details' : 'no-details');
+
+                // Emulate <details> where necessary and enable open/close event handlers
+
+                $('details').details();
+
+            });
+
+        </script>
+
+    </div>
+
+</body>
+
+</html>
