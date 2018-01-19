@@ -1,7 +1,7 @@
 package com.bayer.corp.Regions.Germany.GDPR.tests.Privacy;
 
 import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
-import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
+import com.bayer.corp.Regions.Germany.GDPR.tests.Privacy.steps.PrivacyPolicy;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;

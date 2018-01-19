@@ -46,15 +46,27 @@ public class PrivacyPolicy extends AbstractStep
             BayerWebElement privacy1 = getElement("gdpr.privacyV1", webDriver);
             privacy1.click();
         	//verify 5 elements on privacy page
+            new StructureValidator("Nutzung der Website", "/Bayer-Automation/src/test/java/com/bayer/corp/Regions/Germany/GDPR/tests/Privacy/PrivacyKeywordValidation.xml");
+            new StructureValidator("Informationen über Ihre Rechte", "/Bayer-Automation/src/test/java/com/bayer/corp/Regions/Germany/GDPR/tests/Privacy/PrivacyKeywordValidation.xml");
+            new StructureValidator("Profiling", "/Bayer-Automation/src/test/java/com/bayer/corp/Regions/Germany/GDPR/tests/Privacy/PrivacyKeywordValidation.xml");
+            new StructureValidator("Datenübertragbarkeit", "/Bayer-Automation/src/test/java/com/bayer/corp/Regions/Germany/GDPR/tests/Privacy/PrivacyKeywordValidation.xml");
+            new StructureValidator("Aufsichtsbehörde", "/Bayer-Automation/src/test/java/com/bayer/corp/Regions/Germany/GDPR/tests/Privacy/PrivacyKeywordValidation.xml");
+            
+            
+            
         }
-        else if(webDriver.getPageSource().contains("your Text")) {
+        else if(webDriver.getPageSource().contains("Datenschutzinformation")) {
         	//click privacy
         	//verify 5 elements on privacy page
         }
-        else if(webDriver.getPageSource().contains("your Text")) {
+        else if(webDriver.getPageSource().contains("Datenschutz")) {
         	//click privacy
         	//verify 5 elements on privacy page
         }
+        else if(webDriver.getPageSource().contains("Datenschutzpolicy")) {
+        	//click privacy
+        	//verify 5 elements on privacy page
+        }	
         else {
         	System.out.println("Nothing found.");
         }
