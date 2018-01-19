@@ -15,38 +15,35 @@ import com.bayer.common.utility.StructureValidator;
 import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.javascript.host.URL;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
+import java.io.*;
 
 public class PrivacyTest extends AbstractTest {
-	
-public String url = "https://www.bayer.com/";
-    
-	public String getUrl(){ 
-		return url;
-	}
-    @TestDescriptor( testName="Conditions of Use Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
-    public void conditionsTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new ConditionsOfUse() } );
-    }
-    
-    @TestDescriptor( testName="Privacy Policy Validation" )
-    @Test ( dataProvider = "deviceList", enabled=false)
-    public void privacyPolicyTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
-    }
-    
-    @TestDescriptor( testName="Example Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
-    public void navigateTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
-    }
-    
-    @TestDescriptor( testName="Example Timed Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
-    public void timedNavigateTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new TimedNavigate(url, 6000) } );
-    }
-     
-}
+		
+			
+	public String url = "https://www.cropscience.bayer.de/";
+		    
+			public String getUrl(){ 
+				return url;
+			}
+		    
+		    @TestDescriptor( testName="GDPR Privacy Policy Validation" )
+		    @Test ( dataProvider = "deviceList", enabled=true)
+		    public void privacyPolicyTest( DeviceContainer dC ) {
+		        executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
+		    }
+		    
+		    @TestDescriptor( testName="GDPR Navigation Test" )
+		    @Test ( dataProvider = "deviceList", enabled=false)
+		    public void navigateTest( DeviceContainer dC ) {
+		        executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
+		    }
+		    
+		    @TestDescriptor( testName="GDPR Timed Navigation Test" )
+		    @Test ( dataProvider = "deviceList", enabled=false)
+		    public void timedNavigateTest( DeviceContainer dC ) {
+		        executeSteps( new Step[] { new TimedNavigate(url, 6000) } );
+		    }
+		}//end for loop 
+
 
 // push test 5
