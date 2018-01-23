@@ -11,7 +11,7 @@ package com.bayer.corp.Regions.Germany.GDPR.tests.Privacy;
 
 	public class ApachePOIExcelWrite {
 
-	    private static final String FILE_NAME = "/tmp/MyFirstExcel.xlsx";
+	    private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/MIRA_Websites_URLs.xlsx";
 
 	    public static void main(String[] args) {
 
@@ -31,7 +31,7 @@ package com.bayer.corp.Regions.Germany.GDPR.tests.Privacy;
 
 	        for (Object[] datatype : datatypes) {
 	            Row row = sheet.createRow(rowNum++);
-	            int colNum = 0;
+	            int colNum = 1;
 	            for (Object field : datatype) {
 	                Cell cell = row.createCell(colNum++);
 	                if (field instanceof String) {
