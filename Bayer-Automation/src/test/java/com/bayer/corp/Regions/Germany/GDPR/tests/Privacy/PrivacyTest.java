@@ -33,7 +33,7 @@ public class PrivacyTest extends AbstractTest {
 		
 			
 	public String url = "https://pallas-versicherung.de/";
-	//private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/MIRA_Websites_URLs.xlsx";	    
+	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/MIRA_Websites_URLs.xlsx";	    
 			public String getUrl(){ 
 				return url;
 			}
@@ -41,9 +41,7 @@ public class PrivacyTest extends AbstractTest {
 			@TestDescriptor( testName="GDPR Privacy Policy Validation" )
   		    @Test ( dataProvider = "deviceList", enabled=true)
   		    public void privacyPolicyTest( DeviceContainer dC ) {
- 		        executeSteps( new Step[] { new Navigate(url) } );
- 		    }
-		    /*public void methodLoop() {
+ 		        
 		    	try {
 
 		            FileInputStream excelFile = new FileInputStream(new File(FILE_NAME));
@@ -63,16 +61,14 @@ public class PrivacyTest extends AbstractTest {
 		                    //getCellTypeEnum ill be renamed to getCellType starting from version 4.0
 		                    if (currentCell.getCellTypeEnum() == CellType.STRING) {
 		                        url=currentCell.getStringCellValue();
-		                        privacyPolicyTest(DeviceContainer dC , url);
+		                        executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
 		                        System.out.println("Current url is: "+url);
 		                    } else if (currentCell.getCellTypeEnum() == CellType.NUMERIC) {
-		                        System.out.println("Unable to read url.");;
+		                        System.out.println("Unable to read url.");
 		                        
 		                    }
-
 		                }
 		                System.out.println();
-
 		            }
 		        } catch (FileNotFoundException e) {
 		            e.printStackTrace();
@@ -81,7 +77,6 @@ public class PrivacyTest extends AbstractTest {
 		        }
 
 			}
-			*/
 		    
 		    @TestDescriptor( testName="GDPR URL Loop" )
 		    @Test ( dataProvider = "deviceList", enabled=false)
