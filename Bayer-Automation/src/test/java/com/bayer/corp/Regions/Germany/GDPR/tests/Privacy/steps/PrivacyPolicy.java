@@ -35,17 +35,12 @@ public class PrivacyPolicy extends AbstractStep
     private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/MIRA_Websites_Germany.xlsx";
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {
-    	/*PrivacyTest urlVar = new PrivacyTest();
+    	PrivacyTest urlVar = new PrivacyTest();
     	String url = urlVar.getUrl();
     	XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("Datatypes in Java");
         Object[][] datatypes = {
-                {"Datatype", "Type", "Size(in bytes)"},
-                {"int", "Primitive", 2},
-                {"float", "Primitive", 4},
-                {"double", "Primitive", 8},
-                {"char", "Primitive", 1},
-                {"String", "Non-Primitive", "No fixed size"}
+               
         };
 
         int rowNum = 0;
@@ -75,7 +70,7 @@ public class PrivacyPolicy extends AbstractStep
         }
 
         System.out.println("Done");
-    	*/
+    	
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
         
     	waitForElement( "bayer.key", webDriver, 15 );
