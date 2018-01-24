@@ -4,11 +4,19 @@ import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
 import com.bayer.corp.Regions.Germany.GDPR.tests.Privacy.steps.PrivacyPolicy;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+//import org.apache.poi.xssf.usermodel.XSSFSheet;
+//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+//import org.omg.CORBA.Current;
+
 import java.io.*;
+//import org.apache.poi.ss.usermodel.*;
+//import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Iterator;
 import com.bayer.common.Accessibility;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
@@ -26,63 +34,63 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 public class PrivacyTest extends AbstractTest {
 		
 			
-	public String url = "https://www.cropscience.bayer.de/";
-		    
+	public String url = "http://pallas-versicherung.de/";
+	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/MIRA_Websites_URLs.xlsx";	    
 			public String getUrl(){ 
 				return url;
 			}
-		    public static void  setURLs() {
-		    	String FILE_NAME = "/tmp/MyFirstExcel.xlsx";
-
-		        
-
-		            XSSFWorkbook workbook = new XSSFWorkbook();
-		            XSSFSheet sheet = workbook.createSheet("Datatypes in Java");
-		            Object[][] datatypes = {
-		                    {"Datatype", "Type", "Size(in bytes)"},
-		                    {"int", "Primitive", 2},
-		                    {"float", "Primitive", 4},
-		                    {"double", "Primitive", 8},
-		                    {"char", "Primitive", 1},
-		                    {"String", "Non-Primitive", "No fixed size"}
-		            };
-
-		            int rowNum = 0;
-		            System.out.println("Creating excel");
-
-		            for (Object[] datatype : datatypes) {
-		                Row row = sheet.createRow(rowNum++);
-		                int colNum = 0;
-		                for (Object field : datatype) {
-		                    Cell cell = row.createCell(colNum++);
-		                    if (field instanceof String) {
-		                        cell.setCellValue((String) field);
-		                    } else if (field instanceof Integer) {
-		                        cell.setCellValue((Integer) field);
-		                    }
-		                }
-		            }
-
-		            try {
-		                FileOutputStream outputStream = new FileOutputStream(FILE_NAME);
-		                workbook.write(outputStream);
-		                workbook.close();
-		            } catch (FileNotFoundException e) {
-		                e.printStackTrace();
-		            } catch (IOException e) {
-		                e.printStackTrace();
-		            }
-
-		            System.out.println("Done");
-		        
-		    }
-
+		    
 		    @TestDescriptor( testName="GDPR Privacy Policy Validation" )
 		    @Test ( dataProvider = "deviceList", enabled=true)
-		    public void privacyPolicyTest( DeviceContainer dC ) {
-		        executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
+		    public void privacyPolicyTest( DeviceContainer dC) {
+		    	executeSteps( new Step[] { new Navigate(url), });
 		    }
+		    /*public void methodLoop() {
+		    	try {
+
+		            FileInputStream excelFile = new FileInputStream(new File(FILE_NAME));
+		            Workbook workbook = new XSSFWorkbook(excelFile);
+		            Sheet datatypeSheet = workbook.getSheetAt(0);
+		            Iterator<Row> iterator = datatypeSheet.iterator();
+
+		            while (iterator.hasNext()) {
+
+		                Row currentRow = iterator.next();
+		                Iterator<Cell> cellIterator = currentRow.iterator();
+
+		                while (cellIterator.hasNext()) {
+
+		                    Cell currentCell = cellIterator.next();
+		                    //getCellTypeEnum shown as deprecated for version 3.15
+		                    //getCellTypeEnum ill be renamed to getCellType starting from version 4.0
+		                    if (currentCell.getCellTypeEnum() == CellType.STRING) {
+		                        url=currentCell.getStringCellValue();
+		                        privacyPolicyTest(DeviceContainer dC , url);
+		                        System.out.println("Current url is: "+url);
+		                    } else if (currentCell.getCellTypeEnum() == CellType.NUMERIC) {
+		                        System.out.println("Unable to read url.");;
+		                        
+		                    }
+
+		                }
+		                System.out.println();
+
+		            }
+		        } catch (FileNotFoundException e) {
+		            e.printStackTrace();
+		        } catch (IOException e) {
+		            e.printStackTrace();
+		        }
+
+			}
+			*/
 		    
+		    @TestDescriptor( testName="GDPR URL Loop" )
+		    @Test ( dataProvider = "deviceList", enabled=false)
+		    public void privacyNavigationLoop( DeviceContainer dC ) {
+		    	
+		        executeSteps( new Step[] { new Navigate(url) } );
+		    }
 		    @TestDescriptor( testName="GDPR Navigation Test" )
 		    @Test ( dataProvider = "deviceList", enabled=false)
 		    public void navigateTest( DeviceContainer dC ) {
@@ -90,7 +98,7 @@ public class PrivacyTest extends AbstractTest {
 		    }
 		    
 		    @TestDescriptor ( testName = "GDPR Link Checker Test")
-		    @Test ( dataProvider = "deviceList", enabled = true)
+		    @Test ( dataProvider = "deviceList", enabled = false)
 		    public void gdprLinkChecker( DeviceContainer dC )
 		    {
 		        executeSteps( new Step[] { new Navigate(url), new LinkValidator(url, -1) } );
