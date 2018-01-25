@@ -40,12 +40,7 @@ public class PrivacyPolicy extends AbstractStep
     	XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("Datatypes in Java");
         Object[][] datatypes = {
-                {"Datatype", "Type", "Size(in bytes)"},
-                {"int", "Primitive", 2},
-                {"float", "Primitive", 4},
-                {"double", "Primitive", 8},
-                {"char", "Primitive", 1},
-                {"String", "Non-Primitive", "No fixed size"}
+               
         };
 
         int rowNum = 0;
@@ -80,10 +75,11 @@ public class PrivacyPolicy extends AbstractStep
         
     	waitForElement( "bayer.key", webDriver, 15 );
     	BayerWebElement logo = getElement("bayer.key", webDriver);
-    	
-        if(webDriver.getPageSource().contains("Datenschutzerklärung")) {
+    	String urlList = webDriver.getPageSource();
+        if(urlList.contains("Datenschutzerklärung")) {
            waitForElement( "gdpr.privacyV1", webDriver, 15 );
            BayerWebElement privacy1 = getElement("gdpr.privacyV1", webDriver);
+           Util.scrollToElement(webDriver, privacy1, wait);
            privacy1.click();
            waitForElement( "bayer.key", webDriver, 15 );
            webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -124,10 +120,11 @@ public class PrivacyPolicy extends AbstractStep
            }
             
         }
-        else if(webDriver.getPageSource().contains("Datenschutzinformation")) {
+        else if(urlList.contains("Datenschutzinformation")) {
         	waitForElement( "gdpr.privacyV2", webDriver, 15 );
-            BayerWebElement privacy1 = getElement("gdpr.privacyV2", webDriver);
-            privacy1.click();
+            BayerWebElement privacy2 = getElement("gdpr.privacyV2", webDriver);
+            Util.scrollToElement(webDriver, privacy2, wait);
+            privacy2.click();
             waitForElement( "bayer.key", webDriver, 15 );
             webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
          	//verify 5 elements on privacy page
@@ -168,10 +165,11 @@ public class PrivacyPolicy extends AbstractStep
         	//click privacy
         	//verify 5 elements on privacy page
         }
-        else if(webDriver.getPageSource().contains("Datenschutz")) {
+        else if(urlList.contains("Datenschutz")) {
         	waitForElement( "gdpr.privacyV3", webDriver, 15 );
-            BayerWebElement privacy1 = getElement("gdpr.privacyV3", webDriver);
-            privacy1.click();
+            BayerWebElement privacy3 = getElement("gdpr.privacyV3", webDriver);
+            Util.scrollToElement(webDriver, privacy3, wait);
+            privacy3.click();
             waitForElement( "bayer.key", webDriver, 15 );
             webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
          	//verify 5 elements on privacy page
@@ -210,10 +208,11 @@ public class PrivacyPolicy extends AbstractStep
          	   System.out.println("Text not found");
             }
         }
-        else if(webDriver.getPageSource().contains("Datenschutzpolicy")) {
+        else if(urlList.contains("Datenschutzpolicy")) {
         	waitForElement( "gdpr.privacyV4", webDriver, 15 );
-            BayerWebElement privacy1 = getElement("gdpr.privacyV4", webDriver);
-            privacy1.click();
+            BayerWebElement privacy4 = getElement("gdpr.privacyV4", webDriver);
+            Util.scrollToElement(webDriver, privacy4, wait);
+            privacy4.click();
             waitForElement( "bayer.key", webDriver, 15 );
             webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
          	//verify 5 elements on privacy page
