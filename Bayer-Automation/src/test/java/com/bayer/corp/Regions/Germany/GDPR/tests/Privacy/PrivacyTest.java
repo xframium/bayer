@@ -32,14 +32,14 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 public class PrivacyTest extends AbstractTest {
 		
 			
-	public String url = "https://pallas-versicherung.de/";
+	public String url = "https://www.cropscience.bayer.de";
 	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/MIRA_Websites_URLs.xlsx";	    
 			public String getUrl(){ 
 				return url;
 			}
 		    
 			@TestDescriptor( testName="GDPR Privacy Policy Validation" )
-  		    @Test ( dataProvider = "deviceList", enabled=true)
+  		    @Test ( dataProvider = "deviceList", enabled=false)
   		    public void privacyPolicyTest( DeviceContainer dC ) {
  		        
 		    	try {
@@ -61,7 +61,8 @@ public class PrivacyTest extends AbstractTest {
 		                    //getCellTypeEnum ill be renamed to getCellType starting from version 4.0
 		                    if (currentCell.getCellTypeEnum() == CellType.STRING) {
 		                        url=currentCell.getStringCellValue();
-		                        executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
+		                        executeSteps( new Step[] { new Navigate(url), //new PrivacyPolicy() 
+		                        		} );
 		                        System.out.println("Current url is: "+url);
 		                    } else if (currentCell.getCellTypeEnum() == CellType.NUMERIC) {
 		                        System.out.println("Unable to read url.");
@@ -78,16 +79,16 @@ public class PrivacyTest extends AbstractTest {
 
 			}
 		    
-		    @TestDescriptor( testName="GDPR URL Loop" )
-		    @Test ( dataProvider = "deviceList", enabled=false)
+		    @TestDescriptor( testName="GDPR URL Test" )
+		    @Test ( dataProvider = "deviceList", enabled=true)
 		    public void privacyNavigationLoop( DeviceContainer dC ) {
 		    	
-		        executeSteps( new Step[] { new Navigate(url) } );
+		        executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
 		    }
-		    @TestDescriptor( testName="GDPR Navigation Test" )
+		    @TestDescriptor( testName="GDPR Accessibility Test" )
 		    @Test ( dataProvider = "deviceList", enabled=false)
 		    public void navigateTest( DeviceContainer dC ) {
-		        executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
+		        executeSteps( new Step[] { new Navigate(url), new Accessibility(url) } );
 		    }
 		    
 		    @TestDescriptor ( testName = "GDPR Link Checker Test")
