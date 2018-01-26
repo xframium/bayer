@@ -14,7 +14,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
 import com.bayer.common.Accessibility;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
@@ -32,7 +36,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 public class PrivacyTest extends AbstractTest {
 		
 			
-	public String url = "https://www.cropscience.bayer.de";
+	public String url = "https://www.canesten.de/de/home/";
 	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/MIRA_Websites_URLs.xlsx";	    
 			public String getUrl(){ 
 				return url;
@@ -82,8 +86,36 @@ public class PrivacyTest extends AbstractTest {
 		    @TestDescriptor( testName="GDPR URL Test" )
 		    @Test ( dataProvider = "deviceList", enabled=true)
 		    public void privacyNavigationLoop( DeviceContainer dC ) {
-		    	
-		        executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
+		    	/*String token1 = "";
+
+		        Scanner inFile1 = null;
+				try {
+					inFile1 = new Scanner(new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/urlList.txt")).useDelimiter(",\\s*");
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
+		        List<String> temps = new ArrayList<String>();
+
+		        // while loop
+		        while (inFile1.hasNext()) {
+		          // find next line
+		          token1 = inFile1.next();
+		          temps.add(token1);
+		        }
+		        inFile1.close();
+
+		        String[] tempsArray = temps.toArray(new String[0]);
+
+		        for (String s : tempsArray) {
+		          System.out.println(s);
+		        	url = s;
+		        	
+		        }
+		        */
+		    	executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );	
+		        
 		    }
 		    @TestDescriptor( testName="GDPR Accessibility Test" )
 		    @Test ( dataProvider = "deviceList", enabled=false)

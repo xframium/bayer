@@ -14,6 +14,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.io.File;
 import javax.swing.plaf.basic.BasicSliderUI.ScrollListener;
 import org.apache.poi.ss.usermodel.Cell;
@@ -31,6 +32,8 @@ import com.bayer.common.utility.StructureValidator;
 import com.bayer.corp.Regions.Germany.GDPR.tests.Privacy.*;
 import com.bayer.marketing.consumerHealth.betaseron.tests.Utility.Util;
 import com.bayer.test.step.AbstractStep;
+import com.gargoylesoftware.htmlunit.javascript.host.Element;
+import com.gargoylesoftware.htmlunit.util.Cookie;
 import com.sun.jna.platform.unix.X11;
 
 public class PrivacyPolicy extends AbstractStep
@@ -45,6 +48,7 @@ public class PrivacyPolicy extends AbstractStep
     private static List<PrivacyInfo> privacyData =  new ArrayList<>();
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver )  {
+    	
     	PrivacyTest pt = new PrivacyTest();
     	boolean privacyFound = false; 
 	    String privacyName =""; 
@@ -56,19 +60,36 @@ public class PrivacyPolicy extends AbstractStep
     	
     	
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
-        
+    	//Cookie ck = new Cookie("JSESSIONID", "B8F9B794A232D828BDBD291D7FCE0232.node1", "radiologie.bayer.de", );
+    	//webDriver.manage().addCookie(ck);
     	waitForElement( "bayer.key", webDriver, 15 );
     	BayerWebElement logo = getElement("bayer.key", webDriver);
     	String urlList = webDriver.getPageSource();
     	
+    	/*BayerWebElement vis1 = getElement("bayer.cookiesVisible", webDriver);
+    	if(urlList.contains("Einverstunden")) {
+    		BayerWebElement cookiesConf1 = getElement("bayer.cookiesConfirm1", webDriver);
+           	cookiesConf1.click();
+    	}
+    	else  if(urlList.contains("OK")){
+           	BayerWebElement cookiesConf2 = getElement("bayer.cookiesConfirm2", webDriver);
+           	cookiesConf2.click();
+           }
+    	else if(urlList.contains("Ok")) {
+    		BayerWebElement cookiesConf3 = getElement("bayer.cookiesConfirm3", webDriver);
+           	cookiesConf3.click();
+    	}
+    	else {
+    		System.out.println("Cookie not found");
+    	}
+    	*/
+    	
         if(urlList.contains("Datenschutzerklärung")) {
            privacyName="Datenschutzerklärung";
            privacyFound = true;
-           BayerWebElement popup = getElement("bayer.cookiesVisibleDE", webDriver);
-           if(popup.isDisplayed()){
-           	BayerWebElement cookiesConf = getElement("bayer.cookiesConfirm", webDriver);
-           	cookiesConf.click();
-           }
+           /*BayerWebElement popup = getElement("bayer.cookiesVisibleDE", webDriver); */
+           
+           
            waitForElement( "gdpr.privacyV1", webDriver, 15 );
            BayerWebElement privacy1 = getElement("gdpr.privacyV1", webDriver);
            Util.scrollToElement(webDriver, privacy1, wait);
@@ -313,7 +334,6 @@ public class PrivacyPolicy extends AbstractStep
         
         Font headerFont = workbook.createFont();
         headerFont.setBold(true);
-        headerFont.setFontHeight((short) 18);
         headerFont.setColor(IndexedColors.BLUE.getIndex());
 
         // Create a CellStyle with the font
