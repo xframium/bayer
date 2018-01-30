@@ -36,51 +36,47 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 public class PrivacyTest extends AbstractTest {
 		
 			
-	public String url = "https://www.canesten.de/de/home/";
+	public String url = "https://radiologie.bayer.de/home";
+	public int parentRowNum = 0;
 	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/MIRA_Websites_URLs.xlsx";	    
 			public String getUrl(){ 
 				return url;
 			}
-		    
+			public int getRowNum(){ 
+				return parentRowNum;
+			}
+			public void setUrl(String newUrl){ 
+				url = newUrl;;
+			}
 			@TestDescriptor( testName="GDPR Privacy Policy Validation" )
   		    @Test ( dataProvider = "deviceList", enabled=false)
   		    public void privacyPolicyTest( DeviceContainer dC ) {
- 		        
-		    	try {
-
-		            FileInputStream excelFile = new FileInputStream(new File(FILE_NAME));
-		            Workbook workbook = new XSSFWorkbook(excelFile);
-		            Sheet datatypeSheet = workbook.getSheetAt(0);
-		            Iterator<Row> iterator = datatypeSheet.iterator();
-
-		            while (iterator.hasNext()) {
-
-		                Row currentRow = iterator.next();
-		                Iterator<Cell> cellIterator = currentRow.iterator();
-
-		                while (cellIterator.hasNext()) {
-
-		                    Cell currentCell = cellIterator.next();
-		                    //getCellTypeEnum shown as deprecated for version 3.15
-		                    //getCellTypeEnum ill be renamed to getCellType starting from version 4.0
-		                    if (currentCell.getCellTypeEnum() == CellType.STRING) {
-		                        url=currentCell.getStringCellValue();
-		                        executeSteps( new Step[] { new Navigate(url), //new PrivacyPolicy() 
-		                        		} );
-		                        System.out.println("Current url is: "+url);
-		                    } else if (currentCell.getCellTypeEnum() == CellType.NUMERIC) {
-		                        System.out.println("Unable to read url.");
-		                        
-		                    }
-		                }
-		                System.out.println();
-		            }
-		        } catch (FileNotFoundException e) {
-		            e.printStackTrace();
-		        } catch (IOException e) {
-		            e.printStackTrace();
-		        }
-
+				String [] urlNames = new String[116];
+				try {
+					File file = new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/urlListMod.txt");
+					FileReader fileReader = new FileReader(file);
+					BufferedReader bufferedReader = new BufferedReader(fileReader);
+					StringBuffer stringBuffer = new StringBuffer();
+					String line;
+					int i = 0;
+					while ((line = bufferedReader.readLine()) != null) {
+						//System.out.println(line);
+						urlNames[i] = line;
+						i++;
+					}
+					fileReader.close();
+					//System.out.println("Contents of file:");
+					//System.out.println(stringBuffer.toString());
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				System.out.println("For loop");
+				for(int c = 0; c < urlNames.length; c ++) { 
+					url = "http://"+urlNames[c];
+					executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy()});
+					parentRowNum++;
+					System.out.println("Parent row num is " +parentRowNum);
+				}
 			}
 		    
 		    @TestDescriptor( testName="GDPR URL Test" )
@@ -124,7 +120,7 @@ public class PrivacyTest extends AbstractTest {
 		    }
 		    
 		    @TestDescriptor ( testName = "GDPR Link Checker Test")
-		    @Test ( dataProvider = "deviceList", enabled = true)
+		    @Test ( dataProvider = "deviceList", enabled = false)
 		    public void gdprLinkChecker( DeviceContainer dC )
 		    {
 		        executeSteps( new Step[] { new Navigate(url), new LinkValidator(url, -1) } );
