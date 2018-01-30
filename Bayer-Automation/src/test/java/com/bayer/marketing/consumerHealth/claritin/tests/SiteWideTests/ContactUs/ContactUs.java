@@ -4,7 +4,7 @@ import com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.HomePage.
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
-
+import com.bayer.marketing.consumerHealth.claritin.tests.SiteWideTests.ContactUs.Steps.ContactUsRun;
 import com.bayer.common.Accessibility;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
@@ -27,7 +27,7 @@ public String url = "colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081";
 		return url;
 	}
     @TestDescriptor( testName="Contact Us" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void conditionsTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new ConditionsOfUse() } );
     }
