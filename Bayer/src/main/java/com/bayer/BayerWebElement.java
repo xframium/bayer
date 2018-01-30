@@ -32,6 +32,7 @@ public class BayerWebElement implements WebElement, Locatable
     public BayerWebElement( By useBy, BayerWebDriver webDriver )
     {
         this.by = useBy;
+        
         this.webDriver = webDriver;
     }
     
