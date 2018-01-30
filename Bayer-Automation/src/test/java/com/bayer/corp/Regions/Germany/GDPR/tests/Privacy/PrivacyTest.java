@@ -70,7 +70,6 @@ public class PrivacyTest extends AbstractTest {
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-				System.out.println("For loop");
 				for(int c = 0; c < urlNames.length; c ++) { 
 					url = "http://"+urlNames[c];
 					executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy()});

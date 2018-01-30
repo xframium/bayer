@@ -44,7 +44,7 @@ public class PrivacyPolicy extends AbstractStep
         super( "message", "error message" );
     }
     private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/MIRA_Websites_Germany.xlsx";
-    private static String[] columns = {"URL", "Prviacy Found(T/F)", "Privacy Name", "Phrase 1 Found", "Phrase 2 Found", "Phrase 3 Found", "Phrase 4 Found", "Phrase 5 Found" };
+    private static String[] columns = {"URL", "Prviacy Found(T/F)", "Privacy Name", "Phrase 1 Found", "Phrase 2 Found", "Phrase 3 Found", "Phrase 4 Found", "Phrase 5 Found", "Cookie Acceptance Phrase" };
     private static List<PrivacyInfo> privacyData =  new ArrayList<>();
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver )  {
@@ -57,7 +57,7 @@ public class PrivacyPolicy extends AbstractStep
 	    boolean phrase3 = false; 
 	    boolean phrase4 = false;
 	    boolean phrase5 = false;
-    	
+	    String cookieName ="";
     	
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
     	//Cookie ck = new Cookie("JSESSIONID", "B8F9B794A232D828BDBD291D7FCE0232.node1", "radiologie.bayer.de", );
@@ -66,50 +66,52 @@ public class PrivacyPolicy extends AbstractStep
     	BayerWebElement logo = getElement("bayer.key", webDriver);
     	String urlList = webDriver.getPageSource();
     	
-    	////////Cookie Check////////
-    	boolean cookieFound = false;
+    	////////Cookie Check 1////////
     	try
+    	{	waitForElement("bayer.cookiesConfirm1", webDriver, 15);
+	    	BayerWebElement cookiesConf1 = getElement("bayer.cookiesConfirm1", webDriver);
+	    	cookieName = "Einverstanden";
+	    	cookiesConf1.click();	
+    	}
+    	catch( Exception e )
     	{
-    	BayerWebElement cookiesConf = getElement("bayer.cookiesConfirm1", webDriver);
-    	Util.scrollToElement(webDriver, cookiesConf, wait);
-    	cookiesConf.click();
-    	cookieFound = true;
+    	}
+    	////////Cookie Check 2////////
+    	try
+    	{	waitForElement("bayer.cookiesConfirm2", webDriver, 15);
+	    	BayerWebElement cookiesConf2 = getElement("bayer.cookiesConfirm2", webDriver);
+	    	cookieName = "OK";
+	    	cookiesConf2.click();
+	    	
+    	}
+    	catch( Exception e )
+    	{
+    	}
+    	////////Cookie Check 3////////
+    	try
+    	{	waitForElement("bayer.cookiesConfirm3", webDriver, 15);
+	    	BayerWebElement cookiesConf3 = getElement("bayer.cookiesConfirm3", webDriver);
+	    	cookieName = "Ok";
+	    	cookiesConf3.click();	
     	}
     	
     	catch( Exception e )
     	{
     	}
-
-    	if(cookieFound == false){
+    	/*if(cookieFound1 == false){
     		System.out.println("Cookie Not Found");
     	}
-    	/*BayerWebElement vis1 = getElement("bayer.cookiesVisible", webDriver);
-    	if(urlList.contains("Einverstunden")) {
-    		BayerWebElement cookiesConf1 = getElement("bayer.cookiesConfirm1", webDriver);
-           	cookiesConf1.click();
-    	}
-    	else  if(urlList.contains("OK")){
-           	BayerWebElement cookiesConf2 = getElement("bayer.cookiesConfirm2", webDriver);
-           	cookiesConf2.click();
-           }
-    	else if(urlList.contains("Ok")) {
-    		BayerWebElement cookiesConf3 = getElement("bayer.cookiesConfirm3", webDriver);
-           	cookiesConf3.click();
-    	}
     	else {
-    		System.out.println("Cookie not found");
+    		System.out.println("Cookie found");
     	}
     	*/
-    	
         if(urlList.contains("Datenschutzerklärung")) {
            privacyName="Datenschutzerklärung";
            privacyFound = true;
            /*BayerWebElement popup = getElement("bayer.cookiesVisibleDE", webDriver); */
-           
-           
            waitForElement( "gdpr.privacyV1", webDriver, 15 );
            BayerWebElement privacy1 = getElement("gdpr.privacyV1", webDriver);
-           Util.scrollToElement(webDriver, privacy1, wait);
+           //Util.scrollToElement(webDriver, privacy1, wait);
            privacy1.click();
            waitForElement( "bayer.key", webDriver, 15 );
            
@@ -165,10 +167,10 @@ public class PrivacyPolicy extends AbstractStep
         	privacyFound = true;
         	waitForElement( "gdpr.privacyV2", webDriver, 15 );
             BayerWebElement privacy2 = getElement("gdpr.privacyV2", webDriver);
-            Util.scrollToElement(webDriver, privacy2, wait);
+            //Util.scrollToElement(webDriver, privacy2, wait);
             privacy2.click();
             waitForElement( "bayer.key", webDriver, 15 );
-            webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            //webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
          	//verify 5 elements on privacy page
             if(webDriver.getPageSource().contains("Nutzung der Website")) {
          	   //System.out.println("Test Successful");
@@ -222,10 +224,10 @@ public class PrivacyPolicy extends AbstractStep
         	privacyFound = true;
         	waitForElement( "gdpr.privacyV3", webDriver, 15 );
             BayerWebElement privacy3 = getElement("gdpr.privacyV3", webDriver);
-            Util.scrollToElement(webDriver, privacy3, wait);
+            //Util.scrollToElement(webDriver, privacy3, wait);
             privacy3.click();
             waitForElement( "bayer.key", webDriver, 15 );
-            webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            //webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
          	//verify 5 elements on privacy page
             if(webDriver.getPageSource().contains("Nutzung der Website")) {
          	   //System.out.println("Test Successful");
@@ -277,10 +279,10 @@ public class PrivacyPolicy extends AbstractStep
         	privacyFound = true;
         	waitForElement( "gdpr.privacyV4", webDriver, 15 );
             BayerWebElement privacy4 = getElement("gdpr.privacyV4", webDriver);
-            Util.scrollToElement(webDriver, privacy4, wait);
+            //Util.scrollToElement(webDriver, privacy4, wait);
             privacy4.click();
             waitForElement( "bayer.key", webDriver, 15 );
-            webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            //webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
          	//verify 5 elements on privacy page
             if(webDriver.getPageSource().contains("Nutzung der Website")) {
          	   //System.out.println("Test Successful");
@@ -334,11 +336,11 @@ public class PrivacyPolicy extends AbstractStep
         	phrase3=false;
         	phrase4=false;
         	phrase5=false;
-        	
-        	System.out.println("Nothing found.");
+        	cookieName = "No cookie popup";
+        	//System.out.println("Nothing found.");
         }
         
-        privacyData.add(new PrivacyInfo(privacyFound, privacyName, phrase1, phrase2, phrase3, phrase4, phrase5));
+        privacyData.add(new PrivacyInfo(privacyFound, privacyName, phrase1, phrase2, phrase3, phrase4, phrase5, cookieName));
         
         Workbook workbook = new XSSFWorkbook(); // new HSSFWorkbook() for generating `.xls` file
 
@@ -374,8 +376,8 @@ public class PrivacyPolicy extends AbstractStep
         // Create Other rows and cells with employees data
         int rowNum = 1;
         for(PrivacyInfo dataRow: privacyData) {
-        	rowNum=pt.getRowNum() + 1;
-        	System.out.println("Current row number: " +rowNum);
+        	rowNum = pt.getRowNum() + 1;
+        	System.out.println("Current row number: " +rowNum+". Parent row num:"+pt.getRowNum());
         	Row row = sheet.createRow(rowNum);
 
             row.createCell(0).setCellValue(pt.getUrl());
@@ -387,6 +389,7 @@ public class PrivacyPolicy extends AbstractStep
             row.createCell(5).setCellValue(dataRow.getPhrase3()); 
             row.createCell(6).setCellValue(dataRow.getPhrase4()); 
             row.createCell(7).setCellValue(dataRow.getPhrase5());
+            row.createCell(8).setCellValue(dataRow.getPopUpName());
             //System.out.println("Current row number: " +rowNum);
         }
 

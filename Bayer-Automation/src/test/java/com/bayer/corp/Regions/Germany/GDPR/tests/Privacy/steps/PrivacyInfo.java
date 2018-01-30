@@ -8,8 +8,8 @@ public class PrivacyInfo {
 	    private boolean phrase3; 
 	    private boolean phrase4;
 	    private boolean phrase5;
-
-	    public PrivacyInfo(boolean privacyFound, String privacyName,boolean phrase1, boolean phrase2, boolean phrase3, boolean phrase4, boolean phrase5) {
+	    private String popupName;
+	    public PrivacyInfo(boolean privacyFound, String privacyName,boolean phrase1, boolean phrase2, boolean phrase3, boolean phrase4, boolean phrase5, String popupName) {
 	        this.privacyFound = privacyFound;
 	        this.privacyName = privacyName;
 	        this.phrase1 = phrase1;
@@ -17,6 +17,7 @@ public class PrivacyInfo {
 	        this.phrase3 = phrase3; 
 	        this.phrase4 = phrase4;
 	        this.phrase5 = phrase5;
+	        this.popupName = popupName;
 	    }
 
 		public boolean getPrivacyFound(){ 
@@ -39,6 +40,9 @@ public class PrivacyInfo {
 		}
 		public boolean getPhrase5(){ 
 			return phrase5;
+		}
+		public String getPopUpName(){ 
+			return popupName;
 		}
 	}
 
