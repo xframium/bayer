@@ -43,7 +43,7 @@ public class PrivacyPolicy extends AbstractStep
     {
         super( "message", "error message" );
     }
-    private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/MIRA_Websites_Germany.xlsx";
+    private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/MIRA_Websites_Germany.xlsx";
     private static String[] columns = {"URL", "Prviacy Found(T/F)", "Privacy Name", "Phrase 1 Found", "Phrase 2 Found", "Phrase 3 Found", "Phrase 4 Found", "Phrase 5 Found", "Cookie Acceptance Phrase" };
     private static List<PrivacyInfo> privacyData =  new ArrayList<>();
     @Override
@@ -64,7 +64,6 @@ public class PrivacyPolicy extends AbstractStep
     	//webDriver.manage().addCookie(ck);
     	waitForElement( "bayer.key", webDriver, 15 );
     	BayerWebElement logo = getElement("bayer.key", webDriver);
-    	String urlList = webDriver.getPageSource();
     	
     	////////Cookie Check 1////////
     	try
@@ -98,20 +97,18 @@ public class PrivacyPolicy extends AbstractStep
     	catch( Exception e )
     	{
     	}
-    	/*if(cookieFound1 == false){
-    		System.out.println("Cookie Not Found");
-    	}
-    	else {
-    		System.out.println("Cookie found");
-    	}
-    	*/
+    	webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    	String urlList = webDriver.getPageSource();
         if(urlList.contains("Datenschutzerklärung")) {
-           privacyName="Datenschutzerklärung";
-           privacyFound = true;
+           
            /*BayerWebElement popup = getElement("bayer.cookiesVisibleDE", webDriver); */
+        	
            waitForElement( "gdpr.privacyV1", webDriver, 15 );
            BayerWebElement privacy1 = getElement("gdpr.privacyV1", webDriver);
            //Util.scrollToElement(webDriver, privacy1, wait);
+           privacyName="Datenschutzerklärung";
+	       privacyFound = true;
+
            privacy1.click();
            waitForElement( "bayer.key", webDriver, 15 );
            
@@ -162,12 +159,14 @@ public class PrivacyPolicy extends AbstractStep
            }
             
         }
+    	
         else if(urlList.contains("Datenschutzinformation")) {
         	privacyName="Datenschutzinformation";
         	privacyFound = true;
         	waitForElement( "gdpr.privacyV2", webDriver, 15 );
             BayerWebElement privacy2 = getElement("gdpr.privacyV2", webDriver);
             //Util.scrollToElement(webDriver, privacy2, wait);
+            //webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             privacy2.click();
             waitForElement( "bayer.key", webDriver, 15 );
             //webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -401,7 +400,7 @@ public class PrivacyPolicy extends AbstractStep
         // Write the output to a file
         FileOutputStream fileOut = null;
 		try {
-			fileOut = new FileOutputStream("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/MIRA_Websites_URLs.xlsx");
+			fileOut = new FileOutputStream("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/MIRA_Websites_URLs.xlsx");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

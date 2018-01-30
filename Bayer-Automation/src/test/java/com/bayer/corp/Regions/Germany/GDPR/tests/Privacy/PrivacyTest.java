@@ -38,7 +38,7 @@ public class PrivacyTest extends AbstractTest {
 			
 	public String url = "https://radiologie.bayer.de/home";
 	public int parentRowNum = 0;
-	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/MIRA_Websites_URLs.xlsx";	    
+	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/MIRA_Websites_URLs.xlsx";	    
 			public String getUrl(){ 
 				return url;
 			}
@@ -53,7 +53,7 @@ public class PrivacyTest extends AbstractTest {
   		    public void privacyPolicyTest( DeviceContainer dC ) {
 				String [] urlNames = new String[116];
 				try {
-					File file = new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/urlListMod.txt");
+					File file = new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/urlListMod.txt");
 					FileReader fileReader = new FileReader(file);
 					BufferedReader bufferedReader = new BufferedReader(fileReader);
 					StringBuffer stringBuffer = new StringBuffer();
