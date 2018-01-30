@@ -66,6 +66,23 @@ public class PrivacyPolicy extends AbstractStep
     	BayerWebElement logo = getElement("bayer.key", webDriver);
     	String urlList = webDriver.getPageSource();
     	
+    	////////Cookie Check////////
+    	boolean cookieFound = false;
+    	try
+    	{
+    	BayerWebElement cookiesConf = getElement("bayer.cookiesConfirm1", webDriver);
+    	Util.scrollToElement(webDriver, cookiesConf, wait);
+    	cookiesConf.click();
+    	cookieFound = true;
+    	}
+    	
+    	catch( Exception e )
+    	{
+    	}
+
+    	if(cookieFound == false){
+    		System.out.println("Cookie Not Found");
+    	}
     	/*BayerWebElement vis1 = getElement("bayer.cookiesVisible", webDriver);
     	if(urlList.contains("Einverstunden")) {
     		BayerWebElement cookiesConf1 = getElement("bayer.cookiesConfirm1", webDriver);
@@ -311,7 +328,7 @@ public class PrivacyPolicy extends AbstractStep
             }
         }	
         else {
-        	privacyName="Policy name not found";
+        	privacyName="German privacy statement name not found";
         	phrase1=false;
         	phrase2=false;
         	phrase3=false;
@@ -357,7 +374,9 @@ public class PrivacyPolicy extends AbstractStep
         // Create Other rows and cells with employees data
         int rowNum = 1;
         for(PrivacyInfo dataRow: privacyData) {
-        	Row row = sheet.createRow(rowNum++);
+        	rowNum=pt.getRowNum() + 1;
+        	System.out.println("Current row number: " +rowNum);
+        	Row row = sheet.createRow(rowNum);
 
             row.createCell(0).setCellValue(pt.getUrl());
 
@@ -368,7 +387,7 @@ public class PrivacyPolicy extends AbstractStep
             row.createCell(5).setCellValue(dataRow.getPhrase3()); 
             row.createCell(6).setCellValue(dataRow.getPhrase4()); 
             row.createCell(7).setCellValue(dataRow.getPhrase5());
-            
+            //System.out.println("Current row number: " +rowNum);
         }
 
 		// Resize all columns to fit the content size
