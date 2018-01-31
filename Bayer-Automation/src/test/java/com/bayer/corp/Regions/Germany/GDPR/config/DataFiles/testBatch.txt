@@ -1,0 +1,4 @@
+aposervice.bayer.de
+radiologie.bayer.de
+wuppertal.bayer.de
+www.ms-gateway.de

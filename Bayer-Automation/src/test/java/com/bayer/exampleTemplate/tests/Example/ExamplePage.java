@@ -38,7 +38,7 @@ public String url = "https://www.bayer.com/";
     @TestDescriptor( testName="Example Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url)} );
+        executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
     }
     
     @TestDescriptor( testName="Example Timed Navigation Test" )

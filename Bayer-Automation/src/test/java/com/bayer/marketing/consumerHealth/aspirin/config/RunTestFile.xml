@@ -6,7 +6,7 @@
   <test name="Run Test File"  >
     <packages>
 
-      <package name="com.bayer.marketing.consumerHealth.aspirin.tests.SiteWideTests.headerNav" /> 
+      <package name="com.bayer.marketing.consumerHealth.aspirin.tests.footerNav" /> 
 
    </packages>
  </test>
