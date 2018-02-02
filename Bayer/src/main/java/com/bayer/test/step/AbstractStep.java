@@ -190,4 +190,50 @@ public abstract class AbstractStep implements Step
 
         return webElement;
     }
+    
+    protected BayerWebElement waitForVisible( String objectName, BayerWebDriver webDriver, int waitTime )
+    {
+        ORLookup orLookup = PropertyReader.instance().getElement( objectName, webDriver.getOsType() );
+
+        if ( orLookup.getOrContext() != null )
+            webDriver.switchContext( orLookup.getOrContext() );
+
+        WebDriverWait waitFor = new WebDriverWait( webDriver, waitTime, 500 );
+
+        final By useBy;
+
+        switch ( orLookup.getOrType() )
+        {
+            case "XPATH":
+                useBy = By.xpath( orLookup.getOrValue() );
+                break;
+            case "CSS":
+                useBy = By.cssSelector( orLookup.getOrValue() );
+                break;
+            case "ID":
+                useBy = By.id( orLookup.getOrValue() );
+                break;
+            case "NAME":
+                useBy = By.name( orLookup.getOrValue() );
+                break;
+            case "VISUAL":
+                useBy = By.linkText( orLookup.getOrValue() );
+                break;
+            default:
+                useBy = By.xpath( orLookup.getOrValue() );
+        }
+
+        BayerWebElement webElement = (BayerWebElement) waitFor.until( new Function<WebDriver, WebElement>()
+        {
+
+            @Override
+            public WebElement apply( WebDriver webDriver )
+            {
+                return ExpectedConditions.visibilityOfElementLocated( useBy ).apply( webDriver );
+            }
+
+        } );
+
+        return webElement;
+    }
 }
