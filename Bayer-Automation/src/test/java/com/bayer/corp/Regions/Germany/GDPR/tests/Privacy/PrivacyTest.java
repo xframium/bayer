@@ -57,7 +57,7 @@ public class PrivacyTest extends AbstractTest {
 				String [] urlNames = new String[40];
 				int numEntries = 0;
 				try {
-					File file = new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/urlListBatch1.txt");
+					File file = new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/urlListBatch3.txt");
 					FileReader fileReader = new FileReader(file);
 					BufferedReader bufferedReader = new BufferedReader(fileReader);
 					StringBuffer stringBuffer = new StringBuffer();
