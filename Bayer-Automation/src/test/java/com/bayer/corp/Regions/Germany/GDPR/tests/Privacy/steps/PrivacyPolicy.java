@@ -70,6 +70,7 @@ public class PrivacyPolicy extends AbstractStep
 	    boolean phrase4 = false;
 	    boolean phrase5 = false;
 	    String cookieName ="Not found";
+	    boolean checkFlag = false;
     	
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
     	//Cookie ck = new Cookie("JSESSIONID", "B8F9B794A232D828BDBD291D7FCE0232.node1", "radiologie.bayer.de", );
@@ -77,22 +78,28 @@ public class PrivacyPolicy extends AbstractStep
     	waitForElement( "bayer.key", webDriver, 15 );
     	BayerWebElement logo = getElement("bayer.key", webDriver);
     	
+    	////////Wait for cookie popup///////
+    		webDriver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
+    	
     	
     	////////Cookie Check////////
-  ///////Cookie Check 1////////
+    	///////Cookie Check 1////////
       	try
-      	{	waitForElement("bayer.cookiesConfirm1", webDriver, 15);
-  	    	BayerWebElement cookiesConf1 = getElement("bayer.cookiesConfirm1", webDriver);
-	  	    	if(cookiesConf1.isDisplayed()){
-  	    		cookieName = "Einverstanden";
-	  	    	cookiesConf1.click();
-	  	    	}
+      	{	
+  	    	BayerWebElement cookiesConf1 = waitForVisible("bayer.cookiesConfirm", webDriver, 15);
+	
+    		cookieName = cookiesConf1.getText();
+  	    	cookiesConf1.click();
+
       	}
       	catch( Exception e )
       	{
       	}
+      	
+      	
+      	
       	////////Cookie Check 2////////
-      	try
+      	/*try
       	{	waitForElement("bayer.cookiesConfirm2", webDriver, 15);
   	    	BayerWebElement cookiesConf2 = getElement("bayer.cookiesConfirm2", webDriver);
   	    		if(cookiesConf2.isDisplayed()){
@@ -116,251 +123,736 @@ public class PrivacyPolicy extends AbstractStep
       	catch( Exception e )
       	{
       	}
-      	
-      	webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+      	*/
+      	webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     	
-
     	String urlList = webDriver.getPageSource();
-        if(urlList.contains("Datenschutzerklärung")) {
-           privacyName="Datenschutzerklärung";
-           privacyFound = true;
-           /*BayerWebElement popup = getElement("bayer.cookiesVisibleDE", webDriver); */
-           System.out.println("Stop 1");
-           waitForElement( "gdpr.privacyV1", webDriver, 15 );
-           BayerWebElement privacy1 = getElement("gdpr.privacyV1", webDriver);
-           System.out.println("Stop 2");
-           Util.scrollToElement(webDriver, privacy1, wait);
-           wait.until(ExpectedConditions.invisibilityOf(privacy1));
-           System.out.println("Stop 3");
-           //JavascriptExecutor javascript1 = (JavascriptExecutor) webDriver;
-           //javascript1.executeScript("privacy1.click();", privacy1);
-           privacy1.click();
-           System.out.println("Stop 4");
-           waitForElement( "bayer.key", webDriver, 15 );
-           
-        	//verify 5 elements on privacy page
-           if(webDriver.getPageSource().contains("Nutzung der Website")) {
-        	   //System.out.println("Test Successful");
-        	   phrase1=true;
-           }
-           else { 
-        	   //System.out.println("Text not found");
-        	   phrase1=false;
-           }
-           
-           if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
-        	   //System.out.println("Test Successful");
-        	   phrase2=true;
-           }
-           else { 
-        	   //System.out.println("Text not found");
-        	   phrase2=false;
-           }
-           
-           if(webDriver.getPageSource().contains("Profiling")) {
-        	   //System.out.println("Test Successful");
-        	   phrase3=true;
-           }
-           else { 
-        	   //System.out.println("Text not found");
-        	   phrase3=false;
-           }
-           
-           if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
-        	   //System.out.println("Test Successful");
-        	   phrase4=true;
-           }
-           else { 
-        	   //System.out.println("Text not found");
-        	   phrase4=false;
-           }
-           
-           if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
-        	   //System.out.println("Test Successful");
-        	   phrase5=true;
-           }
-           else { 
-        	  //System.out.println("Text not found");
-        	   phrase5=false;
-           }
-            
+    	
+    	if(urlList.contains("Datenschutz")) {
+        	
+    		 try {
+		    	   waitForElement( "gdpr.privacyV2Footer", webDriver, 15 );
+			       BayerWebElement privacy2Footer = getElement("gdpr.privacyV2Footer", webDriver);
+			       Util.scrollToElement(webDriver, privacy2Footer, wait);
+	           		
+	           		if(privacy2Footer.isDisplayed()){
+	           			Util.scrollToElement(webDriver, privacy2Footer, wait);
+	           		  privacyFound = true;
+	           		   privacyName="Datenschutz";
+		        	   checkFlag = true;
+		        	   System.out.println("Pass 2");
+			           //wait.until(ExpectedConditions.invisibilityOf(privacy1));
+			           //JavascriptExecutor javascript1 = (JavascriptExecutor) webDriver;
+			           //javascript1.executeScript("privacy1.click();", privacy1);
+			           privacy2Footer.click();
+			           waitForElement( "bayer.key", webDriver, 15 );
+			           
+			        	//verify 5 elements on privacy page
+			           if(webDriver.getPageSource().contains("Nutzung der Website")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase1=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase1=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase2=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase2=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Profiling")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase3=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase3=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase4=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase4=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase5=true;
+			           }
+			           else { 
+			        	  //System.out.println("Text not found");
+			        	   phrase5=false;
+			           }
+		           }//end if displayed
+		 	           else { 
+		 	        	   System.out.println("Datenschutzerklärung not displayed");
+				 	           }
+				 			} catch (Exception e) {
+				 				// TODO: handle exception
+				 			}
+		 		   if(checkFlag == false){
+		 		      try {
+		    	   waitForElement( "gdpr.privacyV2FooterID", webDriver, 15 );
+			       BayerWebElement privacy2 = getElement("gdpr.privacyV2FooterID", webDriver);
+			       Util.scrollToElement(webDriver, privacy2, wait);
+	           		
+	           		if(privacy2.isDisplayed()){
+	           			Util.scrollToElement(webDriver, privacy2, wait);
+	           		  privacyFound = true;
+	           		   privacyName="Datenschutz";
+		        	   checkFlag = true;
+		        	   
+			           //wait.until(ExpectedConditions.invisibilityOf(privacy1));
+			           //JavascriptExecutor javascript1 = (JavascriptExecutor) webDriver;
+			           //javascript1.executeScript("privacy1.click();", privacy1);
+			           privacy2.click();
+			           waitForElement( "bayer.key", webDriver, 15 );
+			           
+			        	//verify 5 elements on privacy page
+			           if(webDriver.getPageSource().contains("Nutzung der Website")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase1=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase1=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase2=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase2=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Profiling")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase3=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase3=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase4=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase4=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase5=true;
+			           }
+			           else { 
+			        	  //System.out.println("Text not found");
+			        	   phrase5=false;
+			           }
+		           }//end if displayed
+		           else { 
+		        	   System.out.println("Datenschutz not displayed");
+		           }
+					} catch (Exception e) {
+						// TODO: handle exception
+					}  
+		 		   }//end check flag if
+		 		  if(checkFlag == false){
+		 		      try {
+		    	   waitForElement( "gdpr.privacyV2", webDriver, 15 );
+			       BayerWebElement privacy2 = getElement("gdpr.privacyV2", webDriver);
+			       Util.scrollToElement(webDriver, privacy2, wait);
+	           		
+	           		if(privacy2.isDisplayed()){
+	           			Util.scrollToElement(webDriver, privacy2, wait);
+	           		  privacyFound = true;
+	           		   privacyName="Datenschutz";
+		        	   checkFlag = true;
+		        	   
+			           //wait.until(ExpectedConditions.invisibilityOf(privacy1));
+			           //JavascriptExecutor javascript1 = (JavascriptExecutor) webDriver;
+			           //javascript1.executeScript("privacy1.click();", privacy1);
+			           privacy2.click();
+			           waitForElement( "bayer.key", webDriver, 15 );
+			           
+			        	//verify 5 elements on privacy page
+			           if(webDriver.getPageSource().contains("Nutzung der Website")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase1=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase1=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase2=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase2=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Profiling")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase3=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase3=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase4=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase4=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase5=true;
+			           }
+			           else { 
+			        	  //System.out.println("Text not found");
+			        	   phrase5=false;
+			           }
+		           }//end if displayed
+		           else { 
+		        	   System.out.println("Datenschutz not displayed");
+		           }
+				} catch (Exception e) {
+					// TODO: handle exception
+				}  
+		    }//end check flag if
+       }//end try
+    	if(urlList.contains("Datenschutzerklärung")) {
+            /*BayerWebElement popup = getElement("bayer.cookiesVisibleDE", webDriver); */
+            //System.out.println("Stop 1");
+ 		       try {
+ 		    	   waitForElement( "gdpr.privacyV1Footer", webDriver, 15 );
+ 			       BayerWebElement privacy1Footer = getElement("gdpr.privacyV1Footer", webDriver);
+ 			       Util.scrollToElement(webDriver, privacy1Footer, wait);
+ 	           		
+ 	           		if(privacy1Footer.isDisplayed()){
+ 	           			Util.scrollToElement(webDriver, privacy1Footer, wait);
+ 	           		  privacyFound = true;
+ 	           		   privacyName="Datenschutzerklärung";
+ 		        	   checkFlag = true;
+ 		        	   System.out.println("Pass 1");
+ 			           //wait.until(ExpectedConditions.invisibilityOf(privacy1));
+ 			           //JavascriptExecutor javascript1 = (JavascriptExecutor) webDriver;
+ 			           //javascript1.executeScript("privacy1.click();", privacy1);
+ 			           privacy1Footer.click();
+ 			           waitForElement( "bayer.key", webDriver, 15 );
+ 			           
+ 			        	//verify 5 elements on privacy page
+ 			           if(webDriver.getPageSource().contains("Nutzung der Website")) {
+ 			        	   //System.out.println("Test Successful");
+ 			        	   phrase1=true;
+ 			           }
+ 			           else { 
+ 			        	   //System.out.println("Text not found");
+ 			        	   phrase1=false;
+ 			           }
+ 			           
+ 			           if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
+ 			        	   //System.out.println("Test Successful");
+ 			        	   phrase2=true;
+ 			           }
+ 			           else { 
+ 			        	   //System.out.println("Text not found");
+ 			        	   phrase2=false;
+ 			           }
+ 			           
+ 			           if(webDriver.getPageSource().contains("Profiling")) {
+ 			        	   //System.out.println("Test Successful");
+ 			        	   phrase3=true;
+ 			           }
+ 			           else { 
+ 			        	   //System.out.println("Text not found");
+ 			        	   phrase3=false;
+ 			           }
+ 			           
+ 			           if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
+ 			        	   //System.out.println("Test Successful");
+ 			        	   phrase4=true;
+ 			           }
+ 			           else { 
+ 			        	   //System.out.println("Text not found");
+ 			        	   phrase4=false;
+ 			           }
+ 			           
+ 			           if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
+ 			        	   //System.out.println("Test Successful");
+ 			        	   phrase5=true;
+ 			           }
+ 			           else { 
+ 			        	  //System.out.println("Text not found");
+ 			        	   phrase5=false;
+ 			           }
+ 		           }//end if displayed
+		 	           else { 
+		 	        	   System.out.println("Datenschutzerklärung not displayed");
+				 	           }
+				 			} catch (Exception e) {
+				 				// TODO: handle exception
+				 			}
+ 		      if(checkFlag == false){
+	 		      try {
+	    	   waitForElement( "gdpr.privacyV1FooterID", webDriver, 15 );
+		       BayerWebElement privacy2 = getElement("gdpr.privacyV1FooterID", webDriver);
+		       Util.scrollToElement(webDriver, privacy2, wait);
+           		
+           		if(privacy2.isDisplayed()){
+           			Util.scrollToElement(webDriver, privacy2, wait);
+           		  privacyFound = true;
+           		   privacyName="Datenschutz";
+	        	   checkFlag = true;
+	        	   
+		           //wait.until(ExpectedConditions.invisibilityOf(privacy1));
+		           //JavascriptExecutor javascript1 = (JavascriptExecutor) webDriver;
+		           //javascript1.executeScript("privacy1.click();", privacy1);
+		           privacy2.click();
+		           waitForElement( "bayer.key", webDriver, 15 );
+		           
+		        	//verify 5 elements on privacy page
+		           if(webDriver.getPageSource().contains("Nutzung der Website")) {
+		        	   //System.out.println("Test Successful");
+		        	   phrase1=true;
+		           }
+		           else { 
+		        	   //System.out.println("Text not found");
+		        	   phrase1=false;
+		           }
+		           
+		           if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
+		        	   //System.out.println("Test Successful");
+		        	   phrase2=true;
+		           }
+		           else { 
+		        	   //System.out.println("Text not found");
+		        	   phrase2=false;
+		           }
+		           
+		           if(webDriver.getPageSource().contains("Profiling")) {
+		        	   //System.out.println("Test Successful");
+		        	   phrase3=true;
+		           }
+		           else { 
+		        	   //System.out.println("Text not found");
+		        	   phrase3=false;
+		           }
+		           
+		           if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
+		        	   //System.out.println("Test Successful");
+		        	   phrase4=true;
+		           }
+		           else { 
+		        	   //System.out.println("Text not found");
+		        	   phrase4=false;
+		           }
+		           
+		           if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
+		        	   //System.out.println("Test Successful");
+		        	   phrase5=true;
+		           }
+		           else { 
+		        	  //System.out.println("Text not found");
+		        	   phrase5=false;
+		           }
+	           }//end if displayed
+	           else { 
+	        	   System.out.println("Datenschutz not displayed");
+	           }
+				} catch (Exception e) {
+					// TODO: handle exception
+				}  
+ 		      }//end check flag if
+		 		   if(checkFlag == false){
+		 		      try {
+		    	   waitForElement( "gdpr.privacyV1", webDriver, 15 );
+			       BayerWebElement privacy1 = getElement("gdpr.privacyV1", webDriver);
+			       Util.scrollToElement(webDriver, privacy1, wait);
+	           		
+	           		if(privacy1.isDisplayed()){
+	           			Util.scrollToElement(webDriver, privacy1, wait);
+	           		  privacyFound = true;
+	           		   privacyName="Datenschutzerklärung";
+		        	   checkFlag = true;
+		        	   
+			           //wait.until(ExpectedConditions.invisibilityOf(privacy1));
+			           //JavascriptExecutor javascript1 = (JavascriptExecutor) webDriver;
+			           //javascript1.executeScript("privacy1.click();", privacy1);
+			           privacy1.click();
+			           waitForElement( "bayer.key", webDriver, 15 );
+			           
+			        	//verify 5 elements on privacy page
+			           if(webDriver.getPageSource().contains("Nutzung der Website")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase1=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase1=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase2=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase2=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Profiling")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase3=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase3=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase4=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase4=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase5=true;
+			           }
+			           else { 
+			        	  //System.out.println("Text not found");
+			        	   phrase5=false;
+			           }
+		           }//end if displayed
+		           else { 
+		        	   System.out.println("Datenschutzerklärung not displayed");
+		           }
+				} catch (Exception e) {
+					// TODO: handle exception
+				}  
+ 		    }//end check flag if
+		 		  
+         }//end try 
+    	if(urlList.contains("Datenschutzinformation")) {
+        	
+    		try {
+		    	   waitForElement( "gdpr.privacyV3Footer", webDriver, 15 );
+			       BayerWebElement privacy3Footer = getElement("gdpr.privacyV3Footer", webDriver);
+			       Util.scrollToElement(webDriver, privacy3Footer, wait);
+	           		
+	           		if(privacy3Footer.isDisplayed()){
+	           			Util.scrollToElement(webDriver, privacy3Footer, wait);
+	           		  privacyFound = true;
+	           		   privacyName="Datenschutzinformation";
+		        	   checkFlag = true;
+		        	   System.out.println("Pass 3");
+			           //wait.until(ExpectedConditions.invisibilityOf(privacy1));
+			           //JavascriptExecutor javascript1 = (JavascriptExecutor) webDriver;
+			           //javascript1.executeScript("privacy1.click();", privacy1);
+			           privacy3Footer.click();
+			           waitForElement( "bayer.key", webDriver, 15 );
+			           
+			        	//verify 5 elements on privacy page
+			           if(webDriver.getPageSource().contains("Nutzung der Website")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase1=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase1=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase2=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase2=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Profiling")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase3=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase3=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase4=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase4=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase5=true;
+			           }
+			           else { 
+			        	  //System.out.println("Text not found");
+			        	   phrase5=false;
+			           }
+		           }//end if displayed
+		 	           else { 
+		 	        	   System.out.println("Datenschutzerklärung not displayed");
+				 	           }
+				 			} catch (Exception e) {
+				 				// TODO: handle exception
+				 			}
+    			
+		 		   if(checkFlag == false){
+		 		      try {
+		    	   waitForElement( "gdpr.privacyV3", webDriver, 15 );
+			       BayerWebElement privacy3 = getElement("gdpr.privacyV3", webDriver);
+			       Util.scrollToElement(webDriver, privacy3, wait);
+	           		
+	           		if(privacy3.isDisplayed()){
+	           			Util.scrollToElement(webDriver, privacy3, wait);
+	           		  privacyFound = true;
+	           		   privacyName="Datenschutzinformation";
+		        	   checkFlag = true;
+		        	   
+			           //wait.until(ExpectedConditions.invisibilityOf(privacy1));
+			           //JavascriptExecutor javascript1 = (JavascriptExecutor) webDriver;
+			           //javascript1.executeScript("privacy1.click();", privacy1);
+			           privacy3.click();
+			           waitForElement( "bayer.key", webDriver, 15 );
+			           
+			        	//verify 5 elements on privacy page
+			           if(webDriver.getPageSource().contains("Nutzung der Website")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase1=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase1=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase2=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase2=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Profiling")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase3=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase3=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase4=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase4=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase5=true;
+			           }
+			           else { 
+			        	  //System.out.println("Text not found");
+			        	   phrase5=false;
+			           }
+		           }//end if displayed
+		           else { 
+		        	   System.out.println("Datenschutzinformation not displayed");
+		           }
+				} catch (Exception e) {
+					// TODO: handle exception
+				}  
+		    }//end check flag if
         }
-        else if(urlList.contains("Datenschutzinformation")) {
-        	privacyName="Datenschutzinformation";
-        	privacyFound = true;
-        	waitForElement( "gdpr.privacyV2", webDriver, 15 );
-            BayerWebElement privacy2 = getElement("gdpr.privacyV2", webDriver);
-            Util.scrollToElement(webDriver, privacy2, wait);
-            wait.until(ExpectedConditions.visibilityOf(privacy2));
-            privacy2.click();
-            waitForElement( "bayer.key", webDriver, 15 );
-            webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-         	//verify 5 elements on privacy page
-            if(webDriver.getPageSource().contains("Nutzung der Website")) {
-         	   //System.out.println("Test Successful");
-            	phrase1=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase1=false;
-            }
-            
-            if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
-         	   //System.out.println("Test Successful");
-            	phrase2=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase2=false;
-            }
-            
-            if(webDriver.getPageSource().contains("Profiling")) {
-         	   //System.out.println("Test Successful");
-            	phrase3=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase3=false;
-            }
-            
-            if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
-         	   //System.out.println("Test Successful");
-            	phrase4=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase4=false;
-            }
-            
-            if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
-         	   //System.out.println("Test Successful");
-            	phrase5=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase5=false;
-            }
-        	//click privacy
-        	//verify 5 elements on privacy page
-        }
-        else if(urlList.contains("Datenschutz")) {
-        	privacyName="Datenschutz";
-        	privacyFound = true;
-        	waitForElement( "gdpr.privacyV3", webDriver, 15 );
-            BayerWebElement privacy3 = getElement("gdpr.privacyV3", webDriver);
-            Util.scrollToElement(webDriver, privacy3, wait);
-            privacy3.click();
-            waitForElement( "bayer.key", webDriver, 15 );
-            webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-         	//verify 5 elements on privacy page
-            if(webDriver.getPageSource().contains("Nutzung der Website")) {
-         	   //System.out.println("Test Successful");
-            	phrase1=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase1=false;
-            }
-            
-            if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
-         	   //System.out.println("Test Successful");
-            	phrase2=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase2=false;
-            }
-            
-            if(webDriver.getPageSource().contains("Profiling")) {
-         	   //System.out.println("Test Successful");
-            	phrase3=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase3=false;
-            }
-            
-            if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
-         	   //System.out.println("Test Successful");
-            	phrase4=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase4=false;
-            }
-            
-            if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
-         	   //System.out.println("Test Successful");
-            	phrase5=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase5=false;
-            }
-        }
-        else if(urlList.contains("Datenschutzpolicy")) {
-        	privacyName="Datenschutzpolicy";
-        	privacyFound = true;
-        	waitForElement( "gdpr.privacyV4", webDriver, 15 );
-            BayerWebElement privacy4 = getElement("gdpr.privacyV4", webDriver);
-            Util.scrollToElement(webDriver, privacy4, wait);
-            privacy4.click();
-            waitForElement( "bayer.key", webDriver, 15 );
-            webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-         	//verify 5 elements on privacy page
-            if(webDriver.getPageSource().contains("Nutzung der Website")) {
-         	   //System.out.println("Test Successful");
-            	phrase1=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase1=false;
-            }
-            
-            if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
-         	   //System.out.println("Test Successful");
-            	phrase2=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase2=false;
-            }
-            
-            if(webDriver.getPageSource().contains("Profiling")) {
-         	   //System.out.println("Test Successful");
-            	phrase3=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase3=false;
-            }
-            
-            if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
-         	   //System.out.println("Test Successful");
-            	phrase4=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase4=false;
-            }
-            
-            if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
-         	   //System.out.println("Test Successful");
-            	phrase5=true;
-            }
-            else { 
-         	   //System.out.println("Text not found");
-            	phrase5=false;
-            }
+        if(urlList.contains("Datenschutzpolicy")) {
+        	try {
+		    	   waitForElement( "gdpr.privacyV4Footer", webDriver, 15 );
+			       BayerWebElement privacy4Footer = getElement("gdpr.privacyV4Footer", webDriver);
+			       Util.scrollToElement(webDriver, privacy4Footer, wait);
+	           		
+	           		if(privacy4Footer.isDisplayed()){
+	           			Util.scrollToElement(webDriver, privacy4Footer, wait);
+	           		  privacyFound = true;
+	           		   privacyName="Datenschutzpolicy";
+		        	   checkFlag = true;
+		        	   System.out.println("Pass 1");
+			           //wait.until(ExpectedConditions.invisibilityOf(privacy1));
+			           //JavascriptExecutor javascript1 = (JavascriptExecutor) webDriver;
+			           //javascript1.executeScript("privacy1.click();", privacy1);
+			           privacy4Footer.click();
+			           waitForElement( "bayer.key", webDriver, 15 );
+			           
+			        	//verify 5 elements on privacy page
+			           if(webDriver.getPageSource().contains("Nutzung der Website")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase1=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase1=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase2=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase2=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Profiling")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase3=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase3=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase4=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase4=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase5=true;
+			           }
+			           else { 
+			        	  //System.out.println("Text not found");
+			        	   phrase5=false;
+			           }
+		           }//end if displayed
+		 	           else { 
+		 	        	   System.out.println("Datenschutzpolicy not displayed");
+				 	           }
+				 			} catch (Exception e) {
+				 				// TODO: handle exception
+				 			}
+		 		   if(checkFlag == false){
+		 		      try {
+		    	   waitForElement( "gdpr.privacyV4", webDriver, 15 );
+			       BayerWebElement privacy4 = getElement("gdpr.privacyV4", webDriver);
+			       Util.scrollToElement(webDriver, privacy4, wait);
+	           		
+	           		if(privacy4.isDisplayed()){
+	           			Util.scrollToElement(webDriver, privacy4, wait);
+	           		  privacyFound = true;
+	           		   privacyName="Datenschutzpolicy";
+		        	   checkFlag = true;
+		        	   
+			           //wait.until(ExpectedConditions.invisibilityOf(privacy1));
+			           //JavascriptExecutor javascript1 = (JavascriptExecutor) webDriver;
+			           //javascript1.executeScript("privacy1.click();", privacy1);
+			           privacy4.click();
+			           waitForElement( "bayer.key", webDriver, 15 );
+			           
+			        	//verify 5 elements on privacy page
+			           if(webDriver.getPageSource().contains("Nutzung der Website")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase1=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase1=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Informationen über Ihre Rechte")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase2=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase2=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Profiling")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase3=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase3=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Datenübertragbarkeit")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase4=true;
+			           }
+			           else { 
+			        	   //System.out.println("Text not found");
+			        	   phrase4=false;
+			           }
+			           
+			           if(webDriver.getPageSource().contains("Aufsichtsbehörde")) {
+			        	   //System.out.println("Test Successful");
+			        	   phrase5=true;
+			           }
+			           else { 
+			        	  //System.out.println("Text not found");
+			        	   phrase5=false;
+			           }
+		           }//end if displayed
+		           else { 
+		        	   System.out.println("Datenschutzpolicy not displayed");
+		           }
+				} catch (Exception e) {
+					// TODO: handle exception
+				}  
+		    }//end check flag if
         }	
-        else {
+    	
+        if(checkFlag == false) {
         	privacyName="German privacy statement name not found";
         	phrase1=false;
         	phrase2=false;
         	phrase3=false;
         	phrase4=false;
         	phrase5=false;
-        	cookieName = "Not found";
+        	//cookieName = "Not found";
         	System.out.println("Nothing found.");
         }
        PrivacyInfo pvinf = new PrivacyInfo(privacyFound, privacyName, phrase1, phrase2, phrase3, phrase4, phrase5, cookieName);
