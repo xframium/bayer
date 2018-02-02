@@ -9,7 +9,7 @@ import org.apache.commons.collections.functors.IfClosure;
 
 import java.io.FileReader;
 import java.io.IOException;
-import com.bayer.common.Accessibility;
+//import com.bayer.common.Accessibility;
 import com.bayer.common.utility.*;
 import com.bayer.exampleTemplate.tests.Example.ExamplePage;
 import com.bayer.BayerWebDriver;
@@ -48,8 +48,7 @@ public class ContactUsRun extends AbstractStep
     	}else{
     		throw new IllegalArgumentException();
     	}
-    	
-    	
+    
         return true;
         
     }
