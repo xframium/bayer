@@ -26,53 +26,10 @@ public class TestConnectivity extends AbstractStep
     
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {
-    	
-    	/*Alert alert = webDriver.switchTo().alert();
-    	alert.accept();
-    	webDriver.switchTo().defaultContent();*/
-    	
-    	/*webDriver.switchTo().alert();
-    	//Selenium-WebDriver Java Code for entering Username & Password as below:
-    	webDriver.findElement(By.id("userID")).sendKeys("colin");
-    	webDriver.findElement(By.id("password")).sendKeys("Bayer123");
-    	webDriver.switchTo().alert().accept();
-    	webDriver.switchTo().defaultContent();*/
-    	
-    	/*String MainWindow=webDriver.getWindowHandle();
-        // To handle all new opened window.				
-        Set<String> s1=webDriver.getWindowHandles();		
-        Iterator<String> i1=s1.iterator();
-        while(i1.hasNext())			
-        {		
-            String ChildWindow=i1.next();		
-            		
-            if(!MainWindow.equalsIgnoreCase(ChildWindow))			
-            {    		                                                                                                           
-                    webDriver.switchTo().alert();
-					//Selenium-WebDriver Java Code for entering Username & Password as below:
-					webDriver.findElement(By.id("userID")).sendKeys("colin");
-					webDriver.findElement(By.id("password")).sendKeys("Bayer123");
-					webDriver.switchTo().alert().accept();
-						
-            }		
-        }		
-        // Switching to Parent window i.e Main Window.
-        webDriver.switchTo().window(MainWindow);*/
-        
-       
-        /*webDriver.switchTo().alert().authenticateUsing(new UserAndPassword("colin", "Bayer123"));
-        webDriver.switchTo().defaultContent() ;*/
-    	
-    	/*webDriver.switchTo().alert().setCredentials(new UserAndPassword("colin", "Bayer123"));
-    	webDriver.switchTo().alert().accept();*/
-    	
     	if(isAlertPresents(webDriver)) {   	
 	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
 	    	webDriver.switchTo().alert().accept();
     	}
-       /* 
-       */
-    	
     	waitForElement("claritin.bsl.base.text", webDriver, 30);
         WebDriverWait wait = new WebDriverWait(webDriver, 30);
         if(isAlertPresents(webDriver)) {   	

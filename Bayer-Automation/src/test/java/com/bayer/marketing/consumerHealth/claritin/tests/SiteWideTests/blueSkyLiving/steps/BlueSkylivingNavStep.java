@@ -3,6 +3,7 @@ package com.bayer.marketing.consumerHealth.claritin.tests.SiteWideTests.blueSkyL
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -24,16 +25,15 @@ public class BlueSkylivingNavStep extends AbstractStep {
 
 	@Override
 	protected boolean _executeStep(BayerWebDriver webDriver) {
+		
 		if(isAlertPresents(webDriver)) {   	
 	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
 	    	webDriver.switchTo().alert().accept();
     	}
+		
+		//variable to hold url
 		String blueSkyLivingUrl = webDriver.getCurrentUrl();
-
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
+		
 		WebDriverWait wait = new WebDriverWait(webDriver, 30);
 		// Register to Claritin application
 		this.register(webDriver, wait, blueSkyLivingUrl);
@@ -312,38 +312,19 @@ public class BlueSkylivingNavStep extends AbstractStep {
 
 	public void register(BayerWebDriver webDriver, WebDriverWait wait, String blueSkyLivingUrl) {
 		// wait for join for free link to visible
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='join-now']")));
-
+		
 		// wait for join for free link to visible
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		waitForElement("claritin.bsl.join", webDriver, 30);
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		BayerWebElement join = getElement("claritin.bsl.join", webDriver);
 		join.click();
 		
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		waitForElement("claritin.bsl.base.join.free.validate", webDriver, 30);
 
 		String firstName = RandomStringUtils.random(5, true, false);
 		String lastName = RandomStringUtils.random(5, true, false);
 		userName = firstName + "." + lastName + "@bayer.com";
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
+
 		// Enter First Name
 		this.enterDetails("claritin.bsl.base.join.firstName", webDriver, firstName, wait, false);
 		if(isAlertPresents(webDriver)) {   	
@@ -352,58 +333,22 @@ public class BlueSkylivingNavStep extends AbstractStep {
     	}
 		// Enter Last Name
 		this.enterDetails("claritin.bsl.base.join.lastName", webDriver, lastName, wait, false);
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		// Enter Email
 		this.enterDetails("claritin.bsl.base.join.email", webDriver, userName, wait, false);
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		// Enter ConfirmEmail
 		this.enterDetails("claritin.bsl.base.join.confirm.email", webDriver, userName, wait, false);
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		// Enter Password
 		this.enterDetails("claritin.bsl.base.join.password", webDriver, password, wait, false);
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		// Enter Zipcode
 		this.enterDetails("claritin.bsl.base.join.zipcode", webDriver, zipCode, wait, false);
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		// Select Gender
 		this.enterDetails("claritin.bsl.base.join.gender", webDriver, null, wait, true);
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		// Select Season
 		this.enterDetails("claritin.bsl.base.join.season.allyear", webDriver, null, wait, true);
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		// Select days
 		this.enterDetails("claritin.bsl.base.join.days", webDriver, null, wait, true);
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		// Select all applicable ages
 		this.enterDetails("claritin.bsl.base.join.age45", webDriver, null, wait, true);
-		if(isAlertPresents(webDriver)) {   	
-	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
-	    	webDriver.switchTo().alert().accept();
-    	}
 		this.enterDetails("claritin.bsl.base.join.age25to44", webDriver, null, wait, true);
 		this.enterDetails("claritin.bsl.base.join.age18to24", webDriver, null, wait, true);
 		this.enterDetails("claritin.bsl.base.join.age12to17", webDriver, null, wait, true);
@@ -447,9 +392,13 @@ public class BlueSkylivingNavStep extends AbstractStep {
 		this.enterDetails("claritin.bsl.base.join.weekly", webDriver, null, wait, true);
 
 		// Click on submit button
-		this.enterDetails("claritin.bsl.base.join.submit", webDriver, null, wait, true);
-
+		waitForElement("claritin.bsl.base.join.submit", webDriver, 30);
+		BayerWebElement submit = getElement("claritin.bsl.base.join.submit", webDriver);
+		Util.scrollToElement(webDriver, submit, wait);
+		submit.click();
+		
 		// wait until registration became successful
+		//wait=new WebDriverWait(webDriver, 180);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='Welcome!']")));
 
 	}
