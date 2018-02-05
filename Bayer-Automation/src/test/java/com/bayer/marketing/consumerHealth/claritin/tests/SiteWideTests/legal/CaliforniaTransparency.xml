@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
+    
+    <validation name="H1tag">
+    <description>H1 Header information</description>
+   		<tag name="//h1"> 
+    	<text type="contains">California Transparency in Supply Chains Act</text>
+    	</tag>
+    </validation>
+    
+    <validation name="Paragraphs">
+    <description>Paragraph information</description>
+   		<tag name="//*"> 
+	    	<text type="contains">The California Transparency in Supply Chains Act of 2010 is designed to increase the amount of information made available by manufacturers and retailers regarding their efforts (if any) to address the issue of slavery and human trafficking, thereby allowing consumers to make better, more informed choices regarding the products they buy and the companies they choose to support. The following highlights Bayer’s global efforts in this regard.</text>
+	    	
+	    	<text type="contains"> Bayer supports the United Nations’ Universal Declaration of Human Rights and a number of globally recognized declarations for multinational enterprises. As a founding member of the</text>
+	    	
+	    	<text type="contains">https://www.unglobalcompact.org/what-is-gc/mission/principles United Nations Global Compact</text>
+	    	
+	    	<text type="contains">initiative, Bayer undertakes to implement the https://www.unglobalcompact.org/what-is-gc/mission/principles 10 universally recognized principles</text>
+	    	
+	    	<text type="contains">in the areas of human rights, labor standards, environmental protection and anti-corruption throughout the organization when shaping business processes and strategies.</text>
+	    	
+	    	<text type="contains">Promoting human rights standards internally and throughout all of Bayer’s business operations is in line with our</text>
+	    	
+	    	<text type="contains">https://www.bayer.com/en/bayer-mission-science-for-a-better-life.aspx Values and Leadership Principles</text>
+	    	
+	    	<text type="contains">, our http://www.bayer.com/en/Sustainable-Development-Policy.aspx Sustainable Development Policy</text>
+	    	
+	    	<text type="contains">and our group-wide http://www.bayer.com/en/bayer-human-rights-position.aspx Human Rights Position</text>
+	    	
+	    	<text type="contains">. Bayer’s commitment to foster the implementation of human rights is supported through our</text>
+	    	
+	    	<text type="contains">http://www.bayer.com/en/corporate-compliance-policy.aspx Corporate Compliance Policy</text>
+	    	
+	    	<text type="contains">. It is in effect at all Bayer locations, and it applies to Bayer’s business operations worldwide. Bayer will use this position as a framework to guide our decision-making and constructive engagement within our sphere of influence, while the responsibility of the governments of the various countries for protection of human rights is respected.</text>
+	    	
+	    	<text type="contains"> Bayer has combined all of its fundamental sustainability standards and requirements for its suppliers in a</text>
+	    	
+	    	<text type="contains">http://www.bayer.com/en/supplier-code-of-conduct.aspx Supplier Code of Conduct</text>
+	    	
+	    	<text type="contains">. This code of conduct comprises the areas of ethics, labor, health, safety, environment, and quality as well as related management systems. Our Supplier Code of Conduct emphasizes international labor and human rights standards such as the principles of the United Nations Global Compact and the International Labor Organization’s (ILO) eight core labor standards. Suppliers are expected to protect the human rights of their employees and to treat them with dignity and respect. Supplier employees shall have the right to freely choose employment, the right to associate freely and join or be represented by worker councils or labor unions on a voluntary basis, and the right to bargain collectively as they choose. Workers also have the right to a workplace free of harassment and unlawful discrimination.</text>
+	    	
+	    	<text type="contains">In order to successfully address the diverse challenges of a sustainable supply chain and to leverage synergies together with other companies, we collaborate with the Pharmaceutical Supply Chain Initiative (PSCI) as well as with Together for Sustainability (TfS), an initiative co-founded by Bayer. In both initiatives, we focus on the standardization of sustainability aspects in the relevant industries in order to establish corresponding social, ethical and environmental practices among our suppliers. The exchange of supplier assessments and audits among member companies enables access to additional sustainability evaluations of suppliers who also work for Bayer. This minimizes the administrative burden for both suppliers and the member companies.</text>
+	    	
+	    	<text type="contains"> The http://www.pharmaceuticalsupplychain.org/ Pharmaceutical Supply Chain Initiative</text>
+	    	
+	    	<text type="contains">is a group of major pharmaceutical companies who share a vision of better social, economic, and environmental outcomes for all those involved in the pharmaceutical supply chain. This includes improved conditions for workers (including freely chosen employment, no involuntary prison labor, abolition of child labor, and no use of forced, bonded or indentured labor), economic development, and a cleaner environment for local communities.</text>
+	    	
+	    	<text type="contains"> The http://www.tfs-initiative.com/ Together for Sustainability initiative</text>
+    	
+    		<text type="contains">is a group of multinational companies which aims at developing and implementing a global supplier engagement program that assesses and improves sustainability sourcing practices, including ecological and social aspects. The initiative is based on good practices and builds on established principles – such as the</text>
+    		
+    		<text type="contains">http://www.bayer.com/en/Global-Compact.aspx United Nations Global Compact and the</text>
+    		
+    		<text type="contains">http://www.icca-chem.org/en/home/responsible-care Responsible Care Global Charter as well as standards developed by the</text>
+    		
+    		<text type="contains">http://www.ilo.org/global/lang--en/index.htm International Labour Organization (ILO) , the</text>
+    		
+    		<text type="contains">http://www.iso.org/ International Organization for Standardization (ISO),</text>
+    	
+    		<text type="contains">http://www.sa-intl.org/ Social Accountability International (SAI) and others.</text>
+    		
+    		<text type="contains"> Slavery and human trafficking can take many forms, including forced labor and child labor. We follow a clear ‘zero tolerance to child labor’ policy in our business operations worldwide. We do not tolerate child labor in our supply chain either, where we take action against known cases of violations.</text>
+    		
+    		<text type="contains">http://www.annualreport2016.bayer.com/management-report-annexes/about-the-group/responsibility-in-value-creation/procurement-and-supplier-management.html Our efforts</text>
+    		
+    		<text type="contains">to fight against child labor and forced labor are consistent with the ILO’s core labor standards and the United Nations Global Compact principles.</text>
+    		
+    		<text type="contains">Our efforts for more sustainability in the supply chain include:</text>
+    		
+    		<text type="contains">Sustainability standards: </text>
+    		
+    		<text type="contains">Bayer regards adherence to sustainability standards within the supply chain as a crucial factor in the value chain. By acting responsibly in collaboration with our suppliers, we aim to minimize risks and create stable, long-term business relationships with our partners. For this reason, Bayer applies not just economic standards, but also environmental, social and governance (ESG) standards in choosing new suppliers or continuing its relationships with existing ones. These standards are defined in our Supplier Code of Conduct, which includes child labor avoidance and no utilization of forced, bonded or indentured labor or involuntary prison labor. It is binding and integrated into electronic ordering systems and standard contracts throughout Bayer. The Supplier Code of Conduct is based on the principles of the United Nations Global Compact and our Human Rights Position.</text>
+    		
+    		<text type="contains">Supplier sustainability performance evaluation</text>
+    		
+    		<text type="contains">The sustainability performance of our suppliers is monitored through online supplier assessments and on-site audits. Suppliers are selected for these evaluations based on a combination of country and material risks as well as strategic importance in accordance with our</text>
+    		
+    		<text type="contains">http://www.annualreport2016.bayer.com/management-report-annexes/about-the-group/group-strategy-and-targets.html Group targets</text>
+    		
+    		<text type="contains">. The assessments are carried out on our behalf by a leading web-based service platform for sustainability performance monitoring (EcoVadis). They are based on a web-supported, modular questionnaire completed by the supplier, coupled with accompanying verification documents and 360° screening. We conduct the on-site audits with external, independent auditors. Here, too, we apply the standard of the respective industry initiatives in which we participate in order to benefit from synergies. In addition, internal auditors perform inspections with regard to sustainability aspects focusing on health, safety, environmental protection. The assessment and audit results are thoroughly analyzed and documented. Wherever the results are unsatisfactory, we develop improvement measures together with our suppliers to ensure that they observe social, ethical and environmental standards in the future. In 2016, 3% of the evaluations had a critical result. These suppliers were requested by Bayer to rectify the identified weaknesses with the help of corrective instructions or action plans. In 2016, Bayer was not prompted to end a supplier relationship due solely to sustainability performance or serious sustainability deficiencies.</text>
+    		
+    		<text type="contains">Training for procurement staff:</text>
+    		
+    		<text type="contains">We offer training activities to help procurement staff worldwide create awareness of sustainability and possible risks in dialogue with our suppliers. Training for procurement employees includes online courses dealing with the EcoVadis sustainability assessment process. In addition, we organize specific training events, such as courses for selected procurement employees on the issue of sustainability audits, and provide online trainings and information material.</text>
+    		
+    		<text type="contains">Training for suppliers:</text>
+    		
+    		<text type="contains"> We regularly provide information on sustainability to our suppliers through Supplier Days. This global and local dialogue is essential to build up reliable relations and to make the principles of our procurement policy and our sustainability requirements clear to our suppliers. In return, we would like to know more about the suppliers’ situation in order to be able to identify and remove obstacles in our collaboration at an early stage. The continuous development of suppliers in terms of sustainability is also a key objective of the industry initiatives TfS and PSCI. The TfS initiative offers an online Supplier Academy providing trainings on the initiative, Sustainability in Supply Chains and the Sustainability assessment and audit process. Moreover, the TfS member companies organize joint supplier events with the aim to promote a mutual understanding on sustainability challenges and requirements in the supply chain. PSCI likewise promotes continuing supplier development by means of the comprehensive information provided on the PSCI website, and</text>
+    		
+    		<text type="contains">by offering an own series of sustainability webinars on the topics of wastewater management and modern slavery. Furthermore PSCI organizes supplier conferences providing intensive training on subjects such as occupational safety, health and environmental protection, as well as in labor law and corporate ethics.</text>
+    		
+    		<text type="contains">For more details:</text>
+    		
+    		<text type="contains">Internet website: http://www.bayer.com/en/our-approach.aspx</text>
+    		    		    		
+    	</tag>
+    </validation>
+    
+    <validation name="TableData">
+    <description>Table Data</description>
+   		<tag name="//*"> 
+    	     <text type="contains">2016 Bayer AG Annual Report::</text>
+    	     <text type="contains">Responsibility in Value Creation (beginning page 90 of PDF and page 70 in print version), including Procurement and Supplier Management (beginning page 90 of PDF and page 71 in print version)</text>
+    	     <text type="contains">http://www.annualreport2016.bayer.com/ Read online at Bayer.com</text>
+    	     <text type="contains">2016 Bayer AG Annual Report:</text>
+    	     <text type="contains">Sustainability in Supplier Management – Targets and Performance Indicators (page 53 of PDF and page 48 in print version)</text>
+    	     <text type="contains">http://www.annualreport2016.bayer.com/management-report-annexes/about-the-group/group-strategy-and-targets.html Read online at Bayer.com</text>
+    		 <text type="contains">Additional Reference Documents:</text>
+    	     <text type="contains">Overview of Supplier Management and Sustainability in Procurement Practices, as communicated in past Bayer AG Annual Reports and Sustainable Development Reports</text>
+    	     <text type="contains">http://www.bayer.com/en/integrated-annual-reports.aspx Read or download online at Bayer.com</text>
+    		 <text type="contains">Globally recognized declarations for multinational enterprises include:</text>
+    	     <text type="contains">http://www.cefic.org/Documents/ResponsibleCare/RC-global-charter.pdf Global chemical industry’s Responsible Care Global Charter</text>
+    	     <text type="contains">http://www.ilo.org/empent/Publications/WCMS_094386/lang--en/index.htm Tripartite Declaration of Principles concerning Multinational Enterprises and Social Policy of the International Labor Organization (ILO)</text>
+    		 <text type="contains">http://mneguidelines.oecd.org/ Guidelines for Multinational Enterprises of the Organization for Economic Cooperation and Development (OECD)</text>
+    	     <text type="contains">http://www.un.org/en/universal-declaration-human-rights/index.html United Nations’ Universal Declaration of Human Rights</text>
+    	     <text type="contains">http://www.ohchr.org/EN/ProfessionalInterest/Pages/CCPR.aspx International Covenant on Civil and Political Rights</text>
+    		 <text type="contains">http://www.ohchr.org/EN/ProfessionalInterest/Pages/CESCR.aspx International Covenant on Economic, Social and Cultural Rights</text>
+    	     <text type="contains">http://www.ilo.org/global/standards/lang--en/index.htm International Labor Organization’s (ILO) eight core labor standards</text>
+    	</tag>
+    </validation>
+         
+</validationCollection>
