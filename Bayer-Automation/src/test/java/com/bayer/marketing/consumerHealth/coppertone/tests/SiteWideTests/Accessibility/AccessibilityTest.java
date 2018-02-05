@@ -30,7 +30,7 @@ public String url = "https://www.coppertone.com/";
     public void conditionsTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new ConditionsOfUse() } );
     }
-    @TestDescriptor( testName="Conditions of Use Test" )
+    @TestDescriptor( testName="Accessibility Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void accessibilityTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new Accessibility() } );

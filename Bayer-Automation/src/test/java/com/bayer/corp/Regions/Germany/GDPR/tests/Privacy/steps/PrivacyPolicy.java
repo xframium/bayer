@@ -63,13 +63,13 @@ public class PrivacyPolicy extends AbstractStep
     	
     	PrivacyTest pt = new PrivacyTest();
     	boolean privacyFound = false; 
-	    String privacyName =""; 
+	    String privacyName = ""; 
 	    boolean phrase1 = false; 
 	    boolean phrase2 = false; 
 	    boolean phrase3 = false; 
 	    boolean phrase4 = false;
 	    boolean phrase5 = false;
-	    String cookieName ="Not found";
+	    String cookieName = "Not found";
 	    boolean checkFlag = false;
     	
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
@@ -80,7 +80,6 @@ public class PrivacyPolicy extends AbstractStep
     	
     	////////Wait for cookie popup///////
     		webDriver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
-    	
     	
     	////////Cookie Check////////
     	///////Cookie Check 1////////
@@ -95,8 +94,6 @@ public class PrivacyPolicy extends AbstractStep
       	catch( Exception e )
       	{
       	}
-      	
-      	
       	
       	////////Cookie Check 2////////
       	/*try
@@ -423,7 +420,7 @@ public class PrivacyPolicy extends AbstractStep
            		if(privacy2.isDisplayed()){
            			Util.scrollToElement(webDriver, privacy2, wait);
            		  privacyFound = true;
-           		   privacyName="Datenschutz";
+           		   privacyName="Datenschutzerklärung";
 	        	   checkFlag = true;
 	        	   
 		           //wait.until(ExpectedConditions.invisibilityOf(privacy1));
@@ -479,7 +476,7 @@ public class PrivacyPolicy extends AbstractStep
 		           }
 	           }//end if displayed
 	           else { 
-	        	   System.out.println("Datenschutz not displayed");
+	        	   System.out.println("Datenschutzerklärung not displayed");
 	           }
 				} catch (Exception e) {
 					// TODO: handle exception

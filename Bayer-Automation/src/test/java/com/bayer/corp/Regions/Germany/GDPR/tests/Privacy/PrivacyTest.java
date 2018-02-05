@@ -36,7 +36,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 public class PrivacyTest extends AbstractTest {
 		
 			
-	public String url = "https://www.seresto.de/";
+	public String url = "https://laif900.de";
 	public int parentRowNum = 1;
 	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/urlListBatch4.xlsx";	    
 			public String getUrl(){ 
@@ -52,9 +52,9 @@ public class PrivacyTest extends AbstractTest {
 				url = newUrl;;
 			}
 			@TestDescriptor( testName="GDPR Privacy Policy Validation" )
-  		    @Test ( dataProvider = "deviceList", enabled=true)
+  		    @Test ( dataProvider = "deviceList", enabled=false)
   		    public void privacyPolicyTest( DeviceContainer dC ) {
-				String [] urlNames = new String[40];
+				String [] urlNames = new String[100];
 				int numEntries = 0;
 				try {
 					File file = new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/urlListBatch3.txt");
@@ -67,8 +67,7 @@ public class PrivacyTest extends AbstractTest {
 						//System.out.println(line);
 						urlNames[i] = line;
 						numEntries++;
-						i++;
-					}
+						i++; }
 					fileReader.close();
 					//System.out.println("Contents of file:");
 					//System.out.println(stringBuffer.toString());
@@ -86,7 +85,7 @@ public class PrivacyTest extends AbstractTest {
 			}
 			
 		    @TestDescriptor( testName="GDPR URL Test" )
-		    @Test ( dataProvider = "deviceList", enabled=false)
+		    @Test ( dataProvider = "deviceList", enabled=true)
 		    public void privacyNavigationLoop( DeviceContainer dC ) {
 		    	
 		    	executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum) } );	
