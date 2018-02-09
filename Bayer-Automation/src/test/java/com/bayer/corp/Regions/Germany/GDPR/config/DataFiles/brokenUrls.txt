@@ -15,3 +15,6 @@ test.forum-oculus.de
 test-trialfinder.bayerhealthcare.com
 search-ms.bayerbbs-hosting.com
 www.saludmasculina.com.ar
+http://produktinformation.bayer.de
+www.scheringpg.de
+freeandclear.com.br

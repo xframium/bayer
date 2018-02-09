@@ -19,7 +19,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class ContactUs extends AbstractTest {	
 	
-	public String url = "http://test.bayeraspirin.com/";
+	public String url = "https://www.bayeraspirin.com/";
     
 	public String getUrl(){ 
 		return url;
@@ -30,8 +30,8 @@ public class ContactUs extends AbstractTest {
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url), 
-        							//new HomePageNavSteps(),
-        							new Accessibility()
+        							
+        							//new Accessibility()
         							
         } );
     }

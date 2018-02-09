@@ -36,8 +36,8 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 public class PrivacyTest extends AbstractTest {
 		
 			
-	public String url = "https://laif900.de";
-	public int parentRowNum = 1;
+	private String url = "https://www.praxisgynmanagerin.de/";
+	private int parentRowNum = 1;
 	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/urlListBatch4.xlsx";	    
 			public String getUrl(){ 
 				return url;
@@ -57,7 +57,7 @@ public class PrivacyTest extends AbstractTest {
 				String [] urlNames = new String[100];
 				int numEntries = 0;
 				try {
-					File file = new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/urlListBatch3.txt");
+					File file = new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/testBatch.txt");
 					FileReader fileReader = new FileReader(file);
 					BufferedReader bufferedReader = new BufferedReader(fileReader);
 					StringBuffer stringBuffer = new StringBuffer();

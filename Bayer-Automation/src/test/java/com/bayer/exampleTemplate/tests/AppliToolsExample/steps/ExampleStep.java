@@ -13,6 +13,8 @@ import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 import com.sun.jna.platform.unix.X11;
+
+import io.appium.java_client.pagefactory.WindowsBy;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 import com.applitools.eyes.ProxySettings;
@@ -91,7 +93,13 @@ public class ExampleStep extends AbstractStep
             eyes.close();
             //TestResults results = eyes.close(false);
             //assertEquals(true, results.isPassed());
-
+            driver1.navigate().to(url);
+            
+            eyes.open(driver2, "TestPage2", "Test2", new RectangleSize(1510,900));
+            
+            eyes.checkWindow("Main Page");
+            
+            eyes.close();
         } finally {
 
             eyes.abortIfNotClosed();

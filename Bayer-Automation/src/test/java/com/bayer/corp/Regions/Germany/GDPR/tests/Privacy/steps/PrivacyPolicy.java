@@ -1,5 +1,7 @@
 package com.bayer.corp.Regions.Germany.GDPR.tests.Privacy.steps;
 
+import static org.testng.Assert.assertNotNull;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -86,8 +88,7 @@ public class PrivacyPolicy extends AbstractStep
       	try
       	{	
   	    	BayerWebElement cookiesConf1 = waitForVisible("bayer.cookiesConfirm", webDriver, 15);
-	
-    		cookieName = cookiesConf1.getText();
+  	    	cookieName = cookiesConf1.getText();
   	    	cookiesConf1.click();
 
       	}
@@ -880,10 +881,47 @@ public class PrivacyPolicy extends AbstractStep
         // Create a Sheet
 		
 		Sheet sheet = workbook.getSheetAt(0);
-        
-        // Create Cell Style for formatting Date
-        CellStyle dateCellStyle = workbook.createCellStyle();
-        
+		if(rowNumber == 1) { //Adds legend on first execution
+			//Sheet legend = workbook.getSheetAt(1);
+			Sheet legend = null;
+			if(workbook.getNumberOfSheets() == 1) {
+				legend = workbook.createSheet("Legend");
+			}
+			else { 
+				legend = workbook.getSheetAt(1);
+			}
+	        // Create Cell Style for formatting DatA
+	        CellStyle dateCellStyle = workbook.createCellStyle();
+	        Object[][] legendInfo = {
+	                {"", "Legend"},
+	                {"Country:", "Deutschland"},
+	                {" ", " "},
+	                {"Phrase #", "Phrase Name"},
+	                {"Phrase 1:", "Nutzung der Website"},
+	                {"Phrase 2:", "Informationen über Ihre Rechte"},
+	                {"Phrase 3:", "Profiling"},
+	                {"Phrase 4:", "Datenübertragbarkeit"}, 
+	                {"Phrase 5:", "Aufsichtsbehörde"}
+	        };
+	        int legendRowNum = 0;
+	        System.out.println("Creating excel");
+	
+	        for (Object[] datatype : legendInfo) {
+	            Row legendRow= legend.createRow(legendRowNum++);
+	            int colNum = 0;
+	            for (Object field : datatype) {
+	                Cell cell = legendRow.createCell(colNum++);
+	                if (field instanceof String) {
+	                    cell.setCellValue((String) field);
+	                } else if (field instanceof Integer) {
+	                    cell.setCellValue((Integer) field);
+	                }
+	            }
+	        }
+	        for(int i = 0; i < columns.length; i++) {
+	            legend.autoSizeColumn(i);
+	        }
+		}
         // Create Other rows and cells with employees data
         int rowNum = 2;
         //for(int k = 0; k < privacyArray.length; k++) {

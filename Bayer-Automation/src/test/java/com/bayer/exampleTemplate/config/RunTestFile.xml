@@ -6,7 +6,7 @@
   <test name="Run Test File"  >
     <packages>
 
-      <package name="com.bayer.exampleTemplate.tests.Example" /> 
+      <package name="com.bayer.exampleTemplate.tests.AppliToolsExample" /> 
 
    </packages>
  </test>
