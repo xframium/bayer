@@ -22,7 +22,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class ContactUs extends AbstractTest {
 	
-public String url = "colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081";
+public String url = "http://03342-claritin-qa.photoninfotech.com:8081";
     
 	public String getUrl(){ 
 		return url;
@@ -39,18 +39,7 @@ public String url = "colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081";
     public void navigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url) } );
     }
-    @TestDescriptor ( testName = "Claritin Blue Sky General Testing ")
-    @Test ( dataProvider = "deviceList", enabled = false)
-    public void claristinBSLTest( DeviceContainer dC )
-    {
-        String baseUrl = "http://colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081/";
-     //   executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl ) } );
-    }
-    @TestDescriptor( testName="BlueSkyLiving Timed Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
-    public void timedNavigateTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new TimedNavigate(url, 6000) } );
-    }
+   
      */
 }
 

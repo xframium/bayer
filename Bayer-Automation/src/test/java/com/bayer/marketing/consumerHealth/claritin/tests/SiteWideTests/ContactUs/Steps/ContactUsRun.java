@@ -28,19 +28,26 @@ public class ContactUsRun extends AbstractStep
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {	
     	
+    	BayerWebElement xbutton = getElement( "claritin.privacy.x", webDriver );
     	
+    	if(xbutton.isDisplayed()){
+    		xbutton.click();
+    	}
     	
     	waitForElement("claritin.contactUs", webDriver, 15);
     	BayerWebElement contactUs = getElement( "claritin.contactUs", webDriver );
     	contactUs.click();
     	
+    	/*
     	waitForElement("claritin.contactUs.continue", webDriver, 15);
     	BayerWebElement continueButton = getElement( "claritin.contactUs.continue", webDriver );
     	continueButton.click();
+    	*/
+    	
+    	waitForElement("claritin.contactUs.check", webDriver, 15);
     	
     	String livewellURL ="https://www.livewell.bayer.com/contactus/";
     	String url = webDriver.getCurrentUrl();
-    	
     	System.out.println(url);
     	
     	if(url.equals(livewellURL)){
