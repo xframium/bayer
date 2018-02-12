@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import com.bayer.common.Accessibility;
 import com.bayer.common.utility.*;
-import com.bayer.exampleTemplate.tests.Example.ExamplePage;
+import com.bayer.exampleTemplate.tests.AppliToolsExample.ExamplePage;
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
@@ -42,18 +42,39 @@ public class ExampleStep extends AbstractStep
     //private static final String MANUFACTURER = "Samsung";
     //private static final String MODEL = "Galaxy S7";
     private static final String applitoolsKey = "x836lZBCjnk0zlODvlQFDN906107j109S9nD0d101j5I8OX9o110";
-    public ExampleStep()
+    public static int rowNumber  = 0;
+	public static String newUrl = "";
+    public ExampleStep(String url, int parentRowNum)
     {
         super( "message", "error message" );
+        this.newUrl = url;
+        this.rowNumber = parentRowNum;
     }
     
     @Override
-    protected boolean _executeStep(BayerWebDriver driver1){	
+    protected boolean _executeStep(BayerWebDriver webDriver){	
+    	/*try
+      	{	
+    		BayerWebElement loginConf1 = waitForVisible("bayer.loginPopup", driver1, 15);
+  	    	if(loginConf1.isDisplayed()){
+  	    		waitForElement( "bayer.loginUsername", driver1, 15 );
+  	    		BayerWebElement login = getElement("bayer.loginUsername", driver1);
+  	    		login.sendKeys("NAPilot");
+  	    		waitForElement( "bayer.loginPassword", driver1, 15 );
+  	    		BayerWebElement password = getElement("bayer.loginPassword", driver1);
+  	    		login.sendKeys("xa=Ym52h");
+  	    	}
+
+      	}
+      	catch( Exception e )
+      	{
+      	}
+    	*/
     	ExamplePage page = new ExamplePage();
     	Eyes eyes = new Eyes();
 
         eyes.setApiKey(applitoolsKey);
-
+		/*
         String user = null;
 		try {
 			user = URLEncoder.encode(USER_NAME, "UTF-8");
@@ -76,34 +97,26 @@ public class ExampleStep extends AbstractStep
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-       RemoteWebDriver driver2 = new RemoteWebDriver(url, driver1.getCapabilities());
-
+	
+       RemoteWebDriver driver2 = new RemoteWebDriver(url, webDriver.getCapabilities());
+	   */
         try {
         	eyes.setProxy(new ProxySettings("http://ptb-proxy.na.bayer.cnb/"));
-            driver2.get(page.getUrl());
+            webDriver.asRemote().get(page.getUrl());
 
             eyes.setForceFullPageScreenshot(true);
             eyes.setStitchMode(StitchMode.CSS);
             //eyes.setImageCut(new FixedCutProvider(HEADER_SIZE , 0, 0, 0));
-            eyes.open(driver2, "TestPage1", "Test1", new RectangleSize(1510,900));
-            
-            eyes.checkWindow("Main Page");
+            eyes.open(webDriver.asRemote(), "Dr.Scholl's", "Dr.Scholl's" + rowNumber, new RectangleSize(1510,900));
+            eyes.checkWindow("Dr.Scholl's Page #" + rowNumber);
             
             eyes.close();
             //TestResults results = eyes.close(false);
             //assertEquals(true, results.isPassed());
-            driver1.navigate().to(url);
-            
-            eyes.open(driver2, "TestPage2", "Test2", new RectangleSize(1510,900));
-            
-            eyes.checkWindow("Main Page");
-            
-            eyes.close();
         } finally {
 
             eyes.abortIfNotClosed();
-
+            //driver1.quit();
 
 }
         return true;

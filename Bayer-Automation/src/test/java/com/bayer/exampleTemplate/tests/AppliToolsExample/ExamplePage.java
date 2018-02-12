@@ -24,15 +24,14 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class ExamplePage extends AbstractTest {
 	
-private String url = "https://www.bayer.com/";
+private String url = "https://www.drscholls.com/products/";
 private int parentRowNum = 1;  
 	public String getUrl(){ 
 		return url;
 	}
-
 	
     @TestDescriptor( testName="AppliTools Example Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC ) {
     	String [] urlNames = new String[100];
 		int numEntries = 0;
@@ -57,13 +56,17 @@ private int parentRowNum = 1;
 		System.out.println("For loop");
 		
 		for(int c = 0; c < numEntries; c ++) { 
-			url = "http://"+urlNames[c];
-			executeSteps( new Step[] { new Navigate(url), new ExamplePage(url, parentRowNum)});
+			url = urlNames[c];
+			executeSteps( new Step[] { new Navigate(url), new ExampleStep(url, parentRowNum)});
 			parentRowNum++;
 			System.out.println("Parent row num is " + parentRowNum);
 		}
     }
-    
+    @TestDescriptor( testName="Applitools Single Page Example Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void appliToolsExample( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url), new ExampleStep(url, 2)} );
+    }
     @TestDescriptor( testName="Example Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void timedNavigateTest( DeviceContainer dC ) {
