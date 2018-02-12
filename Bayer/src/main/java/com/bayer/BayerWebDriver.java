@@ -3,6 +3,7 @@ package com.bayer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.ContextAware;
@@ -25,8 +26,11 @@ import org.openqa.selenium.internal.FindsByName;
 import org.openqa.selenium.internal.FindsByTagName;
 import org.openqa.selenium.internal.FindsByXPath;
 import org.openqa.selenium.internal.Locatable;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
 import com.bayer.utiilty.XMLEscape;
 import com.perfecto.reportium.client.ReportiumClient;
+
 import io.appium.java_client.AppiumDriver;
 
 public class BayerWebDriver implements WebDriver, FindsByClassName, FindsByCssSelector, FindsById, FindsByLinkText,
@@ -63,6 +67,14 @@ public class BayerWebDriver implements WebDriver, FindsByClassName, FindsByCssSe
     		return null;
     }
 
+    public RemoteWebDriver asRemote()
+    {
+    	if ( nativeDriver instanceof RemoteWebDriver )
+    		return (RemoteWebDriver) nativeDriver;
+    	else
+    		return null;
+    }
+    
     public ReportiumClient getReportiumClient()
     {
         return reportiumClient;

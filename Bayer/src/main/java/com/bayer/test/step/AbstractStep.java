@@ -1,13 +1,31 @@
 package com.bayer.test.step;
 
+import java.awt.Dimension;
+import java.awt.image.BufferedImage;
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FilenameFilter;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.function.Function;
+
+import javax.imageio.ImageIO;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.objectRepository.ORLookup;
@@ -15,9 +33,11 @@ import com.bayer.objectRepository.PropertyReader;
 import com.bayer.test.step.factory.Step;
 import com.bayer.test.step.factory.StepListener;
 import com.bayer.test.step.factory.StepManager;
+import com.bayer.utiilty.XMLEscape;
 
 public abstract class AbstractStep implements Step
 {
+	private static NumberFormat numberFormat = new DecimalFormat( "0000" );
     private String description;
     private String failureMessage;
     private StepListener stepListener;
@@ -144,6 +164,22 @@ public abstract class AbstractStep implements Step
                 return (BayerWebElement) webDriver.findElement( By.xpath( lookupValue ) );
         }
     }
+    
+    private class CheckPointFiles implements FilenameFilter
+    {
+        private String checkPointName;
+
+        public CheckPointFiles( String checkPointName )
+        {
+            this.checkPointName = checkPointName;
+        }
+
+        @Override
+        public boolean accept( File dir, String name )
+        {
+            return (name.startsWith( checkPointName ));
+        }
+    }
 
     protected BayerWebElement waitForElement( String objectName, BayerWebDriver webDriver, int waitTime )
     {
@@ -236,4 +272,182 @@ public abstract class AbstractStep implements Step
 
         return webElement;
     }
+    
+    protected String dumpState(BayerWebDriver webDriver, String checkPointName, int historicalCount, int deviationPercentage ) throws Exception
+    {
+
+        File checkPointFolder = null;
+
+        if ( checkPointName != null )
+        {
+            checkPointFolder = new File( ".", "historicalComparison" );
+        }   
+
+        File useFolder = new File( ".", "artifacts" );
+        useFolder.mkdirs();
+
+        File screenFile = null;
+        File domFile = null;
+        File xpathFile = null;
+        
+        OutputStream os = null;
+        try
+        {
+            byte[] screenShot = webDriver.getScreenshotAs( OutputType.BYTES );
+            if ( checkPointName != null )
+                screenFile = new File( useFolder, "grid-" + checkPointName.replace( "-", "_" ) + "-" + webDriver.getOsType() + ".png" );
+            else
+                screenFile = File.createTempFile( "state", ".png", useFolder );
+
+            screenFile.getParentFile().mkdirs();
+            os = new BufferedOutputStream( new FileOutputStream( screenFile ) );
+            os.write( screenShot );
+            os.flush();
+            os.close();
+
+            if ( checkPointFolder != null )
+            {
+                //
+                // Dump state as historical
+                //
+                checkPointFolder.mkdirs();
+
+                if ( historicalCount > 0 )
+                {
+                    List<File> historicalFiles = Arrays.asList( checkPointFolder.listFiles( new CheckPointFiles( checkPointName + "-" ) ) );
+                    Collections.sort( historicalFiles );
+                    Collections.reverse( historicalFiles );
+
+                    if ( historicalFiles.size() >= historicalCount )
+                        historicalFiles.get( 0 ).delete();
+
+                    for ( File file : historicalFiles )
+                    {
+                        String[] fileParts = file.getName().split( "\\." );
+                        int fileNumber = Integer.parseInt( fileParts[0].substring( checkPointName.length() + 1 ) );
+
+                        file.renameTo( new File( file.getParentFile(), checkPointName + "-" + numberFormat.format( fileNumber + 1 ) + ".png" ) );
+                    }
+
+                    os = new BufferedOutputStream( new FileOutputStream( new File( checkPointFolder, checkPointName + "-0000.png" ) ) );
+                }
+                else
+                    os = new BufferedOutputStream( new FileOutputStream( new File( checkPointFolder, checkPointName + ".png" ) ) );
+
+                os.write( screenShot );
+                os.flush();
+                os.close();
+
+                if ( deviationPercentage >= 0 )
+                {
+                    //
+                    // Compare with the last image
+                    //
+                    File newFile = new File( checkPointFolder, checkPointName + "-0000.png" );
+                    File previousFile = new File( checkPointFolder, checkPointName + "-0001.png" );
+
+                    if ( newFile.exists() && previousFile.exists() )
+                    {
+                        double computedDeviation = (compareImages( ImageIO.read( newFile ), ImageIO.read( previousFile ) ) * 100);
+
+                        if ( computedDeviation > deviationPercentage )
+                            throw new RuntimeException( "Historical image comparison failed.  Expected a maximum difference of [" + deviationPercentage + "] but found [" + computedDeviation + "]" );
+                    }
+                }
+            }
+        }
+        finally
+        {
+            if ( os != null )
+                try
+                {
+                    os.close();
+                }
+                catch ( Exception e )
+                {
+                }
+        }
+
+
+        String pageSource = null;
+        
+        FileOutputStream outputStream = null;
+        try
+        {
+            File xmlFile = File.createTempFile( "dom-", ".xml", useFolder );
+
+            pageSource = webDriver.getPageSource();
+            outputStream = new FileOutputStream( xmlFile );
+            
+            outputStream.write( XMLEscape.toXML( pageSource ).getBytes() );
+
+            outputStream.flush();
+            outputStream.close();
+        }
+
+        finally
+        {
+            if ( outputStream != null )
+                try
+                {
+                    outputStream.close();
+                }
+                catch ( Exception e )
+                {
+                }
+        }
+        
+        return pageSource;
+    }
+    
+    private String removeScript( String o )
+    {
+        String newString = o;
+        
+        int scriptLocation = 0;
+        
+        while ( ( scriptLocation = newString.indexOf( "<script" ) ) != -1 )
+        {
+            int endLocation = newString.indexOf( "/script>", scriptLocation );
+            if ( endLocation != -1 )
+            {
+                String begin = newString.substring( 0, scriptLocation );
+                String end = newString.substring( endLocation + 8 );
+                newString = begin + end;
+            }
+            else
+                break;
+                
+        }
+        
+        return newString;
+    }
+    
+    protected double compareImages( BufferedImage imageOne, BufferedImage imageTwo )
+    {
+        Dimension dimOne = new Dimension( imageOne.getWidth(), imageOne.getHeight() );
+        Dimension dimTwo = new Dimension( imageTwo.getWidth(), imageTwo.getHeight() );
+        
+        int differenceCount = 0;
+        
+        if ( dimOne.getWidth() != dimTwo.getWidth() || dimOne.getHeight() != dimTwo.getHeight() )
+            return 0;
+        else
+        {
+            for( int x=0; x<dimOne.getWidth(); x++ )
+            {
+                for( int y=0; y<dimOne.getHeight(); y++ )
+                {
+                    if ( imageOne.getRGB( x, y ) != imageTwo.getRGB( x, y ) )
+                        differenceCount++;
+                }
+            }
+        }
+        
+        return differenceCount / ( dimOne.getWidth() * dimOne.getHeight() );
+        
+    }
+    
+    
+    
 }
