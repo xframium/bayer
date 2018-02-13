@@ -12,7 +12,7 @@ import com.bayer.test.step.factory.Step;
 
 public class PrivacyPage extends AbstractTest {
 	
-public String url = "https://www.coppertone.com/";
+public String url = "http://colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081";
     
 	public String getUrl(){ 
 		return url;
