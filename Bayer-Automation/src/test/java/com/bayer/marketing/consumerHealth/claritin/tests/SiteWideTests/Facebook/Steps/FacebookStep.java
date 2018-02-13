@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.claritin.tests.SiteWideTests.ContactUs.Steps;
+package com.bayer.marketing.consumerHealth.claritin.tests.SiteWideTests.Facebook.Steps;
 
 import java.io.BufferedReader;
 import javax.swing.ImageIcon;
@@ -17,10 +17,10 @@ import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 import com.sun.jna.platform.unix.X11;
 
-public class ContactUsRun extends AbstractStep
+public class FacebookStep extends AbstractStep
 {
 
-    public ContactUsRun()
+    public FacebookStep()
     {
         super( "message", "error message" );
     }
@@ -30,25 +30,16 @@ public class ContactUsRun extends AbstractStep
     	
     	
     	
-    	waitForElement("claritin.contactUs", webDriver, 15);
-    	BayerWebElement contactUs = getElement( "claritin.contactUs", webDriver );
-    	contactUs.click();
+    	waitForElement("claritin.key", webDriver, 15);
     	
-    	waitForElement("claritin.contactUs.continue", webDriver, 15);
-    	BayerWebElement continueButton = getElement( "claritin.contactUs.continue", webDriver );
+    	waitForElement("claritin.facebook.button", webDriver, 15);
+    	BayerWebElement fbButton = getElement( "claritin.facebook.button", webDriver );
+    	fbButton.click();
+    	waitForElement("claritin.facebook.confirm", webDriver, 15);
+    	BayerWebElement continueButton = getElement( "claritin.facebook.confirm", webDriver );
     	continueButton.click();
     	
-    	String livewellURL ="https://www.livewell.bayer.com/contactus/";
-    	String url = webDriver.getCurrentUrl();
     	
-    	System.out.println(url);
-    	
-    	if(url.equals(livewellURL)){
-    	System.out.println("Success");	
-    	}else{
-    		throw new IllegalArgumentException();
-    	}
-    
         return true;
         
     }
