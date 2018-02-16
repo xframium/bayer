@@ -273,131 +273,139 @@ public abstract class AbstractStep implements Step
         return webElement;
     }
     
-    protected String dumpState(BayerWebDriver webDriver, String checkPointName, int historicalCount, int deviationPercentage ) throws Exception
+    protected String dumpState(BayerWebDriver webDriver, String checkPointName, int historicalCount, int deviationPercentage )
     {
 
-        File checkPointFolder = null;
-
-        if ( checkPointName != null )
-        {
-            checkPointFolder = new File( ".", "historicalComparison" );
-        }   
-
-        File useFolder = new File( ".", "artifacts" );
-        useFolder.mkdirs();
-
-        File screenFile = null;
-        File domFile = null;
-        File xpathFile = null;
-        
-        OutputStream os = null;
-        try
-        {
-            byte[] screenShot = webDriver.getScreenshotAs( OutputType.BYTES );
-            if ( checkPointName != null )
-                screenFile = new File( useFolder, "grid-" + checkPointName.replace( "-", "_" ) + "-" + webDriver.getOsType() + ".png" );
-            else
-                screenFile = File.createTempFile( "state", ".png", useFolder );
-
-            screenFile.getParentFile().mkdirs();
-            os = new BufferedOutputStream( new FileOutputStream( screenFile ) );
-            os.write( screenShot );
-            os.flush();
-            os.close();
-
-            if ( checkPointFolder != null )
-            {
-                //
-                // Dump state as historical
-                //
-                checkPointFolder.mkdirs();
-
-                if ( historicalCount > 0 )
-                {
-                    List<File> historicalFiles = Arrays.asList( checkPointFolder.listFiles( new CheckPointFiles( checkPointName + "-" ) ) );
-                    Collections.sort( historicalFiles );
-                    Collections.reverse( historicalFiles );
-
-                    if ( historicalFiles.size() >= historicalCount )
-                        historicalFiles.get( 0 ).delete();
-
-                    for ( File file : historicalFiles )
-                    {
-                        String[] fileParts = file.getName().split( "\\." );
-                        int fileNumber = Integer.parseInt( fileParts[0].substring( checkPointName.length() + 1 ) );
-
-                        file.renameTo( new File( file.getParentFile(), checkPointName + "-" + numberFormat.format( fileNumber + 1 ) + ".png" ) );
-                    }
-
-                    os = new BufferedOutputStream( new FileOutputStream( new File( checkPointFolder, checkPointName + "-0000.png" ) ) );
-                }
-                else
-                    os = new BufferedOutputStream( new FileOutputStream( new File( checkPointFolder, checkPointName + ".png" ) ) );
-
-                os.write( screenShot );
-                os.flush();
-                os.close();
-
-                if ( deviationPercentage >= 0 )
-                {
-                    //
-                    // Compare with the last image
-                    //
-                    File newFile = new File( checkPointFolder, checkPointName + "-0000.png" );
-                    File previousFile = new File( checkPointFolder, checkPointName + "-0001.png" );
-
-                    if ( newFile.exists() && previousFile.exists() )
-                    {
-                        double computedDeviation = (compareImages( ImageIO.read( newFile ), ImageIO.read( previousFile ) ) * 100);
-
-                        if ( computedDeviation > deviationPercentage )
-                            throw new RuntimeException( "Historical image comparison failed.  Expected a maximum difference of [" + deviationPercentage + "] but found [" + computedDeviation + "]" );
-                    }
-                }
-            }
-        }
-        finally
-        {
-            if ( os != null )
-                try
-                {
-                    os.close();
-                }
-                catch ( Exception e )
-                {
-                }
-        }
-
-
-        String pageSource = null;
-        
-        FileOutputStream outputStream = null;
-        try
-        {
-            File xmlFile = File.createTempFile( "dom-", ".xml", useFolder );
-
-            pageSource = webDriver.getPageSource();
-            outputStream = new FileOutputStream( xmlFile );
-            
-            outputStream.write( XMLEscape.toXML( pageSource ).getBytes() );
-
-            outputStream.flush();
-            outputStream.close();
-        }
-
-        finally
-        {
-            if ( outputStream != null )
-                try
-                {
-                    outputStream.close();
-                }
-                catch ( Exception e )
-                {
-                }
-        }
-        
-        return pageSource;
+    	try
+    	{
+	        File checkPointFolder = null;
+	
+	        if ( checkPointName != null )
+	        {
+	            checkPointFolder = new File( ".", "historicalComparison" );
+	        }   
+	
+	        File useFolder = new File( ".", "artifacts" );
+	        useFolder.mkdirs();
+	
+	        File screenFile = null;
+	        File domFile = null;
+	        File xpathFile = null;
+	        
+	        OutputStream os = null;
+	        try
+	        {
+	            byte[] screenShot = webDriver.getScreenshotAs( OutputType.BYTES );
+	            if ( checkPointName != null )
+	                screenFile = new File( useFolder, "grid-" + checkPointName.replace( "-", "_" ) + "-" + webDriver.getOsType() + ".png" );
+	            else
+	                screenFile = File.createTempFile( "state", ".png", useFolder );
+	
+	            screenFile.getParentFile().mkdirs();
+	            os = new BufferedOutputStream( new FileOutputStream( screenFile ) );
+	            os.write( screenShot );
+	            os.flush();
+	            os.close();
+	
+	            if ( checkPointFolder != null )
+	            {
+	                //
+	                // Dump state as historical
+	                //
+	                checkPointFolder.mkdirs();
+	
+	                if ( historicalCount > 0 )
+	                {
+	                    List<File> historicalFiles = Arrays.asList( checkPointFolder.listFiles( new CheckPointFiles( checkPointName + "-" ) ) );
+	                    Collections.sort( historicalFiles );
+	                    Collections.reverse( historicalFiles );
+	
+	                    if ( historicalFiles.size() >= historicalCount )
+	                        historicalFiles.get( 0 ).delete();
+	
+	                    for ( File file : historicalFiles )
+	                    {
+	                        String[] fileParts = file.getName().split( "\\." );
+	                        int fileNumber = Integer.parseInt( fileParts[0].substring( checkPointName.length() + 1 ) );
+	
+	                        file.renameTo( new File( file.getParentFile(), checkPointName + "-" + numberFormat.format( fileNumber + 1 ) + ".png" ) );
+	                    }
+	
+	                    os = new BufferedOutputStream( new FileOutputStream( new File( checkPointFolder, checkPointName + "-0000.png" ) ) );
+	                }
+	                else
+	                    os = new BufferedOutputStream( new FileOutputStream( new File( checkPointFolder, checkPointName + ".png" ) ) );
+	
+	                os.write( screenShot );
+	                os.flush();
+	                os.close();
+	
+	                if ( deviationPercentage >= 0 )
+	                {
+	                    //
+	                    // Compare with the last image
+	                    //
+	                    File newFile = new File( checkPointFolder, checkPointName + "-0000.png" );
+	                    File previousFile = new File( checkPointFolder, checkPointName + "-0001.png" );
+	
+	                    if ( newFile.exists() && previousFile.exists() )
+	                    {
+	                        double computedDeviation = (compareImages( ImageIO.read( newFile ), ImageIO.read( previousFile ) ) * 100);
+	
+	                        if ( computedDeviation > deviationPercentage )
+	                            throw new RuntimeException( "Historical image comparison failed.  Expected a maximum difference of [" + deviationPercentage + "] but found [" + computedDeviation + "]" );
+	                    }
+	                }
+	            }
+	        }
+	        finally
+	        {
+	            if ( os != null )
+	                try
+	                {
+	                    os.close();
+	                }
+	                catch ( Exception e )
+	                {
+	                }
+	        }
+	
+	
+	        String pageSource = null;
+	        
+	        FileOutputStream outputStream = null;
+	        try
+	        {
+	            File xmlFile = File.createTempFile( "dom-", ".xml", useFolder );
+	
+	            pageSource = webDriver.getPageSource();
+	            outputStream = new FileOutputStream( xmlFile );
+	            
+	            outputStream.write( XMLEscape.toXML( pageSource ).getBytes() );
+	
+	            outputStream.flush();
+	            outputStream.close();
+	        }
+	
+	        finally
+	        {
+	            if ( outputStream != null )
+	                try
+	                {
+	                    outputStream.close();
+	                }
+	                catch ( Exception e )
+	                {
+	                }
+	        }
+	        
+	        return pageSource;
+    	}
+    	catch( Exception e )
+    	{
+    		e.printStackTrace();
+    		return null;
+    	}
     }
     
     private String removeScript( String o )
