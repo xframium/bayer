@@ -75,6 +75,27 @@ public class BayerWebDriver implements WebDriver, FindsByClassName, FindsByCssSe
     		return null;
     }
     
+    protected boolean verifySwitchWindow( String winExpValue )
+    {
+
+        Set<String> availableWindows = getWindowHandles();
+
+        if ( !availableWindows.isEmpty() )
+        {
+            for ( String windowId : availableWindows )
+            {
+
+            	switchTo().window( windowId );
+            	
+            	if ( getTitle().trim().toLowerCase().contains( winExpValue.toLowerCase() ) || getCurrentUrl().trim().toLowerCase().contains( winExpValue.toLowerCase() ) )
+            		return true;
+            	
+            }
+        }
+
+        return false;
+    }
+    
     public ReportiumClient getReportiumClient()
     {
         return reportiumClient;
