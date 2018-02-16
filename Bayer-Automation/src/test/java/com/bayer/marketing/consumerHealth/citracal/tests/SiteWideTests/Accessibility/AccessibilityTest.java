@@ -1,9 +1,9 @@
-package com.bayer.marketing.consumerHealth.citracal.tests.SiteWideTests.Legal;
+package com.bayer.marketing.consumerHealth.citracal.tests.SiteWideTests.Accessibility;
 
-import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
-import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
-import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
+import com.bayer.marketing.consumerHealth.coppertone.tests.SiteWideTests.Accessibility.steps.AccessibilityStep;
 import org.testng.annotations.Test;
+
+import com.bayer.common.Accessibility;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
 import com.bayer.test.AbstractTest;
@@ -16,25 +16,23 @@ import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.javascript.host.URL;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
-public class PrivacyPage extends AbstractTest {
+public class AccessibilityTest extends AbstractTest {
 	
 public String url = "https://www.coppertone.com/";
     
 	public String getUrl(){ 
 		return url;
 	}
-    @TestDescriptor( testName="Conditions of Use Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
-    public void conditionsTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new ConditionsOfUse() } );
+    @TestDescriptor( testName="Citracal LinkChecker Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void linkTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url), new LinkValidator(url, -1) } );
     }
-    
-    @TestDescriptor( testName="Privacy Policy Validation" )
+    @TestDescriptor( testName="Accessibility Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
-    public void privacyPolicyTest( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
+    public void accessibilityTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url), new LinkValidator(url, -1), new Accessibility() } );
     }
-    
     @TestDescriptor( testName="Example Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void timedNavigateTest( DeviceContainer dC ) {

@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.coppertone.tests.SiteWideTests.Accessibility.steps;
+package com.bayer.marketing.consumerHealth.citracal.tests.SiteWideTests.Legal.steps;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

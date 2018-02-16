@@ -34,7 +34,7 @@ public class HTTPLinkCheck
     
     public static void main( String[] args ) throws Exception {
         System.out.println("Link checker initiated");
-    	String url ="https://www.cropscience.bayer.de/";
+    	String url ="http://test.redesign.citracal.com/";
     	HTTPLinkCheck h = new HTTPLinkCheck();
     	h.process( new URL(url), new URL(url) );
         
@@ -44,10 +44,10 @@ public class HTTPLinkCheck
           System.out.println( key + ": " + h.linkMap.get( key ) + " refereces" );
         }
         
-        //System.out.println( h.pageMap.size() + " unique pages" );
-        //for ( String key : h.pageMap.keySet()) {
-           // System.out.println( key + ": " + h.pageMap.get( key ) + " refereces" );
-        //}
+        System.out.println( h.pageMap.size() + " unique pages" );
+        for ( String key : h.pageMap.keySet()) {
+            System.out.println( key + ": " + h.pageMap.get( key ) + " refereces" );
+        }
     }
 
     

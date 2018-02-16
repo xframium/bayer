@@ -107,6 +107,7 @@ public class ExampleStep extends AbstractStep
             eyes.setForceFullPageScreenshot(true);
             eyes.setStitchMode(StitchMode.CSS);
             //eyes.setImageCut(new FixedCutProvider(HEADER_SIZE , 0, 0, 0));
+            //eyes.setBatch(DrScholls);
             eyes.open(webDriver.asRemote(), "Dr.Scholl's", "Dr.Scholl's" + rowNumber, new RectangleSize(1510,900));
             eyes.checkWindow("Dr.Scholl's Page #" + rowNumber);
             
