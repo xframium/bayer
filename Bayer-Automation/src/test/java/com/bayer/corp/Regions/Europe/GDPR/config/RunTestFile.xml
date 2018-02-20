@@ -6,7 +6,7 @@
   <test name="Run Test File"  >
     <packages>
 
-      <package name="com.bayer.marketing.consumerHealth.citracal.tests.SiteWideTests.UniversalTests" /> 
+      <package name="com.bayer.corp.Regions.Germany.GDPR.tests.Privacy" /> 
 
    </packages>
  </test>
