@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.citracal.tests.SiteWideTests.Accessibility.steps;
+package com.bayer.marketing.consumerHealth.citracal.tests.SiteWideTests.UniversalTests.steps;
 
 import java.io.BufferedReader;
 import javax.swing.ImageIcon;

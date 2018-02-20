@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.citracal.tests.SiteWideTests.Accessibility;
+package com.bayer.marketing.consumerHealth.citracal.tests.SiteWideTests.UniversalTests;
 
 import com.bayer.marketing.consumerHealth.coppertone.tests.SiteWideTests.Accessibility.steps.AccessibilityStep;
 import org.testng.annotations.Test;
@@ -16,9 +16,9 @@ import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.javascript.host.URL;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
-public class AccessibilityTest extends AbstractTest {
+public class UniversalTests extends AbstractTest {
 	
-public String url = "https://www.coppertone.com/";
+public String url = "http://test.redesign.citracal.com/";
     
 	public String getUrl(){ 
 		return url;
@@ -28,7 +28,7 @@ public String url = "https://www.coppertone.com/";
     public void linkTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new LinkValidator(url, -1) } );
     }
-    @TestDescriptor( testName="Accessibility Test" )
+    @TestDescriptor( testName="Citracal Accessibility Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void accessibilityTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new LinkValidator(url, -1), new Accessibility() } );

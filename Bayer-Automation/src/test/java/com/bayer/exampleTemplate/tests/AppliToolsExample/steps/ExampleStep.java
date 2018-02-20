@@ -12,11 +12,13 @@ import com.bayer.exampleTemplate.tests.AppliToolsExample.ExamplePage;
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
+import com.gargoylesoftware.htmlunit.javascript.host.event.DragEvent;
 import com.sun.jna.platform.unix.X11;
 
 import io.appium.java_client.pagefactory.WindowsBy;
 import io.appium.java_client.remote.MobileCapabilityType;
 
+import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.ProxySettings;
 import com.applitools.eyes.RectangleSize;
 import com.applitools.eyes.TestResults;
@@ -32,6 +34,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.security.spec.ECPrivateKeySpec;
 import java.util.concurrent.TimeUnit;
 
 public class ExampleStep extends AbstractStep
@@ -103,14 +106,26 @@ public class ExampleStep extends AbstractStep
         try {
         	eyes.setProxy(new ProxySettings("http://ptb-proxy.na.bayer.cnb/"));
             webDriver.asRemote().get(page.getUrl());
-
+            BatchInfo drScholls = new BatchInfo("Dr. Scholl's");
+            eyes.setBatch(drScholls);
             eyes.setForceFullPageScreenshot(true);
+            //eyes.setRegionToCheck(regionToCheck);
             eyes.setStitchMode(StitchMode.CSS);
             //eyes.setImageCut(new FixedCutProvider(HEADER_SIZE , 0, 0, 0));
             //eyes.setBatch(DrScholls);
-            eyes.open(webDriver.asRemote(), "Dr.Scholl's", "Dr.Scholl's" + rowNumber, new RectangleSize(1510,900));
-            eyes.checkWindow("Dr.Scholl's Page #" + rowNumber);
-            
+            /*System.out.println("Device platform: "+webDriver.getCapabilities().getPlatform().toString());
+           if(webDriver.getCapabilities().getPlatform().equals("IOS")||webDriver.getCapabilities().getPlatform().equals("Android"))
+           { 
+        	   eyes.open(webDriver, "Dr.Scholl's Mobile", "DrScholls Mobile Test" + 3);
+        	   
+           }
+           else {
+        	   eyes.open(webDriver.asRemote(), "Dr.Scholl's", "Dr.Scholl's" + 3, new RectangleSize(1510,900)); 
+        	   }
+            */
+           eyes.open(webDriver.asRemote(), "Dr.Scholl's Mobile", "DrScholls Mobile Test" + 3);
+           eyes.checkWindow("Dr.Scholl's Page #" + 3);
+            System.out.println("Device platform: "+webDriver.getCapabilities().getPlatform().toString());
             eyes.close();
             //TestResults results = eyes.close(false);
             //assertEquals(true, results.isPassed());
