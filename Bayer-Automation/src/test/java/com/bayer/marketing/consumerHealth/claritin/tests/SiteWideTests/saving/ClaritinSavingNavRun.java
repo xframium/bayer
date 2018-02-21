@@ -11,7 +11,8 @@ import com.bayer.test.step.factory.Step;
 
 public class ClaritinSavingNavRun extends AbstractTest {
 
-	public String url = "http://colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081/savings";
+	//public String url = "http://colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081/savings";
+	public String url = "https://www.claritin.com/savings";
 
 	public String getUrl() {
 		return url;
