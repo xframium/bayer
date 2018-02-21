@@ -1,6 +1,6 @@
 package com.bayer.corp.Regions.Europe.GDPR.tests.Privacy;
 
-import com.bayer.corp.Regions.Germany.GDPR.tests.Privacy.steps.PrivacyPolicy;
+import com.bayer.corp.Regions.Europe.GDPR.tests.Privacy.steps.PrivacyPolicy;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -79,7 +79,7 @@ public class PrivacyTest extends AbstractTest {
 				
 				for(int c = 0; c < numEntries; c ++) { 
 					url = "http://"+urlNames[c];
-					executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, c)});
+					executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum, countryCode)});
 					parentRowNum++;
 					System.out.println("Parent row num is " + parentRowNum);
 				}
