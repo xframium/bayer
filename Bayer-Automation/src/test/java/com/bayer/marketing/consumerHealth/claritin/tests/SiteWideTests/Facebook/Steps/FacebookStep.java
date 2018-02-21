@@ -35,6 +35,13 @@ public class FacebookStep extends AbstractStep
     	waitForElement("claritin.facebook.button", webDriver, 15);
     	BayerWebElement fbButton = getElement( "claritin.facebook.button", webDriver );
     	fbButton.click();
+    	try {
+    		waitForElement("claritin.cookiePopup.button", webDriver, 15);
+        	BayerWebElement policyPopup = getElement( "claritin.facebook.button", webDriver );
+        	policyPopup.click();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
     	waitForElement("claritin.facebook.confirm", webDriver, 15);
     	BayerWebElement continueButton = getElement( "claritin.facebook.confirm", webDriver );
     	continueButton.click();
