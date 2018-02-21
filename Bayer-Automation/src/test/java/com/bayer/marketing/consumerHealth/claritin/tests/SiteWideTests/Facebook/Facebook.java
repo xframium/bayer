@@ -22,7 +22,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class Facebook extends AbstractTest {
 	
-public String url = "http://colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081";
+public String url = "https://www.claritin.com/";
     
 	public String getUrl(){ 
 		return url;
