@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import org.apache.commons.collections.functors.IfClosure;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,18 +17,21 @@ import com.bayer.exampleTemplate.tests.Example.ExamplePage;
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
+import com.gargoylesoftware.htmlunit.javascript.host.Window;
 import com.sun.jna.platform.unix.X11;
 
-public class ContactUsRun extends AbstractStep
+public class ContactUsSteps extends AbstractStep
 {
 
-    public ContactUsRun()
+    public ContactUsSteps()
     {
         super( "message", "error message" );
     }
     
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {	
+    	
+    	
     	
     	BayerWebElement xbutton = getElement( "claritin.privacy.x", webDriver );
     	
@@ -38,24 +43,14 @@ public class ContactUsRun extends AbstractStep
     	BayerWebElement contactUs = getElement( "claritin.contactUs", webDriver );
     	contactUs.click();
     	
-    	/*
-    	waitForElement("claritin.contactUs.continue", webDriver, 15);
-    	BayerWebElement continueButton = getElement( "claritin.contactUs.continue", webDriver );
-    	continueButton.click();
-    	*/
+    	verifyWindowSwitch()
     	
+    
     	waitForElement("claritin.contactUs.check", webDriver, 15);
     	
-    	String livewellURL ="https://www.livewell.bayer.com/contactus/";
-    	String url = webDriver.getCurrentUrl();
-    	System.out.println(url);
     	
-    	if(url.equals(livewellURL)){
-    	System.out.println("Success");	
-    	}else{
-    		throw new IllegalArgumentException();
-    	}
-    
+    	
+
         return true;
         
     }
