@@ -14,6 +14,7 @@ public class Accessibility extends AbstractStep implements Step
     private static final URL AXE_URL = Accessibility.class.getResource( "/com/bayer/common/axe.min.js" );
     private static final String lineSeparator = System.getProperty("line.separator");
     private URL baseUrl = null;
+    private boolean checkPoint = false;
     public Accessibility()
     {
         super( "Accessibility Test", "Accessibility Test" );
@@ -24,6 +25,20 @@ public class Accessibility extends AbstractStep implements Step
         super( "Accessibility Test for " + baseUrl , "Accessibility Test for " + baseUrl );
         try
         {
+            this.baseUrl = new URL( baseUrl );
+        }
+        catch( Exception e )
+        {
+            e.printStackTrace();
+        }
+    }
+    
+    public Accessibility( String baseUrl, boolean checkPoint )
+    {
+        super( "Accessibility Test for " + baseUrl , "Accessibility Test for " + baseUrl );
+        try
+        {
+        	this.checkPoint = checkPoint;
             this.baseUrl = new URL( baseUrl );
         }
         catch( Exception e )
@@ -55,6 +70,20 @@ public class Accessibility extends AbstractStep implements Step
                     log.error( report( vA ) );
                     returnValue = false;
                 }
+                
+                if ( checkPoint )
+                {
+                	String checkPointName = currentUrl.replace( "/", "_" ).replace( "\\", "_" ).replace( ".", "_" ).replace( ":", "_" ).replace( "?", "_" ).replace( "#", "_" );
+                	try
+                	{
+                		dumpState( webDriver, checkPointName, 0, 0 );
+                	}
+                	catch( Exception e )
+                	{
+                		e.printStackTrace();
+                	}
+                }
+                
             }
             
             return returnValue;

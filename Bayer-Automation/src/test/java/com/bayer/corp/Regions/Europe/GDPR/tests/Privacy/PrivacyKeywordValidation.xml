@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
+    
+ <validation name="Nutzung der Website">
+    <description>Text Verification</description>
+   		<tag name="//*"> 
+    		<text type="contains">
+    			Nutzung der Website
+			</text>
+    	</tag>
+    </validation>
+    
+    <validation name="Informationen über Ihre Rechte">
+    <description>Footer Elements</description>
+		<tag name="//*"> 
+			<text type="contains">
+				Informationen über Ihre Rechte
+			</text>
+		</tag>
+	</validation>
+	
+	<validation name="Profiling">
+    <description>Footer Elements</description>
+		<tag name="//*"> 
+			<text type="contains">
+				Profiling
+			</text>
+		</tag>
+	</validation>		
+    
+    <validation name="Datenübertragbarkeit">
+    <description>Footer Elements</description>
+		<tag name="//*"> 
+			<text type="contains">
+				Datenübertragbarkeit
+			</text>
+		</tag>
+	</validation>		
+	
+	<validation name="Aufsichtsbehörde">
+    <description>Footer Elements</description>
+		<tag name="//*"> 
+			<text type="contains">
+				Aufsichtsbehörde
+			</text>
+		</tag>
+	</validation>		
+    
+</validationCollection>

@@ -1,4 +1,4 @@
-package com.bayer.corp.Regions.Germany.GDPR.tests.Privacy.steps;
+package com.bayer.corp.Regions.Europe.GDPR.tests.Privacy.steps;
 
 import static org.testng.Assert.assertNotNull;
 

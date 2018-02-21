@@ -1,4 +1,4 @@
-package com.bayer.corp.Regions.Germany.GDPR.tests.Privacy;
+package com.bayer.corp.Regions.Europe.GDPR.tests.Privacy;
 
 import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
 import com.bayer.corp.Regions.Germany.GDPR.tests.Privacy.steps.PrivacyPolicy;
@@ -37,6 +37,7 @@ public class PrivacyTest extends AbstractTest {
 		
 			
 	private String url = "https://www.priorin.de/";
+	private String miraID = null;
 	private int parentRowNum = 1;
 	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/urlListBatch4.xlsx";	    
 			public String getUrl(){ 

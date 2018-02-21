@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.coppertone.tests.SiteWideTests.Legal.steps;
+package com.bayer.marketing.consumerHealth.citracal.tests.SiteWideTests.UniversalTests.steps;
 
 import java.io.BufferedReader;
 import javax.swing.ImageIcon;
@@ -14,10 +14,10 @@ import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 import com.sun.jna.platform.unix.X11;
 
-public class ExampleStep extends AbstractStep
+public class AccessibilityStep extends AbstractStep
 {
 
-    public ExampleStep()
+    public AccessibilityStep()
     {
         super( "message", "error message" );
     }

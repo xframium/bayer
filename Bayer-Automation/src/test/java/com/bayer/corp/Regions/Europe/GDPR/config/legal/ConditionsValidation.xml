@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
+    <validation name="Conditions">
+        <description>Conditions of Use</description>
+        <tag name="//*">
+            <text type="contains">Conditions of Use</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">Access to and use of this website are subject to the following conditions. Please do not use this website unless you agree with these conditions. This website has been developed by Bayer AG (hereinafter to be referred to as BAYER) and is administered by the same. We reserve the right to discontinue or to make partial or complete modifications to this website or to the General Conditions of Use, to our General Terms and Conditions, and to our Conditions of Sale and Delivery. Please note that we may make such changes at our own discretion and without prior announcement. We must therefore ask you, next time you visit this website, to view the conditions again and to note any changes or amendments that may have been made.
+         </text>
+            
+        </tag>
+    </validation>
+    
+    <validation name="SurrenderOfUse">
+        <description>Conditions of Use</description>
+        <tag name="//*">
+            <text type="contains">Surrender of Use and Benefit</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">All details, documents and illustrations published on this website are the sole property of BAYER. Any permission to use the same is granted on the proviso that the relevant copyright note is displayed on all copies, that such details are only used for personal purposes, that they are not exploited commercially, that the details are not modified in any way and that all illustrations gained from the website are only used in conjunction with the accompanying text.</text>   
+        </tag>
+        <tag name="//*">
+         <text type="contains">In derogation from the above, the following applies to</text>   
+        </tag>
+        <tag name="//*">
+         <text type="contains">video footage at http://www.tv-footage.bayer.com: All video footage published on this website and offered for download is the sole property of BAYER or has been licensed to BAYER by third parties. It may be used for purposes of editorial reporting in relevant media provided that its content is not distorted by the addition of your own editorial material. Any non-editorial, commercial use of this video material for your own products or purposes is strictly prohibited.</text>   
+        </tag>
+        <tag name="//*">
+         <text type="contains">download of info graphics at http://www.research.bayer.com: Usage for non-profit purposes is allowed by naming „research – the Bayer scientific magazine“ as source. Resale to third parties is prohibited.</text>   
+        </tag>
+    </validation>
+    
+    <validation name="Trademarks">
+        <description>Trademarks and Copyright</description>
+        <tag name="//*">
+            <text type="contains">Trademarks and Copyright</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">All trademarks on this website are the property of Bayer, unless otherwise noted or in any other way perceivable as third party rights. Any unauthorized use of these trademarks or other materials is expressly prohibited and constitutes a violation of copyright, trademark law or other industrial property rights.</text>   
+        </tag>
+        <tag name="//*">
+         <text type="contains">In derogation from the above, the following applies to video footage at http://www.tv-footage.bayer.com: The user may cite the trademarks in editorial reporting based on the video footage for a period of three years from the date of publication provided that such reporting does not place the brands in a discreditory context. Any non-editorial, commercial use of any kind whatsoever is prohibited and will be considered an infringement of trademark rights and/or any other intellectual property rights.
+         </text>   
+        </tag>
+    </validation>
+    
+    <validation name="Liability">
+        <description>Limited Liability</description>
+        <tag name="//*">
+            <text type="contains">Limited Liability</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">BAYER has compiled the detailed information provided on this website from internal and external sources to the best of its knowledge and belief, using professional diligence. We endeavor to expand and update this range of information on an ongoing basis. The information on this website is purely for the purpose of presenting BAYER and its products and services. However, no representation is made or warranty given, either expressly or tacitly, for the completeness or correctness of the information on this website. Please be aware that this information although accurate on the day it was published may no longer be up to date. We therefore recommend that you check any information you obtain from this website prior to using it in whatever form. Advice given on this website does not exempt you from conducting your own checks on our latest advice – particularly our safety datasheets and technical specifications – and on our products, with a view to their suitability for the intended processes and purposes. Should you require any advice or instructions concerning our products or services, please contact us directly. Users of this website declare that they agree to access the website and its content at their own risk. Neither BAYER nor third parties involved in the writing, production or transmission of this website can be held liable for damage or injury resulting from access or the impossibility of access or from the use or impossibility of use of this website or from the fact that you have relied on information given on this website.</text>
+            
+        </tag>
+    </validation>
+    
+    <validation name="ThirdPartyLinks">
+        <description>Links to third-party websites</description>
+        <tag name="//*">
+            <text type="contains">Websites of Third-party Vendors/Links</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">This website contains links/references to third-party websites. By providing such links, BAYER does not give its approval to their contents. Neither does BAYER accept any responsibility for the availability or the contents of such websites or any liability for damage or injury resulting from the use of such contents, of whatever form. BAYER offers no guarantee that pages linked to provide information of consistent quality. Links to other websites are provided to website users merely for the sake of convenience. Users access such websites at their own risk. The choice of links should in no way restrict users to the linked pages.</text>
+            
+        </tag>
+    </validation>
+    
+    <validation name="Details">
+        <description>Details Supplied</description>
+        <tag name="//*">
+            <text type="contains">Details Supplied by Yourself</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">The user of this website is fully responsible for the content and correctness of details he or she sends to BAYER as well as for the non-violation of any third-party rights that may be involved in such details. The user gives his or her consent for BAYER to store such details and to use the same for the purpose of statistical analysis or for any other specified business purpose, unless the information involves personal details, going beyond master data or usage data as defined in sections 14 and 15 of the German Tele Media Act (Telemediengesetz). In particular, BAYER is entitled to use the contents of such messages, including ideas, inventions, blueprints, techniques and expertise contained therein, for any purpose, such as the development, production and/or marketing of products or services and to reproduce such information and make it available to third parties without any limitations.</text>  
+        </tag>
+    </validation>
+    
+    <validation name="International">
+        <description>International Users</description>
+        <tag name="//*">
+            <text type="contains">International Users</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">This website is checked, operated and updated by BAYER at Leverkusen, Germany. It is intended for international use. However BAYER gives no guarantee that the details presented on this website are correct worldwide, and, in particular, that products and services will be available with the same appearance, in the same sizes or on the same conditions throughout the world. Should you call up this website or download contents, please note that it is your own responsibility to ensure that you act in compliance with local legislation applicable in that place.</text>   
+        </tag>
+        <tag name="//*">
+         <text type="contains">Products mentioned on this website may come in different packaging, in different package sizes, or with different lettering or markings, depending on the country.</text>   
+        </tag>
+        <tag name="//*">
+         <text type="contains">In the USA business is conducted by the Bayer Corporation. Customers in the USA are requested to address to this entity.</text>   
+        </tag>
+    </validation>
+    
+    <validation name="Products">
+        <description>Sale of Bayer products</description>
+        <tag name="//*">
+            <text type="contains">Sale of BAYER Products</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">Our products are sold in accordance with the current version of our General Conditions of Sale and Delivery.</text>   
+        </tag>
+    </validation>
+    
+    <validation name="Law">
+        <description>Applicable Law</description>
+        <tag name="//*">
+            <text type="contains">Applicable Law</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">Any legal claims or lawsuits in conjunction with this website or its use are subject to the interpretation of the laws of the Federal Republic of Germany, except for the provisions of international private law and the Hague Convention relating to a Uniform Law on the International Sale of Goods of July 1, 1964 and in the UN Sales Convention of April 11, 1980.</text>  
+        </tag>
+    </validation>
+    
+    <validation name="Statements">
+        <description>Forward-looking Statements</description>
+        <tag name="//*">
+            <text type="contains">Forward-looking Statements</text>
+        </tag>
+        <tag name="//*">
+         <text type="contains">This website may contain forward-looking statements based on current assumptions and forecasts made by Bayer management. Various known and unknown risks, uncertainties and other factors could lead to material differences between the actual future results, financial situation, development or performance of the company and the estimates given here. These factors include those discussed in Bayer's public reports which are available on the Bayer website at www.bayer.com The company assumes no liability whatsoever to update these forward-looking statements or to conform them to future events or developments.</text>
+            
+        </tag>
+    </validation>
+    
+    
+</validationCollection>
