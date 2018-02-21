@@ -47,13 +47,15 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class PrivacyPolicy extends AbstractStep
 {
-	public static int rowNumber  = 0;
-	public static String newUrl = "";
-    public PrivacyPolicy(String url, int parentRowNum)
+	private static int rowNumber  = 0;
+	private static String newUrl = "";
+	private static String cCode = "";
+    public PrivacyPolicy(String url, int parentRowNum, String countryCode)
     {
         super( "message", "error message" );
         this.newUrl = url;
         this.rowNumber = parentRowNum;
+        this.cCode = countryCode;
     }
     
 	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/MIRA_Websites_Germany.xlsx";
@@ -87,7 +89,7 @@ public class PrivacyPolicy extends AbstractStep
     	///////Cookie Check 1////////
       	try
       	{	
-  	    	BayerWebElement cookiesConf1 = waitForVisible("bayer.cookiesConfirm", webDriver, 15);
+  	    	BayerWebElement cookiesConf1 = waitForVisible("bayer." +cCode+".cookiesConfirm", webDriver, 15);
   	    	cookieName = cookiesConf1.getText();
   	    	cookiesConf1.click();
 
@@ -103,8 +105,8 @@ public class PrivacyPolicy extends AbstractStep
     	if(urlList.contains("Datenschutz")) {
         	
     		 try {
-		    	   waitForElement( "gdpr.privacyV2Footer", webDriver, 15 );
-			       BayerWebElement privacy2Footer = getElement("gdpr.privacyV2Footer", webDriver);
+		    	   waitForElement( "gdpr."+cCode+".privacyV2Footer", webDriver, 15 );
+			       BayerWebElement privacy2Footer = getElement("gdpr."+cCode+".privacyV2Footer", webDriver);
 			       Util.scrollToElement(webDriver, privacy2Footer, wait);
 	           		
 	           		if(privacy2Footer.isDisplayed()){
@@ -172,8 +174,8 @@ public class PrivacyPolicy extends AbstractStep
 				 			}
 		 		   if(checkFlag == false){
 		 		      try {
-		    	   waitForElement( "gdpr.privacyV2FooterID", webDriver, 15 );
-			       BayerWebElement privacy2 = getElement("gdpr.privacyV2FooterID", webDriver);
+		    	   waitForElement( "gdpr."+cCode+".privacyV2FooterID", webDriver, 15 );
+			       BayerWebElement privacy2 = getElement("gdpr."+cCode+".privacyV2FooterID", webDriver);
 			       Util.scrollToElement(webDriver, privacy2, wait);
 	           		
 	           		if(privacy2.isDisplayed()){
@@ -243,8 +245,8 @@ public class PrivacyPolicy extends AbstractStep
 		 		   }//end check flag if
 		 		  if(checkFlag == false){
 		 		      try {
-		    	   waitForElement( "gdpr.privacyV2", webDriver, 15 );
-			       BayerWebElement privacy2 = getElement("gdpr.privacyV2", webDriver);
+		    	   waitForElement( "gdpr."+cCode+".privacyV2", webDriver, 15 );
+			       BayerWebElement privacy2 = getElement("gdpr."+cCode+".privacyV2", webDriver);
 			       Util.scrollToElement(webDriver, privacy2, wait);
 	           		
 	           		if(privacy2.isDisplayed()){
@@ -317,8 +319,8 @@ public class PrivacyPolicy extends AbstractStep
             /*BayerWebElement popup = getElement("bayer.cookiesVisibleDE", webDriver); */
             //System.out.println("Stop 1");
  		       try {
- 		    	   waitForElement( "gdpr.privacyV1Footer", webDriver, 15 );
- 			       BayerWebElement privacy1Footer = getElement("gdpr.privacyV1Footer", webDriver);
+ 		    	   waitForElement( "gdpr."+cCode+".privacyV1Footer", webDriver, 15 );
+ 			       BayerWebElement privacy1Footer = getElement("gdpr."+cCode+".privacyV1Footer", webDriver);
  			       Util.scrollToElement(webDriver, privacy1Footer, wait);
  	           		
  	           		if(privacy1Footer.isDisplayed()){
@@ -387,8 +389,8 @@ public class PrivacyPolicy extends AbstractStep
 					 			}
 		 		      if(checkFlag == false){
 			 		      try {
-			    	   waitForElement( "gdpr.privacyV1FooterID", webDriver, 15 );
-				       BayerWebElement privacy2 = getElement("gdpr.privacyV1FooterID", webDriver);
+			    	   waitForElement( "gdpr."+cCode+".privacyV1FooterID", webDriver, 15 );
+				       BayerWebElement privacy2 = getElement("gdpr."+cCode+".privacyV1FooterID", webDriver);
 				       Util.scrollToElement(webDriver, privacy2, wait);
 		           		
 		           		if(privacy2.isDisplayed()){
@@ -458,8 +460,8 @@ public class PrivacyPolicy extends AbstractStep
 		 		      }//end check flag if
 			 		   if(checkFlag == false){
 			 		      try {
-			    	   waitForElement( "gdpr.privacyV1", webDriver, 15 );
-				       BayerWebElement privacy1 = getElement("gdpr.privacyV1", webDriver);
+			    	   waitForElement( "gdpr."+cCode+".privacyV1", webDriver, 15 );
+				       BayerWebElement privacy1 = getElement("gdpr."+cCode+".privacyV1", webDriver);
 				       Util.scrollToElement(webDriver, privacy1, wait);
 		           		
 		           		if(privacy1.isDisplayed()){
@@ -532,8 +534,8 @@ public class PrivacyPolicy extends AbstractStep
     	if(urlList.contains("Datenschutzinformation")) {
         	
     		try {
-		    	   waitForElement( "gdpr.privacyV3Footer", webDriver, 15 );
-			       BayerWebElement privacy3Footer = getElement("gdpr.privacyV3Footer", webDriver);
+		    	   waitForElement( "gdpr."+cCode+".privacyV3Footer", webDriver, 15 );
+			       BayerWebElement privacy3Footer = getElement("gdpr."+cCode+".privacyV3Footer", webDriver);
 			       Util.scrollToElement(webDriver, privacy3Footer, wait);
 	           		
 	           		if(privacy3Footer.isDisplayed()){
@@ -603,8 +605,8 @@ public class PrivacyPolicy extends AbstractStep
     			
 		 		   if(checkFlag == false){
 		 		      try {
-		    	   waitForElement( "gdpr.privacyV3", webDriver, 15 );
-			       BayerWebElement privacy3 = getElement("gdpr.privacyV3", webDriver);
+		    	   waitForElement( "gdpr."+cCode+".privacyV3", webDriver, 15 );
+			       BayerWebElement privacy3 = getElement("gdpr."+cCode+".privacyV3", webDriver);
 			       Util.scrollToElement(webDriver, privacy3, wait);
 	           		
 	           		if(privacy3.isDisplayed()){
@@ -675,8 +677,8 @@ public class PrivacyPolicy extends AbstractStep
         }
         if(urlList.contains("Datenschutzpolicy")) {
         	try {
-		    	   waitForElement( "gdpr.privacyV4Footer", webDriver, 15 );
-			       BayerWebElement privacy4Footer = getElement("gdpr.privacyV4Footer", webDriver);
+		    	   waitForElement( "gdpr."+cCode+".privacyV4Footer", webDriver, 15 );
+			       BayerWebElement privacy4Footer = getElement("gdpr."+cCode+".privacyV4Footer", webDriver);
 			       Util.scrollToElement(webDriver, privacy4Footer, wait);
 	           		
 	           		if(privacy4Footer.isDisplayed()){
@@ -745,8 +747,8 @@ public class PrivacyPolicy extends AbstractStep
 				 			}
 		 		   if(checkFlag == false){
 		 		      try {
-		    	   waitForElement( "gdpr.privacyV4", webDriver, 15 );
-			       BayerWebElement privacy4 = getElement("gdpr.privacyV4", webDriver);
+		    	   waitForElement( "gdpr."+cCode+".privacyV4", webDriver, 15 );
+			       BayerWebElement privacy4 = getElement("gdpr."+cCode+".privacyV4", webDriver);
 			       Util.scrollToElement(webDriver, privacy4, wait);
 	           		
 	           		if(privacy4.isDisplayed()){
