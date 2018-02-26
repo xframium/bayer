@@ -39,8 +39,10 @@ public class BlueSkylivingNavStep extends AbstractStep {
 		this.register(webDriver, wait, blueSkyLivingUrl);
 
 		// Login to Claritin application
-		this.login(webDriver, wait, blueSkyLivingUrl);
+		//this.login(webDriver, wait, blueSkyLivingUrl);
 
+		webDriver.navigate().to(blueSkyLivingUrl);
+		
 		waitForElement("claritin.bsl.read.articles", webDriver, 30);
 		BayerWebElement read = getElement("claritin.bsl.read.articles", webDriver);
 		Util.scrollToElement(webDriver, read, wait);
@@ -99,9 +101,9 @@ public class BlueSkylivingNavStep extends AbstractStep {
 				webDriver, "claritin.bsl.library.allergy.article9.read.validate", wait);
 		this.renderAllArticles(webDriver, wait);
 
-		this.validateArticle("claritin.bsl.library.allergy.article10", "claritin.bsl.library.allergy.article10.read",
+		/*this.validateArticle("claritin.bsl.library.allergy.article10", "claritin.bsl.library.allergy.article10.read",
 				webDriver, "claritin.bsl.library.allergy.article10.read.validate", wait);
-		this.renderAllArticles(webDriver, wait);
+		this.renderAllArticles(webDriver, wait);*/
 
 		this.validateArticle("claritin.bsl.library.allergy.article11", "claritin.bsl.library.allergy.article11.read",
 				webDriver, "claritin.bsl.library.allergy.article11.read.validate", wait);
@@ -281,28 +283,43 @@ public class BlueSkylivingNavStep extends AbstractStep {
 	public void login(BayerWebDriver webDriver, WebDriverWait wait, String blueSkyLivingUrl) {
 		// Recall base URL
 		webDriver.navigate().to(blueSkyLivingUrl);
-
+		
+		if(isAlertPresents(webDriver)) {   	
+	    	webDriver.switchTo().alert().sendKeys("colin"+Keys.TAB+"Bayer123");
+	    	webDriver.switchTo().alert().accept();
+    	}
+		
+		wait=new WebDriverWait(webDriver, 60);
+		
 		// wait for login link to visible
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='log-in']")));
-
+		
 		// Move to login link and click on it
 		BayerWebElement login = getElement("claritin.bsl.login", webDriver);
 		Util.scrollToElement(webDriver, login, wait);
 		login.click();
 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='Log In']")));
+		
 		// Enter User name
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='username']")));
 		waitForElement("claritin.bsl.login.username", webDriver, 30);
 		BayerWebElement username = getElement("claritin.bsl.login.username", webDriver);
+		Util.scrollToElement(webDriver, username, wait);
 		username.sendKeys(userName);
 
 		// Enter Password
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='password']")));
 		waitForElement("claritin.bsl.login.password", webDriver, 30);
 		BayerWebElement passwrd = getElement("claritin.bsl.login.password", webDriver);
+		Util.scrollToElement(webDriver, passwrd, wait);
 		passwrd.sendKeys(password);
 
 		// Submit the credentials
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Login']")));
 		waitForElement("claritin.bsl.login.submit", webDriver, 30);
 		BayerWebElement submit = getElement("claritin.bsl.login.submit", webDriver);
+		Util.scrollToElement(webDriver, submit, wait);
 		submit.click();
 
 		// wait for login to successful

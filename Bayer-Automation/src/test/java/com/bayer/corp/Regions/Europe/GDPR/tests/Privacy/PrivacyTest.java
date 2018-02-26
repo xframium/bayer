@@ -1,7 +1,6 @@
 package com.bayer.corp.Regions.Europe.GDPR.tests.Privacy;
 
-import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
-import com.bayer.corp.Regions.Germany.GDPR.tests.Privacy.steps.PrivacyPolicy;
+import com.bayer.corp.Regions.Europe.GDPR.tests.Privacy.steps.PrivacyPolicy;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -38,6 +37,7 @@ public class PrivacyTest extends AbstractTest {
 			
 	private String url = "https://www.priorin.de/";
 	private String miraID = null;
+	private String countryCode = "DE";
 	private int parentRowNum = 1;
 	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/urlListBatch4.xlsx";	    
 			public String getUrl(){ 
@@ -79,7 +79,7 @@ public class PrivacyTest extends AbstractTest {
 				
 				for(int c = 0; c < numEntries; c ++) { 
 					url = "http://"+urlNames[c];
-					executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum)});
+					executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum, countryCode)});
 					parentRowNum++;
 					System.out.println("Parent row num is " + parentRowNum);
 				}
@@ -89,7 +89,7 @@ public class PrivacyTest extends AbstractTest {
 		    @Test ( dataProvider = "deviceList", enabled=true)
 		    public void privacyNavigationLoop( DeviceContainer dC ) {
 		    	
-		    	executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum) } );	
+		    	executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum, countryCode) } );	
 		        
 		    }
 		    @TestDescriptor( testName="GDPR Accessibility Test" )
