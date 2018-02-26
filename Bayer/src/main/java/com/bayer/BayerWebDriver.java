@@ -75,7 +75,7 @@ public class BayerWebDriver implements WebDriver, FindsByClassName, FindsByCssSe
     		return null;
     }
     
-    protected boolean verifySwitchWindow( String winExpValue )
+    public boolean verifySwitchWindow( String winExpValue )
     {
 
         Set<String> availableWindows = getWindowHandles();

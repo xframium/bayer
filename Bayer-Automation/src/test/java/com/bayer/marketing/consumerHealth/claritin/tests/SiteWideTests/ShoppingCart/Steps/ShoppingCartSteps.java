@@ -1,4 +1,4 @@
-package com.bayer.marketing.consumerHealth.claritin.tests.SiteWideTests.ContactUs.Steps;
+package com.bayer.marketing.consumerHealth.claritin.tests.SiteWideTests.ShoppingCart.Steps;
 
 import java.io.BufferedReader;
 import javax.swing.ImageIcon;
@@ -31,7 +31,7 @@ import com.applitools.eyes.TestResults;
 import com.applitools.eyes.selenium.Eyes;
 import com.applitools.eyes.selenium.StitchMode;
 
-public class ContactUsSteps extends AbstractStep
+public class ShoppingCartSteps extends AbstractStep
 {
 
 	private static final int HEADER_SIZE = 65; // Should be adopted according to device
@@ -39,7 +39,7 @@ public class ContactUsSteps extends AbstractStep
     private static final String PASSWORD = "Bayer1234";
     private static final String applitoolsKey = "x836lZBCjnk0zlODvlQFDN906107j109S9nD0d101j5I8OX9o110";
 	
-    public ContactUsSteps()
+    public ShoppingCartSteps()
     {
         super( "message", "error message" );
     }
@@ -47,7 +47,7 @@ public class ContactUsSteps extends AbstractStep
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {	
     	
-    	
+    	/*
     	ExamplePage page = new ExamplePage();
     	Eyes eyes = new Eyes();
     	eyes.setApiKey(applitoolsKey);
@@ -68,7 +68,7 @@ public class ContactUsSteps extends AbstractStep
     	   
     	} 
     	
-    	//eyes.checkWindow(); 
+
     	
     	//BayerWebElement xbutton = getElement( "claritin.policyPopup.button", webDriver );
     	 BatchInfo ClaritinContact = new BatchInfo("ClaritinContact");
@@ -76,25 +76,17 @@ public class ContactUsSteps extends AbstractStep
            eyes.setForceFullPageScreenshot(true);
            
            eyes.setStitchMode(StitchMode.CSS);
-        /*   
-    	if(xbutton.isDisplayed()){
-    		xbutton.click();
-    	}
-    	*/
-    	eyes.checkWindow(); 
-    	
-    	waitForElement("claritin.contactUs", webDriver, 15);
-    	BayerWebElement contactUs = getElement( "claritin.contactUs", webDriver );
-    	contactUs.click();
+           //eyes.checkWindow(); 
+*/
     	
     	
-    	webDriver.verifySwitchWindow("https://www.livewell.bayer.com/contactus/");
     	
-    	eyes.checkWindow(); 
     	
-    	waitForElement("claritin.contactUs.check", webDriver, 15);
+    	(//*[@class='morph-sct-cart-badge-indicator'])[1]
     	
-    	eyes.close();
+    	
+    	
+    	//eyes.close();
     	
 
         return true;
