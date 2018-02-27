@@ -24,7 +24,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class ExamplePage extends AbstractTest {
 	
-private String url = "https://www.drscholls.com/products/";
+private String url = "https://www.coppertone.com/";
 private int parentRowNum = 1;  
 	public String getUrl(){ 
 		return url;

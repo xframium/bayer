@@ -19,11 +19,15 @@ import io.appium.java_client.pagefactory.WindowsBy;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 import com.applitools.eyes.BatchInfo;
+import com.applitools.eyes.FixedCutProvider;
 import com.applitools.eyes.ProxySettings;
 import com.applitools.eyes.RectangleSize;
 import com.applitools.eyes.TestResults;
 import com.applitools.eyes.selenium.Eyes;
 import com.applitools.eyes.selenium.StitchMode;
+import com.applitools.eyes.selenium.fluent.Target;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -56,76 +60,41 @@ public class ExampleStep extends AbstractStep
     
     @Override
     protected boolean _executeStep(BayerWebDriver webDriver){	
-    	/*try
-      	{	
-    		BayerWebElement loginConf1 = waitForVisible("bayer.loginPopup", driver1, 15);
-  	    	if(loginConf1.isDisplayed()){
-  	    		waitForElement( "bayer.loginUsername", driver1, 15 );
-  	    		BayerWebElement login = getElement("bayer.loginUsername", driver1);
-  	    		login.sendKeys("NAPilot");
-  	    		waitForElement( "bayer.loginPassword", driver1, 15 );
-  	    		BayerWebElement password = getElement("bayer.loginPassword", driver1);
-  	    		login.sendKeys("xa=Ym52h");
-  	    	}
-
-      	}
-      	catch( Exception e )
-      	{
-      	}
-    	*/
     	ExamplePage page = new ExamplePage();
     	Eyes eyes = new Eyes();
 
         eyes.setApiKey(applitoolsKey);
-		/*
-        String user = null;
-		try {
-			user = URLEncoder.encode(USER_NAME, "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        String password = null;
-		try {
-			password = URLEncoder.encode(PASSWORD, "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-        URL url = null;
-		try {
-			url = new URL("https://" + user + ":" + password + "@bayer.perfectomobile.com/nexperience/wd/hub");
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	
-       RemoteWebDriver driver2 = new RemoteWebDriver(url, webDriver.getCapabilities());
-	   */
+        //webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         try {
         	eyes.setProxy(new ProxySettings("http://ptb-proxy.na.bayer.cnb/"));
+        	if (webDriver.getCapabilities().getBrowserName() == "Safari") {
+                eyes.setImageCut(new FixedCutProvider(63,135,0,0)); //remove URL and footer. values = (header, footer, left, right)
+        	}
             webDriver.asRemote().get(page.getUrl());
-            BatchInfo drScholls = new BatchInfo("Dr. Scholl's");
+            BatchInfo drScholls = new BatchInfo("Bayer Global");
             eyes.setBatch(drScholls);
             eyes.setForceFullPageScreenshot(true);
             //eyes.setRegionToCheck(regionToCheck);
             eyes.setStitchMode(StitchMode.CSS);
             //eyes.setImageCut(new FixedCutProvider(HEADER_SIZE , 0, 0, 0));
             //eyes.setBatch(DrScholls);
-            /*System.out.println("Device platform: "+webDriver.getCapabilities().getPlatform().toString());
-           if(webDriver.getCapabilities().getPlatform().equals("IOS")||webDriver.getCapabilities().getPlatform().equals("Android"))
+            String platformName = webDriver.getCapabilities().getCapability("platformName").toString();
+            System.out.println(platformName);
+           if((platformName.equals("IOS"))||(platformName.equals("Android")))
            { 
-        	   eyes.open(webDriver, "Dr.Scholl's Mobile", "DrScholls Mobile Test" + 3);
+        	   System.out.println("Pass if statement");
+        	   eyes.open(webDriver.asRemote(), "Bayer Global Mobile Test1", "ayer Global Mobile Test" + webDriver.getCapabilities().getCapability("platformName"));
         	   
            }
            else {
-        	   eyes.open(webDriver.asRemote(), "Dr.Scholl's", "Dr.Scholl's" + 3, new RectangleSize(1510,900)); 
-        	   }
-            */
-           eyes.open(webDriver.asRemote(), "Dr.Scholl's Mobile", "DrScholls Mobile Test" + 3);
-           eyes.checkWindow("Dr.Scholl's Page #" + 3);
-            System.out.println("Device platform: "+webDriver.getCapabilities().getPlatform().toString());
+        	   System.out.println("Pass else statement");
+        	   eyes.open(webDriver.asRemote(), "ayer Global Web", "ayer Global" + webDriver.getCapabilities().getCapability("platformName"), new RectangleSize(1510,900)); 
+        	   
+           }
+           
+           //eyes.open(webDriver.asRemote(), "Dr.Scholl's Mobile", "DrScholls " +webDriver.getCapabilities().getPlatform()+" Test" + 3);
+           //eyes.check("chart", Target.region(By.));
+           eyes.checkWindow("ayer Global Page #" + 4);
             eyes.close();
             //TestResults results = eyes.close(false);
             //assertEquals(true, results.isPassed());

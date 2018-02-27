@@ -9,6 +9,8 @@ import org.apache.commons.collections.functors.IfClosure;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
 //import com.bayer.common.Accessibility;
 import com.bayer.common.utility.*;
 import com.bayer.exampleTemplate.tests.Example.ExamplePage;
@@ -29,15 +31,14 @@ public class FacebookStep extends AbstractStep
     protected boolean _executeStep( BayerWebDriver webDriver ) {	
     	
     	
-    	
     	waitForElement("claritin.key", webDriver, 15);
     	
     	waitForElement("claritin.facebook.button", webDriver, 15);
     	BayerWebElement fbButton = getElement( "claritin.facebook.button", webDriver );
     	fbButton.click();
     	try {
-    		waitForElement("claritin.cookiePopup.button", webDriver, 15);
-        	BayerWebElement policyPopup = getElement( "claritin.facebook.button", webDriver );
+    		waitForElement("claritin.policyPopup.button", webDriver, 15);
+        	BayerWebElement policyPopup = getElement( "claritin.policyPopup.button", webDriver );
         	policyPopup.click();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -46,6 +47,7 @@ public class FacebookStep extends AbstractStep
     	BayerWebElement continueButton = getElement( "claritin.facebook.confirm", webDriver );
     	continueButton.click();
     	
+    	webDriver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
     	
         return true;
         
