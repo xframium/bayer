@@ -71,17 +71,17 @@ public class ContactUsSteps extends AbstractStep
     	//eyes.checkWindow(); 
     	
     	//BayerWebElement xbutton = getElement( "claritin.policyPopup.button", webDriver );
-    	 BatchInfo ClaritinContact = new BatchInfo("ClaritinContact");
-    	   eyes.setBatch(ClaritinContact);
-           eyes.setForceFullPageScreenshot(true);
+    	// BatchInfo ClaritinContact = new BatchInfo("ClaritinContact");
+    	  // eyes.setBatch(ClaritinContact);
+        //   eyes.setForceFullPageScreenshot(true);
            
-           eyes.setStitchMode(StitchMode.CSS);
+         //  eyes.setStitchMode(StitchMode.CSS);
         /*   
     	if(xbutton.isDisplayed()){
     		xbutton.click();
     	}
     	*/
-    	eyes.checkWindow(); 
+    	//eyes.checkWindow(); 
     	
     	waitForElement("claritin.contactUs", webDriver, 15);
     	BayerWebElement contactUs = getElement( "claritin.contactUs", webDriver );
@@ -90,7 +90,7 @@ public class ContactUsSteps extends AbstractStep
     	
     	webDriver.verifySwitchWindow("https://www.livewell.bayer.com/contactus/");
     	
-    	eyes.checkWindow(); 
+    	//eyes.checkWindow(); 
     	
     	waitForElement("claritin.contactUs.check", webDriver, 15);
     	
