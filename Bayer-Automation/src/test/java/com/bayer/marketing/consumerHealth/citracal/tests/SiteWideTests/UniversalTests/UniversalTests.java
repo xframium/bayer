@@ -2,7 +2,6 @@ package com.bayer.marketing.consumerHealth.citracal.tests.SiteWideTests.Universa
 
 import com.bayer.marketing.consumerHealth.coppertone.tests.SiteWideTests.Accessibility.steps.AccessibilityStep;
 import org.testng.annotations.Test;
-
 import com.bayer.common.Accessibility;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;

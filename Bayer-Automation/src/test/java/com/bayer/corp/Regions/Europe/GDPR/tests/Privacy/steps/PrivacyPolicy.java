@@ -8,6 +8,10 @@ import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.EncryptedDocumentException;
@@ -828,122 +832,53 @@ public class PrivacyPolicy extends AbstractStep
         	//cookieName = "Not found";
         	System.out.println("Nothing found.");
         }
-       PrivacyInfo pvinf = new PrivacyInfo(privacyFound, privacyName, phrase1, phrase2, phrase3, phrase4, phrase5, cookieName);
-        privacyData.add(pvinf);
-        FileInputStream inputStream = null;
-		try {
-			inputStream = new FileInputStream(new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/MIRA_Websites_URLs.xlsx"));
-		} catch (FileNotFoundException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
-        Workbook workbook = null;
-		try {
-			workbook = WorkbookFactory.create(inputStream);
-		} catch (EncryptedDocumentException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (InvalidFormatException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+        String connectionString =  
+                "jdbc:sqlserver://HUSHNVC039Q:1433;"
+                		+ "databaseName=GDPR;"
+                + "trustServerCertificate=true;"
+                + "user=TestUser;"  
+                + "password=Bayer@1234;";  
+            // Declare the JDBC objects.  
+            Connection connection = null;  
+            try
+            {
+                Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                System.out.println("Class found ");
+            }
+            catch(java.lang.ClassNotFoundException e)
+            {
+                System.out.println("ClassNotFoundException: ");
+                System.out.println(e.getMessage());
+            }
+            try {  
+            	System.out.println("Establishing connection");
+                connection = DriverManager.getConnection(connectionString);  
+                System.out.println("Connected to database");
+                Statement statement = connection.createStatement();
+                ResultSet rSet = statement.executeQuery(" insert into users (URL, PrivacyFound, PrivacyName, Phase1, Phase2, Phase3, Phase4, Phase5, Cookie_Acceptance_Phrase, MIRA_ID)"
+                        + " values ("+url +"," ?, ?, ?, ?)");
+                
+                /*while (rSet.next()) {
+                         	  
+                	  String urlName = rSet.getString("URL");
+                      //String last = rSet.getString("last");
 
-       // CreationHelper createHelper = workbook.getCreationHelper();
-
-        // Create a Sheet
-		
-		Sheet sheet = workbook.getSheetAt(0);
-		if(rowNumber == 1) { //Adds legend on first execution
-			//Sheet legend = workbook.getSheetAt(1);
-			Sheet legend = null;
-			if(workbook.getNumberOfSheets() == 1) {
-				legend = workbook.createSheet("Legend");
-			}
-			else { 
-				legend = workbook.getSheetAt(1);
-			}
-	        // Create Cell Style for formatting DatA
-	        CellStyle dateCellStyle = workbook.createCellStyle();
-	        Object[][] legendInfo = {
-	                {"", "Legend"},
-	                {"Country:", "Deutschland"},
-	                {" ", " "},
-	                {"Phrase #", "Phrase Name"},
-	                {"Phrase 1:", "Nutzung der Website"},
-	                {"Phrase 2:", "Informationen über Ihre Rechte"},
-	                {"Phrase 3:", "Profiling"},
-	                {"Phrase 4:", "Datenübertragbarkeit"}, 
-	                {"Phrase 5:", "Aufsichtsbehörde"}
-	        };
-	        int legendRowNum = 0;
-	        System.out.println("Creating excel");
-	
-	        for (Object[] datatype : legendInfo) {
-	            Row legendRow= legend.createRow(legendRowNum++);
-	            int colNum = 0;
-	            for (Object field : datatype) {
-	                Cell cell = legendRow.createCell(colNum++);
-	                if (field instanceof String) {
-	                    cell.setCellValue((String) field);
-	                } else if (field instanceof Integer) {
-	                    cell.setCellValue((Integer) field);
-	                }
-	            }
-	        }
-	        for(int i = 0; i < columns.length; i++) {
-	            legend.autoSizeColumn(i);
-	        }
-		}
-        // Create Other rows and cells with employees data
-        int rowNum = 2;
-        //for(int k = 0; k < privacyArray.length; k++) {
-        	//rowNum=pt.getRowNum() + 1;
-        	//pt.setRowNum(rowNum);
-        
-        	//System.out.println("Current row number: " +rowNumber);
-        	Row row = sheet.createRow(rowNumber);
-
-            row.createCell(0).setCellValue(newUrl);
-
-            row.createCell(1).setCellValue(pvinf.getPrivacyFound());
-            row.createCell(2).setCellValue(pvinf.getPrivacyName());               
-            row.createCell(3).setCellValue(pvinf.getPhrase1());
-            row.createCell(4).setCellValue(pvinf.getPhrase2());
-            row.createCell(5).setCellValue(pvinf.getPhrase3()); 
-            row.createCell(6).setCellValue(pvinf.getPhrase4()); 
-            row.createCell(7).setCellValue(pvinf.getPhrase5());
-            row.createCell(8).setCellValue(pvinf.getCookiePhrase());
-            //System.out.println("Current row number: " +rowNum);
-        
-
-		// Resize all columns to fit the content size
-        for(int i = 0; i < columns.length; i++) {
-            sheet.autoSizeColumn(i);
-        }
-
-        // Write the output to a file
-        FileOutputStream fileOut = null;
-		try {
-			fileOut = new FileOutputStream("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/MIRA_Websites_URLs.xlsx");
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        try {
-			workbook.write(fileOut);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        try {
-			fileOut.close();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+                      System.out.println("URL Name: " + urlName);
+                      //System.out.println(", Last: " + last);
+                	}
+                	*/
+            }  
+            catch (Exception e) {  
+                e.printStackTrace();  
+            }  
+            
+            finally {  
+                if (connection != null) 
+                	try { 
+                		connection.close(); 
+                		} 
+                catch(Exception e) {}  
+            }  
     
         System.out.println("End url policy step.");
         return true;
