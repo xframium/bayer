@@ -13,7 +13,7 @@ import com.bayer.test.step.factory.Step;
 
 public class BlueSkylivingNavRun extends AbstractTest {
 
-	public String url = "http://03342-bslqa.photoninfotech.com:8080/claritinblueskyliving";
+	public String url = "https://www.claritinblueskyliving.com/";
 
 	public String getUrl() {
 		return url;
