@@ -79,10 +79,92 @@ public class ShoppingCartSteps extends AbstractStep
            //eyes.checkWindow(); 
 */
     	
+    	waitForElement("claritin.shoppingcart.mobileCheck", webDriver, 15);
+    	BayerWebElement mobileCheck= getElement("claritin.shoppingcart.mobileCheck", webDriver);
     	
+    	if (mobileCheck.isDisplayed()){
+    		
+    		BayerWebElement cartMobile= getElement("claritin.shoppingcart.button.mobile", webDriver);
+    		cartMobile.click();
+    		
+    		waitForElement("claritin.shoppingcart.empty.continue", webDriver, 15);
+    		BayerWebElement cartContinue1= getElement("claritin.shoppingcart.empty.continue", webDriver);
+    		BayerWebElement cartX1= getElement("claritin.shoppingcart.X", webDriver);
+    		
+    		if(cartContinue1.isDisplayed()){
+    			cartContinue1.click();
+    		}else{
+    			cartX1.click();
+    		}
+    		
+    		
+        	BayerWebElement product24hr1= getElement("claritin.shoppingcart.product24hr", webDriver);
+        	product24hr1.click();
+        	
+        	waitForElement("claritin.shoppingcart.addtocart.mobile", webDriver, 15);
+        	BayerWebElement addMobile= getElement("claritin.shoppingcart.addtocart.mobile", webDriver);
+        	addMobile.click();
+        	
+        	waitForElement("claritin.shoppingcart.gotocart", webDriver, 15);
+        	BayerWebElement goToCart1= getElement("claritin.shoppingcart.gotocart", webDriver);
+        	goToCart1.click();
+        	
+        	waitForVisible("claritin.shoppingcart.amazon", webDriver, 15);
+        	BayerWebElement amazonTab1= getElement("claritin.shoppingcart.amazon", webDriver);
+        	amazonTab1.click();
+          	
+        	waitForVisible("claritin.shoppingcart.amazon.buyMobile", webDriver, 15);
+        	BayerWebElement amazonBuy1= getElement("claritin.shoppingcart.amazon.buyMobile", webDriver);
+        	amazonBuy1.click();
+        	
+        	waitForVisible("claritin.shoppingcart.amazon.proceed", webDriver, 15);
+        	BayerWebElement proceed1= getElement("claritin.shoppingcart.amazon.proceed", webDriver);
+        	proceed1.click();
+        	
+        	
+      
+        	
+    		
+    	}else{
+    		BayerWebElement cartDesktop= getElement("claritin.shoppingcart.button.desktop", webDriver);
+    		cartDesktop.click();
+    		
+    		waitForElement("claritin.shoppingcart.empty.continue", webDriver, 15);
+    		BayerWebElement cartContinue2= getElement("claritin.shoppingcart.empty.continue", webDriver);
+    		BayerWebElement cartX2= getElement("claritin.shoppingcart.X", webDriver);
+    		
+    		if(cartContinue2.isDisplayed()){
+    			cartContinue2.click();
+    		}else{
+    			cartX2.click();
+    		}
+    		
+        	BayerWebElement product24hr2= getElement("claritin.shoppingcart.product24hr", webDriver);
+        	product24hr2.click();
+        	
+        	waitForElement("claritin.shoppingcart.addtocart.desktop", webDriver, 15);
+        	BayerWebElement addDesktop= getElement("claritin.shoppingcart.addtocart.desktop", webDriver);
+        	addDesktop.click();
+        	
+        	waitForElement("claritin.shoppingcart.gotocart", webDriver, 15);
+        	BayerWebElement goToCart2= getElement("claritin.shoppingcart.gotocart", webDriver);
+        	goToCart2.click();
+        	
+        	waitForVisible("claritin.shoppingcart.amazon", webDriver, 15);
+        	BayerWebElement amazonTab2= getElement("claritin.shoppingcart.amazon", webDriver);
+          	amazonTab2.click();
+          	
+          	waitForVisible("claritin.shoppingcart.amazon.buyDesktop", webDriver, 15);
+        	BayerWebElement amazonBuy2= getElement("claritin.shoppingcart.amazon.buyDesktop", webDriver);
+        	amazonBuy2.click();
+        	
+         	waitForVisible("claritin.shoppingcart.amazon.proceed", webDriver, 15);
+        	BayerWebElement proceed2= getElement("claritin.shoppingcart.amazon.proceed", webDriver);
+        	proceed2.click();
+        	
+    	}
     	
-    	
-    	(//*[@class='morph-sct-cart-badge-indicator'])[1]
+
     	
     	
     	
