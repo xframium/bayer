@@ -117,6 +117,10 @@ public class ShoppingCartSteps extends AbstractStep
         	BayerWebElement amazonBuy1= getElement("claritin.shoppingcart.amazon.buyMobile", webDriver);
         	amazonBuy1.click();
         	
+        	waitForVisible("claritin.shoppingcart.amazon.proceed", webDriver, 15);
+        	BayerWebElement proceed1= getElement("claritin.shoppingcart.amazon.proceed", webDriver);
+        	proceed1.click();
+        	
         	
       
         	
@@ -153,6 +157,10 @@ public class ShoppingCartSteps extends AbstractStep
           	waitForVisible("claritin.shoppingcart.amazon.buyDesktop", webDriver, 15);
         	BayerWebElement amazonBuy2= getElement("claritin.shoppingcart.amazon.buyDesktop", webDriver);
         	amazonBuy2.click();
+        	
+         	waitForVisible("claritin.shoppingcart.amazon.proceed", webDriver, 15);
+        	BayerWebElement proceed2= getElement("claritin.shoppingcart.amazon.proceed", webDriver);
+        	proceed2.click();
         	
     	}
     	
