@@ -47,7 +47,7 @@ public class ShoppingCartSteps extends AbstractStep
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {	
     	
-    	/*
+    	
     	ExamplePage page = new ExamplePage();
     	Eyes eyes = new Eyes();
     	eyes.setApiKey(applitoolsKey);
@@ -59,25 +59,25 @@ public class ShoppingCartSteps extends AbstractStep
     	if((platformName.equals("IOS"))||(platformName.equals("Android")))
     	{ 
     	   System.out.println("Pass if statement");
-    	   eyes.open(webDriver.asRemote(), "Claritin Desktop", "Claritin Contact Test" + webDriver.getCapabilities().getCapability("platformName"));
+    	   eyes.open(webDriver.asRemote(), "Claritin Desktop", "Claritin Shopping Cart Test" + webDriver.getCapabilities().getCapability("platformName"));
     	   
     	}
     	else {
     	   System.out.println("Pass else statement");
-    	   eyes.open(webDriver.asRemote(), "Claritin Desktop", "Claritin Contact Test" + webDriver.getCapabilities().getCapability("platformName") ); 
+    	   eyes.open(webDriver.asRemote(), "Claritin Desktop", "Claritin Shopping Cart Test" + webDriver.getCapabilities().getCapability("platformName") ); 
     	   
     	} 
     	
 
     	
-    	//BayerWebElement xbutton = getElement( "claritin.policyPopup.button", webDriver );
-    	 BatchInfo ClaritinContact = new BatchInfo("ClaritinContact");
-    	   eyes.setBatch(ClaritinContact);
+  
+    	 BatchInfo ClaritinCart = new BatchInfo("ClaritinCart");
+    	   eyes.setBatch(ClaritinCart);
            eyes.setForceFullPageScreenshot(true);
            
            eyes.setStitchMode(StitchMode.CSS);
-           //eyes.checkWindow(); 
-*/
+          
+           eyes.checkWindow(); 
     	
     	waitForElement("claritin.shoppingcart.mobileCheck", webDriver, 15);
     	BayerWebElement mobileCheck= getElement("claritin.shoppingcart.mobileCheck", webDriver);
@@ -86,6 +86,8 @@ public class ShoppingCartSteps extends AbstractStep
     		
     		BayerWebElement cartMobile= getElement("claritin.shoppingcart.button.mobile", webDriver);
     		cartMobile.click();
+    		
+    		eyes.checkWindow(); 
     		
     		waitForElement("claritin.shoppingcart.empty.continue", webDriver, 15);
     		BayerWebElement cartContinue1= getElement("claritin.shoppingcart.empty.continue", webDriver);
@@ -110,6 +112,7 @@ public class ShoppingCartSteps extends AbstractStep
         	goToCart1.click();
         	
         	waitForVisible("claritin.shoppingcart.amazon", webDriver, 15);
+        	eyes.checkWindow(); 
         	BayerWebElement amazonTab1= getElement("claritin.shoppingcart.amazon", webDriver);
         	amazonTab1.click();
           	
@@ -128,6 +131,8 @@ public class ShoppingCartSteps extends AbstractStep
     	}else{
     		BayerWebElement cartDesktop= getElement("claritin.shoppingcart.button.desktop", webDriver);
     		cartDesktop.click();
+    		
+    		eyes.checkWindow(); 
     		
     		waitForElement("claritin.shoppingcart.empty.continue", webDriver, 15);
     		BayerWebElement cartContinue2= getElement("claritin.shoppingcart.empty.continue", webDriver);
@@ -152,6 +157,7 @@ public class ShoppingCartSteps extends AbstractStep
         	
         	waitForVisible("claritin.shoppingcart.amazon", webDriver, 15);
         	BayerWebElement amazonTab2= getElement("claritin.shoppingcart.amazon", webDriver);
+        	eyes.checkWindow(); 
           	amazonTab2.click();
           	
           	waitForVisible("claritin.shoppingcart.amazon.buyDesktop", webDriver, 15);
@@ -168,7 +174,7 @@ public class ShoppingCartSteps extends AbstractStep
     	
     	
     	
-    	//eyes.close();
+    	eyes.close();
     	
 
         return true;
