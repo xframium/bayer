@@ -832,7 +832,7 @@ public class PrivacyPolicy extends AbstractStep
         	//cookieName = "Not found";
         	System.out.println("Nothing found.");
         }
-        String connectionString =  
+           String connectionString =  
                 "jdbc:sqlserver://HUSHNVC039Q:1433;"
                 		+ "databaseName=GDPR;"
                 + "trustServerCertificate=true;"
@@ -855,9 +855,9 @@ public class PrivacyPolicy extends AbstractStep
                 connection = DriverManager.getConnection(connectionString);  
                 System.out.println("Connected to database");
                 Statement statement = connection.createStatement();
-                ResultSet rSet = statement.executeQuery(" insert into users (URL, PrivacyFound, PrivacyName, Phase1, Phase2, Phase3, Phase4, Phase5, Cookie_Acceptance_Phrase, MIRA_ID)"
-                        + " values ("+url +"," ?, ?, ?, ?)");
-                
+                ResultSet rSet = statement.executeQuery("Insert into users (URL, PrivacyFound, PrivacyName, Phase1, Phase2, Phase3, Phase4, Phase5, Cookie_Acceptance_Phrase, MIRA_ID)" 
+                + " values (" + newUrl +","+ privacyFound +","+privacyName +","+phrase1 +","+ phrase2 +","+phrase3 +","+phrase4 +","+phrase5 +",");
+                System.out.println("Data uploaded");
                 /*while (rSet.next()) {
                          	  
                 	  String urlName = rSet.getString("URL");

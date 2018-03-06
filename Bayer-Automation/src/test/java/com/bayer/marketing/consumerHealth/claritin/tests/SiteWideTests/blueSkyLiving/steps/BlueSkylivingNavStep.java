@@ -39,9 +39,9 @@ public class BlueSkylivingNavStep extends AbstractStep {
 		this.register(webDriver, wait, blueSkyLivingUrl);
 
 		// Login to Claritin application
-		//this.login(webDriver, wait, blueSkyLivingUrl);
+		this.login(webDriver, wait, blueSkyLivingUrl);
 
-		webDriver.navigate().to(blueSkyLivingUrl);
+		//webDriver.navigate().to(blueSkyLivingUrl);
 		
 		waitForElement("claritin.bsl.read.articles", webDriver, 30);
 		BayerWebElement read = getElement("claritin.bsl.read.articles", webDriver);
@@ -97,15 +97,15 @@ public class BlueSkylivingNavStep extends AbstractStep {
 				webDriver, "claritin.bsl.library.allergy.article8.read.validate", wait);
 		this.renderAllArticles(webDriver, wait);
 
-		this.validateArticle("claritin.bsl.library.allergy.article9", "claritin.bsl.library.allergy.article9.read",
+		/*this.validateArticle("claritin.bsl.library.allergy.article9", "claritin.bsl.library.allergy.article9.read",
 				webDriver, "claritin.bsl.library.allergy.article9.read.validate", wait);
-		this.renderAllArticles(webDriver, wait);
+		this.renderAllArticles(webDriver, wait);*/
 
 		/*this.validateArticle("claritin.bsl.library.allergy.article10", "claritin.bsl.library.allergy.article10.read",
 				webDriver, "claritin.bsl.library.allergy.article10.read.validate", wait);
 		this.renderAllArticles(webDriver, wait);*/
 
-		this.validateArticle("claritin.bsl.library.allergy.article11", "claritin.bsl.library.allergy.article11.read",
+		/*this.validateArticle("claritin.bsl.library.allergy.article11", "claritin.bsl.library.allergy.article11.read",
 				webDriver, "claritin.bsl.library.allergy.article11.read.validate", wait);
 		this.renderAllArticles(webDriver, wait);
 
@@ -123,7 +123,7 @@ public class BlueSkylivingNavStep extends AbstractStep {
 
 		this.validateArticle("claritin.bsl.library.allergy.article15", "claritin.bsl.library.allergy.article15.read",
 				webDriver, "claritin.bsl.library.allergy.article15.read.validate", wait);
-		this.renderAllArticles(webDriver, wait);
+		this.renderAllArticles(webDriver, wait);*/
 
 		this.validateArticle("claritin.bsl.library.did.you.know.article1",
 				"claritin.bsl.library.did.you.know.article1.read", webDriver,
@@ -140,27 +140,27 @@ public class BlueSkylivingNavStep extends AbstractStep {
 				"claritin.bsl.library.did.you.know.article3.read.validate", wait);
 		this.renderAllArticles(webDriver, wait);
 
-		this.validateArticle("claritin.bsl.library.did.you.know.article4",
+		/*this.validateArticle("claritin.bsl.library.did.you.know.article4",
 				"claritin.bsl.library.did.you.know.article4.read", webDriver,
 				"claritin.bsl.library.did.you.know.article4.read.validate", wait);
-		this.renderAllArticles(webDriver, wait);
+		this.renderAllArticles(webDriver, wait);*/
 
 		this.validateArticle("claritin.bsl.library.did.you.know.article5",
 				"claritin.bsl.library.did.you.know.article5.read", webDriver,
 				"claritin.bsl.library.did.you.know.article5.read.validate", wait);
 		this.renderAllArticles(webDriver, wait);
 
-		this.validateArticle("claritin.bsl.library.did.you.know.article6",
+		/*this.validateArticle("claritin.bsl.library.did.you.know.article6",
 				"claritin.bsl.library.did.you.know.article6.read", webDriver,
 				"claritin.bsl.library.did.you.know.article6.read.validate", wait);
-		this.renderAllArticles(webDriver, wait);
+		this.renderAllArticles(webDriver, wait);*/
 
 		this.validateArticle("claritin.bsl.library.did.you.know.article16",
 				"claritin.bsl.library.did.you.know.article16.read", webDriver,
 				"claritin.bsl.library.did.you.know.article16.read.validate", wait);
 		this.renderAllArticles(webDriver, wait);
 
-		this.validateArticle("claritin.bsl.library.did.you.know.article7",
+		/*this.validateArticle("claritin.bsl.library.did.you.know.article7",
 				"claritin.bsl.library.did.you.know.article7.read", webDriver,
 				"claritin.bsl.library.did.you.know.article7.read.validate", wait);
 		this.renderAllArticles(webDriver, wait);
@@ -168,7 +168,7 @@ public class BlueSkylivingNavStep extends AbstractStep {
 		this.validateArticle("claritin.bsl.library.did.you.know.article8",
 				"claritin.bsl.library.did.you.know.article8.read", webDriver,
 				"claritin.bsl.library.did.you.know.article8.read.validate", wait);
-		this.renderAllArticles(webDriver, wait);
+		this.renderAllArticles(webDriver, wait);*/
 
 		this.validateArticle("claritin.bsl.library.did.you.know.article9",
 				"claritin.bsl.library.did.you.know.article9.read", webDriver,
@@ -180,7 +180,7 @@ public class BlueSkylivingNavStep extends AbstractStep {
 				"claritin.bsl.library.did.you.know.article10.read.validate", wait);
 		this.renderAllArticles(webDriver, wait);
 
-		this.validateArticle("claritin.bsl.library.did.you.know.article11",
+		/*this.validateArticle("claritin.bsl.library.did.you.know.article11",
 				"claritin.bsl.library.did.you.know.article11.read", webDriver,
 				"claritin.bsl.library.did.you.know.article11.read.validate", wait);
 		this.renderAllArticles(webDriver, wait);
@@ -203,7 +203,7 @@ public class BlueSkylivingNavStep extends AbstractStep {
 		this.validateArticle("claritin.bsl.library.did.you.know.article15",
 				"claritin.bsl.library.did.you.know.article15.read", webDriver,
 				"claritin.bsl.library.did.you.know.article15.read.validate", wait);
-		this.renderAllArticles(webDriver, wait);
+		this.renderAllArticles(webDriver, wait);*/
 
 		this.validateArticle("claritin.bsl.library.get.out.there.article1",
 				"claritin.bsl.library.get.out.there.article1.read", webDriver,
@@ -230,7 +230,7 @@ public class BlueSkylivingNavStep extends AbstractStep {
 				"claritin.bsl.library.get.out.there.article5.read.validate", wait);
 		this.renderAllArticles(webDriver, wait);
 
-		this.validateArticle("claritin.bsl.library.get.out.there.article6",
+		/*this.validateArticle("claritin.bsl.library.get.out.there.article6",
 				"claritin.bsl.library.get.out.there.article6.read", webDriver,
 				"claritin.bsl.library.get.out.there.article6.read.validate", wait);
 		this.renderAllArticles(webDriver, wait);
@@ -248,7 +248,7 @@ public class BlueSkylivingNavStep extends AbstractStep {
 		this.validateArticle("claritin.bsl.library.spot.light.on.article2",
 				"claritin.bsl.library.spot.light.on.article2.read", webDriver,
 				"claritin.bsl.library.spot.light.on.article2.read.validate", wait);
-		this.renderAllArticles(webDriver, wait);
+		this.renderAllArticles(webDriver, wait); */
 
 	}
 
@@ -302,14 +302,14 @@ public class BlueSkylivingNavStep extends AbstractStep {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='Log In']")));
 		
 		// Enter User name
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='username']")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='credential_0']")));
 		waitForElement("claritin.bsl.login.username", webDriver, 30);
 		BayerWebElement username = getElement("claritin.bsl.login.username", webDriver);
 		Util.scrollToElement(webDriver, username, wait);
 		username.sendKeys(userName);
 
 		// Enter Password
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='password']")));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='credential_1']")));
 		waitForElement("claritin.bsl.login.password", webDriver, 30);
 		BayerWebElement passwrd = getElement("claritin.bsl.login.password", webDriver);
 		Util.scrollToElement(webDriver, passwrd, wait);

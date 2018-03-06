@@ -2,11 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <!-- Run Invididual Tests Here --> 
-<suite name="Claritin Test" verbose="2" >
+<suite name="PetBasics Test" verbose="2" >
   <test name="Run Test File"  >
     <packages>
 
-      <package name="com.bayer.marketing.consumerHealth.claritin.tests.SiteWideTests.blueSkyLiving" /> 
+      <package name="com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.HomePage" /> 
 
    </packages>
  </test>

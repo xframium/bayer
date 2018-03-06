@@ -1,5 +1,6 @@
 package com.bayer.exampleTemplate.tests.AppliToolsExample;
 
+import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.ArchPatientStep;
 import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.ExampleStep;
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
@@ -24,15 +25,15 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class ExamplePage extends AbstractTest {
 	
-private String url = "https://www.coppertone.com/";
+private String url = "http://test.archpatientassistance.com/";
 private int parentRowNum = 1;  
 	public String getUrl(){ 
 		return url;
 	}
 	
     @TestDescriptor( testName="AppliTools Example Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
-    public void navigateTest( DeviceContainer dC ) {
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void appliToolsNavigateTest( DeviceContainer dC ) {
     	String [] urlNames = new String[100];
 		int numEntries = 0;
 		try {
@@ -43,13 +44,10 @@ private int parentRowNum = 1;
 			String line;
 			int i = 0;
 			while ((line = bufferedReader.readLine()) != null) {
-				//System.out.println(line);
 				urlNames[i] = line;
 				numEntries++;
 				i++; }
 			fileReader.close();
-			//System.out.println("Contents of file:");
-			//System.out.println(stringBuffer.toString());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -57,15 +55,20 @@ private int parentRowNum = 1;
 		
 		for(int c = 0; c < numEntries; c ++) { 
 			url = urlNames[c];
-			executeSteps( new Step[] { new Navigate(url), new ExampleStep(url, parentRowNum)});
+			executeSteps( new Step[] { new Navigate(url), new ArchPatientStep(url, parentRowNum)});
 			parentRowNum++;
 			System.out.println("Parent row num is " + parentRowNum);
 		}
     }
     @TestDescriptor( testName="Applitools Single Page Example Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void appliToolsExample( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new ExampleStep(url, 2)} );
+        executeSteps( new Step[] { new Navigate(url), new ArchPatientStep(url, parentRowNum)} );
+    }
+    @TestDescriptor( testName="Applitools Single Page Example Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void navTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url)} );
     }
     @TestDescriptor( testName="Example Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
