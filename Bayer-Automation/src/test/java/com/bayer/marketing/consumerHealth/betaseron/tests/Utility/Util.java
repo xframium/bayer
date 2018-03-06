@@ -70,7 +70,7 @@ public class Util {
 	
 	public static void takeScreenShot(Eyes eyes,String testName) {
 		randomTag = RandomStringUtils.random(3, true, false);
-        eyes.checkWindow(testName+randomTag);
+        eyes.checkWindow(testName+"_"+randomTag);
 	}
 	
 	public static void closeEyes(Eyes eyes) {

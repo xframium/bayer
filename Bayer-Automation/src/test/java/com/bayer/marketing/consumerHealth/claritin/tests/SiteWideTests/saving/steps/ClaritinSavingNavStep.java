@@ -1,13 +1,8 @@
 package com.bayer.marketing.consumerHealth.claritin.tests.SiteWideTests.saving.steps;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.applitools.eyes.BatchInfo;
-import com.applitools.eyes.FixedCutProvider;
-import com.applitools.eyes.RectangleSize;
 import com.applitools.eyes.selenium.Eyes;
-import com.applitools.eyes.selenium.StitchMode;
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.marketing.consumerHealth.betaseron.tests.Utility.Util;
@@ -16,9 +11,7 @@ import com.bayer.test.step.AbstractStep;
 public class ClaritinSavingNavStep extends AbstractStep {
 
 	private static final String osType = "WINDOWS";
-	private static final String platFormName="platformName";
-	private static final String applitoolsKey = "jT5nmDPxXHb8fAnnRYVmJ4vItCKH0R9Z2Mm791U9UQc110";
-
+	
 	public ClaritinSavingNavStep() {
 		super("message", "error message");
 	}
