@@ -68,9 +68,7 @@ public class ArchPatientStep extends AbstractStep
         //webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         try {
         	eyes.setProxy(new ProxySettings("http://ptb-proxy.na.bayer.cnb/"));
-        	if (webDriver.getCapabilities().getCapability("platformName").equals("IOS")) {
-                eyes.setImageCut(new FixedCutProvider(63,135,0,0)); //remove URL and footer. values = (header, footer, left, right)
-        	}
+        	
             webDriver.asRemote().get(page.getUrl());
             BatchInfo drScholls = new BatchInfo("ArchStep");
             eyes.setBatch(drScholls);
@@ -84,15 +82,17 @@ public class ArchPatientStep extends AbstractStep
            if((platformName.equals("IOS"))||(platformName.equals("Android")))
            { 
         	   System.out.println("Pass if statement");
-        	   eyes.open(webDriver.asRemote(), "ArchStep", "ArchStep" + webDriver.getCapabilities().getCapability("platformName")+rowNumber);
+        	   eyes.open(webDriver.asRemote(), "ArchStep", "ArchPatient: " + webDriver.getCapabilities().getCapability("platformName")+" Pagenumber:"+rowNumber);
         	   
            }
            else {
         	   System.out.println("Pass else statement");
-        	   eyes.open(webDriver.asRemote(), "ArchStep Web", "ArchStep" + webDriver.getCapabilities().getCapability("platformName")+rowNumber, new RectangleSize(1510,900)); 
+        	   eyes.open(webDriver.asRemote(), "ArchStep Web", "ArchStep" + webDriver.getCapabilities().getCapability("platformName")+" Pagenumber:"+rowNumber, new RectangleSize(1510,900)); 
         	   
            }
-           
+           if (webDriver.getCapabilities().getCapability("platformName").equals("IOS")) {
+               eyes.setImageCut(new FixedCutProvider(34,21,0,0)); //remove URL and footer. values = (header, footer, left, right)
+       		}
            //eyes.open(webDriver.asRemote(), "Dr.Scholl's Mobile", "DrScholls " +webDriver.getCapabilities().getPlatform()+" Test" + 3);
            //eyes.check("chart", Target.region(By.));
            eyes.checkWindow();

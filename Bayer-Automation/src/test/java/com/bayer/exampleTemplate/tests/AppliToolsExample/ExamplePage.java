@@ -33,7 +33,7 @@ private int parentRowNum = 1;
 	
     @TestDescriptor( testName="AppliTools Example Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
-    public void navigateTest( DeviceContainer dC ) {
+    public void appliToolsNavigateTest( DeviceContainer dC ) {
     	String [] urlNames = new String[100];
 		int numEntries = 0;
 		try {
@@ -63,7 +63,7 @@ private int parentRowNum = 1;
     @TestDescriptor( testName="Applitools Single Page Example Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void appliToolsExample( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new ExampleStep(url, 2)} );
+        executeSteps( new Step[] { new Navigate(url), new ArchPatientStep(url, parentRowNum)} );
     }
     @TestDescriptor( testName="Applitools Single Page Example Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
