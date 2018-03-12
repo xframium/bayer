@@ -1,0 +1,5 @@
+http://test.archpatientassistance.com/
+http://test.archpatientassistance.com/eligibility/
+http://test.archpatientassistance.com/proof-of-income/
+http://test.archpatientassistance.com/application/
+http://test.archpatientassistance.com/contact/
