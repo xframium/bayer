@@ -1,8 +1,6 @@
 package com.bayer.marketing.Amazon.ClaritinProducts.tests.Example;
 
-import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
-import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
-import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
+import com.bayer.marketing.Amazon.ClaritinProducts.tests.Example.steps.ExampleStep;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
@@ -24,9 +22,9 @@ public String url = "https://www.amazon.com/";
 		return url;
 	}
     
-    @TestDescriptor( testName="Example Navigation Test" )
+    @TestDescriptor( testName="Amazon Example Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
-    public void navigateTest( DeviceContainer dC ) {
+    public void amazonNavigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
     }
     

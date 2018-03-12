@@ -6,7 +6,7 @@
   <test name="Run Test File"  >
     <packages>
 
-      <package name="com.bayer.exampleTemplate.tests.AppliToolsExample" /> 
+      <package name="com.bayer.marketing.Amazon.ClaritinProducts.tests.Example" /> 
 
    </packages>
  </test>
