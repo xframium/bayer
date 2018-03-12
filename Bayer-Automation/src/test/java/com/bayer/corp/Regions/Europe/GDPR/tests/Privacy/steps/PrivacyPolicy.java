@@ -10,6 +10,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.concurrent.TimeUnit;
@@ -54,12 +55,14 @@ public class PrivacyPolicy extends AbstractStep
 	private static int rowNumber  = 0;
 	private static String newUrl = "";
 	private static String cCode = "";
-    public PrivacyPolicy(String url, int parentRowNum, String countryCode)
+	private static String mira = "";
+    public PrivacyPolicy(String url, int parentRowNum, String countryCode, String miraID)
     {
         super( "message", "error message" );
         this.newUrl = url;
         this.rowNumber = parentRowNum;
         this.cCode = countryCode;
+        this.mira = miraID;
     }
     
 	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/MIRA_Websites_Germany.xlsx";
@@ -105,7 +108,6 @@ public class PrivacyPolicy extends AbstractStep
       	webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     	
     	String urlList = webDriver.getPageSource();
-    	
     	if(urlList.contains("Datenschutz")) {
         	
     		 try {
@@ -840,8 +842,7 @@ public class PrivacyPolicy extends AbstractStep
                 + "password=Bayer@1234;";  
             // Declare the JDBC objects.  
             Connection connection = null;  
-            try
-            {
+            try {
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
                 System.out.println("Class found ");
             }
@@ -854,10 +855,27 @@ public class PrivacyPolicy extends AbstractStep
             	System.out.println("Establishing connection");
                 connection = DriverManager.getConnection(connectionString);  
                 System.out.println("Connected to database");
-                Statement statement = connection.createStatement();
-                ResultSet rSet = statement.executeQuery("Insert into users (URL, PrivacyFound, PrivacyName, Phase1, Phase2, Phase3, Phase4, Phase5, Cookie_Acceptance_Phrase, MIRA_ID)" 
-                + " values (" + newUrl +","+ privacyFound +","+privacyName +","+phrase1 +","+ phrase2 +","+phrase3 +","+phrase4 +","+phrase5 +",");
-                System.out.println("Data uploaded");
+                //Statement statement = connection.createStatement();
+                //ResultSet rSet = statement.executeQuery("Insert into users (URL, PrivacyFound, PrivacyName, Phase1, Phase2, Phase3, Phase4, Phase5, Cookie_Acceptance_Phrase, MIRA_ID) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?"); 
+                String rSet = "Insert into DE (URL, PrivacyFound, PrivacyName, Phase1, Phase2, Phase3, Phase4, Phase5, Cookie_Acceptance_Phrase, MIRA_ID) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                
+                PreparedStatement pStatement = connection.prepareStatement(rSet);
+                pStatement.setString(1, newUrl);
+                pStatement.setString(2, String.valueOf(privacyFound));
+                pStatement.setString(3, privacyName);
+                pStatement.setString(4, String.valueOf(phrase1));
+                pStatement.setString(5, String.valueOf(phrase2));
+                pStatement.setString(6, String.valueOf(phrase3));
+                pStatement.setString(7, String.valueOf(phrase4));
+                pStatement.setString(8, String.valueOf(phrase5));
+                pStatement.setString(9, cookieName);
+                pStatement.setString(10, mira);
+                 
+                int rowsInserted = pStatement.executeUpdate();
+                if (rowsInserted > 0) {
+                	System.out.println("Data uploaded");
+                }
+                
                 /*while (rSet.next()) {
                          	  
                 	  String urlName = rSet.getString("URL");

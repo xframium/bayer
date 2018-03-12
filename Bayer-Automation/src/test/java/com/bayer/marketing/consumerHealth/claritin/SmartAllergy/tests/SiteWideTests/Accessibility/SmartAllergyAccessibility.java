@@ -1,6 +1,6 @@
 package com.bayer.marketing.consumerHealth.claritin.SmartAllergy.tests.SiteWideTests.Accessibility;
 
-import com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.HomePage.steps.HomeStep;
+import com.bayer.marketing.consumerHealth.claritin.SmartAllergy.tests.SiteWideTests.Accessibility.steps.HomeStep;
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
@@ -21,7 +21,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class SmartAllergyAccessibility extends AbstractTest {
 	
-public String url = "http://claritin.cd.uat.bch.inter.fe.claritin.us.build.dev-bbs.sitecore.bayer-ag.com/smartallergymomtoolkitredesign/";
+public String url = "http://claritin.cd.uat.bch.inter.fe.claritin.us.build.dev-bbs.sitecore.bayer-ag.com/products/childrens-claritin";
     
 	public String getUrl(){ 
 		return url;
@@ -37,17 +37,17 @@ public String url = "http://claritin.cd.uat.bch.inter.fe.claritin.us.build.dev-b
     public void navigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url) } );
     }
-    @TestDescriptor( testName="BlueSkyLiving Timed Navigation Test" )
+    @TestDescriptor( testName="Claritin Smart Allergy Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void accessibilityTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new Accessibility() } );
     }
-    @TestDescriptor ( testName = "Claritin Blue Sky General Testing ")
+    @TestDescriptor ( testName = "Claritin Blue Sky General Testing")
     @Test ( dataProvider = "deviceList", enabled = false)
     public void claristinBSLTest( DeviceContainer dC )
     {
-        String baseUrl = "http://colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081/";
-        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl ) } );
+        //String baseUrl = "http://colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081/";
+        executeSteps( new Step[] { new Navigate(url), new LinkValidator(url, -1 ), new Accessibility(url) } );
     }
     @TestDescriptor( testName="BlueSkyLiving Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)

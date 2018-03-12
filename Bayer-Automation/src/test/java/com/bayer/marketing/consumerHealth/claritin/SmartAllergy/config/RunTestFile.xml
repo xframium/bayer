@@ -6,7 +6,7 @@
   <test name="Run Test File"  >
     <packages>
 
-      <package name="com.bayer.marketing.consumerHealth.claritin.BlueSkyLiving.tests.HomePage" /> 
+      <package name="com.bayer.marketing.consumerHealth.claritin.SmartAllergy.tests.SiteWideTests.Accessibility" /> 
 
    </packages>
  </test>

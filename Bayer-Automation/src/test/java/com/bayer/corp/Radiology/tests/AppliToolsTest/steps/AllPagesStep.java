@@ -1,4 +1,4 @@
-package com.bayer.exampleTemplate.tests.AppliToolsExample.steps;
+package com.bayer.corp.Radiology.tests.AppliToolsTest.steps;
 
 import java.io.BufferedReader;
 import javax.swing.ImageIcon;
@@ -41,7 +41,7 @@ import java.net.URLEncoder;
 import java.security.spec.ECPrivateKeySpec;
 import java.util.concurrent.TimeUnit;
 
-public class ArchPatientStep extends AbstractStep
+public class AllPagesStep extends AbstractStep
 {
 	private static final int HEADER_SIZE = 65; // Should be adopted according to device
     private static final String USER_NAME = "colin.ebneth@bayer.com";
@@ -51,7 +51,7 @@ public class ArchPatientStep extends AbstractStep
     private static final String applitoolsKey = "x836lZBCjnk0zlODvlQFDN906107j109S9nD0d101j5I8OX9o110";
     public static int rowNumber  = 0;
 	public static String newUrl = "";
-    public ArchPatientStep(String url, int parentRowNum)
+    public AllPagesStep(String url, int parentRowNum)
     {
         super( "message", "error message" );
         this.newUrl = url;
@@ -64,14 +64,15 @@ public class ArchPatientStep extends AbstractStep
     	Eyes eyes = new Eyes();
 
         eyes.setApiKey(applitoolsKey);
-	
         //webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         try {
         	eyes.setProxy(new ProxySettings("http://ptb-proxy.na.bayer.cnb/"));
-        	
+        	if (webDriver.getCapabilities().getBrowserName() == "Safari") {
+                eyes.setImageCut(new FixedCutProvider(63,135,0,0)); //remove URL and footer. values = (header, footer, left, right)
+        	}
             webDriver.asRemote().get(page.getUrl());
-            BatchInfo batchName = new BatchInfo("ArchStep");
-            eyes.setBatch(batchName);
+            BatchInfo drScholls = new BatchInfo("Bayer Global");
+            eyes.setBatch(drScholls);
             eyes.setForceFullPageScreenshot(true);
             //eyes.setRegionToCheck(regionToCheck);
             eyes.setStitchMode(StitchMode.CSS);
@@ -82,20 +83,18 @@ public class ArchPatientStep extends AbstractStep
            if((platformName.equals("IOS"))||(platformName.equals("Android")))
            { 
         	   System.out.println("Pass if statement");
-        	   eyes.open(webDriver.asRemote(), "ArchStep", "ArchPatient: " + webDriver.getCapabilities().getCapability("platformName"));
+        	   eyes.open(webDriver.asRemote(), "Bayer Global Mobile Test1", "ayer Global Mobile Test" + webDriver.getCapabilities().getCapability("platformName"));
         	   
            }
            else {
         	   System.out.println("Pass else statement");
-        	   eyes.open(webDriver.asRemote(), "ArchStep Web", "ArchStep" + webDriver.getCapabilities().getCapability("platformName")+" Pagenumber:"+rowNumber, new RectangleSize(1510,900)); 
+        	   eyes.open(webDriver.asRemote(), "ayer Global Web", "ayer Global" + webDriver.getCapabilities().getCapability("platformName"), new RectangleSize(1510,900)); 
         	   
            }
-           if (webDriver.getCapabilities().getCapability("platformName").equals("IOS")) {
-               eyes.setImageCut(new FixedCutProvider(34,21,0,0)); //remove URL and footer. values = (header, footer, left, right)
-       		}
+           
            //eyes.open(webDriver.asRemote(), "Dr.Scholl's Mobile", "DrScholls " +webDriver.getCapabilities().getPlatform()+" Test" + 3);
            //eyes.check("chart", Target.region(By.));
-           eyes.checkWindow();
+           eyes.checkWindow("ayer Global Page #" + 4);
             eyes.close();
             //TestResults results = eyes.close(false);
             //assertEquals(true, results.isPassed());

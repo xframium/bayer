@@ -35,54 +35,9 @@ public class HomeStep extends AbstractStep
     	webDriver.switchTo().alert().accept();
     	webDriver.switchTo().defaultContent();
     	*/
-    	waitForElement( "bayer.home.about", webDriver, 15 );
-        BayerWebElement exampleImage = getElement("bayer.home.about", webDriver);
-        exampleImage.click();
-        waitForElement( "bayer.key", webDriver, 15 );
-       
-        //new Accessibility();
-        
-        webDriver.navigate().to(url);
-        
-        
-        
-        ///////////////Example Code Structure///////////////////
-        /*BayerWebElement emailAddress = getElement( "login.emailAddress", webDriver );
-        emailAddress.sendKeys( "test@bayer.com" );
-        
-        BayerWebElement confirmEmailAddress = getElement( "login.confirmEmailAddress", webDriver );
-        confirmEmailAddress.sendKeys( "test@bayer.com" );
-        
-        BayerWebElement password = getElement( "login.password", webDriver );
-        password.sendKeys( "password" );
-        
-        
-        String bImage = password.getCssValue( "color" );
-        */
-        
-        
-        /*String csvFile = "src/test/java/com/bayer/exampleTemplate/config/TestData.csv";
-        String line = "";
-        String cvsSplitBy = ",";
-        int x = 0;
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-
-            while (((line = br.readLine()) != null) && (x <=2) ) {
-        		
-                // use comma as separator
-                String[] userData = line.split(cvsSplitBy);
-
-                System.out.println(userData[1] + " " + userData[2]);
-                x++; 	
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        */
-        //new Accessibility();
-        return true;
-        
+    	webDriver.navigate().to(url);
+    	new Accessibility();
+    	return true;
     }
 
 }

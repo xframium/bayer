@@ -1,4 +1,4 @@
-package com.bayer.exampleTemplate.tests.AppliToolsExample;
+package com.bayer.corp.Radiology.tests.AppliToolsTest;
 
 import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.ArchPatientStep;
 import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.ExampleStep;
@@ -23,7 +23,7 @@ import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.javascript.host.URL;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
-public class ExamplePage extends AbstractTest {
+public class AppliToolsAllPages extends AbstractTest {
 	
 private String url = "http://test.archpatientassistance.com/";
 private int parentRowNum = 1;  

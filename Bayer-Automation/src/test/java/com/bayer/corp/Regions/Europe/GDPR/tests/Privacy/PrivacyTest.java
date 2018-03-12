@@ -35,7 +35,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 public class PrivacyTest extends AbstractTest {
 		
 			
-	private String url = "https://www.priorin.de/";
+	private String url = "https://www.betaferon.de/";
 	private String miraID = null;
 	private String countryCode = "DE";
 	private int parentRowNum = 1;
@@ -55,10 +55,10 @@ public class PrivacyTest extends AbstractTest {
 			@TestDescriptor( testName="GDPR Privacy Policy Validation" )
   		    @Test ( dataProvider = "deviceList", enabled=false)
   		    public void privacyPolicyTest( DeviceContainer dC ) {
-				String [] urlNames = new String[100];
+				String [] urlLine = new String[130];
 				int numEntries = 0;
 				try {
-					File file = new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/testBatch.txt");
+					File file = new File("src/test/java/com/bayer/corp/Regions/Europe/GDPR/config/DataFiles/MasterURLlist.csv");
 					FileReader fileReader = new FileReader(file);
 					BufferedReader bufferedReader = new BufferedReader(fileReader);
 					StringBuffer stringBuffer = new StringBuffer();
@@ -66,7 +66,8 @@ public class PrivacyTest extends AbstractTest {
 					int i = 0;
 					while ((line = bufferedReader.readLine()) != null) {
 						//System.out.println(line);
-						urlNames[i] = line;
+						urlLine[i] = line;
+						
 						numEntries++;
 						i++; }
 					fileReader.close();
@@ -77,10 +78,23 @@ public class PrivacyTest extends AbstractTest {
 				}
 				System.out.println("For loop");
 				
-				for(int c = 0; c < numEntries; c ++) { 
-					url = "http://"+urlNames[c];
-					executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum, countryCode)});
-					parentRowNum++;
+				for(int c = 0; c < numEntries; c ++) {
+					String line = urlLine[c];
+					String[] parts = line.split(",");
+					String urlName = parts[0]; // 004
+					countryCode = parts[1];
+					miraID = parts[2];
+					url = "http://"+urlName;
+					System.out.println(urlName);
+					System.out.println(countryCode);
+					System.out.println(miraID);
+					try {
+						executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum, countryCode, miraID)});
+					} 
+					catch (Exception e) {
+						System.out.println("Unable to reach url: " +url);
+					}
+						parentRowNum++;
 					System.out.println("Parent row num is " + parentRowNum);
 				}
 			}
@@ -89,7 +103,7 @@ public class PrivacyTest extends AbstractTest {
 		    @Test ( dataProvider = "deviceList", enabled=true)
 		    public void privacyNavigationLoop( DeviceContainer dC ) {
 		    	
-		    	executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum, countryCode) } );	
+		    	executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum, countryCode, miraID) } );	
 		        
 		    }
 		    @TestDescriptor( testName="GDPR Accessibility Test" )

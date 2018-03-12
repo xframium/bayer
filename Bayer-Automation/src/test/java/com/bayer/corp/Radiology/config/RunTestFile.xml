@@ -6,7 +6,7 @@
   <test name="Run Test File"  >
     <packages>
 
-      <package name="com.bayer.corp.Regions.Europe.GDPR.tests.Privacy" /> 
+      <package name="com.bayer.exampleTemplate.tests.AppliToolsExample" /> 
 
    </packages>
  </test>

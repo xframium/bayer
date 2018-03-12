@@ -23,7 +23,7 @@ public class FAQDogNavRun extends AbstractTest {
 		return url;
 	}
 	@TestDescriptor( testName="PetBasics FAQ Dog Set1 Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC ) {
 		executeSteps( new Step[] { new Navigate(url), 
         							new FAQDogSet1NavSteps()
@@ -32,7 +32,7 @@ public class FAQDogNavRun extends AbstractTest {
     }
 	
 	@TestDescriptor( testName="PetBasics FAQ Dog Set2 Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTestSet2( DeviceContainer dC ) {
 		executeSteps( new Step[] { new Navigate(url), 
         							new FAQDogSet2NavSteps()
@@ -41,7 +41,7 @@ public class FAQDogNavRun extends AbstractTest {
     }
 	
 	@TestDescriptor( testName="PetBasics FAQ Dog Filter Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void applyFilterTest( DeviceContainer dC ) {
 		executeSteps( new Step[] { new Navigate(url), 
         							new ApplyFilterToFAQAllNavSteps()
@@ -56,7 +56,7 @@ public class FAQDogNavRun extends AbstractTest {
     }
 	
 	@TestDescriptor(testName = "PetBasics FAQ Dog Structure Test")
-	@Test(dataProvider = "deviceList", enabled = true)
+	@Test(dataProvider = "deviceList", enabled = false)
 	public void faqDogStructureTest(DeviceContainer dC) {
 		executeSteps(new Step[] {new Navigate(url),
 								 new StructureValidator("FAQH1Tag", "/com/bayer/marketing/animalHealth/petBasics/tests/faqDog/FAQDogValidation.xml"),
@@ -69,7 +69,7 @@ public class FAQDogNavRun extends AbstractTest {
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
     	executeSteps(new Step[] { 
-    			new LinkValidator(url, 1)
+    			new LinkValidator(url, -1)
     			
    
     	});
