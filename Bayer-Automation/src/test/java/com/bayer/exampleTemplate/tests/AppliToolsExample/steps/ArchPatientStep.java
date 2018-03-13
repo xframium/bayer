@@ -1,5 +1,21 @@
 package com.bayer.exampleTemplate.tests.AppliToolsExample.steps;
 
+
+import com.bayer.exampleTemplate.tests.AppliToolsExample.ExamplePage;
+import com.bayer.BayerWebDriver;
+
+import com.bayer.test.step.AbstractStep;
+
+
+import com.applitools.eyes.BatchInfo;
+import com.applitools.eyes.FixedCutProvider;
+import com.applitools.eyes.ProxySettings;
+import com.applitools.eyes.RectangleSize;
+
+import com.applitools.eyes.selenium.Eyes;
+import com.applitools.eyes.selenium.StitchMode;
+/*
+import com.bayer.BayerWebElement;
 import java.io.BufferedReader;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -8,38 +24,25 @@ import java.io.FileReader;
 import java.io.IOException;
 import com.bayer.common.Accessibility;
 import com.bayer.common.utility.*;
-import com.bayer.exampleTemplate.tests.AppliToolsExample.ExamplePage;
-import com.bayer.BayerWebDriver;
-import com.bayer.BayerWebElement;
-import com.bayer.test.step.AbstractStep;
 import com.gargoylesoftware.htmlunit.javascript.host.event.DragEvent;
 import com.sun.jna.platform.unix.X11;
-
 import io.appium.java_client.pagefactory.WindowsBy;
 import io.appium.java_client.remote.MobileCapabilityType;
-
-import com.applitools.eyes.BatchInfo;
-import com.applitools.eyes.FixedCutProvider;
-import com.applitools.eyes.ProxySettings;
-import com.applitools.eyes.RectangleSize;
-import com.applitools.eyes.TestResults;
-import com.applitools.eyes.selenium.Eyes;
-import com.applitools.eyes.selenium.StitchMode;
 import com.applitools.eyes.selenium.fluent.Target;
-
+import com.applitools.eyes.TestResults;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.reporters.jq.ResultsByClass;
-
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.security.spec.ECPrivateKeySpec;
 import java.util.concurrent.TimeUnit;
+*/
 
 public class ArchPatientStep extends AbstractStep
 {

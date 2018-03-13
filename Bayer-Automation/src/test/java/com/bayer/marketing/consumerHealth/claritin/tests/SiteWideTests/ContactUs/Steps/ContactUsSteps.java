@@ -66,7 +66,7 @@ public class ContactUsSteps extends AbstractStep
     	}
     	else {
     	   System.out.println("Pass else statement");
-    	   eyes.open(webDriver.asRemote(), "Claritin Desktop", "Claritin Contact Test" + webDriver.getCapabilities().getCapability("platformName") ); 
+    	   eyes.open(webDriver.asRemote(), "Claritin Desktop", "Claritin Contact Test" + webDriver.getCapabilities().getCapability("platformName")); 
     	   
     	} 
     	
