@@ -1,8 +1,8 @@
 package com.bayer.marketing.consumerHealth.coppertone.tests.SiteWideTests.Accessibility;
 
 import com.bayer.marketing.consumerHealth.coppertone.tests.SiteWideTests.Accessibility.steps.AccessibilityStep;
-import com.bayer.marketing.consumerHealth.coppertone.tests.SiteWideTests.Accessibility.steps.PrivacyPolicy;
-import com.bayer.marketing.consumerHealth.coppertone.tests.SiteWideTests.Accessibility.steps.ConditionsOfUse;
+import com.bayer.marketing.consumerHealth.coppertone.tests.SiteWideTests.Legal.steps.ConditionsOfUse;
+import com.bayer.marketing.consumerHealth.coppertone.tests.SiteWideTests.Legal.steps.PrivacyPolicy;
 import org.testng.annotations.Test;
 
 import com.bayer.common.Accessibility;
@@ -44,4 +44,3 @@ public String url = "https://www.coppertone.com/";
      
 }
 
-// push test 5

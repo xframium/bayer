@@ -135,7 +135,7 @@ public class Scroll {
 			MobileElement me = (MobileElement) driver.findElement(meX);
 
 			TouchAction touchAction6 = new TouchAction(driver);
-			touchAction6.longPress(me, 1000).release();
+			//touchAction6.longPress(me, 1000).release();
 			driver.performTouchAction(touchAction6);
 
 			driver.getKeyboard().pressKey(convertAndroidMonthName(list[i]) + "");
