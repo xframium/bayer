@@ -17,10 +17,9 @@ import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 import com.sun.jna.platform.unix.X11;
 
-public class ExampleStep extends AbstractStep
-{
+public class GrabDataStep extends AbstractStep {
 
-    public ExampleStep()
+    public GrabDataStep()
     {
         super( "message", "error message" );
     }
@@ -43,6 +42,8 @@ public class ExampleStep extends AbstractStep
             Util.scrollToElement(webDriver, result, wait);
             
             result.click();
+            waitForElement( "amazon.key", webDriver, 15 );
+            
             webDriver.navigate().back();
         }
         

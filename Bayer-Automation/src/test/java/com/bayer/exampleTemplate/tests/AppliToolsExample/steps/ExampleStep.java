@@ -32,6 +32,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.reporters.jq.ResultsByClass;
 
 import java.io.UnsupportedEncodingException;
@@ -62,7 +63,7 @@ public class ExampleStep extends AbstractStep
     protected boolean _executeStep(BayerWebDriver webDriver){	
     	ExamplePage page = new ExamplePage();
     	Eyes eyes = new Eyes();
-
+    	WebDriverWait wait = new WebDriverWait(webDriver, 20);
         eyes.setApiKey(applitoolsKey);
         //webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         try {
@@ -83,18 +84,18 @@ public class ExampleStep extends AbstractStep
            if((platformName.equals("IOS"))||(platformName.equals("Android")))
            { 
         	   System.out.println("Pass if statement");
-        	   eyes.open(webDriver.asRemote(), "Bayer Global Mobile Test1", "ayer Global Mobile Test" + webDriver.getCapabilities().getCapability("platformName"));
+        	   eyes.open(webDriver.asRemote(), "Bayer Global Mobile Test1", "Bayer Global Mobile Test" + webDriver.getCapabilities().getCapability("platformName"));
         	   
            }
            else {
         	   System.out.println("Pass else statement");
-        	   eyes.open(webDriver.asRemote(), "ayer Global Web", "ayer Global" + webDriver.getCapabilities().getCapability("platformName"), new RectangleSize(1510,900)); 
+        	   eyes.open(webDriver.asRemote(), "Bayer Global Web", "Bayer Global" + webDriver.getCapabilities().getCapability("platformName"), new RectangleSize(1510,900)); 
         	   
            }
            
            //eyes.open(webDriver.asRemote(), "Dr.Scholl's Mobile", "DrScholls " +webDriver.getCapabilities().getPlatform()+" Test" + 3);
            //eyes.check("chart", Target.region(By.));
-           eyes.checkWindow("ayer Global Page #" + 4);
+           eyes.checkWindow("Bayer Global Page #" + 4);
             eyes.close();
             //TestResults results = eyes.close(false);
             //assertEquals(true, results.isPassed());

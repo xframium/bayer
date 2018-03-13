@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.io.FileReader;
 import java.io.IOException;
 import com.bayer.common.Accessibility;
@@ -26,6 +29,7 @@ public class ExampleStep extends AbstractStep
     protected boolean _executeStep( BayerWebDriver webDriver ) {	
     	ExamplePage urlVar = new ExamplePage();
     	String url = urlVar.getUrl();
+    	WebDriverWait wait = new WebDriverWait(webDriver, 20);
     	
     	waitForElement( "bayer.home.about", webDriver, 15 );
         BayerWebElement exampleImage = getElement("bayer.home.about", webDriver);
