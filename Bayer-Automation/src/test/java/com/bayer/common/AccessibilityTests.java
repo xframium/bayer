@@ -15,7 +15,8 @@ public class AccessibilityTests extends AbstractTest
     public void claristinBSLTest( DeviceContainer dC )
     {
         String baseUrl = "http://colin:Bayer123@03342-bslqa.photoninfotech.com:8080/";
-        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl ) } );
+        boolean checkPoint = true;
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl, checkPoint ) } );
     }
 	
     @TestDescriptor ( testName = "Pet Basics General Testing ")
