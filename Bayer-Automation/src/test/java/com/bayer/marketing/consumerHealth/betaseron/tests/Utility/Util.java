@@ -17,7 +17,7 @@ public class Util {
 	
 	private static final String osType="WINDOWS";
 	private static final String platFormName="platformName";
-	private static final String applitoolsKey = "jT5nmDPxXHb8fAnnRYVmJ4vItCKH0R9Z2Mm791U9UQc110";
+	private static final String applitoolsKey = "x836lZBCjnk0zlODvlQFDN906107j109S9nD0d101j5I8OX9o110";
 	private static String randomTag="";
 
 	public static void scrollToElement(BayerWebDriver webDriver, BayerWebElement webElment, WebDriverWait wait) {
@@ -62,15 +62,14 @@ public class Util {
     	   eyes.open(webDriver.asRemote(), appName, testName + webDriver.getCapabilities().getCapability(platFormName));
          }
        else {
-    	   eyes.open(webDriver.asRemote(), appName, testName + webDriver.getCapabilities().getCapability(platFormName), new RectangleSize(1024,768)); 
+    	   eyes.open(webDriver.asRemote(), appName, testName + webDriver.getCapabilities().getCapability(platFormName), new RectangleSize(1440,900)); 
        }
         
         return eyes;
 	}
 	
 	public static void takeScreenShot(Eyes eyes,String testName) {
-		randomTag = RandomStringUtils.random(3, true, false);
-        eyes.checkWindow(testName+"_"+randomTag);
+        eyes.checkWindow(testName);
 	}
 	
 	public static void closeEyes(Eyes eyes) {
