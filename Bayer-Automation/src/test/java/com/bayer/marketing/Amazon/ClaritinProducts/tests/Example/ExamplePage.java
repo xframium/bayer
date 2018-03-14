@@ -1,6 +1,7 @@
 package com.bayer.marketing.Amazon.ClaritinProducts.tests.Example;
 
 import com.bayer.marketing.Amazon.ClaritinProducts.tests.Example.steps.ExampleStep;
+import com.bayer.marketing.Amazon.ClaritinProducts.tests.Example.steps.GrabDataStep;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
 import com.bayer.common.TimedNavigate;
@@ -23,11 +24,15 @@ public String url = "https://www.amazon.com/";
 	}
     
     @TestDescriptor( testName="Amazon Example Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void amazonNavigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
     }
-    
+    @TestDescriptor( testName="Amazon Example Navigation Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void amazonDataGrabTest( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url), new GrabDataStep() } );
+    }
     @TestDescriptor( testName="Example Timed Navigation Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void timedNavigateTest( DeviceContainer dC ) {

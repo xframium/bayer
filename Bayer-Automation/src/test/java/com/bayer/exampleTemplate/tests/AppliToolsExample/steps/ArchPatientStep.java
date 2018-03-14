@@ -14,7 +14,7 @@ import com.applitools.eyes.RectangleSize;
 
 import com.applitools.eyes.selenium.Eyes;
 import com.applitools.eyes.selenium.StitchMode;
-/*
+
 import com.bayer.BayerWebElement;
 import java.io.BufferedReader;
 import javax.swing.ImageIcon;
@@ -42,7 +42,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.security.spec.ECPrivateKeySpec;
 import java.util.concurrent.TimeUnit;
-*/
+
 
 public class ArchPatientStep extends AbstractStep
 {
