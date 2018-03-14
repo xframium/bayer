@@ -20,7 +20,7 @@ public class AccessibilityTests extends AbstractTest
     }
 	
     @TestDescriptor ( testName = "Pet Basics General Testing ")
-    @Test ( dataProvider = "deviceList", enabled = true, groups = "ci" )
+    @Test ( dataProvider = "deviceList", enabled = false, groups = "ci" )
     public void petBasicAccessibility( DeviceContainer dC )
     {
         String baseUrl = "https://www.petbasics.com";
