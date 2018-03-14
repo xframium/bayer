@@ -16,7 +16,7 @@ public class AccessibilityTests extends AbstractTest
     {
         String baseUrl = "http://colin:Bayer123@03342-bslqa.photoninfotech.com:8080/";
         boolean checkPoint = true;
-        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl, checkPoint ) } );
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl) } );
     }
 	
     @TestDescriptor ( testName = "Pet Basics General Testing ")
@@ -24,7 +24,7 @@ public class AccessibilityTests extends AbstractTest
     public void petBasicAccessibility( DeviceContainer dC )
     {
         String baseUrl = "https://www.petbasics.com";
-        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new SiteCheckPoint( baseUrl ) } );
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl ) } );
     }
     
     @TestDescriptor ( testName = "Aleve General Testing ")
@@ -32,7 +32,7 @@ public class AccessibilityTests extends AbstractTest
     public void aleveAccessibility( DeviceContainer dC )
     {
         String baseUrl = "https://www.aleve.com";
-        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl, true ) } );
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl) } );
     }
     
     @TestDescriptor ( testName = "Betaseron General Testing ")
@@ -40,7 +40,7 @@ public class AccessibilityTests extends AbstractTest
     public void betaseronAccessibility( DeviceContainer dC )
     {
         String baseUrl = "https://www.betaseron.com";
-        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl, true ) } );
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl) } );
     }
     
     @TestDescriptor ( testName = "Claritin General Testing ")
@@ -48,7 +48,7 @@ public class AccessibilityTests extends AbstractTest
     public void claritinAccessibility( DeviceContainer dC )
     {
         String baseUrl = "https://www.claritin.com";
-        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl, true ) } );
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl) } );
     }
 
     @TestDescriptor ( testName = "Aspirin General Testing ")
@@ -56,7 +56,7 @@ public class AccessibilityTests extends AbstractTest
     public void aspirinAccessibility( DeviceContainer dC )
     {
         String baseUrl = "https://www.aspirin.com";
-        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl, true ) } );
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl) } );
     }
     
     @TestDescriptor ( testName = "MSMS General Testing ")
@@ -64,7 +64,7 @@ public class AccessibilityTests extends AbstractTest
     public void msmsAccessibility( DeviceContainer dC )
     {
         String baseUrl = "http://test.makingsciencemakesense.com";
-        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl, true ) } );
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator( baseUrl, -1 ), new Accessibility( baseUrl) } );
     }
    
     
