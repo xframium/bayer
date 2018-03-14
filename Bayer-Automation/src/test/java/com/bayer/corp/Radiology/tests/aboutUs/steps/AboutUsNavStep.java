@@ -22,14 +22,6 @@ public class AboutUsNavStep extends AbstractStep {
 		WebDriverWait wait = new WebDriverWait(webDriver, 30);
 		
 		this.scrollAndTakeScreenShot("radiology.aboutus.snap.one",eyes,webDriver,wait);
-		
-		this.scrollAndTakeScreenShot("radiology.aboutus.snap.two",eyes,webDriver,wait);
-		
-		this.scrollAndTakeScreenShot("radiology.aboutus.snap.three",eyes,webDriver,wait);
-		
-		this.scrollAndTakeScreenShot("radiology.aboutus.snap.four",eyes,webDriver,wait);
-		
-		this.scrollAndTakeScreenShot("radiology.aboutus.snap.five",eyes,webDriver,wait);
     	
 		Util.closeEyes(eyes);
 		
