@@ -34,6 +34,11 @@
     <artifactId>eyes-selenium-java3</artifactId>
     <version>RELEASE</version>
 	</dependency>
+	<dependency>
+        <groupId>org.json</groupId>
+        <artifactId>org.json</artifactId>
+        <version>RELEASE</version>
+	</dependency>
   </dependencies>
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
