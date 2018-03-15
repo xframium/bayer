@@ -10,6 +10,7 @@
     </groups>
     <packages>
         <package name="com.bayer.common" />
+        <package name="com.bayer.corp.Regions.Europe.GDPR.tests.Privacy" />
     </packages>
   </test>
 </suite>
