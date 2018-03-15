@@ -36,7 +36,7 @@ public class AccessibilityTests extends AbstractTest
     }
     
     @TestDescriptor ( testName = "Aleve General Testing ")
-    @Test ( dataProvider = "deviceList", enabled = false, groups = "ci" )
+    @Test ( dataProvider = "deviceList", enabled = true, groups = "ci" )
     public void aleveAccessibility( DeviceContainer dC )
     {
         String baseUrl = "https://www.aleve.com";
