@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import com.bayer.common.utility.LinkValidator;
@@ -93,7 +94,7 @@ public class AccessibilityTests extends AbstractTest
 			}
 			@TestDescriptor( testName="GDPR Privacy Policy Validation" )
   		    @Test ( dataProvider = "deviceList", enabled=false, groups ="ci")
-  		    public void privacyPolicyTest( DeviceContainer dC ) {
+  		    public void privacyPolicyLoop( DeviceContainer dC ) {
 				String [] urlLine = new String[130];
 				int numEntries = 0;
 				try {
@@ -104,14 +105,11 @@ public class AccessibilityTests extends AbstractTest
 					String line;
 					int i = 0;
 					while ((line = bufferedReader.readLine()) != null) {
-						//System.out.println(line);
 						urlLine[i] = line;
 						
 						numEntries++;
 						i++; }
 					fileReader.close();
-					//System.out.println("Contents of file:");
-					//System.out.println(stringBuffer.toString());
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -139,8 +137,8 @@ public class AccessibilityTests extends AbstractTest
 			}
 			
 		    @TestDescriptor( testName="GDPR URL Test" )
-		    @Test ( dataProvider = "deviceList", enabled=true, groups = "ci")
-		    public void privacyNavigationLoop( DeviceContainer dC ) {
+		    @Test ( dataProvider = "deviceList", enabled=false, groups = "ci")
+		    public void privacyNavigationTest( DeviceContainer dC ) {
 		    	
 		    	executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum, countryCode, miraID) } );	
 		        

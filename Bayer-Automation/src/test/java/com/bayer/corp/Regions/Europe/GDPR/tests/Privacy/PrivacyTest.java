@@ -100,7 +100,7 @@ public class PrivacyTest extends AbstractTest {
 			}
 			
 		    @TestDescriptor( testName="GDPR URL Test" )
-		    @Test ( dataProvider = "deviceList", enabled=true)
+		    @Test ( dataProvider = "deviceList", enabled=true, groups ="ci")
 		    public void privacyNavigationLoop( DeviceContainer dC ) {
 		    	
 		    	executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum, countryCode, miraID) } );	
