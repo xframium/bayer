@@ -62,13 +62,15 @@ public class Util {
     	   eyes.open(webDriver.asRemote(), appName, testName + webDriver.getCapabilities().getCapability(platFormName));
          }
        else {
-    	   eyes.open(webDriver.asRemote(), appName, testName + webDriver.getCapabilities().getCapability(platFormName), new RectangleSize(1440,900)); 
+    	    eyes.open(webDriver.asRemote(), appName, testName + webDriver.getCapabilities().getCapability(platFormName), new RectangleSize(1440,900)); 
+    	   //eyes.open(webDriver.asRemote(), appName, testName + webDriver.getCapabilities().getCapability(platFormName), new RectangleSize(1024,768)); 
        }
         
         return eyes;
 	}
 	
 	public static void takeScreenShot(Eyes eyes,String testName) {
+		eyes.setForceFullPageScreenshot(true);
         eyes.checkWindow(testName);
 	}
 	

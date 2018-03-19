@@ -18,7 +18,7 @@ public class LearningCenterNavRun extends AbstractTest {
 
 	@TestDescriptor(testName = "Radiology Learning Center visual validation")
 	@Test(dataProvider = "deviceList", enabled = true)
-	public void navigateRadiologyService(DeviceContainer dC) {
+	public void navigateRadiologyLearningCenter(DeviceContainer dC) {
 		executeSteps(new Step[] { new Navigate(url), new LearningCenterNavStep()});
 	}
 }
