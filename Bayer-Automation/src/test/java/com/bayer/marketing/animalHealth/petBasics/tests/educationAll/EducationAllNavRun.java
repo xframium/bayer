@@ -68,7 +68,7 @@ public class EducationAllNavRun extends AbstractTest {
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
     	executeSteps(new Step[] { 
-    			new LinkValidator(url, 1)
+    			new LinkValidator(url, -1)
     			
    
     	});

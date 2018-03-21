@@ -43,7 +43,7 @@ public class FaqsNavRun extends AbstractTest {
 	@TestDescriptor(testName = "Aspirin FAQS Link Validation")
 	@Test(dataProvider = "deviceList", enabled = true)
 	public void linkValidationTest(DeviceContainer dC) {
-		executeSteps(new Step[] { new LinkValidator(url, 1)
+		executeSteps(new Step[] { new LinkValidator(url, -1)
 
 		});
 	}
