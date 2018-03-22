@@ -69,7 +69,7 @@ public class ExampleStep extends AbstractStep
         try {
         	eyes.setProxy(new ProxySettings("http://ptb-proxy.na.bayer.cnb/"));
         	if (webDriver.getCapabilities().getBrowserName() == "Safari") {
-                eyes.setImageCut(new FixedCutProvider(63,135,0,0)); //remove URL and footer. values = (header, footer, left, right)
+                eyes.setImageCut(new FixedCutProvider(135,35,0,0)); //remove URL and footer. values = (header, footer, left, right)
         	}
             webDriver.asRemote().get(page.getUrl());
             BatchInfo drScholls = new BatchInfo("Bayer Global");
@@ -95,7 +95,7 @@ public class ExampleStep extends AbstractStep
            
            //eyes.open(webDriver.asRemote(), "Dr.Scholl's Mobile", "DrScholls " +webDriver.getCapabilities().getPlatform()+" Test" + 3);
            //eyes.check("chart", Target.region(By.));
-           eyes.checkWindow("Bayer Global Page #" + 4);
+           eyes.checkWindow();
             eyes.close();
             //TestResults results = eyes.close(false);
             //assertEquals(true, results.isPassed());

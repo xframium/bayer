@@ -85,6 +85,11 @@
     <artifactId>poi</artifactId>
     <version>3.17</version>
 </dependency>
+<dependency>
+        <groupId>org.json</groupId>
+        <artifactId>org.json</artifactId>
+        <version>RELEASE</version>
+	</dependency>
 	<dependency>
     <groupId>com.applitools</groupId>
     <artifactId>eyes-selenium-java3</artifactId>

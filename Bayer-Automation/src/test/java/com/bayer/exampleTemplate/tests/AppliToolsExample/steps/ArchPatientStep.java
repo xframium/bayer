@@ -6,11 +6,11 @@ import com.bayer.BayerWebDriver;
 
 import com.bayer.test.step.AbstractStep;
 
-
 import com.applitools.eyes.BatchInfo;
 import com.applitools.eyes.FixedCutProvider;
 import com.applitools.eyes.ProxySettings;
 import com.applitools.eyes.RectangleSize;
+import com.bayer.validation.visual.*;
 
 import com.applitools.eyes.selenium.Eyes;
 import com.applitools.eyes.selenium.StitchMode;
@@ -24,12 +24,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import com.bayer.common.Accessibility;
 import com.bayer.common.utility.*;
+import com.bayer.corp.Radiology.tests.AppliToolsTest.AppliToolsAllPages;
 import com.gargoylesoftware.htmlunit.javascript.host.event.DragEvent;
 import com.sun.jna.platform.unix.X11;
 import io.appium.java_client.pagefactory.WindowsBy;
 import io.appium.java_client.remote.MobileCapabilityType;
 import com.applitools.eyes.selenium.fluent.Target;
 import com.applitools.eyes.TestResults;
+import com.applitools.utils.*;
+import com.applitools.eyes.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
@@ -99,11 +102,21 @@ public class ArchPatientStep extends AbstractStep
            //eyes.open(webDriver.asRemote(), "Dr.Scholl's Mobile", "DrScholls " +webDriver.getCapabilities().getPlatform()+" Test" + 3);
            //eyes.check("chart", Target.region(By.));
            eyes.checkWindow();
-            eyes.close();
+           TestResults testResult= eyes.close(false);
+           String viewKey ="KL99zxdo4peUIDFNMwyVe7F104Lf2F5b2l57PghSmU106vVA110";
+           try {
+			ApplitoolsTestResultsHandler testResultHandler= new ApplitoolsTestResultsHandler(testResult,viewKey);
+			testResultHandler.downloadDiffs("H:/Personal Data/Applitools/ArchPatient");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+           
+           // eyes.close();
             //TestResults results = eyes.close(false);
             //assertEquals(true, results.isPassed());
         } finally {
-
+        	
             eyes.abortIfNotClosed();
             //driver1.quit();
 

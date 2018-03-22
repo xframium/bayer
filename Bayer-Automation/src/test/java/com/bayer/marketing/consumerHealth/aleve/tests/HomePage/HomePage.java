@@ -13,12 +13,12 @@ import com.bayer.test.step.factory.Step;
 public class HomePage extends AbstractTest
 {
     @TestDescriptor( testName="Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true, groups = "bayer" )
+    @Test ( dataProvider = "deviceList", enabled=false, groups = "bayer" )
     public void navigateTest( DeviceContainer dC )
     {
         executeSteps( new Step[] { new Navigate( "https://www.aleve.com/" ),new HomePageNavStep() } );
     }
-    
+
     @TestDescriptor( testName="Structure Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
     public void structureTest( DeviceContainer dC )
@@ -26,10 +26,10 @@ public class HomePage extends AbstractTest
         executeSteps( new Step[] { new Navigate( "https://www.aleve.com" ), new StructureValidator( "ISI" ), new Navigate("https://www.aleve.com/live-well/") } );
     }
     @TestDescriptor( testName="Link Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void linkTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new LinkValidator("https://www.aleve.com", 95) } );
+        executeSteps( new Step[] { new LinkValidator("https://www.aleve.com",-1) } );
     }
 }
 

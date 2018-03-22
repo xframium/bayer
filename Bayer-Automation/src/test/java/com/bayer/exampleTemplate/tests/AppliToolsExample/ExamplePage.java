@@ -1,6 +1,7 @@
 package com.bayer.exampleTemplate.tests.AppliToolsExample;
 
 import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.ArchPatientStep;
+import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.AltArchPatientStep;
 import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.CoppertoneStep;
 import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.ExampleStep;
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
@@ -16,7 +17,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-
+import org.openqa.selenium.Platform;
+import org.openqa.selenium.Proxy;
+import org.openqa.selenium.Proxy.ProxyType;
+import org.openqa.selenium.remote.CapabilityType;
 import org.springframework.ejb.access.SimpleRemoteStatelessSessionProxyFactoryBean;
 import com.bayer.common.utility.LinkValidator;
 import com.bayer.common.utility.StructureValidator;
@@ -33,7 +37,7 @@ private int parentRowNum = 1;
 	}
 	
     @TestDescriptor( testName="AppliTools Example Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void appliToolsNavigateTest( DeviceContainer dC ) {
     	String [] urlNames = new String[100];
 		int numEntries = 0;
@@ -41,7 +45,6 @@ private int parentRowNum = 1;
 			File file = new File("src/test/java/com/bayer/exampleTemplate/config/TestData/urlList.txt");
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			StringBuffer stringBuffer = new StringBuffer();
 			String line;
 			int i = 0;
 			while ((line = bufferedReader.readLine()) != null) {
@@ -63,9 +66,16 @@ private int parentRowNum = 1;
 		}
     }
     @TestDescriptor( testName="Applitools Single Page Example Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void appliToolsExample( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new ArchPatientStep(url, parentRowNum)} );
+    	/*String httpProxy = "140.250.199.44:80";
+        Proxy proxy = new Proxy();
+        proxy.setProxyType(ProxyType.MANUAL);
+        proxy.setHttpProxy(httpProxy);
+        capabilities.setCapability(CapabilityType.PROXY, proxy);
+        capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+	*/
+        executeSteps( new Step[] { new Navigate(url), new AltArchPatientStep(url, parentRowNum)} );
     }
     @TestDescriptor( testName="Applitools Single Page Example Test" )
     @Test ( dataProvider = "deviceList", enabled=true)

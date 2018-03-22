@@ -18,7 +18,6 @@ import com.applitools.eyes.selenium.StitchMode;
 import com.bayer.BayerWebElement;
 import java.io.BufferedReader;
 import java.io.File;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -37,8 +36,12 @@ import com.applitools.eyes.TestResults;
 import com.applitools.utils.*;
 import com.applitools.eyes.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.Platform;
+import org.openqa.selenium.Proxy;
+import org.openqa.selenium.Proxy.ProxyType;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.reporters.jq.ResultsByClass;
@@ -71,6 +74,15 @@ public class AltArchPatientStep extends AbstractStep
     protected boolean _executeStep(BayerWebDriver webDriver){	
     	String [] urlNames = new String[100];
 		int numEntries = 0;
+		/*String httpProxy = "140.250.199.44:80";
+        Proxy proxy = new Proxy();
+        proxy.setProxyType(ProxyType.MANUAL);
+        ((Proxy) proxy).setHttpProxy(httpProxy);
+        //BayerWebElement test = new BayerWebElement(null, webDriver);
+        Capabilities capabilities = webDriver.getCapabilities();
+        ((DesiredCapabilities) capabilities).setCapability(CapabilityType.PROXY, proxy);  
+        ((DesiredCapabilities) capabilities).setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+	    */
 		try {
 			File file = new File("src/test/java/com/bayer/exampleTemplate/config/TestData/urlList.txt");
 			FileReader fileReader = new FileReader(file);
@@ -96,10 +108,7 @@ public class AltArchPatientStep extends AbstractStep
 		
 	        //webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 	        try {
-	        	for(int c = 0; c < numEntries; c++) { 
-	    			String url = urlNames[c];
-	    			System.out.println(url);
-	    			webDriver.navigate().to(url);
+	        		
 			        	eyes.setProxy(new ProxySettings("http://ptb-proxy.na.bayer.cnb/"));
 			        	
 			            webDriver.asRemote().get(page.getUrl());
@@ -110,6 +119,7 @@ public class AltArchPatientStep extends AbstractStep
 			            eyes.setStitchMode(StitchMode.CSS);
 			            //eyes.setImageCut(new FixedCutProvider(HEADER_SIZE , 0, 0, 0));
 			            //eyes.setBatch(DrScholls);
+			           
 			            String platformName = webDriver.getCapabilities().getCapability("platformName").toString();
 			            System.out.println(platformName);
 			           if((platformName.equals("IOS"))||(platformName.equals("Android")))
@@ -120,22 +130,32 @@ public class AltArchPatientStep extends AbstractStep
 			           }
 			           else {
 			        	   System.out.println("Pass else statement");
-			        	   eyes.open(webDriver.asRemote(), "ArchStep Web", "ArchStep" + webDriver.getCapabilities().getCapability("platformName")+" Pagenumber:"+c, new RectangleSize(1510,900)); 
+			        	   eyes.open(webDriver.asRemote(), "ArchStep Web", "ArchStep" + webDriver.getCapabilities().getCapability("platformName")+" Pagenumber:"+rowNumber, new RectangleSize(1510,900)); 
 			        	   
 			           }
-			           if (webDriver.getCapabilities().getCapability("platformName").equals("IOS")) {
-			               eyes.setImageCut(new FixedCutProvider(34,21,0,0)); //remove URL and footer. values = (header, footer, left, right)
-			       		}
+			           if (platformName.equals("IOS")) {
+			        	   
+			               eyes.setImageCut(new FixedCutProvider(120,21,0,0)); //remove URL and footer. values = (header, footer, left, right)
+			       			System.out.println("Image cut");
+			           }
+			           /*for(int c = 0; c < numEntries; c++) { 
+			    			String url = urlNames[c];
+			    			System.out.println(url);
+			    	*/
+			           eyes.checkWindow();
+			           
+			            //System.out.println("Check window: "+c);
+			           //webDriver.navigate().to(url);
 			           //eyes.open(webDriver.asRemote(), "Dr.Scholl's Mobile", "DrScholls " +webDriver.getCapabilities().getPlatform()+" Test" + 3);
 			           //eyes.check("chart", Target.region(By.));
-			           eyes.checkWindow();
+			           
            
-	        	}//end for loop
+	        	//}//end for loop
            TestResults testResult= eyes.close(false);
            String viewKey ="KL99zxdo4peUIDFNMwyVe7F104Lf2F5b2l57PghSmU106vVA110";
            try {
 			ApplitoolsTestResultsHandler testResultHandler= new ApplitoolsTestResultsHandler(testResult,viewKey);
-			testResultHandler.downloadDiffs("H:/Personal Data/Applitools/ArchPatient");
+			testResultHandler.downloadCurrentImages("H:/Personal Data/Applitools/ArchPatient");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
