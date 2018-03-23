@@ -12,6 +12,9 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.Proxy;
+import org.openqa.selenium.Proxy.ProxyType;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
@@ -192,7 +195,22 @@ public abstract class AbstractTest
 
                     }
                     else
+                    {	
+                    	/*try {
+                            String proxyHost = (String)dC.getCapability("proxy");
+                            
+                            
+                            Proxy proxy = new Proxy();
+                            proxy.setProxyType(ProxyType.MANUAL);
+                            proxy.setHttpProxy(proxyHost);
+                            dC.setCapability(CapabilityType.PROXY, proxy);
+                            dC.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
+                    }
+                    catch(Exception ex)
                     {
+                            
+                    }
+		*/
                         webDriver = new BayerWebDriver( new RemoteWebDriver( new URL( cloudUrl ), dC ) );
                         // webDriver.manage().timeouts().implicitlyWait( 5,
                         // TimeUnit.SECONDS );
