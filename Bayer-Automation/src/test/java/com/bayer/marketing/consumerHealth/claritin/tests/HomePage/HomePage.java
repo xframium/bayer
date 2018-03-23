@@ -13,7 +13,7 @@ import com.bayer.test.step.factory.Step;
 
 public class HomePage extends AbstractTest {	
 	
-	public String url = "http://03342-claritin-qa.photoninfotech.com:8081/";
+	public String url = "https://www.claritin.com/";
     
 	public String getUrl(){ 
 		return url;
