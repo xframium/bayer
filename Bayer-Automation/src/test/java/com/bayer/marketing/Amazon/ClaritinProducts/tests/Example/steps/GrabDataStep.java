@@ -74,7 +74,7 @@ public class GrabDataStep extends AbstractStep {
         searchBtn.click();
         waitForElement( "amazon.key", webDriver, 15 );
         
-        for(int i=0;i<2;i++){
+        for(int i=0;i<5;i++){
         	waitForElement( "amazon.result"+i, webDriver, 15 );
             BayerWebElement result = getElement("amazon.result"+i, webDriver);
             Util.scrollToElement(webDriver, result, wait);
