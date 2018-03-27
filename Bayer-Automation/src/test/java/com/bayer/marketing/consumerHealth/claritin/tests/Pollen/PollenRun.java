@@ -17,7 +17,7 @@ public class PollenRun extends AbstractTest
    
     @TestDescriptor( testName="Pollen Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
-    public void faqTest( DeviceContainer dC )
+    public void pollenTest( DeviceContainer dC )
     {
         executeSteps( new Step[] { new Navigate( "https://www.claritin.com/" ), new PollenStep() } );
     }

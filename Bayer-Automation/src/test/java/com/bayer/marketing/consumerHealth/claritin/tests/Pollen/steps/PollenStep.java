@@ -16,23 +16,26 @@ public class PollenStep extends AbstractStep
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
         
-    	waitForElement( "claritin.home.pollenArrow", webDriver, 15 );
-    	BayerWebElement pollenArrow = getElement( "claritin.home.pollenArrow", webDriver );
+    	waitForElement( "claritin.pollenArrow", webDriver, 15 );
+    	BayerWebElement pollenArrow = getElement( "claritin.pollenArrow", webDriver );
     	
     	if(pollenArrow.isDisplayed()){
     		//Mobile and desktop Test
            
-            BayerWebElement launch = getElement( "claritin.home.pollenArrow", webDriver );
+            BayerWebElement launch = getElement( "claritin.pollenArrow", webDriver );
             launch.click();
             
-            BayerWebElement claritin = getElement( "claritin.faq.content.claritin", webDriver );
-            claritin.click();
+            BayerWebElement zipsearch = getElement( "claritin.pollenModalZip", webDriver );
+            zipsearch.click();
             
-            BayerWebElement claritind = getElement( "claritin.faq.content.claritind", webDriver );
-            claritind.click(); 
+            BayerWebElement zipinsert = getElement( "claritin.pollenModalInput", webDriver );
+            zipinsert.click(); 
             
-            BayerWebElement children = getElement( "claritin.faq.content.children", webDriver );
-            children.click();
+            BayerWebElement find = getElement( "claritin.pollenModalZipBtn", webDriver );
+            find.click();
+            
+            BayerWebElement close = getElement( "claritin.pollenModalClose", webDriver );
+            close.click();
     		
     	}
         
