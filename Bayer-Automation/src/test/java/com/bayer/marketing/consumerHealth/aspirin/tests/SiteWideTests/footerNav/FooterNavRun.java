@@ -13,7 +13,8 @@ import com.bayer.test.step.factory.Step;
 
 public class FooterNavRun extends AbstractTest {
 
-	public String url = "http://test.bayeraspirin.com/";
+	//public String url = "http://test.bayeraspirin.com/";
+	public String url ="https://www.bayeraspirin.com/";
 
 	public String getUrl() {
 		return url;
@@ -43,7 +44,7 @@ public class FooterNavRun extends AbstractTest {
 	@TestDescriptor(testName = "Aspirin Footer Link Validation")
 	@Test(dataProvider = "deviceList", enabled = true)
 	public void linkValidationTest(DeviceContainer dC) {
-		executeSteps(new Step[] { new LinkValidator(url, 1)
+		executeSteps(new Step[] { new LinkValidator(url, -1)
 
 		});
 	}

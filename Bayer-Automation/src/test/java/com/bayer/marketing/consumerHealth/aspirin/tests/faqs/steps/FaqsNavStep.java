@@ -119,19 +119,19 @@ public class FaqsNavStep extends AbstractStep {
 		Util.scrollToElement(webDriver, continueFaq, wait);
 		continueFaq.click();
 		
-		this.validate("aspirin.faq.aspirin.regimen.link", webDriver, "aspirin.faq.aspirin.regimen.link.header", wait);
+		this.validate("aspirin.faq.aspirin.regimen.link", webDriver, "aspirin.faq.aspirin.regimen.header", wait);
 		this.validate("aspirin.faq.aspirin.regimen.section1.collapse", webDriver, "aspirin.faq.aspirin.regimen.section1.collapse.validate", wait);
 		this.validate("aspirin.faq.aspirin.regimen.section1.link1", webDriver, "aspirin.faq.aspirin.regimen.section1.link1.validate", wait);
 		Util.recallBaseURL(webDriver, faqs);
 		
 		waitForElement("aspirin.faq.base.text", webDriver, 30);
-		this.validate("aspirin.faq.aspirin.regimen.link", webDriver, "aspirin.faq.aspirin.regimen.link.header", wait);
+		this.validate("aspirin.faq.aspirin.regimen.link", webDriver, "aspirin.faq.aspirin.regimen.header", wait);
 		this.validate("aspirin.faq.aspirin.regimen.section1.collapse", webDriver, "aspirin.faq.aspirin.regimen.section1.collapse.validate", wait);
 		this.validate("aspirin.faq.aspirin.regimen.section1.link2", webDriver, "aspirin.faq.aspirin.regimen.section1.link2.validate", wait);
 		Util.recallBaseURL(webDriver, faqs);
 		
 		waitForElement("aspirin.faq.base.text", webDriver, 30);
-		this.validate("aspirin.faq.aspirin.regimen.link", webDriver, "aspirin.faq.aspirin.regimen.link.header", wait);
+		this.validate("aspirin.faq.aspirin.regimen.link", webDriver, "aspirin.faq.aspirin.regimen.header", wait);
 		this.validate("aspirin.faq.aspirin.regimen.section2.collapse", webDriver, "aspirin.faq.aspirin.regimen.section2.collapse.validate", wait);
 		this.validate("aspirin.faq.aspirin.regimen.section3.collapse", webDriver, "aspirin.faq.aspirin.regimen.section3.collapse.validate", wait);
 		this.validate("aspirin.faq.aspirin.regimen.section3.link1", webDriver, "aspirin.faq.aspirin.regimen.section3.link1.validate", wait);
