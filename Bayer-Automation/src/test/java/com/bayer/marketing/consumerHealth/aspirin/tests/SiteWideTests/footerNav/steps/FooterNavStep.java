@@ -176,22 +176,21 @@ public class FooterNavStep extends AbstractStep {
 		webDriver.navigate().to(footerUrl);
 		waitForElement("aspirin.base.image", webDriver, 30);
 		
-String parentWindow = webDriver.getWindowHandle();
-		
-		//External links opened in new browser tab
-		this.switchToNewTabAndClose("aspirin.footer.bayer.global", webDriver, wait, parentWindow);
-		Util.recallBaseURL(webDriver, footerUrl);
-		this.switchToNewTabAndClose("aspirin.footer.bayer.consumer.health", webDriver, wait, parentWindow);
-		Util.recallBaseURL(webDriver, footerUrl);
-		this.switchToNewTabAndClose("aspirin.footer.bayer.privacy.statement", webDriver, wait, parentWindow);
-		Util.recallBaseURL(webDriver, footerUrl);
-		this.switchToNewTabAndClose("aspirin.footer.bayer.condition.use", webDriver, wait, parentWindow);
-		Util.recallBaseURL(webDriver, footerUrl);
-		this.switchToNewTabAndClose("aspirin.footer.bayer.imprint", webDriver, wait, parentWindow);
-		Util.recallBaseURL(webDriver, footerUrl);
-		this.switchToNewTabAndClose("aspirin.footer.bayer.transparency.chain", webDriver, wait, parentWindow);
-			
-						
+		if(!osType.equals(webDriver.getOsType())) {
+			String parentWindow = webDriver.getWindowHandle();
+			//External links opened in new browser tab
+			this.switchToNewTabAndClose("aspirin.footer.bayer.global", webDriver, wait, parentWindow);
+			Util.recallBaseURL(webDriver, footerUrl);
+			this.switchToNewTabAndClose("aspirin.footer.bayer.consumer.health", webDriver, wait, parentWindow);
+			Util.recallBaseURL(webDriver, footerUrl);
+			this.switchToNewTabAndClose("aspirin.footer.bayer.privacy.statement", webDriver, wait, parentWindow);
+			Util.recallBaseURL(webDriver, footerUrl);
+			this.switchToNewTabAndClose("aspirin.footer.bayer.condition.use", webDriver, wait, parentWindow);
+			Util.recallBaseURL(webDriver, footerUrl);
+			this.switchToNewTabAndClose("aspirin.footer.bayer.imprint", webDriver, wait, parentWindow);
+			Util.recallBaseURL(webDriver, footerUrl);
+			this.switchToNewTabAndClose("aspirin.footer.bayer.transparency.chain", webDriver, wait, parentWindow);
+		}
 		return true;
 	}
 
