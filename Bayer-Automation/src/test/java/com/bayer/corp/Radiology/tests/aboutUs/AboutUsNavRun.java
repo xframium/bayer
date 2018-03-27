@@ -7,6 +7,8 @@ import com.bayer.corp.Radiology.tests.aboutUs.steps.AboutUsLocationsStep;
 import com.bayer.corp.Radiology.tests.aboutUs.steps.AboutUsNavCongressesStep;
 import com.bayer.corp.Radiology.tests.aboutUs.steps.AboutUsNavStep;
 import com.bayer.corp.Radiology.tests.aboutUs.steps.AboutUsSolutionsStep;
+import com.bayer.corp.Radiology.tests.common.RadiologyNavStep;
+import com.bayer.corp.Radiology.tests.common.ScreenIdentifier;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
@@ -18,29 +20,35 @@ public class AboutUsNavRun extends AbstractTest {
 	public String getUrl() {
 		return url;
 	}
+	
+	@TestDescriptor(testName = "About us Radiology Solutions visual validation")
+	@Test(dataProvider = "deviceList", enabled = true)
+	public void navigateRadiologyAboutUs(DeviceContainer dC) {
+		executeSteps(new Step[] { new Navigate(url), new RadiologyNavStep(ScreenIdentifier.ABOUTUS.name())});
+	}
 
 	@TestDescriptor(testName = "Radiology About us visual validation")
-	@Test(dataProvider = "deviceList", enabled = true)
+	@Test(dataProvider = "deviceList", enabled = false)
 	public void navigateRadiologyHome(DeviceContainer dC) {
 		executeSteps(new Step[] { new Navigate(url), new AboutUsNavStep()});
 	}
 	
 	@TestDescriptor(testName = "About us Radiology Congresses visual validation")
-	@Test(dataProvider = "deviceList", enabled = true)
+	@Test(dataProvider = "deviceList", enabled = false)
 	public void navigateRadiologyCongresses(DeviceContainer dC) {
 		url ="https://www.radiologysolutions.bayer.com/aboutus/congresses/";
 		executeSteps(new Step[] { new Navigate(url), new AboutUsNavCongressesStep()});
 	}
 	
 	@TestDescriptor(testName = "About us Radiology Locations visual validation")
-	@Test(dataProvider = "deviceList", enabled = true)
+	@Test(dataProvider = "deviceList", enabled = false)
 	public void navigateRadiologyLocations(DeviceContainer dC) {
 		url ="https://www.radiologysolutions.bayer.com/aboutus/locations/";
 		executeSteps(new Step[] { new Navigate(url), new AboutUsLocationsStep()});
 	}
 	
 	@TestDescriptor(testName = "About us Radiology Solutions visual validation")
-	@Test(dataProvider = "deviceList", enabled = true)
+	@Test(dataProvider = "deviceList", enabled = false)
 	public void navigateRadiologySolutions(DeviceContainer dC) {
 		url ="https://www.radiologysolutions.bayer.com/aboutus/solutions-people-insights/";
 		executeSteps(new Step[] { new Navigate(url), new AboutUsSolutionsStep()});

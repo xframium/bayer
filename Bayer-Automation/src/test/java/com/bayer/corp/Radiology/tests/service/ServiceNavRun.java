@@ -3,6 +3,8 @@ package com.bayer.corp.Radiology.tests.service;
 import org.testng.annotations.Test;
 
 import com.bayer.common.Navigate;
+import com.bayer.corp.Radiology.tests.common.RadiologyNavStep;
+import com.bayer.corp.Radiology.tests.common.ScreenIdentifier;
 import com.bayer.corp.Radiology.tests.home.steps.HomeNavStep;
 import com.bayer.corp.Radiology.tests.service.steps.ServiceNavStep;
 import com.bayer.test.AbstractTest;
@@ -20,7 +22,8 @@ public class ServiceNavRun extends AbstractTest {
 	@TestDescriptor(testName = "Radiology Service visual validation")
 	@Test(dataProvider = "deviceList", enabled = true)
 	public void navigateRadiologyService(DeviceContainer dC) {
-		executeSteps(new Step[] { new Navigate(url), new ServiceNavStep()});
+		//executeSteps(new Step[] { new Navigate(url), new ServiceNavStep()});
+		 executeSteps(new Step[] { new Navigate(url), new RadiologyNavStep(ScreenIdentifier.SERVICE.name())});
 	}
 }
 

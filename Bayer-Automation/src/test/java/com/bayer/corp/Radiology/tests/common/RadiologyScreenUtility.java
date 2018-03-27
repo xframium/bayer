@@ -242,8 +242,27 @@ public class RadiologyScreenUtility {
 				"https://www.radiologysolutions.bayer.com/products/ct/dosemanagement/education/");
 		productScreens.put(education1.getScreenName(), education1);
 
-		
-
 		return productScreens;
 	}
+	public static Map<String, RadiologyScreen> getAboutUsScreens() {
+		Map<String, RadiologyScreen> aboutUs = new HashMap<String, RadiologyScreen>();
+		
+		RadiologyScreen baseScreen = new RadiologyScreen("radiology-aboutus-landing-page", "Radiology about Us landing page ", "radiology.aboutus.snap.one",
+				"https://www.radiologysolutions.bayer.com/aboutus/");
+		aboutUs.put(baseScreen.getScreenName(), baseScreen);
+		
+		RadiologyScreen congresses = new RadiologyScreen("radiology-aboutus-congresses", "Radiology about us congresses", "radiology.aboutus.congresses.validate",
+				"https://www.radiologysolutions.bayer.com/aboutus/congresses/");
+		aboutUs.put(congresses.getScreenName(), congresses);
+		
+		RadiologyScreen locations = new RadiologyScreen("radiology-aboutus-locations", "Radiology about us locations", "radiology.aboutus.locations.validate",
+				"https://www.radiologysolutions.bayer.com/aboutus/locations/");
+		aboutUs.put(locations.getScreenName(), locations);
+		
+		RadiologyScreen solutions = new RadiologyScreen("radiology-aboutus-solutions", "Radiology about us Solutions", "radiology.aboutus.solutions.validate",
+				"https://www.radiologysolutions.bayer.com/aboutus/solutions-people-insights/");
+		aboutUs.put(solutions.getScreenName(), solutions);
+		
+		return aboutUs;
+	}	
 }

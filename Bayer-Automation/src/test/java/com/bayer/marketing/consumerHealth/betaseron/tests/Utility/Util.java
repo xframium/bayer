@@ -6,8 +6,10 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.applitools.eyes.BatchInfo;
+import com.applitools.eyes.FileLogger;
 import com.applitools.eyes.FixedCutProvider;
 import com.applitools.eyes.RectangleSize;
+import com.applitools.eyes.StdoutLogHandler;
 import com.applitools.eyes.selenium.Eyes;
 import com.applitools.eyes.selenium.StitchMode;
 import com.bayer.BayerWebDriver;
@@ -49,14 +51,12 @@ public class Util {
 		Eyes eyes = new Eyes();
         eyes.setApiKey(applitoolsKey);
         //eyes.setProxy(new ProxySettings("http://ptb-proxy.na.bayer.cnb/"));
-    	if (webDriver.getCapabilities().getBrowserName() == "Safari") {
-            eyes.setImageCut(new FixedCutProvider(63,135,0,0)); //remove URL and footer. values = (header, footer, left, right)
-    	}
         webDriver.asRemote().get(url);
-        eyes.setForceFullPageScreenshot(true);
-        eyes.setStitchMode(StitchMode.CSS);
         BatchInfo drScholls = new BatchInfo(batchInfo);
         eyes.setBatch(drScholls);
+        eyes.setForceFullPageScreenshot(true);
+        eyes.setStitchMode(StitchMode.CSS);
+        
         String platformName = webDriver.getCapabilities().getCapability(platFormName).toString();
        if((platformName.equals("IOS"))||(platformName.equals("Android"))){ 
     	   eyes.open(webDriver.asRemote(), appName, testName + webDriver.getCapabilities().getCapability(platFormName));
@@ -65,18 +65,53 @@ public class Util {
     	    eyes.open(webDriver.asRemote(), appName, testName + webDriver.getCapabilities().getCapability(platFormName), new RectangleSize(1440,900)); 
     	   //eyes.open(webDriver.asRemote(), appName, testName + webDriver.getCapabilities().getCapability(platFormName), new RectangleSize(1024,768)); 
        }
-        
+       if (platformName.equals("IOS")) {
+           eyes.setImageCut(new FixedCutProvider(34,21,0,0)); //remove URL and footer. values = (header, footer, left, right)
+   		}
+      
         return eyes;
 	}
 	
 	public static void takeScreenShot(Eyes eyes,String testName) {
-		eyes.setForceFullPageScreenshot(true);
         eyes.checkWindow(testName);
 	}
 	
 	public static void closeEyes(Eyes eyes) {
 		eyes.close();
 		eyes.abortIfNotClosed();
+	}
+	
+	public static void initilizeEyesServerAndTakeScreenShot(BayerWebDriver webDriver,String url,String batchInfo,String appName,String testName) {
+		Eyes eyes = new Eyes();
+        eyes.setApiKey(applitoolsKey);
+        eyes.setLogHandler(new StdoutLogHandler(true));
+        try {
+        eyes.setLogHandler(new FileLogger("C:\\Bayer\\file.log", true, true));	
+		webDriver.asRemote().get(url);
+        BatchInfo batchName = new BatchInfo(batchInfo);
+        eyes.setBatch(batchName);
+        eyes.setForceFullPageScreenshot(true);
+        eyes.setStitchMode(StitchMode.CSS);
+        String platformName = webDriver.getCapabilities().getCapability("platformName").toString();
+        System.out.println(platformName);
+       if((platformName.equals("IOS"))||(platformName.equals("Android")))
+       { 
+    	   eyes.open(webDriver.asRemote(), appName, testName + webDriver.getCapabilities().getCapability("platformName"));
+    	   
+       }
+       else {
+    	   eyes.open(webDriver.asRemote(), appName, testName + webDriver.getCapabilities().getCapability("platformName")+" Pagenumber:"+0, new RectangleSize(1510,900)); 
+    	   
+       }
+       if (webDriver.getCapabilities().getCapability("platformName").equals("IOS")) {
+           eyes.setImageCut(new FixedCutProvider(34,21,0,0)); // 120remove URL and footer. values = (header, footer, left, right)
+   		}
+        eyes.checkWindow();
+        eyes.close();
+        }
+		finally {
+			eyes.abortIfNotClosed();
+		}
 	}
 	
 }

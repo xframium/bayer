@@ -3,6 +3,8 @@ package com.bayer.corp.Radiology.tests.learningCenter;
 import org.testng.annotations.Test;
 
 import com.bayer.common.Navigate;
+import com.bayer.corp.Radiology.tests.common.RadiologyNavStep;
+import com.bayer.corp.Radiology.tests.common.ScreenIdentifier;
 import com.bayer.corp.Radiology.tests.learningCenter.steps.LearningCenterNavStep;
 import com.bayer.test.AbstractTest;
 import com.bayer.test.device.DeviceContainer;
@@ -19,7 +21,8 @@ public class LearningCenterNavRun extends AbstractTest {
 	@TestDescriptor(testName = "Radiology Learning Center visual validation")
 	@Test(dataProvider = "deviceList", enabled = true)
 	public void navigateRadiologyLearningCenter(DeviceContainer dC) {
-		executeSteps(new Step[] { new Navigate(url), new LearningCenterNavStep()});
+		//executeSteps(new Step[] { new Navigate(url), new LearningCenterNavStep()});
+		executeSteps(new Step[] { new Navigate(url), new RadiologyNavStep(ScreenIdentifier.LEARNING.name())});
 	}
 }
 
