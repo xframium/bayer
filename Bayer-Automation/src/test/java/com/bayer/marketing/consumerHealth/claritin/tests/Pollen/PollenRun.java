@@ -21,10 +21,10 @@ public class PollenRun extends AbstractTest
     {
         executeSteps( new Step[] { new Navigate( "https://www.claritin.com/" ), new PollenStep() } );
     }
-    @TestDescriptor ( testName = "Claritin Link Checker Test")
-    @Test ( dataProvider = "deviceList", enabled = true)
-    public void gdprLinkChecker( DeviceContainer dC )
-    {
-        executeSteps( new Step[] { new Navigate(url), new LinkValidator(url, -1) } );
-    }
+    //@TestDescriptor ( testName = "Claritin Link Checker Test")
+    //@Test ( dataProvider = "deviceList", enabled = true)
+    //public void gdprLinkChecker( DeviceContainer dC )
+    //{
+    //    executeSteps( new Step[] { new Navigate(url), new LinkValidator(url, -1) } );
+    //}
 }
