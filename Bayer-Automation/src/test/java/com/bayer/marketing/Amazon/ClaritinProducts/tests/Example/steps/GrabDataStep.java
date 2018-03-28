@@ -76,7 +76,8 @@ public class GrabDataStep extends AbstractStep {
         searchBtn.click();
         waitForElement( "amazon.key", webDriver, 15 );
         
-        for(int i=0;i<3;i++){
+        for(int i=0;i<5;i++){
+        	System.out.println("Counter is at " + i);
         	waitForElement( "amazon.result"+i, webDriver, 15 );
             BayerWebElement result = getElement("amazon.result"+i, webDriver);
             Util.scrollToElement(webDriver, result, wait);
@@ -117,8 +118,10 @@ public class GrabDataStep extends AbstractStep {
 	  	    	BayerWebElement reviewsAll = waitForVisible("amazon.allReviews", webDriver, 15);
 	  	    	Util.scrollToElement(webDriver, reviewsAll, wait);
 	  	    	reviewsAll.click(); 
+	  	    	reviewKeywords=null; //clear data from variable
 	  	    	try {
 	  	    		BayerWebElement topPositive = waitForVisible("amazon.topPositive", webDriver, 15);
+	  	    		
 	  	    		reviewKeywords+=topPositive.getText();
 				} catch (Exception e) {
 					System.out.println("Unable to grab top positive review");
@@ -131,11 +134,12 @@ public class GrabDataStep extends AbstractStep {
 				}
 	            
 	  	    	System.out.println("Keyword string: "+ reviewKeywords);
-	  	    	webDriver.navigate().to(urlName);
+	  	    	Util.scrollToElement(webDriver, reviewsAll, wait);
+	  	    	webDriver.navigate().back();
   	    	}
   	    	catch (Exception e) {
 				numReviews="No reviews posted";
-				webDriver.navigate().to(urlName);
+				webDriver.navigate().back();
 			}
   	    	try {
 	  	    	BayerWebElement numQuestions = waitForVisible("amazon.numQuestions", webDriver, 15);
@@ -193,6 +197,7 @@ public class GrabDataStep extends AbstractStep {
             catch (Exception e) {  
                 e.printStackTrace();  
             } 
+            //Util.scrollToElement(webDriver, key, wait);
             webDriver.navigate().back();
         }//end loop
         

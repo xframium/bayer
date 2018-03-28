@@ -5,7 +5,7 @@
 <suite name="Suite1" verbose="1" >
   <test name="Run Test File">
     <packages>
-      <package name="com.bayer.marketing.consumerHealth.aleve.tests.HomePage" />  
+      <package name="com.bayer.marketing.consumerHealth.aleve.tests.FAQ" />  
     </packages>
   </test>
 </suite>
