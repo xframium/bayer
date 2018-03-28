@@ -34,10 +34,12 @@ public class GrabDataStep extends AbstractStep {
     private static String urlName = null;
     private static String productName = null;
     private static String reviewScale = null;
+    private static String reviewKeywords = null;
     private static String numReviews = null;
     private static String questions = null;
     private static String prodDesc = null;
     private static String aboutProd = null;
+    private static String prodKeywords = null;
     
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {	
@@ -74,7 +76,7 @@ public class GrabDataStep extends AbstractStep {
         searchBtn.click();
         waitForElement( "amazon.key", webDriver, 15 );
         
-        for(int i=0;i<5;i++){
+        for(int i=0;i<3;i++){
         	waitForElement( "amazon.result"+i, webDriver, 15 );
             BayerWebElement result = getElement("amazon.result"+i, webDriver);
             Util.scrollToElement(webDriver, result, wait);
@@ -111,7 +113,30 @@ public class GrabDataStep extends AbstractStep {
   	    	catch (Exception e) {
 				numReviews="No reviews posted";
 			}
-  	    	
+  	    	try{
+	  	    	BayerWebElement reviewsAll = waitForVisible("amazon.allReviews", webDriver, 15);
+	  	    	Util.scrollToElement(webDriver, reviewsAll, wait);
+	  	    	reviewsAll.click(); 
+	  	    	try {
+	  	    		BayerWebElement topPositive = waitForVisible("amazon.topPositive", webDriver, 15);
+	  	    		reviewKeywords+=topPositive.getText();
+				} catch (Exception e) {
+					System.out.println("Unable to grab top positive review");
+				}
+	  	    	try {
+	  	    		BayerWebElement topCritical = waitForVisible("amazon.topCritical", webDriver, 15);
+	  	    		reviewKeywords+=topCritical.getText();
+				} catch (Exception e) {
+					System.out.println("Unable to grab top critical review");
+				}
+	            
+	  	    	System.out.println("Keyword string: "+ reviewKeywords);
+	  	    	webDriver.navigate().to(urlName);
+  	    	}
+  	    	catch (Exception e) {
+				numReviews="No reviews posted";
+				webDriver.navigate().to(urlName);
+			}
   	    	try {
 	  	    	BayerWebElement numQuestions = waitForVisible("amazon.numQuestions", webDriver, 15);
 	            questions= numQuestions.getText();
@@ -144,17 +169,20 @@ public class GrabDataStep extends AbstractStep {
                 System.out.println("Connected to database");
                 //Statement statement = connection.createStatement();
                 //ResultSet rSet = statement.executeQuery("Insert into users (URL, PrivacyFound, PrivacyName, Phase1, Phase2, Phase3, Phase4, Phase5, Cookie_Acceptance_Phrase, MIRA_ID) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?"); 
-                String rSet = "Insert into ClaritinData (Date, URL, ProductName, ReviewScale, NumReviews, Questions, ProductDescription, AboutTheProduct) values (?, ?, ?, ?, ?, ?, ?, ?)";
+                String rSet = "Insert into ClaritinData (ProductName, ReviewScale, NumReviews, ReviewKeywords, Questions, ProductDescription, AboutTheProduct, ProductKeywords, URL, Date) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 
                 PreparedStatement pStatement = connection.prepareStatement(rSet);
-                pStatement.setObject(1, currentDate);
-                pStatement.setString(2, urlName);
-                pStatement.setString(3, productName);
-                pStatement.setString(4, reviewScale);
-                pStatement.setString(5, numReviews);
-                pStatement.setString(6, questions);
-                pStatement.setString(7, prodDesc);
-                pStatement.setString(8, aboutProd);
+               
+                pStatement.setString(1, productName);
+                pStatement.setString(2, reviewScale);
+                pStatement.setString(3, numReviews);
+                pStatement.setObject(4, reviewKeywords);
+                pStatement.setString(5, questions);
+                pStatement.setString(6, prodDesc);
+                pStatement.setString(7, aboutProd);
+                pStatement.setString(8, prodKeywords);
+                pStatement.setString(9, urlName);
+                pStatement.setObject(10, currentDate);
                 
                 int rowsInserted = pStatement.executeUpdate();
                 if (rowsInserted > 0) {
