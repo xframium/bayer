@@ -25,7 +25,7 @@ public class Footer extends AbstractTest {
 		return url;
 	}
 	
-	@TestDescriptor( testName="Footer Nav Test")
+	@TestDescriptor( testName="Pet Basics Footer Nav Test")
     @Test ( dataProvider = "deviceList", enabled=true)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
@@ -36,11 +36,11 @@ public class Footer extends AbstractTest {
     }
     
 	
-    @TestDescriptor( testName="Footer Validation Test")
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @TestDescriptor( testName="Pet Basics Footer Validation Test")
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url),
-        						   new StructureValidator("Copyright", "/HomePageValidation.xml"),
+        						   //new StructureValidator("Copyright", "/HomePageValidation.xml"),
         						   
         						    } );
     }
