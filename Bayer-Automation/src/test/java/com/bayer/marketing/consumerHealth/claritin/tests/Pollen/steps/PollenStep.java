@@ -35,7 +35,10 @@ public class PollenStep extends AbstractStep
             BayerWebElement engage = getElement( "claritin.pollenHead", webDriver );
             engage.click();
             
-            BayerWebElement launch = getElement( "claritin.pollenArrow", webDriver );
+            //BayerWebElement launch = getElement( "claritin.pollenArrow", webDriver );
+            //launch.click();
+            
+            BayerWebElement launch = getElement( "claritin.pollenPod", webDriver );
             launch.click();
             
             BayerWebElement zipsearch = getElement( "claritin.pollenModalZip", webDriver );
@@ -45,9 +48,10 @@ public class PollenStep extends AbstractStep
             zipinsert.click(); 
             zipinsert.clear();
 			zipinsert.sendKeys("66216");
-            
+			            
             BayerWebElement find = getElement( "claritin.pollenModalZipBtn", webDriver );
             find.click();
+            waitForElement("claritin.pollenModalInput.validate", webDriver, 30);
             
             BayerWebElement close = getElement( "claritin.pollenModalClose", webDriver );
             close.click();
