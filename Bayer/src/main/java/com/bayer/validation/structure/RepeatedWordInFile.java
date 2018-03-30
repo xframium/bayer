@@ -93,7 +93,7 @@ public class RepeatedWordInFile
                     outputString+=(entry.getKey() + " : "+ entry.getValue()+", ");
                 }
             }
-            System.out.println("Keyword list: "+outputString);
+           // System.out.println("Keyword list: "+outputString);
         } 
         catch (IOException e) 
         {
@@ -111,7 +111,7 @@ public class RepeatedWordInFile
             }
         }
     } 
-    public static String getOutput(){
+    public String getOutput(){
     	return outputString;
     
     }

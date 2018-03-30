@@ -5,8 +5,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import com.bayer.validation.structure.RepeatedWordInFile;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
@@ -32,6 +33,7 @@ public class GrabDataStep extends AbstractStep {
     }
     private static String dateInserted = null;
     private static String urlName = null;
+    private static String primeStatus = null;
     private static String productName = null;
     private static String reviewScale = null;
     private static String reviewKeywords = null;
@@ -68,6 +70,25 @@ public class GrabDataStep extends AbstractStep {
     	ExamplePage urlVar = new ExamplePage();
     	String url = urlVar.getUrl();
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
+    	
+    	BayerWebElement signIn = waitForVisible("amazon.signIn", webDriver, 15);
+        signIn.click();
+        try {
+        	BayerWebElement email = waitForVisible("amazon.email", webDriver, 15);
+            email.sendKeys("ebneth@optonline.net");
+            BayerWebElement emailConfirm = waitForVisible("amazon.emailSubmit", webDriver, 15);
+            emailConfirm.click();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+        try {
+        	BayerWebElement password = waitForVisible("amazon.passowrd", webDriver, 15);
+            password.sendKeys("Astoria19");
+            BayerWebElement passwordEmail = waitForVisible("amazon.passowrdSubmit", webDriver, 15);
+            passwordEmail.click();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
     	waitForElement( "amazon.search", webDriver, 15 );
         BayerWebElement search = getElement("amazon.search", webDriver);
         search.click();
@@ -76,7 +97,7 @@ public class GrabDataStep extends AbstractStep {
         searchBtn.click();
         waitForElement( "amazon.key", webDriver, 15 );
         
-        for(int i=0;i<5;i++){
+        for(int i=0;i<1;i++){
         	System.out.println("Counter is at " + i);
         	waitForElement( "amazon.result"+i, webDriver, 15 );
             BayerWebElement result = getElement("amazon.result"+i, webDriver);
@@ -97,6 +118,27 @@ public class GrabDataStep extends AbstractStep {
             catch (Exception e) {
 				// TODO: handle exception
 			}
+            /*try {
+            	BayerWebElement prime1 = waitForElement("amazon.primeBadge", webDriver, 15);
+            	if(prime1.isDisplayed() == true){
+            		System.out.println("Prime displayed");
+            		primeStatus = "Amazon Prime";
+            	}
+            }
+            catch (Exception e) {
+				System.out.println("Prime badge not displayed");
+			}
+            try {
+            	BayerWebElement prime2 = waitForElement("amazon.pantryBadge", webDriver, 15);
+            	if(prime2.isDisplayed() == true){
+            		System.out.println("Pantry displayed");
+            		primeStatus = "Amazon Pantry";
+            	}
+            }
+            catch (Exception e) {
+				System.out.println("Pantry badge not displayed");
+			}
+			*/
   	    	try {
 	  	    	BayerWebElement ratingScale = waitForElement("amazon.ratingPopover", webDriver, 15);
 	            
@@ -118,28 +160,34 @@ public class GrabDataStep extends AbstractStep {
 	  	    	BayerWebElement reviewsAll = waitForVisible("amazon.allReviews", webDriver, 15);
 	  	    	Util.scrollToElement(webDriver, reviewsAll, wait);
 	  	    	reviewsAll.click(); 
-	  	    	reviewKeywords=null; //clear data from variable
+	  	    	reviewKeywords=""; //clear data from variable
+	  	    	String temp ="";
 	  	    	try {
 	  	    		BayerWebElement topPositive = waitForVisible("amazon.topPositive", webDriver, 15);
 	  	    		
-	  	    		reviewKeywords+=topPositive.getText();
+	  	    		temp+=topPositive.getText();
+	  	    		System.out.println(temp);
+	  	    		
 				} catch (Exception e) {
 					System.out.println("Unable to grab top positive review");
 				}
 	  	    	try {
 	  	    		BayerWebElement topCritical = waitForVisible("amazon.topCritical", webDriver, 15);
-	  	    		reviewKeywords+=topCritical.getText();
+	  	    		temp+=topCritical.getText();
 				} catch (Exception e) {
 					System.out.println("Unable to grab top critical review");
 				}
-	            
+	            if(temp!=""){
+	            	RepeatedWordInFile words = new RepeatedWordInFile(temp);
+	  	    		reviewKeywords+=words.getOutput();
+	            }
 	  	    	System.out.println("Keyword string: "+ reviewKeywords);
 	  	    	Util.scrollToElement(webDriver, reviewsAll, wait);
 	  	    	webDriver.navigate().back();
   	    	}
   	    	catch (Exception e) {
 				numReviews="No reviews posted";
-				webDriver.navigate().back();
+				//webDriver.navigate().back();
 			}
   	    	try {
 	  	    	BayerWebElement numQuestions = waitForVisible("amazon.numQuestions", webDriver, 15);
@@ -165,28 +213,39 @@ public class GrabDataStep extends AbstractStep {
   	    	catch (Exception e) {
 				aboutProd = "No about the product information";
 			}
-  	    	String keywordSearch = aboutProd + prodDesc;
+  	    	
   	    	///////////////retrieve data section/////////////////////
-            try {  
+            try {
+            	String prodKeys = "";
+            	prodKeys = aboutProd + prodDesc;
+				RepeatedWordInFile prod = new RepeatedWordInFile(prodKeys);
+				prodKeywords = prod.getOutput();
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+  	    	
+  	    	
+  	    	try {  
             	System.out.println("Establishing connection");
                 connection = DriverManager.getConnection(connectionString);  
                 System.out.println("Connected to database");
                 //Statement statement = connection.createStatement();
                 //ResultSet rSet = statement.executeQuery("Insert into users (URL, PrivacyFound, PrivacyName, Phase1, Phase2, Phase3, Phase4, Phase5, Cookie_Acceptance_Phrase, MIRA_ID) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?"); 
-                String rSet = "Insert into ClaritinData (ProductName, ReviewScale, NumReviews, ReviewKeywords, Questions, ProductDescription, AboutTheProduct, ProductKeywords, URL, Date) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                String rSet = "Insert into ClaritinData (Date, ProductName, PrimeStatus, ReviewScale, NumReviews, ReviewKeywords, Questions, ProductDescription, AboutTheProduct, ProductKeywords, URL) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 
                 PreparedStatement pStatement = connection.prepareStatement(rSet);
                
-                pStatement.setString(1, productName);
-                pStatement.setString(2, reviewScale);
-                pStatement.setString(3, numReviews);
-                pStatement.setObject(4, reviewKeywords);
-                pStatement.setString(5, questions);
-                pStatement.setString(6, prodDesc);
-                pStatement.setString(7, aboutProd);
-                pStatement.setString(8, prodKeywords);
-                pStatement.setString(9, urlName);
-                pStatement.setObject(10, currentDate);
+                pStatement.setObject(1, currentDate);
+                pStatement.setString(2, productName);
+                pStatement.setString(3, primeStatus);
+                pStatement.setString(4, reviewScale);
+                pStatement.setString(5, numReviews);
+                pStatement.setObject(6, reviewKeywords);
+                pStatement.setString(7, questions);
+                pStatement.setString(8, prodDesc);
+                pStatement.setString(9, aboutProd);
+                pStatement.setString(10, prodKeywords);
+                pStatement.setString(11, urlName);   
                 
                 int rowsInserted = pStatement.executeUpdate();
                 if (rowsInserted > 0) {
@@ -200,7 +259,13 @@ public class GrabDataStep extends AbstractStep {
             //Util.scrollToElement(webDriver, key, wait);
             webDriver.navigate().back();
         }//end loop
-        
+        try {
+        	Actions actions = new Actions(webDriver);
+        	BayerWebElement signOut = waitForVisible("amazon.signIn", webDriver, 15);
+            actions.moveToElement(signOut);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
         
         try {  
         	System.out.println("Establishing connection");
