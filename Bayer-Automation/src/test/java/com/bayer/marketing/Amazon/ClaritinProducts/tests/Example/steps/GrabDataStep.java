@@ -22,6 +22,9 @@ import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.test.step.AbstractStep;
 import com.sun.jna.platform.unix.X11;
+
+import javassist.tools.web.Webserver;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -70,10 +73,11 @@ public class GrabDataStep extends AbstractStep {
     	ExamplePage urlVar = new ExamplePage();
     	String url = urlVar.getUrl();
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
+    	waitForElement( "amazon.key", webDriver, 15 );
     	
-    	BayerWebElement signIn = waitForVisible("amazon.signIn", webDriver, 15);
-        signIn.click();
         try {
+        	BayerWebElement signIn = waitForVisible("amazon.signIn", webDriver, 15);
+            signIn.click();
         	BayerWebElement email = waitForVisible("amazon.email", webDriver, 15);
             email.sendKeys("ebneth@optonline.net");
             BayerWebElement emailConfirm = waitForVisible("amazon.emailSubmit", webDriver, 15);
@@ -118,7 +122,7 @@ public class GrabDataStep extends AbstractStep {
             catch (Exception e) {
 				// TODO: handle exception
 			}
-            /*try {
+            try {
             	BayerWebElement prime1 = waitForElement("amazon.primeBadge", webDriver, 15);
             	if(prime1.isDisplayed() == true){
             		System.out.println("Prime displayed");
@@ -138,7 +142,7 @@ public class GrabDataStep extends AbstractStep {
             catch (Exception e) {
 				System.out.println("Pantry badge not displayed");
 			}
-			*/
+			
   	    	try {
 	  	    	BayerWebElement ratingScale = waitForElement("amazon.ratingPopover", webDriver, 15);
 	            
@@ -259,13 +263,6 @@ public class GrabDataStep extends AbstractStep {
             //Util.scrollToElement(webDriver, key, wait);
             webDriver.navigate().back();
         }//end loop
-        try {
-        	Actions actions = new Actions(webDriver);
-        	BayerWebElement signOut = waitForVisible("amazon.signIn", webDriver, 15);
-            actions.moveToElement(signOut);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
         
         try {  
         	System.out.println("Establishing connection");
@@ -280,7 +277,15 @@ public class GrabDataStep extends AbstractStep {
                 		} 
                 catch(Exception e) {}  
             } 
-        
+        try {
+        	Actions actions = new Actions(webDriver.asRemote());
+        	BayerWebElement signOut = waitForVisible("amazon.signIn", webDriver, 15);
+            actions.moveToElement(signOut);
+            BayerWebElement logout = waitForVisible("amazon.signOut", webDriver, 15);
+            logout.click();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
         
         return true;
         
