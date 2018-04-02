@@ -1,17 +1,15 @@
-Active,manufacturer,model,platformName,platformVersion,browserName,browserVersion,resolution,location
-No,Apple,iPhone-X,IOS,,,,,
-No,Samsung,Galaxy S8,Android,,,,,
-No,Apple,iPhone-7,IOS,,,,,
-No,,,Windows,10,Chrome,61,,
-No,,,Windows,10,Firefox,57,,
-Yes,,,Windows,10,Firefox,58,1920x1080,US East
-No,,,Windows,10,Firefox,58,1280x1024,US East
-No,,,Windows,10,Chrome,64,1280x1024,US East
-No,,,Windows,10,Edge,16,1280x1024,US East
-No,,,Windows,10,Internet Explorer,11,1280x1024,US East
-No,,,Windows,10,Chrome,64,1920x1080,US East
-No,,,Windows,10,Edge,16,1920x1080,US East
-No,,,Windows,10,Internet Explorer,11,1920x1080,US East
-No,,,Windows,10,Firefox,58,1440x900,US East
-No,,,Windows,10,Chrome,64,1440x900,US East
-No,,,Windows,10,Edge,57,1440x900,US East
+Active,manufacturer,model,platformName,platformVersion,browserName,browserVersion,resolution,location,
+No,Apple,iPhone-X,IOS,,,,,,
+No,Samsung,Galaxy S8,Android,,,,,,
+No,Apple,iPhone-7,IOS,,,,,,
+No,,,Windows,10,Firefox,59,1920x1080,US East,
+No,,,Windows,10,Firefox,59,1280x1024,US East,
+No,,,Windows,10,Chrome,65,1280x1024,US East,
+No,,,Windows,10,Edge,16,1280x1024,US East,
+No,,,Windows,10,Internet Explorer,11,1280x1024,US East,
+No,,,Windows,10,Chrome,65,1920x1080,US East,
+No,,,Windows,10,Edge,16,1920x1080,US East,
+No,,,Windows,10,Internet Explorer,11,1920x1080,US East,
+Yes,,,Windows,10,Firefox,59,1440x900,US East,,
+No,,,Windows,10,Chrome,65,1440x900,US East,
+No,,,Windows,10,Edge,16,1440x900,US East,
