@@ -5,7 +5,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,12 +21,13 @@ import com.bayer.test.step.AbstractStep;
 public class PollenStep extends AbstractStep
 {
 
-    public PollenStep()
+	public PollenStep()
     {
         super( "message", "error message" );
     }
     
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     protected boolean _executeStep( BayerWebDriver webDriver )
     {
         
@@ -107,13 +111,32 @@ public class PollenStep extends AbstractStep
             
             BayerWebElement close = getElement( "claritin.pollenModalClose", webDriver );
             close.click();
-    		
+            
+            
+            /*
+            for(int i=1;i<6;i++) {
+            BayerWebElement zipsearch5 = getElement( "claritin.pollenModalZip", webDriver );
+            zipsearch5.click();
+            
+            BayerWebElement zipinsert5 = getElement( "claritin.pollenModalInput", webDriver );
+            zipinsert5.click(); 
+            zipinsert5.clear();
+			zipinsert5.sendKeys("00000");
+			            
+            BayerWebElement find5 = getElement( "claritin.pollenModalZipBtn", webDriver );
+            find5.click();
+            waitForElement("claritin.pollenModalInput.validate5", webDriver, 30);
+            */
+            //BayerWebElement close = getElement( "claritin.pollenModalClose", webDriver );
+            //close.click();
+            //}
     	}
-    	/*
+/*    	
     	String csvFile = "src/test/java/com/bayer/exampleTemplate/config/TestData.csv";
         String line = "";
         String cvsSplitBy = ",";
         int x = 0;
+        int i =1;
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
 
             while (((line = br.readLine()) != null) && (x <=2) ) {
@@ -122,13 +145,29 @@ public class PollenStep extends AbstractStep
                 String[] userData = line.split(cvsSplitBy);
 
                 System.out.println(userData[7]);
-                x++; 	
+                //for(int i=1;i<6;i++) {
+            BayerWebElement zipsearch = getElement( "claritin.pollenModalZip", webDriver );
+            zipsearch.click();
+            
+            BayerWebElement zipinsert = getElement( "claritin.pollenModalInput", webDriver );
+            zipinsert.click(); 
+            zipinsert.clear();
+			zipinsert.sendKeys(userData[7]);
+			            
+            BayerWebElement find = getElement( "claritin.pollenModalZipBtn", webDriver );
+            find.click();
+            //waitForElement("claritin.pollenModalInput.validate"+i, webDriver, 30); 
+            //webDriver.wait.until(ExpectedConditions.visibilityOfAllElements(By.xpath(".//[text()="+userData[7])));          
+            ((FluentWait<WebDriver>) webDriver.wait).until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//[text()="+userData[7])));
+            }
+                x++; 
+                i++;
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        */
+*/        
         return true;
     }
 

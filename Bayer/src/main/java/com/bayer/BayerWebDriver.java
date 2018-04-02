@@ -43,6 +43,7 @@ public class BayerWebDriver implements WebDriver, FindsByClassName, FindsByCssSe
 	private String platformVersion;
 	
 	private boolean handlingError = false;
+	public Object wait;
 	
     public boolean isHandlingError()
     {
