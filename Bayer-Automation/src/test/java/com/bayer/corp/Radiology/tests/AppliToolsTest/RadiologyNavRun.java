@@ -44,4 +44,26 @@ public class RadiologyNavRun extends AbstractTest {
 		executeSteps(new Step[] { new Navigate(url), new RadiologyNavStep(urlNames) });
 
 	}
+	
+	@TestDescriptor(testName = "Radiology Solutions Navigation for Test Site")
+	@Test(dataProvider = "deviceList", enabled = true)
+	public void radiologyNavigateForTestSite(DeviceContainer dC) {
+		List<String> urlNames = new ArrayList<String>();
+		try {
+			File file = new File("src/test/java/com/bayer/corp/Radiology/config/TestData/testUrlList.txt");
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			String line;
+			while ((line = bufferedReader.readLine()) != null) {
+				urlNames.add(line);
+			}
+			fileReader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("Number of URL's which needs verification : " + urlNames.size());
+		url="http://test.radiologysolutions.bayer.com/";
+		executeSteps(new Step[] { new Navigate(url), new RadiologyNavStep(urlNames) });
+
+	}
 }
