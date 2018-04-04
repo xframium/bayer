@@ -1,7 +1,7 @@
 package com.bayer.corp.Regions.NorthAmerica.FontCheck.tests.AllSites;
 
 import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
-import com.bayer.corp.Regions.Germany.GDPR.tests.Privacy.steps.PrivacyPolicy;
+import com.bayer.corp.Regions.NorthAmerica.FontCheck.tests.AllSites.steps.*;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
 import java.io.*;
@@ -39,12 +39,12 @@ public class FontTest extends AbstractTest {
 				url = newUrl;
 			}
 			@TestDescriptor( testName="GDPR Privacy Policy Validation" )
-  		    @Test ( dataProvider = "deviceList", enabled=false)
+  		    @Test ( dataProvider = "deviceList", enabled=true)
   		    public void privacyPolicyTest( DeviceContainer dC ) {
 				String [] urlNames = new String[100];
 				int numEntries = 0;
 				try {
-					File file = new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/testBatch.txt");
+					File file = new File("src/test/java/com/bayer/corp/Regions/NorthAmerica/FontCheck/config/DataFiles/urlList.txt");
 					FileReader fileReader = new FileReader(file);
 					BufferedReader bufferedReader = new BufferedReader(fileReader);
 					String line;
@@ -62,17 +62,17 @@ public class FontTest extends AbstractTest {
 				
 				for(int c = 0; c < numEntries; c ++) { 
 					url = "http://"+urlNames[c];
-					executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum)});
+					executeSteps( new Step[] { new Navigate(url), new FontCheckStep(url, parentRowNum)});
 					parentRowNum++;
 					System.out.println("Parent row num is " + parentRowNum);
 				}
 			}
 			
 		    @TestDescriptor( testName="GDPR URL Test" )
-		    @Test ( dataProvider = "deviceList", enabled=true, groups="ci")
+		    @Test ( dataProvider = "deviceList", enabled=false, groups="ci")
 		    public void privacyNavigationLoop( DeviceContainer dC ) {
 		    	
-		    	executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy(url, parentRowNum) } );	
+		    	executeSteps( new Step[] { new Navigate(url), new FontCheckStep(url, parentRowNum) } );	
 		        
 		    }
 		    @TestDescriptor( testName="GDPR Accessibility Test" )

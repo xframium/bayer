@@ -37,12 +37,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import com.bayer.BayerWebDriver;
 import com.bayer.BayerWebElement;
 import com.bayer.common.utility.StructureValidator;
-import com.bayer.corp.Regions.Germany.GDPR.tests.Privacy.*;
-import com.bayer.marketing.consumerHealth.betaseron.tests.Utility.Util;
+import com.bayer.corp.Regions.NorthAmerica.FontCheck.tests.AllSites.*;
 import com.bayer.test.step.AbstractStep;
-import com.gargoylesoftware.htmlunit.javascript.host.Element;
-import com.gargoylesoftware.htmlunit.util.Cookie;
-import com.sun.jna.platform.unix.X11;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 public class FontCheckStep extends AbstractStep
@@ -56,87 +52,42 @@ public class FontCheckStep extends AbstractStep
         this.rowNumber = parentRowNum;
     }
     
-	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/MIRA_Websites_Germany.xlsx";
-    private static String[] columns = {"URL", "Prviacy Found(T/F)", "Privacy Name", "Phrase 1 Found", "Phrase 2 Found", "Phrase 3 Found", "Phrase 4 Found", "Phrase 5 Found", "Cookie Acceptance Phrase" };
+    private static String[] columns = {"Brand", "URL", "Google Fonts", "Adobe Fonts", "Comments" };
     //private static String[] privacyArray =  new String[8];
     public static List<FontInfo> fontData = new ArrayList<>();
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver )  {
-    	
-    	PrivacyTest pt = new PrivacyTest();
-    	boolean privacyFound = false; 
-	    String privacyName = ""; 
-	    boolean phrase1 = false; 
-	    boolean phrase2 = false; 
-	    boolean phrase3 = false; 	    boolean phrase4 = false;
-	    boolean phrase5 = false;
-	    String cookieName = "Not found";
-	    boolean checkFlag = false;
+	    
+	    String Brand = "";
+	    String currentUrl = "";
+	    Boolean googleConf = false;
+	    Boolean adobeConf = false;
+	    String comments = "";
     	
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
-    	//Cookie ck = new Cookie("JSESSIONID", "B8F9B794A232D828BDBD291D7FCE0232.node1", "radiologie.bayer.de", );
-    	//webDriver.manage().addCookie(ck);
-    	waitForElement( "bayer.key", webDriver, 15 );
-    	BayerWebElement logo = getElement("bayer.key", webDriver);
     	
     	////////Wait for cookie popup///////
     		webDriver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
     	
     	////////Cookie Check////////
     	///////Cookie Check 1////////
-      	try
-      	{	
-  	    	BayerWebElement cookiesConf1 = waitForVisible("bayer.cookiesConfirm", webDriver, 15);
-  	    	cookieName = cookiesConf1.getText();
-  	    	cookiesConf1.click();
-
-      	}
-      	catch( Exception e )
-      	{
-      	}
+    		webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
       	
-      	webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+    	currentUrl = webDriver.getCurrentUrl();
+    	String urlSource = webDriver.getPageSource();
     	
-    	String urlList = webDriver.getPageSource();
-    	
-    	if(urlList.contains("fonts.google")) {
-        	
-    		 try {
-		    	   waitForElement( "gdpr.privacyV2Footer", webDriver, 15 );
-			       BayerWebElement privacy2Footer = getElement("gdpr.privacyV2Footer", webDriver);
-			       Util.scrollToElement(webDriver, privacy2Footer, wait);
-    		 } 
-    		 catch (Exception e) {
-				System.out.println("No google font found");
-			}
+    	if(urlSource.contains("fonts.google")) {
+        	googleConf = true;	
     	}
-    	if(urlList.contains("fonts.adobe")) {
-        	
-   		 try {
-		    	   waitForElement( "gdpr.privacyV2Footer", webDriver, 15 );
-			       BayerWebElement privacy2Footer = getElement("gdpr.privacyV2Footer", webDriver);
-			       Util.scrollToElement(webDriver, privacy2Footer, wait);
-   		 } 
-   		 catch (Exception e) {
-				System.out.println("No google font found");
-			}
-   	}
+    	if(urlSource.contains("wwwimages2.adobe")) {
+        	adobeConf = true;
+    	}
     	
-        if(checkFlag == false) {
-        	privacyName="German privacy statement name not found";
-        	phrase1=false;
-        	phrase2=false;
-        	phrase3=false;
-        	phrase4=false;
-        	phrase5=false;
-        	//cookieName = "Not found";
-        	System.out.println("Nothing found.");
-        }
-       FontInfo pvinf = new FontInfo(privacyFound, privacyName, phrase1, phrase2, phrase3, phrase4, phrase5, cookieName);
+       FontInfo pvinf = new FontInfo(Brand,googleConf,adobeConf,comments);
         fontData.add(pvinf);
         FileInputStream inputStream = null;
 		try {
-			inputStream = new FileInputStream(new File("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/MIRA_Websites_URLs.xlsx"));
+			inputStream = new FileInputStream(new File("src/test/java/com/bayer/corp/Regions/NorthAmerica/FontCheck/config/DataFiles/Website_FontCheck_List.xlsx"));
 		} catch (FileNotFoundException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
@@ -173,14 +124,7 @@ public class FontCheckStep extends AbstractStep
 	        CellStyle dateCellStyle = workbook.createCellStyle();
 	        Object[][] legendInfo = {
 	                {"", "Legend"},
-	                {"Country:", "Deutschland"},
-	                {" ", " "},
-	                {"Phrase #", "Phrase Name"},
-	                {"Phrase 1:", "Nutzung der Website"},
-	                {"Phrase 2:", "Informationen über Ihre Rechte"},
-	                {"Phrase 3:", "Profiling"},
-	                {"Phrase 4:", "Datenübertragbarkeit"}, 
-	                {"Phrase 5:", "Aufsichtsbehörde"}
+	                
 	        };
 	        int legendRowNum = 0;
 	        System.out.println("Creating excel");
@@ -202,7 +146,7 @@ public class FontCheckStep extends AbstractStep
 	        }
 		}
         // Create Other rows and cells with employees data
-        int rowNum = 2;
+       
         //for(int k = 0; k < privacyArray.length; k++) {
         	//rowNum=pt.getRowNum() + 1;
         	//pt.setRowNum(rowNum);
@@ -210,16 +154,12 @@ public class FontCheckStep extends AbstractStep
         	//System.out.println("Current row number: " +rowNumber);
         	Row row = sheet.createRow(rowNumber);
 
-            row.createCell(0).setCellValue(newUrl);
-
-            row.createCell(1).setCellValue(pvinf.getPrivacyFound());
-            row.createCell(2).setCellValue(pvinf.getPrivacyName());               
-            row.createCell(3).setCellValue(pvinf.getPhrase1());
-            row.createCell(4).setCellValue(pvinf.getPhrase2());
-            row.createCell(5).setCellValue(pvinf.getPhrase3()); 
-            row.createCell(6).setCellValue(pvinf.getPhrase4()); 
-            row.createCell(7).setCellValue(pvinf.getPhrase5());
-            row.createCell(8).setCellValue(pvinf.getCookiePhrase());
+           
+            row.createCell(0).setCellValue(pvinf.getBrand());
+            row.createCell(1).setCellValue(currentUrl);               
+            row.createCell(2).setCellValue(pvinf.getGoogleConf());
+            row.createCell(3).setCellValue(pvinf.getAdobeConf());
+            row.createCell(4).setCellValue(pvinf.getComments());
             //System.out.println("Current row number: " +rowNum);
         
 
@@ -231,7 +171,7 @@ public class FontCheckStep extends AbstractStep
         // Write the output to a file
         FileOutputStream fileOut = null;
 		try {
-			fileOut = new FileOutputStream("src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/MIRA_Websites_URLs.xlsx");
+			fileOut = new FileOutputStream("src/test/java/com/bayer/corp/Regions/NorthAmerica/FontCheck/config/DataFiles/Website_FontCheck_List.xlsx");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -249,7 +189,7 @@ public class FontCheckStep extends AbstractStep
 			e.printStackTrace();
 		}
     
-        System.out.println("End url policy step.");
+        System.out.println("End Font check step.");
         return true;
         
     }
