@@ -50,13 +50,13 @@ import com.gargoylesoftware.htmlunit.util.Cookie;
 import com.sun.jna.platform.unix.X11;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public class PrivacyPolicy extends AbstractStep
+public class PrivacyCheck extends AbstractStep
 {
 	private static int rowNumber  = 0;
 	private static String newUrl = "";
 	private static String cCode = "";
 	private static String mira = "";
-    public PrivacyPolicy(String url, int parentRowNum, String countryCode, String miraID)
+    public PrivacyCheck(String url, int parentRowNum, String countryCode, String miraID)
     {
         super( "message", "error message" );
         this.newUrl = url;
@@ -105,7 +105,6 @@ public class PrivacyPolicy extends AbstractStep
       	{
       	}
       	
-      	webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     	
     	String urlList = webDriver.getPageSource();
     	if(urlList.contains("Datenschutz")) {
@@ -120,9 +119,6 @@ public class PrivacyPolicy extends AbstractStep
 	           		  privacyFound = true;
 	           		   privacyName="Datenschutz";
 		        	   checkFlag = true;
-			           //wait.until(ExpectedConditions.invisibilityOf(privacy1));
-			           //JavascriptExecutor javascript1 = (JavascriptExecutor) webDriver;
-			           //javascript1.executeScript("privacy1.click();", privacy1);
 			           privacy2Footer.click();
 			           waitForElement( "bayer.key", webDriver, 15 );
 			           

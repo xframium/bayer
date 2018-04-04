@@ -849,8 +849,7 @@ public class PrivacyPolicy extends AbstractStep
 			e1.printStackTrace();
 		}
 
-       // CreationHelper createHelper = workbook.getCreationHelper();
-
+        // CreationHelper createHelper = workbook.getCreationHelper();
         // Create a Sheet
 		
 		Sheet sheet = workbook.getSheetAt(0);
