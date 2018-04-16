@@ -2,117 +2,15 @@
 <validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
     <validation name="HOME">
         <description>Testing Home</description>
-        <tag name="//p/strong">
-            <text type="contains">BETASERON can cause serious side effects, including:</text>
-        </tag>
-        <tag name="//p">
-            <text type="contains">Symptoms of liver problems may include yellowing of your eyes, itchy skin, feeling very tired, flu-like symptoms, nausea or vomiting, bruising easily or bleeding problems. Your healthcare provider will do blood tests to check for these problems while you take BETASERON. </text>
-            <tag name="/strong">
-                <text type="contains">Liver Problems Including Liver Failure</text>
-            </tag>
+        <tag name="//h1">
+            <text type="contains">Because spring</text>
         </tag>
     </validation>
-    <validation name="Aleve HOME">
-        <description>Testing Home</description>
-        <tag name="//p/strong">
-            <text type="contains">GO BEYOND PAIN</text>
-        </tag>
-        <tag name="//p">
-            <text type="contains">Symptoms of liver problems may include yellowing of your eyes, itchy skin, feeling very tired, flu-like symptoms, nausea or vomiting, bruising easily or bleeding problems. Your healthcare provider will do blood tests to check for these problems while you take BETASERON. </text>
-            <tag name="/strong">
-                <text type="contains">Liver Problems Including Liver Failure</text>
-            </tag>
-        </tag>
-    </validation>
-    <validation name="Allergy Test">
-        <description>Testing allergy</description>
-        <tag name="//*">
-            <text type="contains">Information provided by</text>
-        </tag>
-       
-    </validation>
-    <validation name="ISI">
-        <description>Important Safety Information</description>
-        <tag name="//p">
-            <text type="contains">is a prescription medicine used to reduce the number of relapses in people with relapsing forms of multiple sclerosis (MS). This includes people who have had their first symptoms of multiple sclerosis and have an MRI consistent with multiple sclerosis. BETASERON will not cure MS but may decrease the number of flare-ups of the disease.</text>
-            <tag name="/strong">
-                <text type="regex">(?s).*BETASERON.*\(interferon beta-1b\).*</text>
-            </tag>
-        </tag>
-        <tag name="//p">
-            <text type="contains">are allergic to interferon beta-1b, to another interferon beta, to human albumin, or mannitol.</text>
-            <tag name="/strong">
-                <text type="contains">Do not take BETASERON (interferon beta-1b) if you</text>
-            </tag>
-        </tag>
-        <tag name="//p/strong">
-            <text type="contains">BETASERON can cause serious side effects, including:</text>
-        </tag>
-        <tag name="//p">
-            <text type="contains">Symptoms of liver problems may include yellowing of your eyes, itchy skin, feeling very tired, flu-like symptoms, nausea or vomiting, bruising easily or bleeding problems. Your healthcare provider will do blood tests to check for these problems while you take BETASERON.</text>
-            <tag name="/strong">
-                <text type="contains">Liver Problems Including Liver Failure.</text>
-            </tag>
-        </tag>
-        <tag name="//p">
-            <text type="contains">Serious allergic reactions can happen quickly and may happen after your first dose of BETASERON or after you have taken BETASERON many times. Symptoms may include difficulty breathing or swallowing, swelling of the mouth or tongue, rash, itching, or skin bumps.</text>
-            <tag name="/strong">
-                <text type="contains">Serious Allergic Reactions.</text>
-            </tag>
-        </tag>
-        <tag name="//p">
-            <text type="contains">Call your healthcare provider right away if you have any of the following symptoms, especially if they are new, worse or worry you: thoughts about suicide or dying, new or worse depression (sinking feeling or sadness), new or worse anxiety (feeling uneasy, nervous or fearful for no reason), trouble sleeping (insomnia), acting aggressive, being angry, or violent, acting on dangerous impulses, hallucinations, other unusual changes in behavior or mood.</text>
-            <tag name="/strong">
-                <text type="contains">Depression or Suicidal Thoughts.</text>
-            </tag>
-        </tag>
-        <tag name="//p/strong">
-            <text type="contains">Other possible serious side effects with BETASERON include:</text>
-        </tag>
-        <tag name="//p">
-            <text type="contains">BETASERON may worsen heart problems including congestive heart failure. Symptoms of heart problems may include swollen ankles, shortness of breath, decreased ability to exercise, fast heartbeat, tightness in chest, increased need to urinate at night, not being able to lay flat in bed.</text>
-            <tag name="/strong">
-                <text type="contains">Heart Problems.</text>
-            </tag>
-        </tag>
-        <tag name="//p">
-            <text type="contains">Serious skin reactions can happen in some people including areas of severe damage to skin and the tissue below the skin (necrosis). These reactions can happen anywhere you inject BETASERON. Symptoms of injection site problems may include swelling, redness, or pain at the injection site, fluid drainage from the injection site, breaks in your skin or blue-black skin discoloration. Change your injection site each time you inject BETASERON as it will lessen the chance of you having a serious skin reaction. Avoid injecting BETASERON into an area of the skin that is sore, reddened, infected or has other problems.</text>
-            <tag name="/strong">
-                <text type="contains">Injection Site Problems.</text>
-            </tag>
-        </tag>
-        <tag name="//p">
-            <text type="contains">BETASERON can cause flu-like symptoms including fever, chills, tiredness, sweating, muscle aches when you first start to use it. These symptoms may decrease over time. Taking medicines for fever and pain relief on the days you are using BETASERON may help decrease these symptoms.</text>
-            <tag name="/strong">
-                <text type="contains">Flu-like Symptoms.</text>
-            </tag>
-        </tag>
-        <tag name="//p">
-            <text type="contains">Some people have had seizures while taking BETASERON, including people who have never had seizures before. It is not known if the seizures were related to MS, to BETASERON, or to a combination of both. If you have a seizure after taking BETASERON call your healthcare provider right away.</text>
-            <tag name="/strong">
-                <text type="contains">Seizures.</text>
-            </tag>
-        </tag>
-        <tag name="//p">
-            <text type="contains">You may have a drop in the levels of infection-fighting white blood cells, red blood cells, or cells that help you form blood clots. If drops in levels are severe, they can lessen your ability to fight infections, make you feel tired or sluggish or cause you to bruise or bleed easily.</text>
-            <tag name="/strong">
-                <text type="contains">Blood Problems.</text>
-            </tag>
-        </tag>
-        <tag name="//p/strong">
-            <text type="contains">Risk to Pregnancy:</text>
-        </tag>
-        <tag name="//p">
-            <text type="contains">BETASERON can harm your unborn baby. BETASERON may cause you to lose your baby (miscarry). If you become pregnant while taking BETASERON call your healthcare provider right away. You and your healthcare provider should decide if you should continue to take BETASERON.</text>
-        </tag>
-        <tag name="//p/strong">
-            <text type="contains">Most Common Side Effects:</text>
-        </tag>
-        <tag name="//p">
-            <text type="contains">The most common side effects of BETASERON include low white blood cell count, increases in your liver enzymes, headache, increase in your muscle tension, pain, rash, problems sleeping, stomach pain, weakness. These are not all the possible side effects of BETASERON.</text>
-        </tag>
-        <tag name="//p">
-            <text type="contains">Tell your healthcare provider if you have any side effect that bothers you or that does not go away. Tell your healthcare provider about all the medicines you take and your medical conditions.</text>
+    <validation name="Imprint">
+        <description>Imprint</description>
+        <tag name="//ul/li/a">
+            <attribute name="href" type="is">http://www.bayercare.com/imprint.cfm</attribute>
+            <text type="contains">IMPRINT</text>
         </tag>
     </validation>
 </validationCollection>
