@@ -27,7 +27,7 @@ public class HomePage extends AbstractTest {
 	}
 	
 	@TestDescriptor( testName="PetBasics Home Nav Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url),
@@ -48,7 +48,7 @@ public class HomePage extends AbstractTest {
     }
     
     @TestDescriptor( testName="PetBasics Home Accessibility Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void accessibilityTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url),
         						   new AccessitilitySteps(),
@@ -56,11 +56,11 @@ public class HomePage extends AbstractTest {
         						    } );
     }
     @TestDescriptor( testName="Home Page Link Validation" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
-    	System.out.println("The url currently being used it" + url);
+    	System.out.println("The url currently being used is " + url);
     	executeSteps(new Step[] { 
-    			new LinkValidator("https://www.petbasics.com/", 297)
+    			new LinkValidator("https://www.petbasics.com/", 148)
     			
    
     	});

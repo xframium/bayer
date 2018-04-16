@@ -20,7 +20,7 @@ public class HomePage extends AbstractTest {
 	}
 	
 	@TestDescriptor( testName="Claritin Home Nav Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url), 
@@ -30,11 +30,11 @@ public class HomePage extends AbstractTest {
     }
     
     @TestDescriptor( testName="Claritin Home Link Validation" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
     	//System.out.println("The url currently being used it" + url);
     	executeSteps(new Step[] { 
-    			new LinkValidator(url, 42)    			
+    			new LinkValidator(url, 37)    			
     	});
     }
     	
