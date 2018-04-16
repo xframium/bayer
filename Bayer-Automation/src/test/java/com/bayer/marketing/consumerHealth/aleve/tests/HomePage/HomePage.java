@@ -20,13 +20,13 @@ public class HomePage extends AbstractTest
     }
 
     @TestDescriptor( testName="Structure Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC )
     {
         executeSteps( new Step[] { new Navigate( "https://www.aleve.com" ), new StructureValidator( "ISI" ), new Navigate("https://www.aleve.com/live-well/") } );
     }
     @TestDescriptor( testName="Link Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void linkTest( DeviceContainer dC )
     {
         executeSteps( new Step[] { new LinkValidator("https://www.aleve.com",-1) } );
