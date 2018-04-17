@@ -8,7 +8,6 @@ import com.bayer.common.TimedNavigate;
 import com.bayer.common.utility.LinkValidator;
 import com.bayer.common.utility.StructureValidator;
 import com.bayer.test.AbstractTest;
-import com.bayer.test.AbstractTest.TestDescriptor;
 import com.bayer.test.device.DeviceContainer;
 import com.bayer.test.step.factory.Step;
 
@@ -32,18 +31,19 @@ public class HomePage extends AbstractTest {
     }
     
     @TestDescriptor( testName="Claritin Home Link Validation" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void linkValidationTest(DeviceContainer dC){
     	//System.out.println("The url currently being used it" + url);
     	executeSteps(new Step[] { 
     			new LinkValidator(url, 37)    			
     	});
     }
+    
     @TestDescriptor( testName="Structure Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC )
     {
-        executeSteps( new Step[] { new Navigate( "https://www.claritin.com" ), new StructureValidator( "ISI" ), new Navigate("https://www.claritin.com/live-well/") } );
+        executeSteps( new Step[] { new Navigate("https://www.claritin.com/"), new StructureValidator( "IMPRINT" ) } );
     }    	
  
 } //end class

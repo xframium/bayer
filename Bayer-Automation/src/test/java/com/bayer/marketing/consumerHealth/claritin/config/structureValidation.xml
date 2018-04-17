@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <validationCollection xsi:schemaLocation="http://www.xframium.org/structureValidation http://www.xframium.org/xsd/validation/structureValidation-0.0.1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.xframium.org/structureValidation">
-    <validation name="HOME">
+    <validation name="CLARITIN HOME">
         <description>Testing Home</description>
         <tag name="//h1">
             <text type="contains">Because spring</text>
         </tag>
     </validation>
-    <validation name="Imprint">
-        <description>Imprint</description>
-        <tag name="//ul/li/a">
-            <attribute name="href" type="is">http://www.bayercare.com/imprint.cfm</attribute>
-            <text type="contains">IMPRINT</text>
-        </tag>
+    <validation name="IMPRINT">
+    	<description>Testing Imprint</description>
+    	<tag name="//ul/li/a">
+    		<text type="contains">IMPRINT</text></tag>
     </validation>
 </validationCollection>

@@ -38,7 +38,7 @@ public class HomePage extends AbstractTest {
     }
     
     @TestDescriptor( testName="PetBasics Home Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url),
         						   new StructureValidator("H1 Tag", "/HomePageValidation.xml"),    						  
