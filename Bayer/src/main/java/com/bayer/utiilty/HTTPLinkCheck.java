@@ -34,7 +34,7 @@ public class HTTPLinkCheck
     
     public static void main( String[] args ) throws Exception {
         System.out.println("Link checker initiated");
-    	String url ="https://www.aleve.com/";
+    	String url ="https://petbasics.com";
     	HTTPLinkCheck h = new HTTPLinkCheck();
     	h.process( new URL(url), new URL(url) );
         

@@ -26,7 +26,7 @@ public class ContactUs extends AbstractTest {
 	}
 	
 	@TestDescriptor( testName="Aspirin Home Accessibility Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC ) {
         System.out.println(url);
 		executeSteps( new Step[] { new Navigate(url), 
@@ -38,7 +38,7 @@ public class ContactUs extends AbstractTest {
     
 	
     @TestDescriptor( testName="Home Page Validation Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void structureTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url),
         						   new StructureValidator("Main Now Approved Banner", "/HomePageValidation.xml"),

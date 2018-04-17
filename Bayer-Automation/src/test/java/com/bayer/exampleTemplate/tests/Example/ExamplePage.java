@@ -2,6 +2,7 @@ package com.bayer.exampleTemplate.tests.Example;
 
 import com.bayer.exampleTemplate.tests.Example.steps.ExampleStep;
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
+import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.AltArchPatientStep;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
 import com.bayer.common.Navigate;
@@ -15,6 +16,7 @@ import com.bayer.common.utility.StructureValidator;
 import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.javascript.host.URL;
 import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
+import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.AltArchPatientStep;
 
 public class ExamplePage extends AbstractTest {
 	
@@ -36,7 +38,7 @@ public String url = "https://www.bayer.com/";
     }
     
     @TestDescriptor( testName="Example Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navigateTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new ExampleStep() } );
     }
@@ -47,6 +49,12 @@ public String url = "https://www.bayer.com/";
         executeSteps( new Step[] { new TimedNavigate(url, 6000) } );
     }
      
+    @TestDescriptor( testName="Example Timed Navigation Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void ArchPatient( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url), new AltArchPatientStep(url, 1)} );
+    }
+    
 }
 
 // push test 5
