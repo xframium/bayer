@@ -6,12 +6,20 @@ public class FontInfo {
 	//private String currentUrl;
 	private Boolean googleConf;
 	private Boolean adobeConf;
+	private Boolean typographyConf;
+	private Boolean myFontsConf;
+	private Boolean typekitConf;
+	private Boolean fontspringConf;
 	private String comments;
 
-	    public FontInfo(String Brand,boolean googleConf, boolean adobeConf, String comments) {
+	    public FontInfo(String Brand,boolean googleConf, boolean adobeConf, boolean typographyConf, boolean myFontsConf, boolean typekitConf,boolean fontspringConf, String comments) {
 	        this.Brand = Brand;
 	        this.googleConf = googleConf;
 	        this.adobeConf = adobeConf;
+	        this.typographyConf = typographyConf;
+	        this.myFontsConf = myFontsConf;
+	        this.typekitConf = typekitConf;
+	        this.fontspringConf = fontspringConf;
 	        this.comments = comments; 
 	    }
 
@@ -23,6 +31,18 @@ public class FontInfo {
 		}
 		public boolean getAdobeConf(){ 
 			return adobeConf;
+		}
+		public boolean getTypographyConf(){ 
+			return typographyConf;
+		}
+		public boolean getMyFontsConf(){ 
+			return typographyConf;
+		}
+		public boolean getTypekitConf(){ 
+			return typographyConf;
+		}
+		public boolean getFontspringConf(){ 
+			return typographyConf;
 		}
 		public String getComments(){ 
 			return comments;

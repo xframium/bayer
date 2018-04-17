@@ -61,7 +61,7 @@ public class FontTest extends AbstractTest {
 				System.out.println("For loop");
 				
 				for(int c = 0; c < numEntries; c ++) { 
-					url = "http://"+urlNames[c];
+					url = urlNames[c];
 					executeSteps( new Step[] { new Navigate(url), new FontCheckStep(url, parentRowNum)});
 					parentRowNum++;
 					System.out.println("Parent row num is " + parentRowNum);
