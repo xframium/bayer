@@ -62,6 +62,10 @@ public class FontCheckStep extends AbstractStep
 	    String currentUrl = "";
 	    Boolean googleConf = false;
 	    Boolean adobeConf = false;
+	    Boolean typographyConf = false;
+	    Boolean myFontsConf = false;
+	    Boolean typekitConf = false;
+	    Boolean fontspringConf = false; 
 	    String comments = "";
     	
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
@@ -71,7 +75,7 @@ public class FontCheckStep extends AbstractStep
     	
     	////////Cookie Check////////
     	///////Cookie Check 1////////
-    		webDriver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+    		webDriver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
       	
     	currentUrl = webDriver.getCurrentUrl();
     	String urlSource = webDriver.getPageSource();
@@ -82,8 +86,19 @@ public class FontCheckStep extends AbstractStep
     	if(urlSource.contains("wwwimages2.adobe")) {
         	adobeConf = true;
     	}
-    	
-       FontInfo pvinf = new FontInfo(Brand,googleConf,adobeConf,comments);
+    	if(urlSource.contains("typography")) {
+        	typographyConf = true;
+    	}
+    	if(urlSource.contains("myfont")) {
+        	myFontsConf = true;
+    	}
+    	if(urlSource.contains("typekit")) {
+        	typekitConf = true;
+    	}
+    	if(urlSource.contains("fontspring")) {
+        	fontspringConf = true;
+    	}
+       FontInfo pvinf = new FontInfo(Brand,googleConf,adobeConf,typographyConf,myFontsConf,typekitConf,fontspringConf,comments);
         fontData.add(pvinf);
         FileInputStream inputStream = null;
 		try {
@@ -159,7 +174,11 @@ public class FontCheckStep extends AbstractStep
             row.createCell(1).setCellValue(currentUrl);               
             row.createCell(2).setCellValue(pvinf.getGoogleConf());
             row.createCell(3).setCellValue(pvinf.getAdobeConf());
-            row.createCell(4).setCellValue(pvinf.getComments());
+            row.createCell(4).setCellValue(pvinf.getTypographyConf());
+            row.createCell(5).setCellValue(pvinf.getMyFontsConf());
+            row.createCell(6).setCellValue(pvinf.getTypekitConf());
+            row.createCell(7).setCellValue(pvinf.getFontspringConf());
+            row.createCell(8).setCellValue(pvinf.getComments());
             //System.out.println("Current row number: " +rowNum);
         
 

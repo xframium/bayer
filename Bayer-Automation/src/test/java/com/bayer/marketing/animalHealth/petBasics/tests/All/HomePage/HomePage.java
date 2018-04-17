@@ -58,9 +58,9 @@ public class HomePage extends AbstractTest {
     @TestDescriptor( testName="Home Page Link Validation" )
     @Test ( dataProvider = "deviceList", enabled=true)
     public void linkValidationTest(DeviceContainer dC){
-    	System.out.println("The url currently being used it" + url);
+    	System.out.println("The url currently being used is " + url);
     	executeSteps(new Step[] { 
-    			new LinkValidator("https://www.petbasics.com/", 297)
+    			new LinkValidator("https://www.petbasics.com/", 148)
     			
    
     	});

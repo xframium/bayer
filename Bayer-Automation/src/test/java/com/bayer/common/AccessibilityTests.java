@@ -40,7 +40,7 @@ public class AccessibilityTests extends AbstractTest
     public void aleveAccessibility( DeviceContainer dC )
     {
         String baseUrl = "https://www.aleve.com";
-        executeSteps( new Step[] { new Navigate( baseUrl )} );
+        executeSteps( new Step[] { new Navigate( baseUrl ), new LinkValidator(baseUrl, -1)} );
     }
     
     @TestDescriptor ( testName = "Betaseron General Testing ")
