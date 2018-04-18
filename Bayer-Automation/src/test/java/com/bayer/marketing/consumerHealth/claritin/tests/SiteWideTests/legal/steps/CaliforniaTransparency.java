@@ -19,7 +19,7 @@ public class CaliforniaTransparency extends AbstractStep
     @Override
     protected boolean _executeStep( BayerWebDriver webDriver ) {
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
-        
+        /*
     	waitForElement( "bayer.key", webDriver, 15 );
     	
     	BayerWebElement cookiesPopup = getElement("bayer.cookiesVisible", webDriver);
@@ -32,7 +32,7 @@ public class CaliforniaTransparency extends AbstractStep
         BayerWebElement conditions = getElement("bayer.privacy", webDriver);
         Util.scrollToElement(webDriver, conditions, wait);
         conditions.click();
-        waitForElement( "bayer.key", webDriver, 15 );
+        waitForElement( "bayer.key", webDriver, 15 );*/
         
         new StructureValidator("H1tag","/com/bayer/marketing/consumerHealth/claritin/tests/SiteWideTests/legal/CaliforniaTransparency.xml");
         new StructureValidator("Paragraphs","/com/bayer/marketing/consumerHealth/claritin/tests/SiteWideTests/legal/CaliforniaTransparency.xml");

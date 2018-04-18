@@ -12,20 +12,23 @@ import com.bayer.test.step.factory.Step;
 
 public class PrivacyPage extends AbstractTest {
 	
-public String url = "http://colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081";
+	//public String url = "http://colin:Bayer123@03342-claritin-qa.photoninfotech.com:8081";
+	public String url ="https://www.claritin.com";
     
 	public String getUrl(){ 
 		return url;
 	}
     @TestDescriptor( testName="CaliforniaTransparency Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void californiaTransparencyTest( DeviceContainer dC ) {
+    	url="https://www.bayer.us/en/about-bayer/corporate-responsibility/transparency-in-supply-chains.php";
         executeSteps( new Step[] { new Navigate(url), new CaliforniaTransparency() } );
     }
     
     @TestDescriptor( testName="Privacy Policy Validation" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void privacyPolicyTest( DeviceContainer dC ) {
+    	url="http://www.bayercare.com/privacy_statement.cfm";
         executeSteps( new Step[] { new Navigate(url), new PrivacyPolicy() } );
     }
     
