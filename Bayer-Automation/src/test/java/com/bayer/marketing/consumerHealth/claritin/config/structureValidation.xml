@@ -8,7 +8,7 @@
     </validation>
     <validation name="IMPRINT">
     	<description>Testing Imprint</description>
-    	<tag name="//ul/li/a">
+    	<tag name="//a">
     		<text type="contains">IMPRINT</text></tag>
     </validation>
 </validationCollection>

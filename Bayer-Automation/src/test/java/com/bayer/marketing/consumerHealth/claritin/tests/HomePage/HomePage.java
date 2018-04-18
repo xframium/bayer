@@ -41,9 +41,12 @@ public class HomePage extends AbstractTest {
     
     @TestDescriptor( testName="Structure Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
-    public void structureTest( DeviceContainer dC )
+    public void structureTest(DeviceContainer dC)
     {
-        executeSteps( new Step[] { new Navigate("https://www.claritin.com/"), new StructureValidator( "IMPRINT" ) } );
+        executeSteps( new Step[] { 
+        		new Navigate(url), 
+        		new StructureValidator("IMPRINT", "../../../config/structureValidation.xml")
+        });
     }    	
  
 } //end class
