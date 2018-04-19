@@ -23,7 +23,7 @@ import com.bayer.common.utility.StructureValidator;
 public class FontTest extends AbstractTest {
 		
 			
-	private String url = "https://fonts.google.com/";
+	private String url = "http://www.essure.com/";
 	private int parentRowNum = 1;
 	private static final String FILE_NAME = "src/test/java/com/bayer/corp/Regions/Germany/GDPR/config/DataFiles/urlListBatch4.xlsx";	    
 			public String getUrl(){ 
@@ -41,7 +41,7 @@ public class FontTest extends AbstractTest {
 			@TestDescriptor( testName="GDPR Privacy Policy Validation" )
   		    @Test ( dataProvider = "deviceList", enabled=true)
   		    public void privacyPolicyTest( DeviceContainer dC ) {
-				String [] urlNames = new String[100];
+				String [] urlNames = new String[1000];
 				int numEntries = 0;
 				try {
 					File file = new File("src/test/java/com/bayer/corp/Regions/NorthAmerica/FontCheck/config/DataFiles/urlList.txt");
@@ -51,9 +51,13 @@ public class FontTest extends AbstractTest {
 					int i = 0;
 					while ((line = bufferedReader.readLine()) != null) {
 						//System.out.println(line);
-						urlNames[i] = line;
-						numEntries++;
-						i++; }
+						
+						if (!line.contains("xmlns") || (!line.contains("xsi"))) {
+							urlNames[i] = line;
+							numEntries++;
+							i++;
+						}//end if
+						 }
 					fileReader.close();
 				} catch (IOException e) {
 					e.printStackTrace();

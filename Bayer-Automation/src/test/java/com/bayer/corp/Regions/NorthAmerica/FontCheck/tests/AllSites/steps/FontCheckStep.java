@@ -71,7 +71,7 @@ public class FontCheckStep extends AbstractStep
     	WebDriverWait wait = new WebDriverWait(webDriver, 20);
     	
     	////////Wait for cookie popup///////
-    		webDriver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
+        //webDriver.manage().timeouts().pageLoadTimeout(15, TimeUnit.SECONDS);
     	
     	////////Cookie Check////////
     	///////Cookie Check 1////////

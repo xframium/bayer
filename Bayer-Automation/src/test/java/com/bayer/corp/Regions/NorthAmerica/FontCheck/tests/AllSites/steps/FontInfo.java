@@ -36,13 +36,13 @@ public class FontInfo {
 			return typographyConf;
 		}
 		public boolean getMyFontsConf(){ 
-			return typographyConf;
+			return myFontsConf;
 		}
 		public boolean getTypekitConf(){ 
-			return typographyConf;
+			return typekitConf;
 		}
 		public boolean getFontspringConf(){ 
-			return typographyConf;
+			return fontspringConf;
 		}
 		public String getComments(){ 
 			return comments;
