@@ -5,7 +5,7 @@
 <suite name="PetBasics Test" verbose="2" >
   <test name="Run Test File"  >
     <packages>
-      <package name="com.bayer.marketing.animalHealth.petBasics.tests.faqDog" /> 
+      <package name="com.bayer.marketing.animalHealth.petBasics.tests.All.AboutPage" /> 
    </packages>
  </test>
 </suite>

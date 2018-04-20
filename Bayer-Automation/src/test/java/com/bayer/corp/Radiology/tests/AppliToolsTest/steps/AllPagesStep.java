@@ -83,18 +83,18 @@ public class AllPagesStep extends AbstractStep
            if((platformName.equals("IOS"))||(platformName.equals("Android")))
            { 
         	   System.out.println("Pass if statement");
-        	   eyes.open(webDriver.asRemote(), "Bayer Global Mobile Test1", "ayer Global Mobile Test" + webDriver.getCapabilities().getCapability("platformName"));
+        	   eyes.open(webDriver.asRemote(), "Bayer Global Mobile Test1", "Bayer Global Mobile Test" + webDriver.getCapabilities().getCapability("platformName"));
         	   
            }
            else {
         	   System.out.println("Pass else statement");
-        	   eyes.open(webDriver.asRemote(), "ayer Global Web", "ayer Global" + webDriver.getCapabilities().getCapability("platformName"), new RectangleSize(1510,900)); 
+        	   eyes.open(webDriver.asRemote(), "Bayer Global Web", "ayer Global" + webDriver.getCapabilities().getCapability("platformName"), new RectangleSize(1510,900)); 
         	   
            }
            
            //eyes.open(webDriver.asRemote(), "Dr.Scholl's Mobile", "DrScholls " +webDriver.getCapabilities().getPlatform()+" Test" + 3);
            //eyes.check("chart", Target.region(By.));
-           eyes.checkWindow("ayer Global Page #" + 4);
+           eyes.checkWindow("Bayer Global Page #" + 4);
             eyes.close();
             //TestResults results = eyes.close(false);
             //assertEquals(true, results.isPassed());

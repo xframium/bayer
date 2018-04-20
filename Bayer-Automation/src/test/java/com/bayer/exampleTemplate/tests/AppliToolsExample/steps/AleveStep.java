@@ -53,7 +53,7 @@ import java.security.spec.ECPrivateKeySpec;
 import java.util.concurrent.TimeUnit;
 
 
-public class AltArchPatientStep extends AbstractStep
+public class AleveStep extends AbstractStep
 {
 	private static final int HEADER_SIZE = 65; // Should be adopted according to device
     private static final String USER_NAME = "colin.ebneth@bayer.com";
@@ -63,7 +63,7 @@ public class AltArchPatientStep extends AbstractStep
     private static final String applitoolsKey = "x836lZBCjnk0zlODvlQFDN906107j109S9nD0d101j5I8OX9o110";
     public static int rowNumber  = 0;
 	public static String newUrl = "";
-    public AltArchPatientStep(String url, int parentRowNum)
+    public AleveStep(String url, int parentRowNum)
     {
         super( "message", "error message" );
         this.newUrl = url;
@@ -112,7 +112,7 @@ public class AltArchPatientStep extends AbstractStep
 			        	eyes.setProxy(new ProxySettings("http://ptb-proxy.na.bayer.cnb/"));
 			        	
 			            webDriver.asRemote().get(page.getUrl());
-			            BatchInfo batchName = new BatchInfo("ArchStep");
+			            BatchInfo batchName = new BatchInfo("Aleve");
 			            eyes.setBatch(batchName);
 			            eyes.setForceFullPageScreenshot(true);
 			            //eyes.setRegionToCheck(regionToCheck);
@@ -125,12 +125,12 @@ public class AltArchPatientStep extends AbstractStep
 			           if((platformName.equals("IOS"))||(platformName.equals("Android")))
 			           { 
 			        	   System.out.println("Pass if statement");
-			        	   eyes.open(webDriver.asRemote(), "ArchStep", "ArchPatient: " + webDriver.getCapabilities().getCapability("platformName"));
+			        	   eyes.open(webDriver.asRemote(), "AleveStep", "AlevePatient: " + webDriver.getCapabilities().getCapability("platformName"));
 			        	   
 			           }
 			           else {
 			        	   System.out.println("Pass else statement");
-			        	   eyes.open(webDriver.asRemote(), "ArchStep Web", "ArchStep" + webDriver.getCapabilities().getCapability("platformName")+" Pagenumber:"+rowNumber, new RectangleSize(1510,900)); 
+			        	   eyes.open(webDriver.asRemote(), "AleveStep Web", "AleveStep" + webDriver.getCapabilities().getCapability("platformName")+" Pagenumber:"+rowNumber, new RectangleSize(1510,900)); 
 			        	   
 			           }
 			           if (platformName.equals("IOS")) {

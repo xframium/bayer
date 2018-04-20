@@ -6,7 +6,7 @@
   <test name="Run Test File"  >
     <packages>
 
-      <package name="com.bayer.corp.Regions.Germany.GDPR.tests.Privacy" /> 
+      <package name="com.bayer.corp.Regions.NorthAmerica.FontCheck.tests.AllSites" /> 
 
    </packages>
  </test>

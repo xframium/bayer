@@ -2,6 +2,7 @@ package com.bayer.exampleTemplate.tests.AppliToolsExample;
 
 import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.ArchPatientStep;
 import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.AltArchPatientStep;
+import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.AleveStep;
 import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.CoppertoneStep;
 import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.ExampleStep;
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
@@ -30,7 +31,7 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class ExamplePage extends AbstractTest {
 	
-private String url = "http://test.archpatientassistance.com/";
+private String url = "http://www.aleve.com";
 private int parentRowNum = 1;  
 	public String getUrl(){ 
 		return url;
@@ -66,16 +67,14 @@ private int parentRowNum = 1;
 		}
     }
     @TestDescriptor( testName="Applitools Single Page Example Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void appliToolsExample( DeviceContainer dC ) {
-    	/*String httpProxy = "140.250.199.44:80";
-        Proxy proxy = new Proxy();
-        proxy.setProxyType(ProxyType.MANUAL);
-        proxy.setHttpProxy(httpProxy);
-        capabilities.setCapability(CapabilityType.PROXY, proxy);
-        capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-	*/
         executeSteps( new Step[] { new Navigate(url), new AltArchPatientStep(url, parentRowNum)} );
+    }
+    @TestDescriptor( testName="Applitools Aleve Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void appliToolsAleve( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url), new AleveStep(url, parentRowNum)} );
     }
     @TestDescriptor( testName="Applitools Single Page Example Test" )
     @Test ( dataProvider = "deviceList", enabled=true)
