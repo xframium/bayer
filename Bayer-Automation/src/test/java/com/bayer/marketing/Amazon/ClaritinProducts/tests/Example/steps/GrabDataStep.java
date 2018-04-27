@@ -51,7 +51,7 @@ public class GrabDataStep extends AbstractStep {
     	
     	Date date = new Date();
     	Object currentDate = new java.sql.Timestamp(date.getTime());
-    	
+    	String posRev, negRev;
     	String connectionString =  
                 "jdbc:sqlserver://HUSHNVC039Q:1433;"
                 		+ "databaseName=AmazonData;"
@@ -102,7 +102,21 @@ public class GrabDataStep extends AbstractStep {
         searchBtn.click();
         waitForElement( "amazon.key", webDriver, 15 );
         
-        for(int i=0;i<2;i++){
+        for(int i=0;i<4;i++){
+        	 
+        	    ///////////////////////////////////////
+        	    primeStatus = null;
+        	    productName = null;
+        	    reviewScale = null;
+        	    reviewKeywords = null;
+        	    numReviews = null;
+        	    questions = null;
+        	    prodDesc = null;
+        	    aboutProd = null;
+        	    prodKeywords = null;
+        	    //////////^^^Reset Variables^^^//////////
+        	    System.out.println();
+        	    System.out.println();
 	        	System.out.println("Counter is at " + i);
 	        	waitForElement( "amazon.result"+i, webDriver, 15 );
 	            BayerWebElement result = getElement("amazon.result"+i, webDriver);
@@ -169,22 +183,28 @@ public class GrabDataStep extends AbstractStep {
 		  	    	String temp ="";
 		  	    	try {
 		  	    		BayerWebElement topPositive = waitForVisible("amazon.topPositive", webDriver, 15);
-		  	    		
-		  	    		temp+=topPositive.getText();
-		  	    		System.out.println(temp);
+		  	    		posRev=topPositive.getText();
+		  	    		temp+=posRev;
+		  	    		System.out.println(posRev);
 		  	    		
 					} catch (Exception e) {
 						System.out.println("Unable to grab top positive review");
 					}
 		  	    	try {
 		  	    		BayerWebElement topCritical = waitForVisible("amazon.topCritical", webDriver, 15);
-		  	    		temp+=topCritical.getText();
+		  	    		
+		  	    		negRev=topCritical.getText();
+		  	    		temp+=negRev;
+		  	    		System.out.println(negRev);
 					} catch (Exception e) {
 						System.out.println("Unable to grab top critical review");
 					}
 		            if(temp!=""){
 		            	RepeatedWordInFile words = new RepeatedWordInFile(temp);
 		  	    		reviewKeywords+=words.getOutput();
+		            }
+		            else {
+		            	reviewKeywords="No top reviews found.";
 		            }
 		  	    	System.out.println("Keyword string: "+ reviewKeywords);
 		  	    	Util.scrollToElement(webDriver, reviewsAll, wait);
@@ -261,6 +281,12 @@ public class GrabDataStep extends AbstractStep {
 	            catch (Exception e) {  
 	                e.printStackTrace();  
 	            } 
+	  	    	try { 
+            		connection.close(); 
+            		} 
+            catch(Exception e) {
+            	System.out.println("Unable to close connection");
+            }
 	            //Util.scrollToElement(webDriver, key, wait);
 	            webDriver.navigate().back();
         }//end loop
