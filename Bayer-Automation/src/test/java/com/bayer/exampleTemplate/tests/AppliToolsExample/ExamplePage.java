@@ -1,10 +1,6 @@
 package com.bayer.exampleTemplate.tests.AppliToolsExample;
 
-import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.ArchPatientStep;
-import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.AltArchPatientStep;
-import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.AleveStep;
-import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.CoppertoneStep;
-import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.ExampleStep;
+import com.bayer.exampleTemplate.tests.AppliToolsExample.steps.*;
 import com.bayer.exampleTemplate.tests.Example.steps.PrivacyPolicy;
 import com.bayer.exampleTemplate.tests.Example.steps.ConditionsOfUse;
 import org.testng.annotations.Test;
@@ -75,6 +71,11 @@ private int parentRowNum = 1;
     @Test ( dataProvider = "deviceList", enabled=false)
     public void appliToolsAleve( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url), new ArchPatientStep(url, parentRowNum)} );
+    }
+    @TestDescriptor( testName="Applitools Adempas Test" )
+    @Test ( dataProvider = "deviceList", enabled=true)
+    public void appliToolsAdempas( DeviceContainer dC ) {
+        executeSteps( new Step[] { new Navigate(url), new AdempasStep(url, parentRowNum)} );
     }
     @TestDescriptor( testName="Applitools Single Page Example Test" )
     @Test ( dataProvider = "deviceList", enabled=false)
