@@ -31,19 +31,19 @@ import com.gargoylesoftware.htmlunit.javascript.host.dom.Text;
 
 public class ExamplePage extends AbstractTest {
 	
-private String url = "http://www.aleve.com";
+private String url = "http://test.skyla-us.com/index.php";
 private int parentRowNum = 1;  
 	public String getUrl(){ 
 		return url;
 	}
 	
     @TestDescriptor( testName="AppliTools Example Navigation Test" )
-    @Test ( dataProvider = "deviceList", enabled=false)
+    @Test ( dataProvider = "deviceList", enabled=true)
     public void appliToolsNavigateTest( DeviceContainer dC ) {
     	String [] urlNames = new String[100];
 		int numEntries = 0;
 		try {
-			File file = new File("src/test/java/com/bayer/exampleTemplate/config/TestData/urlList.txt");
+			File file = new File("src/test/java/com/bayer/exampleTemplate/config/TestData/skylaUrlList.txt");
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
 			String line;
@@ -72,12 +72,12 @@ private int parentRowNum = 1;
         executeSteps( new Step[] { new Navigate(url), new AltArchPatientStep(url, parentRowNum)} );
     }
     @TestDescriptor( testName="Applitools Aleve Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void appliToolsAleve( DeviceContainer dC ) {
-        executeSteps( new Step[] { new Navigate(url), new AleveStep(url, parentRowNum)} );
+        executeSteps( new Step[] { new Navigate(url), new ArchPatientStep(url, parentRowNum)} );
     }
     @TestDescriptor( testName="Applitools Single Page Example Test" )
-    @Test ( dataProvider = "deviceList", enabled=true)
+    @Test ( dataProvider = "deviceList", enabled=false)
     public void navTest( DeviceContainer dC ) {
         executeSteps( new Step[] { new Navigate(url)} );
     }

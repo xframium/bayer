@@ -76,7 +76,7 @@ public class ArchPatientStep extends AbstractStep
         	eyes.setProxy(new ProxySettings("http://ptb-proxy.na.bayer.cnb/"));
         	
             webDriver.asRemote().get(page.getUrl());
-            BatchInfo batchName = new BatchInfo("ArchStep");
+            BatchInfo batchName = new BatchInfo("Skyla");
             eyes.setBatch(batchName);
             eyes.setForceFullPageScreenshot(true);
             //eyes.setRegionToCheck(regionToCheck);
